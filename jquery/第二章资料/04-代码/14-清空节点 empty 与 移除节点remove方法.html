@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>清空节点 empty 与 移除节点remove方法</title>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" />
+  <ul id="ul1">
+    <li>我是第1个li标签</li>
+    <li>我是第2个li标签</li>
+    <li id="li3">我是第3个li标签</li>
+    <li>我是第4个li标签</li>
+    <li>我是第5个li标签</li>
+  </ul>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // //清空元素: empty();
+  // //移除节点: remove();
+  // $(function () {
+  //   //给按钮设置点击事件.
+  //   $('#btn').click(function () {
+  //     //1.清空ul.
+  //     //$('#ul1').html(""); //不推荐使用,有可能会造成内存泄漏,不安全.
+  //     // $('#ul1').empty();//推荐使用.
+
+  //     //2.移除某一个元素.
+  //     // $('#li3').remove(); //"自杀"
+
+  //     //3.移除ul.但是只能获取li3这个标签.
+  //     $('#li3').parent().remove();
+
+  //   });
+
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#btn").click(function () {
+      //清空元素: empty();
+      //移除节点: remove();
+      // $("#ul1").html("");   //不推荐使用,有可能会造成内存泄漏,不安全.
+      // $("#ul1").empty(); //推荐使用.
+      $("#li3").remove();
+      // $("#li3").parent().remove();
+    });
+  })
+</script>

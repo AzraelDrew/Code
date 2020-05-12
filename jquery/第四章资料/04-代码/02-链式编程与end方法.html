@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>edn()方法</title>
+</head>
+
+<body>
+  <div>
+  </div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+      //链式编程
+      //1.什么时候可以链式编程?
+      //如果给元素调用一个方法,这个方法有返回值,并且返回的是一个jQuery对象,那就可以继续再点出jQuery方法.
+      console.log($('div').width(100).height(100).css("backgroundColor", "red"));
+
+
+      //2.必须是jQuery对象才能点出jQuery方法.
+      //console.log($('div').width(100).width()); //100
+      //$('div').width(100).width().height(100); //报错了,因为数值不能点出jQuery方法.
+
+
+      //3.有些时候我们一个方法返回的确实是一个jQuery对象
+      //但是这个对象又不是我们想要的对象,那这个时候就不要再继续点下去了..
+
+
+      //4.end(); //回到上一个状态.
+      //$(this).text(sx_wjx).prevAll().text(sx_wjx).end().nextAll().text(kx_wjx);
+
+
+      //5.end()方法他也是jQuery方法,那他也需要一个jQuery对象才能点出了啊,
+      //width()方法返回的是一个数值, 数值能点出end()方法来吗? 显然不行.
+      //$('div').width(100).width().end().height(100); //不行
+
+
+    });
+  </script>
+</body>
+
+</html>

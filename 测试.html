@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+</head>
+<style>
+    body {
+        height: 2000px;
+    }
+
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin-bottom: 300px;
+    }
+
+    #div1 {
+        background-color: blueviolet;
+        position: fixed;
+        z-index: 2;
+    }
+
+    #div2 {
+        position: relative;
+        top: 400px;
+    }
+</style>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+
+<script>
+    // var a;
+    // const func = (a,
+    //     c = () =>
+    //     a) => {
+    //     var b = a;
+    //     a = 2;
+    //     console.log(a, b, c()); // 2 1 1
+    //     console.log(a, b, c); //2 1 () => a
+    // };
+    // func(1);
+    // var num = 1;
+
+    // function demo() {
+    //     console.log(num);
+
+    //     function demoSon() {
+    //         num = 3;
+    //         console.log(num);
+    //     }
+    //     var num = 2;
+    //     demoSon();
+    //     console.log(num);
+    // }
+    // demo();
+    // console.log(num);
+    // function a() {
+    //     console.log(num);
+    // }
+    // a();
+    let a = 1;
+
+    function sc() {
+        return function () {
+            let b = 2;
+            console.log(a);
+            console.log(b);
+        }
+
+        return function () {
+            let c = 3;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+    }
+    sc();
+</script>
+
+
+</html>

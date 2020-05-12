@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            background: #f3f3f3;
+        }
+
+        footer {
+            height: 50px;
+            background: #eee;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-top: solid 1px #ccc;
+        }
+
+        footer section {
+            flex: 1;
+            /* background: red; */
+            border-right: solid 1px #ccc;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        footer section:last-child {
+            border-right: none;
+        }
+
+        footer section h4 {
+            flex: 0 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        footer section ul {
+            display: flex;
+            flex-direction: column;
+            border: solid 1px #ccc;
+            text-align: center;
+            margin-bottom: 5px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        footer section ul li {
+            flex: 1 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: solid 1px #ccc;
+            cursor: pointer;
+
+        }
+
+        footer section ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main></main>
+    <footer>
+        <section>
+            <h4>教程</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>教程</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>直播</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+        <section>
+            <h4>软件</h4>
+            <ul>
+                <li>PHP</li>
+                <li>CSS</li>
+                <li>CSS</li>
+                <li>CSS</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+
+</html>

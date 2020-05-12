@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>jQuery操作属性</title>
+
+</head>
+
+<body>
+  <input type="button" value="获取属性" id="btn1" />
+  <input type="button" value="设置属性" id="btn2" />
+  <input type="button" value="移除属性" id="btn3" /> <br /><br />
+  <img src="991.gif" alt="周五晚睡1" title="周五晚睡" aaa='aaa' />
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //jQuery中操作属性:attr() removeAttr();
+  //   //1.设置属性
+  //   $('#btn2').click(function () {
+  //     //设置单属性.
+  //     // $('img').attr('src','992.gif');//以前有src属性,更改这个属性.
+  //     // $('img').attr('aaa','哈哈哈');//修改自定义属性.
+  //     // $('img').attr('bbb','bbb');//如果元素原来没有这个属性,那就是添加属性.
+  //     //设置多属性.
+  //     $('img').attr({
+  //       src:'992.gif',
+  //       aaa:"hahaha",
+  //       bbb:'bbb'
+  //     });
+  //   });
+
+  //   //2.获取属性.
+  //   $('#btn1').click(function () {
+  //     //console.log($('img').attr('src'));//自带的属性可以获取
+  //     //console.log($('img').attr('aaa'));//自定义的属性也可以获取
+  //     console.log($('img').attr('bbb'));//如果没有这个属性,获取到的值就是undefined; attr()设置的属性也是可以获取的.
+  //   });
+
+  //   //3.移除属性.
+  //   $('#btn3').click(function () {
+  //     //移除单属性.
+  //     // $('img').removeAttr('alt');
+  //     // $('img').removeAttr('aaa');
+  //     // $('img').removeAttr('bbb');
+
+  //     $('img').removeAttr('alt aaa bbb'); //移除多属性.
+  //   });
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#btn2").click(function () {
+      $("img").attr("src", "992.gif"); //设置属性,也可以设置自定义属性
+      $("img").attr("aaa", "哈哈");
+      $("img").attr("bbb", "bbb"); //如果没有此属性，则添加该属性
+      $("img").attr({
+        "aaa": "哈哈",
+        "bbb": "哈哈",
+      });
+    })
+    $("#btn1").click(function () {
+      console.log($("img").attr("aaa")); //获取属性
+    })
+    $("#btn3").click(function () {
+      $("img").removeAttr("aaa") //移除属性
+      $("img").removeAttr("aaa bbb") //移除多个属性
+    })
+  })
+</script>

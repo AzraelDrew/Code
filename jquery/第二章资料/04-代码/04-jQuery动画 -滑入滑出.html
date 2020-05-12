@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>动画-滑入与滑出</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="滑入" id="slideDown" />
+  <input type="button" value="滑出" id="slideUp" />
+  <input type="button" value="切换" id="slideToggle" /><br /><br />
+  <div id="div1"></div>
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //1.滑入 slideDown(参数1,参数2);
+  //   //参数1: 动画执行的时长
+  //   //参数2: 动画执行完毕后的回调函数
+  //   $('#slideDown').click(function () {
+  //     //让id为div1的元素滑入.
+  //     //$('#div1').slideDown();//没有给参数相当于给了一个默认的时长,mormal代表的400毫秒
+  //     $('#div1').slideDown(2000);
+  //     // $('#div1').slideDown(2000, function () {
+  //     //   alert('滑入完成了..');
+  //     // });
+  //   });
+
+
+  //   //2.滑出 slideUp();
+  //   $('#slideUp').click(function () {
+  //     //让id为div1的元素滑出
+  //     $('#div1').slideUp(2000);
+  //     // $('#div1').slideUp(2000, function () {
+  //     //   alert('滑出做完了...');
+  //     // });
+  //   });
+
+  //   //3.切换 slideToggle();
+  //   //元素是隐藏状态就滑入; 元素是显示状态就滑出.
+  //   $('#slideToggle').click(function () {
+  //     $('#div1').slideToggle(1000);
+  //   });
+
+  // });
+
+  /* yznaisy */
+
+  $(function () {
+    $("#slideDown").click(function () {
+      $("#div1").slideDown(1000, function () { //有三种参数,没有、字符串或者毫秒数,如果没有参数默认400ms，也可以添加回调函数，当动画执行完后会执行回调函数
+        alert("完成了")
+      });
+    });
+    $("#slideUp").click(function () {
+      $("#div1").slideUp(1000, function () { //有三种参数,没有、字符串或者毫秒数,如果没有参数默认400ms，也可以添加回调函数，当动画执行完后会执行回调函数
+        alert("完成了")
+      });
+    });
+    $("#slideToggle").click(function () { //如果元素是隐藏状态就动画显示; 如果元素是显示状态就动画影藏.
+      $("#div1").slideToggle(1000, function () {
+        alert("完成了")
+      });
+    })
+  })
+</script>

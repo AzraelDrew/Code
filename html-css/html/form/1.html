@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>houdunren.com</title>
+</head>
+
+<body>
+    <form action="1.php" method="post">
+        <fieldset>
+            <legend>后盾人</legend>
+            <label>标题
+                <input value="houdunren " type="text" name="title" maxlength="3" readonly required>
+                <!-- 
+                    required   必须填写内容否则不能提交 
+                    maxlength   限制最大字段长度
+                    size  设置长度
+                    readonly  不能更改
+                -->
+            </label>
+            <hr>
+            <label>网址
+                <input type="text" name="url" placeholder="必须有协议如http">
+            </label>
+            <label>来源
+                <input type="text" name="source" value="后盾人">
+            </label>
+        </fieldset>
+        <button>提交</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>颜色插件</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" /> <br /> <br />
+  <div></div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <!--<script src="plugin/jquery.color.js"></script>-->
+  <script src="https://cdn.bootcss.com/jquery-color/2.1.2/jquery.color.js"></script>
+  <script>
+    $(function () {
+      //需求: 点击按钮,让div做动画, left改变到800 , 改变背景色
+      //animate动画不会改变背景色, 如果非要改,就要使用插件.
+      $('#btn').on('click', function () {
+        //让div做动画
+        $('div').animate({
+          left: 800,
+          width: 100,
+          height: 100,
+          backgroundColor: 'green'
+        }, 2000);
+      });
+
+      //什么是插件?
+      //其实就是用来做扩展功能的.
+
+
+      //jQuery插件库: jq22.com
+
+    });
+  </script>
+</body>
+
+</html>

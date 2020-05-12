@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>克隆节点</title>
+  <style>
+    #div1 {
+      width: 400px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+    #div2 {
+      width: 400px;
+      height: 200px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="克隆" id="clone" />
+  <div id="div1">
+    <span>span1</span>
+    <p>p1
+      <b>b1</b>
+    </p>
+  </div>
+  <br /><br />
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //给id为div1的这个元素添加一个点击事件.
+  //   $('#div1').click(function () {
+  //     alert('哈哈,我被点击了...');
+  //   });
+
+
+  //   //jQuery中克隆节点:clone()
+  //   //只存在与内存中,如果要在页面上显示,就应该追加到页面上.
+  //   //clone()方法参数不管是true还是false,都是会克隆到后代节点的.
+  //   //clone()方法参数是true表示会把事件一起克隆到. 参数如果是false就不会克隆事件. 不给参数默认是false.
+  //   //给按钮设置点击事件
+  //   $('#clone').click(function () {
+  //     var $cloneDiv = $('#div1').clone();
+  //     //修改克隆节点的id
+  //     $cloneDiv.attr('id', 'div2');
+  //     //console.log($cloneDiv);
+  //     //把克隆的节点追加到body中.
+  //     $('body').append($cloneDiv);
+  //   });
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#div1").click(function () {
+      alert(1)
+    })
+    $("#clone").click(function () {
+      //只存在与内存中,如果要在页面上显示,就应该追加到页面上.
+      //clone()方法参数不管是true还是false,都是会克隆到后代节点的.
+      //clone()方法参数是true表示会把事件一起克隆到. 参数如果是false就不会克隆事件. 不给参数默认是false.
+      let $cloneDiv = $("#div1").clone();
+      $cloneDiv.attr("id", "div2"); //更改克隆元素的id
+      $("body").append($cloneDiv);
+    })
+  })
+</script>

@@ -1,0 +1,89 @@
+01-复习
+02-jQuery操作属性
+  获取属性    attr("title")
+  设置单属性  attr("title","你是猪")
+  设置多属性  attr(obj );
+  移除属性    removeAttr("title");
+
+03-美女相册 补充
+
+04-prop 操作布尔类型的属性
+  disabled checkBox  selected 
+
+05-表格全选反选 [15-表格全选反选.html]
+
+06-打字效果 [16-打字效果.html]
+
+07-宽高  
+   width();  height();  //获取或者设置宽高
+   innerWidth();  innerHeight();
+   outWidth();    outHeight(); 
+   outWidth(true) outHeight(true); 
+
+   获取页面可视区的宽高：
+      console.log($(window).width() +":"+$(window).height());
+
+08-offset() 和  position()
+   返回的是一个对象
+   console.log($("#son").offset().left);。
+   offset方法获取、设置元素距离document的位置，
+   $("#son").offset({"left":200});
+
+
+    position方法获取的是元素距离有定位的父元素(offsetParent)的位置。
+
+
+
+09-scrollTop()   scrollLeft()
+   设置或者获取垂直滚动条的位置
+
+
+10-腾讯固定导航栏 [17-固定导航栏.html]
+
+
+11-jQuery事件发展机制
+   简单事件 click(); 不会覆盖  但是每次只能注册一个事件。
+   bind();  多次注册， 传入对象，可以绑定多个。不支持动态绑定。
+   delegate事件阶段
+   jQuery1.7之后，使用on方法统一了事件注册。
+
+12-on注册事件的两种方式
+   给自己注册事件  传2个参数
+   注册委托事件    传3个参数
+
+13-表格添加数据案例 昨天做的最后给delete删除事件
+
+
+14-事件解绑
+   原生js中： btn.onclick = function(){};   btn.onclick = null;
+              addEventListener   removeEventListener
+              attachEvent   detachEvent
+
+   jQuery中: on注册的用 off 解绑
+       $(selector).off(); //解绑匹配元素的所有事件
+       $(selector).off("click"); //解绑匹配元素的所有click事件
+
+  
+15-事件触发
+   trigger();
+   
+
+16-jQuery事件对象
+
+17-按键变色效果 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

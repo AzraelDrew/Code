@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let xj = { name: "向军" };
+    console.log(xj);
+    console.log(xj.hasOwnProperty("name"));
+    //完全数据字典对象
+    let hd = Object.create(null, {
+      name: {
+        value: "后盾人"
+      }
+    });
+    console.log(hd.hasOwnProperty("name"));
+  </script>
+</html>

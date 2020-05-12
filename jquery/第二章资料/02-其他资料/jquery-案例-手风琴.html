@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画-案例《手风琴》</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 2400px;
+        }
+
+        #box {
+            width: 1200px;
+            height: 400px;
+            border: 2px solid red;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        #box li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="jquery/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /*1.渲染图片*/
+        var $lis = $('#box li');
+        for (var i = 0; i < $lis.length; i++) {
+            var obj = $lis[i];
+            /*图片*/
+            obj.innerHTML = '<img src="images/collapse/'+(i+1)+'.jpg" />';
+        }
+        /*2.设置动画*/
+        $lis.mouseenter(function () {
+            /*240px---800px*/
+            /*当前li*/
+            $(this).stop().animate({'width':'800px'});
+            /*240px---100px*/
+            /*其他的li*/
+            $(this).siblings().stop().animate({'width':'100px'})
+        });
+        $('#box').mouseleave(function () {
+            $lis.stop().animate({'width':'240px'});
+        });
+    })
+</script>
+</body>
+</html>

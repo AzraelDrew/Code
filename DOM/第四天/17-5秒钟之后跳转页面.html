@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>5秒钟自动跳转</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        // var btn = document.querySelector('button');
+        // var div = document.querySelector('div');
+        // btn.addEventListener('click', function () {
+        //     // console.log(location.href);
+        //     location.href = 'http://www.baidu.com';
+        // })
+        // var timer = 5;
+        // setInterval(function () {
+        //     if (timer == 0) {
+        //         location.href = 'http://www.baidu.com';
+        //     } else {
+        //         div.innerHTML = '您将在' + timer + '秒钟之后跳转到百度首页';
+        //         timer--;
+        //     }
+
+        // }, 1000);
+
+
+        /* yznaisy */
+        let btn = document.querySelector("button");
+        let div = document.querySelector("div");
+        btn.addEventListener("click", function () {
+            location.href = "https://www.baidu.com";
+        })
+        let time = 5;
+        fun(); //消除定时器执行前的空白
+        setInterval(fun, 1000)
+
+        function fun() {
+            if (time == 0) {
+                location.href = "https://www.baidu.com";
+            } else {
+                div.innerHTML = '您将在' + time + '秒钟之后跳转到百度首页';
+                time--;
+            }
+        }
+    </script>
+</body>
+
+</html>

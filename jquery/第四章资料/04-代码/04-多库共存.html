@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>多库并存</title>
+
+</head>
+
+<body>
+
+  <script src="heima.js"></script>
+  <script src="jquery-1.12.4.js"></script>
+  <script src="jquery-3.0.0.js"></script>
+  <script src="jquery-2.2.4.js"></script>
+
+
+  <script>
+    // //1.如何查看jQuery的版本?
+    // //通过jQuery文件名来查看jQuery的版本是不靠谱的做法.
+    // //通过以下四种方式可以查看jQuery的版本.
+    // // console.log(jQuery.fn.jquery);
+    // // console.log(jQuery.prototype.jquery);
+    // // console.log($.fn.jquery);
+    // // console.log($.prototype.jquery);
+
+
+    // //2.如果引入了多个jQuery文件. 那使用的$是哪一个jQuery文件中的呢?
+    // //那个文件后引入,使用的$就是谁的.
+    // //console.log($.fn.jquery);
+
+
+    // //3.多库共存
+    // // var _$ =  $.noConflict(); //3.0.0版本jQuery文件把$符号的控制权给释放了.
+    // //
+    // // (function ($) {
+    // //   //在这个自执行函数中,就可以继续使用$了.
+    // // }(_$));
+    // //
+    // // console.log(_$.fn.jquery);//3.0.0
+    // // console.log(jQuery.fn.jquery);//3.0.0
+    // // console.log($.fn.jquery);//1.12.4
+
+
+
+    // //4.多库共存2
+    // //console.log($.fn.jquery);
+    // var _$300 = $.noConflict(); //3.0.0版本的jQuery把$的控制权给释放了
+
+    // var _$1124 = $.noConflict(); //1.12.4版本的jQuery把$的控制权给释放了
+
+    // console.log($);
+    // console.log(_$1124.fn.jquery);
+    // console.log(_$300.fn.jquery);
+
+    /* yznaisy */
+    $(function () {
+      //获取jquery版本
+      // console.log(jQuery.fn.jquery);
+      // console.log(jQuery.prototype.jquery);
+      // console.log($.fn.jquery);
+      // console.log($.prototype.jquery);
+      let _$1 = $.noConflict(); //如果出现多次释放jquery$会从下到上依次释放
+      let _$2 = $.noConflict();
+      let _$3 = $.noConflict();
+      console.log(_$1.fn.jquery);
+      console.log(_$1.prototype.jquery);
+      console.log(_$2.fn.jquery);
+      console.log(_$2.prototype.jquery);
+      console.log(_$3.fn.jquery);
+      console.log(_$3.prototype.jquery);
+      (function ($) {
+        //在这个自执行函数中,就可以继续使用$了(以前的代码).
+      }(_$1));
+      console.log($);
+    });
+  </script>
+</body>
+
+</html>

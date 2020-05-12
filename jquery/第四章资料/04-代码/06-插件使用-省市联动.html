@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <div id="one">
+    <select name="" ></select>
+    <select name="" ></select>
+    <select name="" ></select>
+  </div>
+
+<script src="jquery-1.12.4.js"></script>
+<script src="plugin/distpicker.data.js"></script>
+<script src="plugin/distpicker.js"></script>
+<script>
+  $(function () {
+    //使用插件
+    //1.引入jQuery文件.
+    //2.引入插件文件.
+    //3.调用插件方法.
+    $('#one').distpicker({
+      province: "广东省",
+      city: "深圳市",
+      district: "宝安区"
+    });
+
+  });
+</script>
+</body>
+</html>

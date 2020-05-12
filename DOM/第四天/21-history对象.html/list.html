@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="index.html">点击我去往首页</a>
+    <button>后退</button>
+    <script>
+        // var btn = document.querySelector('button');
+        // btn.addEventListener('click', function() {
+        //     // history.back();
+        //     history.go(-1);
+        // })
+
+
+        /* yznaisy */
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+            // history.back(); //后退
+            history.go(-1) //后退一步(数字代表多少步)
+        });
+    </script>
+</body>
+
+</html>

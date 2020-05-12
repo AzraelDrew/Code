@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 2000px;
+      height: 2000px;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+      overflow: auto;
+    }
+
+    img {
+      vertical-align: top;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" />
+  <div>
+    <img src="1.jpg" alt="" />
+  </div>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //给按钮设置一个点击事件.
+  //   $('#btn').click(function () {
+  //     //获取
+  //     //scrollLeft() 表示元素内容被卷曲出去的宽度.
+  //     //scrollTop() 表示元素内容被卷曲出去的高度
+  //     //console.log($('div').scrollLeft() + ":" + $('div').scrollTop());
+
+  //     //设置
+  //     //设置元素内容被卷曲出去的高度或者宽度.
+  //     //$('div').scrollLeft(217);
+  //     //$('div').scrollTop(217);
+
+  //     //---------------------------------------
+
+  //     // 获取页面被卷曲的高度
+  //     //console.log($(window).scrollTop());
+  //     // 获取页面被卷曲的宽度
+  //     //console.log($(window).scrollLeft());
+
+  //     //设置页面被卷曲出去的距离.
+  //     // $(window).scrollTop(1000);
+  //     // $(window).scrollLeft(1000);
+  //   });
+
+
+
+
+
+  // });
+
+
+  /* yznaisy */
+
+  $(function () {
+    $("#btn").click(function () {
+      // 获取页面被卷曲的高度
+      console.log($("div").scrollLeft());
+      console.log($("div").scrollTop());
+      // 置元素内容被卷曲出去的高度或者宽度.
+      $("div").scrollLeft(200)
+      $("div").scrollTop(200)
+      console.log($("div").scrollLeft());
+      console.log($("div").scrollTop());
+      console.log($(window).scrollTop());
+      console.log($(window).scrollLeft());
+      $(window).scrollTop(1000);
+      $(window).scrollLeft(1000);
+      console.log($(window).scrollTop());
+      console.log($(window).scrollLeft());
+    })
+  })
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>18-案例-手风琴</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .parentWrap {
+            width: 200px;
+            text-align: center;
+
+        }
+
+        .menuGroup {
+            border: 1px solid #999;
+            background-color: #e0ecff;
+        }
+
+        .groupTitle {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .menuGroup>div {
+            height: 200px;
+            background-color: #fff;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="parentWrap">
+        <li class="menuGroup">
+            <span class="groupTitle">标题1</span>
+            <div>我是弹出来的div1</div>
+        </li>
+
+        <li class="menuGroup">
+            <span class="groupTitle">标题2</span>
+            <div>我是弹出来的div2</div>
+        </li>
+
+        <li class="menuGroup">
+            <span class="groupTitle">标题3</span>
+            <div>我是弹出来的div3</div>
+        </li>
+
+        <li class="menuGroup">
+            <span class="groupTitle">标题4</span>
+            <div>我是弹出来的div4</div>
+        </li>
+    </ul>
+
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+    //     //需求:点击标题li标签,对应的div显示, 他的兄弟标签li下面的div隐藏.
+    //     $('.parentWrap>.menuGroup').click(function () {
+    //         //jQuery特性:隐式迭代
+    //         //jQuery特性:链式编程,在于一个方法返回的是一个jQuery对象,既然是jQueyr对象就可以继续点出jQuery的方法来.
+    //         $(this).children('div').show().parent().siblings('li').children('div').hide();
+    //     });
+
+    // });
+
+
+    /* yznaisy */
+    $(function () {
+        $(".parentWrap>.menuGroup").mouseenter(function () {
+            //当点击li标签时让li的子元素div显示，让li的父元素的子元素的子元素第v隐藏
+            $(this).children("div").show().parent().siblings("li").children("div").hide(); //链式编程
+        })
+    })
+</script>

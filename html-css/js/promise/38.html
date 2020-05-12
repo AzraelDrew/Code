@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    async function hd(name) {
+      // console.log(a);
+      // throw new Error("fail");
+      return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    }
+    hd("后盾人视频")
+      .then(user => {
+        console.log(user);
+      })
+      .catch(error => {
+        console.log("Error" + error);
+      });
+    // new Promise((resolve, reject) => {
+    //   // throw new Error("fail");
+    //   console.log(a);
+    // }).catch(error => {
+    //   console.log(error);
+    // });
+  </script>
+</html>

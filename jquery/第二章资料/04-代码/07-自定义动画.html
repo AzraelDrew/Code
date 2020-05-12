@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>自定义动画</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      left: 0px;
+    }
+
+    #div1 {
+      top: 50px;
+    }
+
+    #div2 {
+      top: 170px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="从左到右800" id="lr800" />
+  <div id="div1"></div>
+  <!--<div id="div2"></div>-->
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //自定义动画 animate();
+  //   //参数1:必选的 对象 代表的是需要做动画的属性
+  //   //参数2:可选的 代表执行动画的时长.
+  //   //参数3:可选的 easing 代表的是缓动还是匀速 linear(匀速)  swing(缓动)   默认不写是缓动
+  //   //参数4:可选的 动画执行完毕后的回调函数.
+  //   $('#lr800').click(function () {
+
+  //     //让id为div1的元素动画移动到800那个位置.
+  //     // $('#div1').animate({
+  //     //   left:800,
+  //     //   width:200,
+  //     //   height:200,
+  //     //   opacity:0.5
+  //     // },2000,'linear', function () {
+  //     //   alert('动画执行完毕了');
+  //     // });
+
+
+
+
+  //     $('#div1').animate({
+  //       left: 800,
+  //       width: 200,
+  //       height: 200,
+  //       opacity: 0.5
+  //     }, 2000, 'linear', function () {
+  //       //既然这里是一个函数,那就可以写任意的代码,那就可以在这里让div1做动画.
+  //       $('#div1').animate({
+  //         left: 400,
+  //         width: 300,
+  //         height: 300,
+  //         top: 150,
+  //         opacity: 1
+  //       }, 2000);
+  //     });
+
+
+
+
+
+
+
+
+  //     //让id为div2的元素动画移动到800那个位置.
+  //     // $('#div2').animate({
+  //     //   left:800
+  //     // },2000,'swing');
+
+
+  //   });
+
+  // });
+
+  /* yznaisy */
+
+  $(function () {
+    $("#lr800").click(function () {
+      //自定义动画 animate();
+      //参数1:必选的 对象 代表的是需要做动画的属性
+      //参数2:可选的 代表执行动画的时长.
+      //参数3:可选的 easing 代表的是缓动还是匀速 linear(匀速)  swing(缓动)   默认不写是缓动
+      //参数4:可选的 动画执行完毕后的回调函数.
+      $("#div1").animate({
+        left: 500,
+        width: 300,
+        height: 300,
+        opacity: 0.5
+      }, 500, "swing", function () {
+        $("#div1").animate({
+          left: 200,
+          width: 100,
+          height: 200,
+          opacity: 150,
+          top: 200
+        }, 500)
+      });
+    });
+  });
+</script>

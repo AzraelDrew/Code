@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>过滤选择器</title>
+
+</head>
+
+<body>
+  <ul>
+    <li>我是第1个li标签</li>
+    <li>我是第2个li标签</li>
+    <li>我是第3个li标签</li>
+    <li>我是第4个li标签</li>
+    <li>我是第5个li标签</li>
+    <li>我是第6个li标签</li>
+    <li>我是第7个li标签</li>
+    <li>我是第8个li标签</li>
+    <li>我是第9个li标签</li>
+    <li>我是第10个li标签</li>
+  </ul>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //设置奇数行li标签颜色为天蓝色.
+  //   $('li:odd').css('backgroundColor', 'skyblue');
+
+  //   //设置偶数行li标签背景色为粉色
+  //   $('li:even').css('backgroundColor', 'pink');
+
+  //   //首尾两行li显示红色.
+  //   $('li:eq(0)').css('backgroundColor', 'red');
+  //   $('li:eq(9)').css('backgroundColor', 'red');
+
+  // });
+
+  /* yznaisy */
+
+  $(function () {
+    $("li:odd").css("backgroundColor", "skyblue"); //设置奇数行
+    $("li:even").css("backgroundColor", "pink"); //设置偶数行
+    $("li:eq(0)").css("backgroundColor", "red"); //设置第一行
+    $("li:eq(9)").css("backgroundColor", "red"); //设置最后一行
+  });
+</script>

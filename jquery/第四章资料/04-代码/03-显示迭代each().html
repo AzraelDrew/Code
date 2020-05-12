@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>复制</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    li {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: pink;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 20px 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="ulList">
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+  </ul>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $(function () {
+    //   //需求:找到所有的li标签,分别设置透明度,透明度是递增到1.
+
+    //   //1.获取所有的li标签.
+    //   var $lis = $('#ulList').children();
+    //   //console.log($lis);
+
+    //   //2.给$lis里面的每一个li标签设置透明度.
+    //   //$lis.css('opacity',0.5);//如果这样设置的话,由于隐式迭代那每一个li标签的透明度都设置成了0.5,不符合需求.
+
+    //   //给每一个对象设置不同的值的时候
+    //   //作用：遍历jQuery对象集合，为每个匹配的元素执行一个函数
+    //   $lis.each(function (index,element) {
+    //     // console.log(index); //每一个li标签的索引
+    //     // console.log(element);//每一个li标签,是一个dom对象.
+
+    //     $(element).css('opacity',(index+1)/10);
+    //   });
+
+    // });  
+
+
+    /* yznaisy */
+    $(function () {
+      let $lis = $("#ulList").children();
+      $lis.each((index, element) => {
+        $(element).css("opacity", (index + 1) / 10)
+      })
+    })
+  </script>
+</body>
+
+</html>

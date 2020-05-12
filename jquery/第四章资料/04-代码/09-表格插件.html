@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #c table {
+      border: 1px solid hotpink;
+      width: 500px;
+      border-collapse: collapse;
+    }
+
+    #c table td,
+    #c table th {
+      border: 1px solid hotpink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="c">
+  </div>
+
+  <script src="jquery-2.2.4.js"></script>
+  <script src="jQuery-table.js"></script>
+  <script>
+    let arr1 = ['序号', '姓名', '年龄', '工资'];
+    let arr2 = [{
+        n: 'xy',
+        age: 20,
+        s: 10
+      },
+      {
+        n: 'wy',
+        age: 10,
+        s: 8
+      },
+      {
+        n: 'pl',
+        age: 11,
+        s: 9
+      }
+    ]
+    $('#c').table(arr1, arr2);
+    console. dir(arr1);
+  </script>
+</body>
+
+</html>

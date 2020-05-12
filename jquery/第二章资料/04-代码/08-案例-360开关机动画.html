@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>360开机动画</title>
+    <style>
+        .box {
+            width: 322px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="box">
+        <span id="closeButton"></span>
+        <div class="hd" id="headPart">
+            <img src="images/t.jpg" alt="" />
+        </div>
+        <div class="bd" id="bottomPart">
+            <img src="images/b.jpg" alt="" />
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+    //     //1.给关闭按钮一个点击事件.
+    //     $('#closeButton').click(function () {
+    //         //2.让下面那部分的高度动画变为0.
+    //         $('#bottomPart').animate({
+    //             height: 0
+    //         }, 500, function () {
+    //             //3.让整个大盒子的宽度动画变为0
+    //             $('#box').animate({
+    //                 width: 0
+    //             }, 1000);
+    //         });
+    //     });
+
+    // });
+
+
+    /* yznaisy */
+    $(function () {
+        $('#closeButton').click(function () {
+            $("#bottomPart").animate({
+                height: 0
+            }, 500, function () {
+                $("#box").animate({
+                    width: 0
+                }, 1000)
+            })
+        });
+    })
+</script>

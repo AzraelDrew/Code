@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>动态创建元素</title>
+  <style>
+    #div1 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="html()" id="btnHtml1" />
+  <input type="button" value="$()" id="btn1" /> <br /><br />
+
+  <div id="div1">
+    <p>p1
+      <span>span1</span>
+    </p>
+  </div>
+
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //原生js中创建节点: document.write();  innerHTML;  document.createElement();
+
+  //   //jQuery中如何创建节点呢?
+  //   //html();   $();
+
+
+  //   //1.html();
+  //   //设置或者获取内容的.
+  //   $('#btnHtml1').click(function () {
+  //     //1.1 获取内容: html()方法不给参数
+  //     //获取到元素的所有内容.
+  //     // console.log($('#div1').html());
+
+  //     //1.2 设置内容: html()方法给参数
+  //     //会把原来的内容给覆盖
+  //     //如果设置的内容中包含了标签,是会把标签给解析出来的.
+  //     $('#div1').html('我是设置的内容<a href="https://www.baidu.com">百度一下</a>');
+  //   });
+
+
+  //   //2.$();
+  //   //确实能创建元素,但是创建的元素只存在于内存中,如果要在页面上显示,就要追加.
+  //   $('#btn1').click(function () {
+  //     var $link = $('<a href="http://news.baidu.com/">我是新闻</a>');
+  //     //console.log($link);
+  //     //追加节点.
+  //     $('#div1').append($link);
+  //   });
+
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#btnHtml1").click(function () {
+      $("#div1").html(
+        "我是设置的内容<a href='https://www.baidu.com'>百度一下</a>"); //直接替换div1中的内容,如果设置的内容中包含了标签,是会把标签给解析出来的.
+    })
+    $("#btn1").click(function () {
+      let $link = $('<a href = "http://news.baidu.com/" > 我是新闻 </a>'); //此方法创建的元素只存在于内存中，如果想要显示，需要追加
+      $("#div1").append($link); //在div1最后添加$link,如果设置的内容中包含了标签,是会把标签给解析出来的.
+    })
+  })
+</script>

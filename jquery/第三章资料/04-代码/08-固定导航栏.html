@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>固定导航栏</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top,
+    .nav {
+      width: 1423px;
+      margin: 0 auto;
+    }
+
+    .main {
+      width: 1000px;
+      margin: auto;
+    }
+
+    img {
+      display: block;
+      /* vertical-align: middle; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <img src="images/top.png" />
+  </div>
+  <div class="nav">
+    <img src="images/nav.png" />
+  </div>
+  <div class="main">
+    <img src="images/main.png" />
+  </div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $(function () {
+    //   //思路:给页面设置一个滚动事件,时刻监视页面的scrollTop的值,
+    //   // 如果这个值大于第一部分的高度,就设置第二部分为固定定位.
+    //   // 如果这个值小于第一部分的高度,就设置第二部分的定位还原.
+
+    //   //计算第一部分的高度.
+    //   var topHeight = $('.top').height();
+    //   //计算第二部分的高度.
+    //   var navHeight = $('.nav').height();
+
+    //   //给页面设置一个滚动事件.
+    //   $(window).scroll(function () {
+    //     //1.获取页面滚出去的距离(被卷曲出去的距离);
+    //     var scrollTopValue =  $(window).scrollTop();
+    //     //2.判断,看scrollTopValue的值是不是大于第一部分的高度.
+    //     if(scrollTopValue >= topHeight){
+    //       //让第二部分固定定位.
+    //       $('.nav').css({
+    //         position:'fixed',
+    //         top:0,
+    //         left:0
+    //       });
+    //       //设置第三部分的margin-top的值为第二部分的高度.
+    //       $('.main').css({
+    //         marginTop:navHeight+10
+    //       });
+    //     }else {
+    //       //让第二部分定位还原.
+    //       $('.nav').css({
+    //         position:'static',
+    //         top:0,
+    //         left:0
+    //       });
+    //       //设置第三部分的margin-top的值为原来的值.
+    //       $('.main').css({
+    //         marginTop:10
+    //       });
+    //     }
+    //   });
+    // });
+    /* yznaisy */
+    $(function () {
+      let topHeight = $(".top").height();
+      let navHeight = $(".nav").height();
+      $(window).scroll(function () {
+        let scrollTopValue = $(window).scrollTop();
+        if (scrollTopValue >= topHeight) {
+          $(".nav").css({
+            position: "fixed",
+            top: 0,
+            left: 0
+          })
+          $(".main").css({
+            marginTop: navHeight //nav固定定位会脱离文档流，下面的元素会顶上来，所有把原来的位置留住，设置外边距为nav的高度
+          })
+        } else {
+          $(".nav").css({
+            position: "static",
+            top: 0,
+            left: 0
+          })
+          $(".main").css({
+            marginTop: 0
+          })
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

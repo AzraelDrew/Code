@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+
+</head>
+
+<body>
+  <div></div>
+  <p></p>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script src="jQuery-bgColor.js"></script>
+  <script src="jQuery-add.js"></script>
+  <script>
+    $(function () {
+      //1.我们自己能不能封装插件呢?
+      // //$('div').width(100).height(100).css('backgroundColor','red'); //设置背景色有些麻烦.
+      // $('div').width(100).height(100).bgColor('red'); //现在jQuery中没有这个bgColor方法,所以报错了.
+      // //我们可以自己封装一个bgColor方法.
+
+
+      //2.如何自己封装插件.
+
+      //2.1 给jQuery的原型添加方法.
+      $('div').width(100).height(100).bgColor('red');
+      $('div').bgColor('green').width(100).height(100);
+
+
+      //2.2 给jQuery直接添加方法.
+      console.log($.add(10, 20));
+
+    });
+  </script>
+</body>
+
+</html>

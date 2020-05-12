@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>兄弟节点</title>
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+        // var div = document.querySelector('div');
+        // // 1.nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等
+        // console.log(div.nextSibling);
+        // console.log(div.previousSibling);
+        // // 2. nextElementSibling 得到下一个兄弟元素节点
+        // console.log(div.nextElementSibling);
+        // console.log(div.previousElementSibling);
+
+
+        /* yznaisy */
+        let div = document.querySelector("div");
+        let span = document.querySelector("span");
+        console.log(div.nextSibling); //nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等   没有返回null
+        console.log(div.nextElementSibling); //nextElementSibling 得到下一个兄弟元素节点  没有返回null
+        console.log(div.previousSibling); //previousSibling上一个兄弟节点 包含元素节点或者 文本节点等等  没有返回null
+        console.log(div.previousElementSibling); //上一个兄弟元素节点  没有返回null
+        console.log(span.nextSibling);
+        console.log(span.nextElementSibling); //此方法有兼容性问题
+        console.log(span.previousSibling);
+        console.log(span.previousElementSibling); //此方法有兼容性问题
+        //解决兼容性问题
+        function getnextElementSibling(element) {
+            let el = element;
+            while (el = el.nextSibling) {
+                if (el.nodeType === 1) {
+                    return el;
+                }
+            }
+            return null;
+        }
+    </script>
+</body>
+
+</html>

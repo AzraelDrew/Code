@@ -1,0 +1,79 @@
+01-复习
+
+
+02-五角星评分案例 
+  prev(); 前一个兄弟
+  prevAll(); 前面所有的兄弟
+  next(); 下一个兄弟
+  nextAll(); 后面所有的兄弟
+  siblings(); 所有的兄弟
+
+
+
+03-链式编程的特例与end方法
+  end();让jQuery内部的对象返回到上一次的状态。
+
+
+
+04-显示迭代的概念 each(); 
+  $("li").each(function(index,element){
+     console.log(index);
+     console.log(element);
+  });
+
+
+05-多库共存
+  console.log($.fn.jquery); //用于查看当前jQuery库的版本。
+  $noConflict();
+
+ 
+06-插件-介绍，颜色插件
+  先引入jQuery文件
+  再引入插件
+  再调用方法。
+
+
+07-案例-京东右侧小导航条 
+  也可以使用一个setTimeout();//记得修改this
+  延迟动画 .delay(200).animate({},1000);
+
+
+
+08-插件的使用
+  www.jq22.com
+
+  jQuery插件  lazyLoad 插件 懒加载-慢加载-延迟加载
+    date-original
+
+
+  jQuery插件  distpicker.data.js  distpicker.js省市联动
+    页面div中必须有三个下拉框
+
+
+  jQuery插件  UI
+     http://jqueryui.com
+
+  
+
+
+插件封装 -自己制作一个背景色插件
+  $.fn其实就是jQuery的原型。
+
+  $.fn.扩展方法 = function(){
+     this //是jQuery对象
+     return this;
+  }
+
+
+
+插件封装-表格插件 [22-表格插件.html]
+
+
+插件封装-tab切换插件  [21-tab栏插件.html]
+
+
+
+
+
+
+

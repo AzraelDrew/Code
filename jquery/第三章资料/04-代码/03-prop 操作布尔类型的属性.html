@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>prop 操作布尔类型的属性</title>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn1" /> <br /> <br />
+  <input type="checkbox" id="ckb1" /><br />
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $(function () {
+    //   //回忆一下，有一类属性比如：checked，写在元素的身上就表示选中，没有写在元素的身上就表示没有选中。
+    //   //这一类属性，用原生js是如何操作的呢？ 给他设置true或者false, 取值也是得到true或者false.
+    //   // document.getElementById("btn1").onclick = function () {
+    //   //   //设置操作。
+    //   //   //document.getElementById("ckb1").checked = false;
+    //   //   //获取操作。
+    //   //   console.log(document.getElementById("ckb1").checked);
+    //   // };
+
+
+    //   //jQuery.
+    //   // $('#btn1').click(function () {
+    //   //   console.log($('#ckb1').attr('checked')); //无论是选中还是没有选中，都返回一个undefined。
+    //   // });
+
+    //   //原因是：
+    //   //在jQuery1.6之后，对于checked、selected、disabled这类boolean类型的属性来说，不能用attr方法，只能用prop方法。
+
+
+    //   $('#btn1').click(function () {
+    //     console.log($('#ckb1').prop('checked'));
+    //     //如果多选框是选中状态返回一个true； 如果多选框是取消选中状态那返回就是一个false.
+    //   });
+
+
+    // });
+
+
+
+    /*  yznaisy*/
+    $(function () {
+      $("#btn1").click(function () {
+        console.log($("#ckb1").prop("checked"));
+      })
+    })
+  </script>
+</body>
+
+</html>

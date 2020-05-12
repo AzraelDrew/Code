@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>下拉菜单-案例</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 30px;
+            margin: 100px auto;
+            /* padding-left: 10px; */
+            /* background-image: url(images/bg.jpg); */
+            background-color: cadetblue;
+            /* border-radius: 50px; */
+        }
+
+        .wrap li {
+            /* background-image: url(images/libg.jpg); */
+            background-color: cadetblue;
+        }
+
+        .wrap>ul>li {
+            float: left;
+            /* margin-right: 10px; */
+            position: relative;
+        }
+
+        .wrap a {
+            display: block;
+            height: 30px;
+            width: 100px;
+            text-decoration: none;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .wrap li ul {
+            position: absolute;
+            top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+    //     //需求: 给一级菜单li设置鼠标移入事件，二级菜单显示。
+    //     //      给一级菜单li设置鼠标离开事件，二级菜单隐藏。
+
+
+    //     //获取一级菜单li的方式:
+    //     //$('li');//不行
+    //     //$('ul>li');//不行
+    //     //$('.wrap li');//不行
+    //     //$('.wrap>ul>li')//可行的.
+
+
+    //     //1.给一级菜单li设置鼠标移入事件，二级菜单显示。
+    //     $('.wrap>ul>li').mouseover(function () {
+    //         //console.log(this);//谁触发了鼠标移入事件,那这个this就是谁,this还是一个dom对象.
+    //         // $(this).children('ul').css('display','block');//显示就是更改display属性为block.
+    //         $(this).children('ul').show(); //show()方法本质上还是更新display属性为block.
+    //     });
+
+    //     //2.给一级菜单li设置鼠标离开事件，二级菜单隐藏。
+    //     $('.wrap>ul>li').mouseout(function () {
+    //         $(this).children('ul').hide(); //hide()方法本质上还是更新display属性为none
+    //     });
+
+
+
+    //     //3.思考题:
+    //     //为什么不给一级菜单a标签设置鼠标移入和离开事件?
+    //     //因为这样的话,选不到二级菜单.
+    //     // $('.wrap>ul>li>a').mouseover(function () {
+    //     //   $(this).siblings('ul').show();
+    //     // });
+    //     // $('.wrap>ul>li>a').mouseout(function () {
+    //     //   $(this).siblings('ul').hide();
+    //     // });
+
+
+    // });
+
+    /* yznaisy */
+    $(function () {
+        $(".wrap>ul>li").mouseover(function () {
+            $(this).children("ul").show();
+            $(this).css("backgroundColor", "#5ca74b");
+        });
+        $(".wrap>ul>li").mouseout(function () {
+            $(this).children("ul").hide();
+            $(this).css("backgroundColor", "");
+        });
+        $(".wrap>ul>li>ul>li").mouseover(function () {
+            $(this).css("backgroundColor", "#5ca74b");
+        });
+        $(".wrap>ul>li>ul>li").mouseout(function () {
+            $(this).css("backgroundColor", "");
+        });
+    })
+</script>

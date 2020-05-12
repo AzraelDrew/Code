@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>jQuery事件对象</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 2000px;
+      height: 2000px;
+
+    }
+
+    .one {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+      /*margin-top: 10px;*/
+      position: relative;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="one" class="one">
+    <input type="button" value="我是按钮" id="btn" />
+    <br /><br />
+    <a href="https://www.baidu.com">百度一下，你就知道</a>
+  </div>
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //1.什么是事件对象.
+  //   //注册一个事件,系统就会帮我们生成一个对象记录这个事件触发时候的一些信息
+  //   //比如触发事件的时候有没有按住某个键,再比如触发这个事件的时候的一些坐标信息....
+  //   //jQuery中用事件参数e来获取.
+  //   //jQuery的事件对象是对原生js事件对象的一个封装,帮你处理好了兼容性.
+  //   $('#one').on('click', function (e) {
+  //     //console.log(e);
+
+
+  //     //2.事件对象中有常用的三个坐标.
+  //     // console.log("screenX"+ e.screenX +" : " + e.screenY);//触发事件那一点距离 屏幕最左上角的值
+  //     // console.log("clientX"+ e.clientX +" : " + e.clientY);//触发事件那一点距离 可视区左上角的值
+  //     // console.log("pageX"+ e.pageX +" : " + e.pageY);//触发事件那一点距离  页面左上角的值
+
+
+  //     //3.
+  //     alert("我是div的单击事件.");
+
+  //   });
+
+
+  //   //3.给按钮注册一个单击事件.
+  //   // $('#btn').on('click', function (e) {
+  //   //   alert('我是按钮的单击事件');
+  //   //   e.stopPropagation();//阻止事件冒泡.
+  //   // });
+
+  //   //4.给a标签注册一个单击事件.
+  //   // $('a').on('click', function (e) {
+  //   //   alert('我是a标签的单击事件....');
+  //   //   // //阻止事件冒泡
+  //   //   // e.stopPropagation();
+  //   //   // //阻止默认行为-阻止a标签的跳转.
+  //   //   // e.preventDefault();
+  //   //
+  //   //   //既能阻止事件冒泡,又能阻止默认行为.
+  //   //   return false;
+  //   // });
+
+
+  //   //5.给页面注册键盘按下事件.
+  //   $(document).on('keydown', function (e) {
+  //     //e.keyCode能获取按的是那个键.
+  //     console.log(e.keyCode);
+  //   });
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#one").on("click", function (e) {
+      console.log(e);
+      console.log("screenX" + " : " + e.screenX + "-" + "screenY" + " : " + e.screenY); //触发事件那一点距离 屏幕最左上角的值
+      console.log("clientX" + " : " + e.clientX + "-" + "clientY" + " : " + e.clientY); //触发事件那一点距离 可视区左上角的值
+      console.log("pageX" + " : " + e.pageX + "-" + "screenY" + " : " + e.pageY); //触发事件那一点距离  页面左上角的值
+
+    })
+    $("#btn").on("click", function (e) {
+      console.log("btn");
+      e.stopPropagation(); //阻止事件冒泡
+    })
+    $("a").on("click", function (e) {
+      console.log("a");
+      // e.stopPropagation();
+      // e.preventDefault(); //阻止默认行为，阻止a标签跳转
+      return false; //既能阻止事件冒泡,又能阻止默认行为.
+    })
+    $(window).on("keyup", function (e) {
+      console.log(e.keyCode);
+    })
+  })
+</script>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d60507a-968d-4be9-8d4c-862975df5663" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Yn4FpJg57glRbfLmctnNo8yUtB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.001">
+    <configuration name="001" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tenxun" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tenxun/001.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="007" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/base" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/base/007.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="009" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/base" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/base/009.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="010" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/base" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/base/010.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="011" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/base" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/base/011.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.001" />
+        <item itemvalue="Python.007" />
+        <item itemvalue="Python.011" />
+        <item itemvalue="Python.010" />
+        <item itemvalue="Python.009" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d60507a-968d-4be9-8d4c-862975df5663" name="Default Changelist" comment="" />
+      <created>1583564923714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583564923714</updated>
+      <workItem from="1583564926378" duration="69000" />
+      <workItem from="1583565008382" duration="58000" />
+      <workItem from="1583565111860" duration="166000" />
+      <workItem from="1583565417336" duration="45000" />
+      <workItem from="1583802361164" duration="2482000" />
+      <workItem from="1583805088634" duration="7714000" />
+      <workItem from="1583813265936" duration="1947000" />
+      <workItem from="1583819391717" duration="18219000" />
+      <workItem from="1583845175755" duration="2688000" />
+      <workItem from="1583890235433" duration="1351000" />
+      <workItem from="1583893327826" duration="12568000" />
+      <workItem from="1583915182331" duration="4685000" />
+      <workItem from="1583975690870" duration="44000" />
+      <workItem from="1583975910071" duration="644000" />
+      <workItem from="1584005592125" duration="90000" />
+      <workItem from="1584005797095" duration="44000" />
+      <workItem from="1584006233090" duration="59000" />
+      <workItem from="1584017818736" duration="4000" />
+      <workItem from="1584155838676" duration="4490000" />
+      <workItem from="1584160830585" duration="10943000" />
+      <workItem from="1584177116439" duration="1898000" />
+      <workItem from="1584179606796" duration="1137000" />
+      <workItem from="1584185393123" duration="7060000" />
+      <workItem from="1584245631737" duration="2409000" />
+      <workItem from="1584248091399" duration="706000" />
+      <workItem from="1584258128118" duration="1802000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="660" y="362" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583895167382">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="660" y="362" key="#com.intellij.fileTypes.FileTypeChooser/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583895167382" />
+    <state x="668" y="152" key="#weibo" timestamp="1584006249840">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="668" y="152" key="#weibo/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006249840" />
+    <state x="887" y="291" key="FileChooserDialogImpl" timestamp="1584160813160">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="474" y="342" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584005613750" />
+    <state x="2394" y="369" key="FileChooserDialogImpl/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583806039820" />
+    <state x="887" y="291" key="FileChooserDialogImpl/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584160813160" />
+    <state width="916" height="340" key="GridCell.Tab.0.bottom" timestamp="1584259931678">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="916" height="340" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1584259931678" />
+    <state width="1337" height="233" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006291219" />
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583976553758" />
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584248797622" />
+    <state width="916" height="340" key="GridCell.Tab.0.center" timestamp="1584259931678">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="916" height="340" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1584259931678" />
+    <state width="1337" height="233" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006291219" />
+    <state width="1877" height="223" key="GridCell.Tab.0.center/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583976553757" />
+    <state width="1877" height="340" key="GridCell.Tab.0.center/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584248797621" />
+    <state width="916" height="340" key="GridCell.Tab.0.left" timestamp="1584259931678">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="916" height="340" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1584259931678" />
+    <state width="1337" height="233" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006291219" />
+    <state width="1877" height="223" key="GridCell.Tab.0.left/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583976553757" />
+    <state width="1877" height="340" key="GridCell.Tab.0.left/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584248797621" />
+    <state width="916" height="340" key="GridCell.Tab.0.right" timestamp="1584259931678">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="916" height="340" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1584259931678" />
+    <state width="1337" height="233" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006291219" />
+    <state width="1877" height="223" key="GridCell.Tab.0.right/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583976553758" />
+    <state width="1877" height="340" key="GridCell.Tab.0.right/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584248797621" />
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1584195640956">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="327" key="GridCell.Tab.1.bottom/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583839034377" />
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584195640956" />
+    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1584195640956">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="327" key="GridCell.Tab.1.center/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583839034377" />
+    <state width="1877" height="326" key="GridCell.Tab.1.center/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584195640956" />
+    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1584195640956">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="327" key="GridCell.Tab.1.left/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583839034377" />
+    <state width="1877" height="326" key="GridCell.Tab.1.left/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584195640956" />
+    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1584195640956">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="327" key="GridCell.Tab.1.right/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583839034377" />
+    <state width="1877" height="326" key="GridCell.Tab.1.right/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584195640956" />
+    <state x="2117" y="227" key="SettingsEditor" timestamp="1584165062274">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="638" y="200" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1584006265377" />
+    <state x="638" y="233" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583845705211" />
+    <state x="2117" y="227" key="SettingsEditor/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584165062274" />
+    <state x="645" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1584258130750">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="645" y="384" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1584258130750" />
+    <state x="2565" y="357" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1583813269723" />
+    <state x="645" y="384" key="com.intellij.ide.util.TipDialog/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1584155838699" />
+    <state x="2565" y="384" key="com.intellij.ide.util.TipDialog/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584248144329" />
+    <state x="2851" y="40" width="662" height="717" maximized="true" key="dock-window-1" timestamp="1583830952073">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2851" y="40" width="662" height="717" maximized="true" key="dock-window-1/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583830952073" />
+    <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1584157213164">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/1920.40.1920.1040/0.40.1920.1040@0.40.1920.1040" timestamp="1583906801669" />
+    <state x="2543" y="265" width="672" height="678" key="search.everywhere.popup/1920.40.1920.1040/0.40.1920.1040@1920.40.1920.1040" timestamp="1584157213164" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/untitled$008.coverage" NAME="008 Coverage Results" MODIFIED="1583827441467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$004.coverage" NAME="004 Coverage Results" MODIFIED="1584179750974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$001.coverage" NAME="001 Coverage Results" MODIFIED="1584259740396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenxun" />
+    <SUITE FILE_PATH="coverage/untitled$music_163_001.coverage" NAME="music_163_001 Coverage Results" MODIFIED="1583896069408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/network_music163" />
+    <SUITE FILE_PATH="coverage/package$010.coverage" NAME="010 Coverage Results" MODIFIED="1584247121409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$011.coverage" NAME="011 Coverage Results" MODIFIED="1584247975492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$007.coverage" NAME="007 Coverage Results" MODIFIED="1583829675100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$007.coverage" NAME="007 Coverage Results" MODIFIED="1584258266263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$002.coverage" NAME="002 Coverage Results" MODIFIED="1584170146282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tenxun" />
+    <SUITE FILE_PATH="coverage/untitled$005.coverage" NAME="005 Coverage Results" MODIFIED="1583822596414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$002.coverage" NAME="002 Coverage Results" MODIFIED="1583825486608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$011.coverage" NAME="011 Coverage Results" MODIFIED="1583909095282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$009.coverage" NAME="009 Coverage Results" MODIFIED="1584188745962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$sign.coverage" NAME="sign Coverage Results" MODIFIED="1583819488004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../wordcloud" />
+    <SUITE FILE_PATH="coverage/untitled$music_163_002.coverage" NAME="music_163_002 Coverage Results" MODIFIED="1583890489062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/network_music163" />
+    <SUITE FILE_PATH="coverage/untitled$003.coverage" NAME="003 Coverage Results" MODIFIED="1583821915637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$weibo.coverage" NAME="weibo Coverage Results" MODIFIED="1584180290292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$001.coverage" NAME="001 Coverage Results" MODIFIED="1583829599992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$004.coverage" NAME="004 Coverage Results" MODIFIED="1583915599302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$010.coverage" NAME="010 Coverage Results" MODIFIED="1583905507982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$weibo__1_.coverage" NAME="weibo (1) Coverage Results" MODIFIED="1584005804865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PYthon/base" />
+    <SUITE FILE_PATH="coverage/untitled$006.coverage" NAME="006 Coverage Results" MODIFIED="1583829652445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$weibo.coverage" NAME="weibo Coverage Results" MODIFIED="1583976355283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/untitled$009.coverage" NAME="009 Coverage Results" MODIFIED="1583836415561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python/base" />
+    <SUITE FILE_PATH="coverage/package$ddbook.coverage" NAME="ddbook Coverage Results" MODIFIED="1584177968001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dangdang/spiders" />
+  </component>
+</project>

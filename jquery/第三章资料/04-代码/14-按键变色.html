@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>按键变色</title>
+    <style>
+        .wrap {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            text-align: center;
+        }
+
+        .wrap div {
+            width: 400px;
+            height: 300px;
+            background: pink;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <h1>按键改变颜色</h1>
+        <div id="bgChange">
+            keyCode为：
+            <span id="keyCodeSpan"></span>
+        </div>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $(function () {
+
+        //     //获取div
+        //     var $div = $('#bgChange');
+        //     //获取显示按键的span
+        //     var $showCode = $('#keyCodeSpan');
+
+        //     //给页面注册一个键盘按下事件.
+        //     $(document).on('keydown', function (e) {
+        //         //console.log(e.keyCode); //r 82   g 71   b 66   p 80   y 89
+        //         switch (e.keyCode) {
+        //             case 82:
+        //                 $div.css('backgroundColor', 'red');
+        //                 $showCode.text(82);
+        //                 break;
+        //             case 71:
+        //                 $div.css('backgroundColor', 'green');
+        //                 $showCode.text(71);
+        //                 break;
+        //             case 66:
+        //                 $div.css('backgroundColor', 'blue');
+        //                 $showCode.text(66);
+        //                 break;
+        //             case 80:
+        //                 $div.css('backgroundColor', 'purple');
+        //                 $showCode.text(80);
+        //                 break;
+        //             case 89:
+        //                 $div.css('backgroundColor', 'yellow');
+        //                 $showCode.text(89);
+        //                 break;
+        //             default:
+        //                 $div.css('backgroundColor', 'pink');
+        //                 $showCode.text("查无此键");
+        //                 break;
+        //         }
+        //     });
+
+        // });
+
+        $(function () {
+            let $div = $("#bgChange");
+            let $showCode = $("#keyCodeSpan");
+            $(document).on("keyup", function (e) {
+                switch (e.keyCode) { //r 82   g 71   b 66   p 80   y 89
+                    case 82:
+                        $div.css('backgroundColor', 'red');
+                        $showCode.text(82);
+                        break;
+                    case 71:
+                        $div.css('backgroundColor', 'green');
+                        $showCode.text(71);
+                        break;
+                    case 66:
+                        $div.css('backgroundColor', 'blue');
+                        $showCode.text(66);
+                        break;
+                    case 80:
+                        $div.css('backgroundColor', 'purple');
+                        $showCode.text(80);
+                        break;
+                    case 89:
+                        $div.css('backgroundColor', 'yellow');
+                        $showCode.text(89);
+                        break;
+                    default:
+                        $div.css('backgroundColor', 'pink');
+                        $showCode.text("查无此键");
+                        break;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

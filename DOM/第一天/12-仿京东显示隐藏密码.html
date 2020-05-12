@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>密码显示与隐藏</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1772247_99826eedh8u.css">
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box i {
+            position: absolute;
+            top: 6px;
+            right: 70px;
+            width: 24px;
+        }
+
+        .box div {
+            position: absolute;
+            top: 2px;
+            right: 1px;
+            /* width: 24px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <i id="eye" class="iconfont iconicon-test1"></i>
+            <div>忘记密码</div>
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        // // 1. 获取元素
+        // var eye = document.getElementById('eye');
+        // var pwd = document.getElementById('pwd');
+        // // 2. 注册事件 处理程序
+        // var flag = 0;
+        // eye.onclick = function () {
+        //     // 点击一次之后， flag 一定要变化
+        //     if (flag == 0) {
+        //         pwd.type = 'text';
+        //         eye.className = 'iconfont iconicon-test';
+        //         flag = 1; // 赋值操作
+        //     } else {
+        //         pwd.type = 'password';
+        //         eye.className = 'iconfont iconicon-test1';
+        //         flag = 0;
+        //     }
+
+        // }
+
+
+        /* yznaisy */
+        let eye = document.querySelector("#eye");
+        let pwd = document.querySelector("#pwd");
+        let flag = true;
+        eye.addEventListener("click", () => {
+            if (flag == true) {
+                pwd.type = "text";
+                eye.className = "iconfont iconicon-test";
+                flag = false;
+            } else {
+                pwd.type = "password";
+                eye.className = "iconfont iconicon-test1";
+                flag = true;
+            }
+        })
+    </script>
+</body>
+
+</html>

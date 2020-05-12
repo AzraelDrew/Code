@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态创建元素</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // // window.onload = function() {
+        // //         document.write('<div>123</div>');
+
+        // //     }
+        // // 三种创建元素方式区别 
+        // // 1. document.write() 创建元素  如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        // // var btn = document.querySelector('button');
+        // // btn.onclick = function() {
+        // //     document.write('<div>123</div>');
+        // // }
+
+        // // 2. innerHTML 创建元素
+        // var inner = document.querySelector('.inner');
+        // // for (var i = 0; i <= 100; i++) {
+        // //     inner.innerHTML += '<a href="#">百度</a>'
+        // // }
+        // var arr = [];
+        // for (var i = 0; i <= 100; i++) {
+        //     arr.push('<a href="#">百度</a>');
+        // }
+        // inner.innerHTML = arr.join('');
+        // // 3. document.createElement() 创建元素
+        // var create = document.querySelector('.create');
+        // for (var i = 0; i <= 100; i++) {
+        //     var a = document.createElement('a');
+        //     create.appendChild(a);
+        // }
+
+
+        /* yznaisy */
+        let btn = document.querySelector("button")
+        btn.addEventListener("click", () => {
+            document.write("<div>123</div>"); //此方法如果页面文档流加载完毕，再调用这句话会导致页面重绘，当你点击按钮后页面中只有div
+        });
+        let inner = document.querySelector(".inner");
+        for (let i = 0; i < 100; i++) {
+            inner.innerHTML += "<a href='javascript:;'>百度</a>\n" //此方法为拼接字符串，会为每一个字符串开票一个内存空间，所以会比较慢
+        }
+
+
+        let arr = [];
+        for (let i = 0; i < 100; i++) {
+            arr.push('<a href="#">百度</a>');
+        }
+        inner.innerHTML = arr.jon("") //此方法为数组形式拼接效率高，结构稍微复杂
+
+
+        let create = document.querySelector(".create");
+        for (let i = 0; i < 100; i++) {
+            let a = document.createElement("a");
+            a.innerHTML = "<a href='javascrip:;'>Google</a>\n"; //此方法不会很慢
+            create.appendChild(a)
+        }
+    </script>
+</body>
+
+</html>

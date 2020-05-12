@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab-head {
+            width: 400px;
+            height: 50px;
+            background: #ccc;
+        }
+
+        .tab-head li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .tab-head li.active {
+            background: hotpink;
+        }
+
+        .tab-body {
+            width: 398px;
+            height: 398px;
+            border: 1px solid #ccc;
+        }
+
+        .tab-body .item {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-body .item.selected {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="tab-head">
+            <li class="active">页签1</li>
+            <li>页签2</li>
+            <li>页签3</li>
+            <li>页签4</li>
+        </ul>
+        <div class="tab-body">
+            <div class="item selected">
+                <p>内容1</p>
+                <p>内容1</p>
+                <p>内容1</p>
+                <p>内容1</p>
+                <p>内容1</p>
+            </div>
+            <div class="item">
+                <p>内容2</p>
+                <p>内容2</p>
+                <p>内容2</p>
+                <p>内容2</p>
+                <p>内容2</p>
+            </div>
+            <div class="item">
+                <p>内容3</p>
+                <p>内容3</p>
+                <p>内容3</p>
+                <p>内容3</p>
+                <p>内容3</p>
+            </div>
+            <div class="item">
+                <p>内容4</p>
+                <p>内容4</p>
+                <p>内容4</p>
+                <p>内容4</p>
+                <p>内容4</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jQuery-tabs.js"></script>
+    <script>
+        $(function () {
+            //使用插件.
+            $('.tab').tabs({
+                tabHeads: '.tab-head>li',
+                tabHeadsClass: 'active',
+                tabBodys: '.item',
+                tabBodysClass: 'selected'
+            });
+
+        });
+    </script>
+</body>
+
+</html>

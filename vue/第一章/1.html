@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:input="changrTitle">
+        <p>{{title}}</p> <!-- vue特殊语法：会在html中查找data中的值与之匹配，如果匹配到就把想对应的值转给它 -->
+        <p>{{yznaisy}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title: "Hello Word",
+            yznaisy: "yznaisy"
+        },
+        methods: {
+            changrTitle: function (e) {
+                this.title = e.target.value;
+            }
+        },
+    })
+</script>
+
+</html>

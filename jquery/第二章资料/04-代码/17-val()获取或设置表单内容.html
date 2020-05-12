@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" /> <br /><br />
+  <input type="text" id="txt" value="请输入账号" />
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //原生js是通过value属性来获取或者设置表单元素的值.
+  //   //jQuery中如何设置或者获取表单元素的值的呢? val();
+
+  //   //给按钮设置点击事件
+  //   $('#btn').click(function () {
+  //     //1.val()方法,不给参数就是获取
+  //     //console.log($('#txt').val());
+
+  //     //2.val()方法,给参数就是设置
+  //     $('#txt').val('我是设置的值');
+  //   });
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    $("#btn").click(function () {
+      let txt = $("#txt").val();
+      alert(txt)
+    })
+  })
+</script>

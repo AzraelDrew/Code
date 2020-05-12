@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>层级选择器</title>
+</head>
+
+<body>
+  <p></p>
+  <div id="father">
+    <div>
+      <span>span1</span>
+      <span>span2</span>
+      <span>span3</span>
+    </div>
+    <div>
+      <b>1</b>
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+      <p></p>
+    </div>
+    <div></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <span>sss1</span>
+  </div>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //需求1:获取id为father这个元素的所有子div.
+  //   // console.log($('#father > div'));
+
+  //   //需求2:获取id为father这个元素的所有子div以及所有子p.
+  //   //console.log($('#father > div ,  p'));//不行,这种意思是获取id为father这个元素的所有子div以及页面上所有的p.
+  //   //console.log($('#father>div , #father>p'));
+
+
+  //   //需求3:获取id为father这个div的所有后代div.
+  //   //console.log($('#father div'));
+
+
+  //   //需求4:获取id为father这个div的所有后代div,以及id为father这个div的所有后代span.
+  //   console.log($('#fahter div , #father span'));
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    console.log($("#father>div")); //子元素选择器
+    console.log($("#father>p,#father>div")); //获取id为father这个元素的所有子div以及所有子p.
+    console.log($("#father div")); //后代选择器
+    console.log($("#father div,#father span")); //后代选择器
+  });
+</script>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>开关灯</title>
+  <style>
+    img {
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <button>开灯</button>
+  <button>关灯</button>
+  <img src="images/coder.jpg" />
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //需求:给按钮们添加事件:设置body的背景色.
+
+  //   //1.获取到按钮们
+  //   var btns = document.getElementsByTagName("button");
+  //   //console.log(btns);
+
+  //   //2.给关灯按钮设置点击事件.
+  //   btns[1].onclick = function () {
+  //     $('body').css('backgroundColor','black');
+  //   }
+
+  //   //3.给开灯按钮设置一个点击事件.
+  //   $(btns[0]).click(function () {
+  //     $('body')[0].style.backgroundColor = 'white';
+  //   });
+
+  // });
+
+
+  /* yznaisy */
+  $(function () {
+    let btns = document.querySelectorAll("button");
+    btns[1].addEventListener("click", function () { //关灯点击事件
+      $("body").css("backgroundColor", "black")
+    })
+    btns[0].addEventListener("click", function () { //开灯点击事件
+      $("body").css("backgroundColor", "white")
+    })
+  })
+</script>

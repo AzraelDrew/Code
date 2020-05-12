@@ -1,0 +1,130 @@
+01-一个小案例
+    a.按钮设置三个div显示， 按钮设置三个div的内容
+    b.得出原生js不好的地方：
+       1.入口函数只能有一个，如果有多个，后面的会将前面的给覆盖掉
+       2.兼容性的问题 低版本的ie不支持textContent
+       3.原生js的API比较复杂
+       4.容错性比较差，之前有一行如果报错的话，则后面的代码都不会执行
+
+02-体验jQuery
+   用jq来写上面的例子
+
+03-jQuery是什么?
+   一个js库
+
+04-如何使用jQuery?
+   a.引入文件
+   b.jquery的入口函数
+   c.写功能实现-写代码-用选择器选择元素-给元素注册事件。
+
+05-jQuery的各版本及区别
+   1.x 还在支持IE678
+   2.x 3.x 已经不再支持IE678
+
+   每一个版本里面还有压缩版本、开发版本
+
+06-jQuery的入口函数
+  $(document).ready(function(){
+
+  });
+  $(function(){
+  
+  });
+  jq入口函数写多个不影响。
+
+  和js入口函数的区别：
+  a.js的入口函数window.onload,需要加载所有的资源(dom树、图片、外部资源)才执行。
+  b.jq的入口函数dom加载完毕后就会执行。
+
+
+07-$函数
+  $和jQuery完全等价。
+      能使用$的地方，就能是jQuery
+      console.log($ === jQuery); //true
+  $是一个函数,根据传入的参数不同，实现不同的功能。
+     a. 参数是一个函数，功能就是入口函数
+        $(function () {
+
+        });
+
+     b. document
+        参数是一个对象，DOM对象（元素），会把这个DOM对象转换成jquery对象
+
+     c. 字符串（最常用）选择器
+        $("#one")    $(".one")
+
+
+08-DOM对象与jquery对象   
+       a. DOM对象,如果我们是通过js的方法来获取到的对象，我们会把它叫做DOM对象
+       b. jQuery对象,如果我们通过jquery的方式获取到的对象，我们会把它叫做jquery对象。
+       c. jquery对象是一个DOM对象的包装集。（包含了DOM对象的集合）
+            jquery对象实质是一个伪数组。DOM对象的伪数组。
+       d. DOM对象不能调用jquery对象的方法
+       e. jQuery对象能不能调用DOM对象的方法
+
+       注意：转换，DOM对象我就想要调用jquery对象的方法，怎么办。
+       f. DOM对象如何转换成jquery对象(花钱功能就更强大)
+          var $obj = $(domObj);
+       g.jquery对象如何转换成DOM对象
+            var $li = $("li");
+            $li[3].style.backgroundColor = "red"; //自动取索引
+            
+            $li.get(index); //调用get方法
+
+
+09-隔行变色 案例
+   先用js的dgt获取li标签们，隔行变色。
+   再换成$(标签名)的方式 获取标签们，提问是否也能实现效果。
+
+10-开关灯案例[01-开关灯.html]
+   主要理解 dom元素和jq元素的转换， 不推荐这样写代码
+
+
+11-设置、获取文本内容 text
+
+
+12-css来设置样式
+   .css(); 参数给一个对象也可以
+
+13-css来获取样式
+   .css("width");  //如果多个标签只能获取第一个标签的值。
+
+14-基本选择器
+    id选择器    $('#id');
+    类选择器    $('.class');
+    标签选择器  $('div');
+    并集选择器  $('div,p,li');    使用逗号分隔，只要符合条件之一就可
+    交集选择器  $('div.redClass'); 获取class为redClass的div元素
+
+    总结：跟css的选择器用法一模一样。
+
+15-层次选择器
+   子代选择器  $('ul > li'); 使用>号，获取儿子层级的元素，注意，并不会获取孙子层级的元素
+   后代选择器  $('ul li');   使用空格，代表后代选择器，获取ul下的所有li元素，包括孙子等
+
+
+16-过滤选择器
+   隔行变色案例03
+   :eq(index)   $('li:eq(2)').css('color', 'red');
+   :odd   $('li:odd').css('color', 'red');
+   :even  $('li:even').css('color', 'red');
+
+
+17-下拉菜单 [04-下拉菜单.html]
+   show();  hide();
+
+  
+18-mouseenter  mouselevae 事件
+   a.把上题中的mouseover 和mouseout 事件 替换mouseenter  mouselevae
+   b.在线测试工具里面，看他们的区别
+
+
+18-鼠标放上突出展示 [02-突出展示.html]
+
+19-手风琴 [05-手风琴.html]
+
+20-淘宝服饰精品 [06-淘宝服饰精品.html]
+
+
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 30px;
+            margin: 100px auto 0;
+            background-color: darkcyan;
+            /* padding-left: 10px; */
+            /* background-image: url(images/bg.jpg); */
+        }
+
+        .wrap li {
+            /* background-image: url(images/libg.jpg); */
+            background-color: darkcyan;
+        }
+
+        .wrap>ul>li {
+            float: left;
+            /* margin-right: 10px; */
+            position: relative;
+        }
+
+        .wrap a {
+            display: block;
+            height: 30px;
+            width: 100px;
+            text-decoration: none;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .wrap li ul {
+            position: absolute;
+            top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单1</a></li>
+                    <li><a href="javascript:void(0);">二级菜单2</a></li>
+                    <li><a href="javascript:void(0);">二级菜单3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+    //     //需求: 给一级菜单的li标签设置鼠标移入事件，二级菜单ul显示。
+    //     //      给一级菜单li设置鼠标离开事件，二级菜单隐藏。
+
+
+    //     //鼠标移入事件.
+    //     $('.wrap>ul>li').mouseenter(function () {
+    //         //$(this).children('ul').css('display','block');
+    //         //简写
+    //         $(this).children('ul').stop(true, false).slideDown(300);
+    //     });
+
+    //     //鼠标移出事件.
+    //     $('.wrap>ul>li').mouseleave(function () {
+    //         //$(this).find('ul').css('display','none');
+    //         //简写
+    //         $(this).find('ul').stop(true, false).slideUp(150);
+    //     });
+
+
+
+    // });
+    /* yznaisy */
+    $(function () {
+        $(".wrap>ul>li").mouseover(function () {
+            $(this).children('ul').stop(true, false).slideDown(500); //把前面所有的动画都清除，当前执行的动画不要到最终效果
+            $(this).css("backgroundColor", "#5ca74b");
+        });
+        $(".wrap>ul>li").mouseout(function () {
+            $(this).find('ul').stop(true, false).slideUp(500);
+            $(this).css("backgroundColor", "");
+        });
+        $(".wrap>ul>li>ul>li").mouseover(function () {
+            $(this).css("backgroundColor", "#5ca74b");
+        });
+        $(".wrap>ul>li>ul>li").mouseout(function () {
+            $(this).css("backgroundColor", "");
+        });
+    })
+</script>

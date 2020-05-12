@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <script>
+      //传值 传址
+      let a = 1;
+      let b = a;
+      console.log(a, b);
+      b = 3;
+      console.log(a, b);
+      let e = { name: "hdcms" };
+      let f = e;
+      console.log(e, f);
+      f.name = "houdunren";
+      console.log(e, f);
+    </script>
+  </body>
+</html>

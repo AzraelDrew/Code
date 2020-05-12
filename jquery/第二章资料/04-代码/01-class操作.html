@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>class操作</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin-top: 10px;
+    }
+
+    .bgc {
+      background-color: green;
+    }
+
+    .fontSize30 {
+      font-size: 30px;
+    }
+
+    .width200 {
+      width: 200px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <input type="button" value="添加类" id="addClass" />
+  <input type="button" value="移除类" id="removeClass" />
+  <input type="button" value="判断类" id="hasClass" />
+  <input type="button" value="切换类" id="toggleClass" />
+  <div id="div1" class="bgc">div1</div>
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //1.添加类 addClass(类名);
+  //   $('#addClass').click(function () {
+  //     //1.1 给id为div1的元素添加类.
+  //     //添加单个类
+  //     //$('#div1').addClass('fontSize30');
+  //     //添加多个类.
+  //     $('#div1').addClass('fontSize30 width200');
+  //   });
+
+  //   //2.移除类
+  //   $('#removeClass').click(function () {
+  //     //2.1 给id为div1的元素移除类.
+  //     //移除单个类
+  //     //$('#div1').removeClass('fontSize30');
+  //     //移除多个类
+  //     //$('#div1').removeClass('fontSize30 width200');
+  //     //移除所有的类
+  //     $('#div1').removeClass();
+  //   });
+
+  //   //3.判断类
+  //   $('#hasClass').click(function () {
+  //     //判断一个元素有没有某个类,如果有就返回true,如果没有就返回false.
+  //     console.log($('#div1').hasClass('fontSize30'));
+  //   });
+
+
+  //   //4.切换类
+  //   $('#toggleClass').click(function () {
+  //     //如果元素有某个类就移除这个类, 如果元素没有这类就添加这个类.
+  //     $('#div1').toggleClass('fontSize30');
+  //   });
+  // });
+
+
+  /* yznaisy */
+  $(function () {
+    $("#addClass").click(function () {
+      $("#div1").addClass("fontSize30 width200"); //添加多个类中间用空格隔开
+    })
+    $("#removeClass").click(function () {
+      $("#div1").removeClass("fontSize30 width200"); //移除多个类中间用空格隔开,如果没有参数则移除所有类
+    })
+    $("#hasClass").click(function () {
+      console.log($("#div1").hasClass("fontSize30 width200"));
+    })
+    $("#toggleClass").click(function () {
+      console.log($("#div1").toggleClass(" width200")); //如果元素有某个类就移除这个类, 如果元素没有这类就添加这个类.
+    })
+  })
+</script>

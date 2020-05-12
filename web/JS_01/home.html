@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        transition: 2s;
+        background: #34495e;
+        color: #34495e;
+    }
+
+    h1 {
+
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    .center {
+        width: 40%;
+        position: relative;
+        left: 30%;
+        border: double 4px;
+    }
+
+    .center img {
+        width: 50%;
+        float: left;
+        margin-right: 10px;
+        margin-left: 5px;
+        margin-bottom: 3px;
+        position: relative;
+        top: 15px;
+        border: double 2px;
+    }
+
+    .text {
+        font: 20px ；
+    }
+</style>
+
+<body>
+    <div class="center">
+        <h1>梵净山</h1>
+        <hr />
+        <img src="./img/fjs.png" alt="梵净山">
+        <p class="text"> <a href="https://baike.baidu.com/item/%E6%A2%B5%E5%87%80%E5%B1%B1/121808?fr=aladdin">梵净山</a>
+            （中国佛教五大名山之一，国家5A级旅游景区）
+            梵净山（Mount Fanjing），得名于“梵天净土”，位于贵州省铜仁市的印江、江口、松桃（西南部）3县交界，地处北纬27°49′50″—28°1′30″，东经
+            108°45′55″—108°48′30″，靠近印江县城、江口县东南部、松桃县西南部。系武陵山脉主峰，是中国的佛教道场和自然保护区，位于铜仁地区中部。
+            梵净山总面积为402.75平方千米，缓冲区面积372.39平方千米。 主要保护对象是以黔金丝猴（Rhinopithecus roxellanae brelichi）、珙桐（Davidia
+            involucrate
+            Baill）等为代表的珍稀野生动植物及原生森林生态系统。森林覆盖率95%，有植物2000余种，国家保护植物31种，动物801种，国家保护动物19种，被誉为“地球绿洲”、“动植物基因库“、人类的宝贵遗产”。
+            梵净山于2018年10月17日被评为国家AAAAA级旅游景区， 国家级自然保护区， 于2008年6月30日被评为中国十大避暑名山， [中国著名的弥勒菩萨道场，
+            国际“人与生物圈保护网”（MAB）成员， 同时也是第42届世界遗产大会认定的世界自然遗产。 2018年7月2日，中国贵州省梵净山在巴林麦纳麦举行的世界遗产大会上获准列入世界自然遗产名录。
+            2020年2月，待疫情结束后至2020年12月31日，景区向全国医务工作者免费。 </p>
+    </div>
+    <script>
+        function Color(elem) {
+            this.elem = elem;
+            this.colors = ["#1abc9c", "#f1c40f", "#9b59b6", "#f39c12"];
+            this.run = function () {
+                setInterval(
+                    function () {
+                        let i = Math.floor(Math.random() * this.colors.length);
+                        this.elem.style.backgroundColor = this.colors[i];
+                    }.bind(this), 1000
+                );
+            };
+        }
+        let obj = new Color(document.body);
+        obj.run();
+    </script>
+</body>
+
+</html>

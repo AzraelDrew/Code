@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跟随鼠标的天使</title>
+    <style>
+        img {
+            position: absolute;
+            top: 2px;
+        }
+
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <img src="images/angel.gif" alt="">
+    <script>
+        // var pic = document.querySelector('img');
+        // document.addEventListener('mousemove', function (e) {
+        //     // 1. mousemove只要我们鼠标移动1px 就会触发这个事件
+        //     // console.log(1);
+        //     // 2.核心原理： 每次鼠标移动，我们都会获得最新的鼠标坐标， 把这个x和y坐标做为图片的top和left 值就可以移动图片
+        //     var x = e.pageX;
+        //     var y = e.pageY;
+        //     console.log('x坐标是' + x, 'y坐标是' + y);
+        //     //3 . 千万不要忘记给left 和top 添加px 单位
+        //     pic.style.left = x - 50 + 'px';
+        //     pic.style.top = y - 40 + 'px';
+        // });
+
+
+        let pic = document.querySelector("img");
+        let div = document.querySelector("div")
+        div.addEventListener("mousemove", function (e) {
+            let x = e.pageX;
+            let y = e.pageY;
+            pic.style.left = x - 30 + "px";
+            pic.style.top = y - 50 + "px";
+        })
+    </script>
+</body>
+
+</html>

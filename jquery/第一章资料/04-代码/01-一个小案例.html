@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>jq的缺点</title>
+  <style>
+    div {
+      height: 100px;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <input type="button" value="设置边框" id="btnOne" />
+  <input type="button" value="设置文本" id="btnTwo" />
+  <input type="button" value="清除文本和边框" id="btnThree" />
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+
+</html>
+<!-- 需求：点击按钮给三个div设置边框和文本 -->
+<script>
+  // //入口函数
+  // window.onload = function () {
+  //   //1.先要获取对应的元素
+  //   var btnOne = document.getElementById("btnOne");
+  //   var btnTwo = document.getElementById("btnTwo");
+  //   var divs = document.getElementsByTagName("div");
+  //   //2.给btnOne按钮设置点击事件
+  //   btnOne.onclick = function () {
+  //     for (var i = 0; i < divs.length; i++) {
+  //       divs[i].style.border = '1px solid red';
+  //     }
+  //   }
+  //   //3.给btnTwo按钮设置点击事件
+  //   btnTwo.onclick = function () {
+  //     for (var i = 0; i < divs.length; i++) {
+  //       divs[i].textContent = "我是设置的文本";
+  //     }
+  //   }
+  // }
+
+  //再来一个入口函数。
+  // window.onload = function () {
+  //   console.log("我又是一个入口函数");
+  // }
+
+
+
+
+  //分析一下，元素js的缺点：
+  //1.不能添加多个入口函数（window.onload）,如果添加了多个，后面的会把前面的给覆盖。
+  //2.原生js的api名字都太长太难记。
+  //3.原生js有的时候代码冗余。
+  //4.原生js中有些属性或者方法，有浏览器兼容问题。
+  //5.原生js容错率比较低，前面的代码出了问题，后面的代码执行不了。
+
+
+  /* yznaisy */
+  window.addEventListener("load", function () {
+    let btnOne = document.querySelector("#btnOne");
+    let btnTwo = document.querySelector("#btnTwo");
+    let btnThree = document.querySelector("#btnThree");
+    let divs = document.querySelectorAll("div");
+    btnOne.addEventListener("click", function () {
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].style.border = "1px solid red";
+      }
+    })
+    btnTwo.addEventListener("click", function () {
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].innerHTML = "我是设置文本";
+      }
+    })
+    btnThree.addEventListener("click", function () {
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].style.border = "";
+        divs[i].innerHTML = "";
+      }
+    })
+  })
+  window.addEventListener("load", function () { //如果添加多个window.load则后面的window.load会覆盖前面的window.load
+    console.log("第二个window.load");
+  })
+</script>

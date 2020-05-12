@@ -1,0 +1,106 @@
+header {
+    border-bottom: solid 5px #16a085;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+    .navbar {
+        display: flex;
+        padding: 1rem 0;
+        align-items: center;
+
+        .logo {
+            color: #16a085;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 1.3rem;
+
+            &+label {
+                display: none;
+
+                &+input {
+                    display: none;
+                }
+            }
+        }
+
+        .collapse {
+            display: flex;
+            flex-grow: 1;
+
+            .links {
+                display: flex;
+                margin-right: auto;
+
+                li {
+                    margin: 0 10px;
+
+                    a {
+                        color: #777;
+
+                        font-weight: bold;
+
+                        &:hover {
+                            color: #333;
+                        }
+                    }
+                }
+            }
+
+            .form {
+                a {
+                    border: solid 1px #16a085;
+                    border-radius: .3rem;
+                    padding: .3rem 1rem;
+                    color: #16a085;
+
+                    &.form-bg {
+                        background: #16a085;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:960px) {
+    header {
+        .navbar {
+            flex-flow: row wrap;
+
+            .logo {
+                margin-right: auto;
+
+                &+label {
+                    display: block;
+                    border: solid 1px #ddd;
+                    padding: .5rem 1rem;
+                    color: #555;
+                    cursor: pointer;
+
+
+
+                    &+input:checked {
+                        &+.collapse {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .collapse {
+                display: none;
+                flex-flow: column;
+                width: 100%;
+
+                .links {
+                    flex-direction: column;
+                    margin-bottom: 1.5rem;
+
+                    li {
+                        margin: .5rem 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+for(var $INDEX$ = 0 ; $INDEX$ < $INDEX2$; $INDEX$++){
+	$END$
+}
+
+
+
+document.getElementById("$END$");

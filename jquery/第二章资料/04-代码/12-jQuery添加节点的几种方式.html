@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>jQuery添加节点的几种方式</title>
+
+</head>
+
+<body>
+  <input type="button" value="append" id="btnAppend" />
+  <input type="button" value="prepend" id="btnPrepend" />
+  <input type="button" value="after" id="btnAfter" />
+  <input type="button" value="before" id="btnBefore" />
+  <input type="button" value="appendTo" id="btnAppendTo" />
+  <ul id="ul1">
+    <li>我是第1个li标签</li>
+    <li>我是第2个li标签</li>
+    <li id="li3">我是第3个li标签</li>
+    <li>我是第4个li标签</li>
+    <li>我是第5个li标签</li>
+  </ul>
+
+  <ul id="ul2">
+    <li>我是第1个li标签2</li>
+    <li>我是第2个li标签2</li>
+    <li id="li32">我是第3个li标签2</li>
+    <li>我是第4个li标签2</li>
+    <li>我是第5个li标签2</li>
+  </ul>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //1.append()
+  //   //父元素.append(子元素); //作为最后一个子元素添加.
+  //   $('#btnAppend').click(function () {
+  //     //1.1 新创建一个li标签,添加到ul1中的去.
+  //     // var $liNew = $("<li>我是新创建的li标签</li>");
+  //     // $('#ul1').append($liNew);
+
+  //     //1.2 把ul1中已经存在的li标签添加到ul中去. 剪切后作为最后一个子元素添加.
+  //     // var $li3 = $('#li3');
+  //     // $('#ul1').append($li3);
+
+  //     //1.3 把ul2中已经存在的li标签添加到ul1中去.剪切后作为最后一个子元素添加.
+  //     var $li32 = $('#li32');
+  //     $('#ul1').append($li32);
+  //   });
+
+
+  //   //2.prepend();
+  //   //父元素.prepend(子元素); //作为第一个子元素添加.
+  //   $('#btnPrepend').click(function () {
+  //     //2.1 新建一个li标签,添加到ul1中去.
+  //     // var $liNew = $("<li>我是新创建的li标签</li>");
+  //     // $('#ul1').prepend($liNew);
+
+  //     //2.1 把ul1中已经存在的li标签添加到ul1中去. 剪切后作为第一个子元素添加.
+  //     // var $li3 = $('#li3');
+  //     // $('#ul1').prepend($li3);
+
+  //     //2.2 把ul2中已经存在的li标签添加到ul1中去. 剪切后作为第一个子元素添加.
+  //     var $li32 = $('#li32');
+  //     $('#ul1').prepend($li32);
+  //   });
+
+
+  //   //3.before()
+  //   //元素A.before(元素B); //把元素B插入到元素A的前面,作为兄弟元素添加
+  //   $('#btnBefore').click(function () {
+  //     //新建一个div
+  //     var $divNew = $('<div>我是新建的div</div>');
+  //     $('#ul1').before($divNew);
+  //   });
+
+  //   //4.after();
+  //   //元素A.after(元素B); //把元素B插入到元素A的后面,作为兄弟元素添加.
+  //   $('#btnAfter').click(function () {
+  //     //新建一个div
+  //     var $divNew = $('<div>我是新建的div</div>');
+  //     $('#ul1').after($divNew);
+  //   });
+
+
+  //   //5.appendTo();
+  //   //子元素.appendTo(父元素); //把子元素作为父元素的最后一个子元素添加.
+  //   $('#btnAppendTo').click(function () {
+  //     //5.1 新建一个li标签,添加到ul1中去.
+  //     var $liNew = $("<li>我是新创建的li标签</li>");
+  //     $liNew.appendTo($('#ul1'));
+
+  //   });
+
+
+
+
+  // });
+  /* yznaisy */
+  $(function () {
+    $("#btnAppend").click(function () {
+      let $linew1 = $("<li>我是新创建的li</li>");
+      // $("#ul1").append($linew1);  //田间在ul1结尾
+      let $linew2 = $("#li3"); //把id为li3的里标签剪切后，作为最后一个元素添加在ul1中
+      // $("#ul1").append($linew2);
+      let $linew3 = $("#li32");
+      $("#ul1").append($linew3)
+    });
+    $("#btnPrepend").click(function () {
+      let $linew4 = $("<li>我是新创建的li</li>");
+      // $("#ul1").prepend($linew4);   //添加在ul1开头
+      let $linew5 = $("#li32");
+      $("#ul1").prepend($linew5);
+    })
+    $("#btnBefore").click(function () {
+      let $divnew1 = $("<div>我是新创建的ldiv</div>");
+      $("#ul1").before($divnew1); //添加在ul1的前面，作为兄弟元素添加
+    })
+    $("#btnAfter").click(function () {
+      let $divnew2 = $("<div>我是新创建的ldiv</div>");
+      $("#ul1").after($divnew2); //添加在ul1的后面，作为兄弟元素添加
+    });
+    $("#btnAppendTo").click(function () {
+      let $divnew2 = $("<div>我是新创建的ldiv</div>");
+      $divnew2.appendTo($("#ul1")) //添加在ul1的后面，作为子元素添加
+    });
+  })
+</script>

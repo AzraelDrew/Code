@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div span {
+        color: red;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        // let reg = /=(?!.)/
+        // console.log(location.search); // ?uname=andy
+        // // 1.先去掉？  substr('起始的位置'，截取几个字符);
+        // var params = location.search.substr(1); // uname=andy
+        // console.log(params);
+        // // 2. 利用=把字符串分割为数组 split('=');
+        // var arr = params.split('=');
+        // console.log(arr); // ["uname", "ANDY"]
+        // var div = document.querySelector('div');
+        // // 3.把数据写入div中
+        // div.innerHTML = arr[1] + '欢迎您';
+
+
+        /* yznaisy */
+        console.log(location.search);
+        let params = (location.search.substr(1)); //截取?号后面的字符串
+        console.log(params);
+        let arr = params.split("=");
+        console.log(arr);
+        let div = document.querySelector("div");
+        div.innerHTML = `<span>${arr[1]}</span>欢迎您`
+    </script>
+</body>
+
+</html>

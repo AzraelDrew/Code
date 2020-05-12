@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin-top: 10px;
+    }
+
+    .one {
+      border: 1px solid red;
+    }
+
+    .two {
+      border: 1px solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" /> <br /><br />
+  <div class="one" id="one"></div>
+  <span style="border:1px solid green">我是一个span标签</span>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $(function () {
+    //   //用原生的js给div注册单击事件.
+    //   //原生js注册相同的事件,后面的会把前面的给覆盖.
+    //   // document.getElementById("one").onclick = function () {
+    //   //   alert('单击事件');
+    //   // };
+    //   // document.getElementById("one").onclick = function () {
+    //   //   alert('单击事件.啦啦啦');
+    //   // };
+
+    //   //jQuery
+    //   //给同一个元素注册同样的事件,后面的不会把前面的给覆盖.
+    //   // $('#one').click(function () {
+    //   //   alert('单击事件');
+    //   // });
+    //   // $('#one').click(function () {
+    //   //   alert('单击事件,lallal ');
+    //   // });
+
+    //   //-------------------------------------------------------------------------------------
+    //   //给按钮设置点击事件,创建一个div.
+    //   $('#btn').click(function () {
+    //     var $divNew = $('<div class="two"></div>');
+    //     $('body').append($divNew);
+    //   });
+    //   //--------------------------------------------------------------------------------------
+    //   //jQuery注册事件的发展历程. (了解)
+
+    //   //1.简单事件绑定 click();
+    //   //不支持同时注册,也不支持动态注册.
+    //   // $('div').click(function () {
+    //   //   console.log("鼠标单击事件");
+    //   // });
+    //   // $('div').mouseenter(function () {
+    //   //   console.log("鼠标移入事件...");
+    //   // });
+
+
+    //   //2. bind方式注册事件
+    //   //支持同时注册,也不支持动态注册.
+    //   // $('div').bind({
+    //   //   mouseenter: function () {
+    //   //     console.log("鼠标移入事件...");
+    //   //   },
+    //   //   click: function () {
+    //   //     console.log("鼠标单击事件");
+    //   //   }
+    //   // });
+
+
+    //   //3.delegate注册委托事件-原理是事件冒泡.
+    //   //支持同时注册,也支持动态注册.为父元素添加事件，再让谁来触发事件
+    //   // $('body').delegate('div',{
+    //   //   mouseenter: function () {
+    //   //     console.log("鼠标移入事件");
+    //   //   },
+    //   //   click: function () {
+    //   //     console.log("鼠标单击事件");
+    //   //   }
+    //   // });
+
+
+
+    //   //4.jQuery1.7之后，jQuery用on统一了所有事件的注册方式。
+
+    //   //4.1 on简单注册事件.
+    //   //不支持动态注册的.
+    //   // $('div').on('click', function () {
+    //   //   console.log("我是单击事件...");
+    //   // });
+
+
+    //   //4.2 on委托注册
+    //   //支持动态注册的.
+    //   $('body').on('click','div,span', function () {
+    //     console.log("单击事件.");
+    //   });
+
+
+
+
+    // });
+
+    /*yznaisy */
+    $(function () {
+      //用原生的js给div注册单击事件.
+      //原生js注册相同的事件,后面的会把前面的给覆盖.
+      document.getElementById("one").onclick = function () {
+        alert('单击事件');
+      };
+      document.getElementById("one").onclick = function () {
+        alert('单击事件.啦啦啦');
+      };
+
+      //jQuery
+      //给同一个元素注册同样的事件,后面的不会把前面的给覆盖.
+      $('#one').click(function () {
+        alert('单击事件');
+      });
+      $('#one').click(function () {
+        alert('单击事件,lallal ');
+      });
+      $('body').on('click', 'div,span', function () { //div与span都能触发事件
+        console.log("单击事件.");
+      });
+    })
+  </script>
+</body>
+
+</html>

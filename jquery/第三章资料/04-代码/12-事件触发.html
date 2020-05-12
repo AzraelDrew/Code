@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>事件触发</title>
+  <style>
+    .one {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn1" />
+  <input type="button" value="按钮2" id="btn2" />
+  <div id="one" class="one"></div>
+</body>
+
+</html>
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //事件触发 trigger.
+  //   //a.代码的方式来触发事件.
+  //   //b.可以使用他来触发自定义事件.
+
+
+  //   //    //1.给div注册一个单击事件.
+  //   //    $('#one').on('click', function () {
+  //   //      console.log("单击事件....");
+  //   //    });
+  //   //
+  //   //    //2.给按钮注册事件.
+  //   //    var i = 0;
+  //   //    $('#btn1').on('click', function () {
+  //   //      i++;
+  //   //      if(i == 3){
+  //   //        //条件满足,触发div的单击事件.
+  //   //        //事件触发.感觉就是用代码的方式来触发事件.
+  //   //        //$('#one').click();
+  //   //        $('#one').trigger('click');
+  //   //      }
+  //   //    });
+
+
+  //   //-------------------------------------------------------
+  //   //给div注册一个自定义事件.
+  //   $('#one').on('linge', function () {
+  //     console.log("啦啦,我是林哥事件.");
+  //   });
+
+  //   //那我现在就是要触发他怎么办?就可以使用触发器trigger.
+  //   $('#btn2').on('click', function () {
+  //     var res = confirm('请问林哥帅吗');
+  //     if (res) {
+  //       //触发自定义的linge事件.
+  //       $('#one').trigger('linge');
+  //     }
+  //   });
+
+
+
+
+  // });
+
+  /* yznaisy */
+  $(function () {
+    // $("#one").on("click", function () {
+    //   console.log(1);
+    // })
+    // let i = 0;
+    // $("#btn1").on("click", function () {
+    //   i++;
+    //   if (i == 3) {
+    //     // $("#one").click();
+    //     $("#one").trigger("click") //触发#one的click事件
+    //   }
+    // })
+    $("#one").on("linge", function () {
+      console.log("啦啦，我试是linge事件");
+    })
+    $("#btn2").on("click", function () {
+      let res = confirm("请问linge帅吗")
+      if (res) {
+        $("#one").trigger("linge") //只要点击确认才会触发
+      }
+    })
+  })
+</script>

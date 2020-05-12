@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>设置，获取css()内容</title>
+  <style>
+    #div1 {
+      height: 200px;
+      background-color: pink;
+      border: 2px solid red;
+
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="获取" id="getBtn" />
+  <input type="button" value="设置" id="setBtn" />
+
+  <div id="div1" style="width:200px"></div>
+  <div id="div2" style="width:300px"></div>
+  <div id="div3" style="width:400px"></div>
+</body>
+
+</html>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  // $(function () {
+  //   //css()方法:  设置/获取样式
+
+  //   //1.获取样式: css()方法设置参数为要获取值的样式名.
+  //   $('#getBtn').click(function () {
+  //     //1.1 获取id为div1这个元素的样式.
+  //     // console.log($('#div1').css('width')); //'200px'
+  //     // console.log($('#div1').css('height')); //'200px'
+  //     // console.log($('#div1').css('background-color'));//'rgb(255, 192, 203)'
+  //     // console.log($('#div1').css('backgroundColor'));//'rgb(255, 192, 203)'
+  //     // console.log($('#div1').css('border'));//'2px solid rgb(255, 0, 0)'
+  //     // //在ie浏览器中,要获取边框这样的样式值,一定要记得给一个准确的边框.
+  //     // console.log($('#div1').css('border-top-width'));
+
+
+  //     //1.2 获取标签为div的元素们的样式.
+  //     //获取包含了多个dom元素的jQuery对象的样式,只能获取到第一个dom对象的样式.
+  //     console.log($('div').css('width')); //'200px'
+  //     //注意：获取样式操作只会返回第一个元素对应的样式值。
+  //   });
+
+
+  //   //2.设置样式: css()方法要给样式名和样式值.
+  //   //设置的样式是行内样式.
+  //   $('#setBtn').click(function () {
+  //     //2.1 给id为div1的这个元素设置样式.
+  //     //设置单样式.
+  //     // $('#div1').css('width','300px');
+  //     // $('#div1').css('height',300);
+  //     // $('#div1').css('backgroundColor','red');
+  //     // $('#div1').css('border','10px solid green');
+
+  //     //设置多样式
+  //     // $('#div1').css({
+  //     //   width:300,
+  //     //   'height':'300px',
+  //     //   'background-color':'green',
+  //     //   'border-top-width':'10px'
+  //     // });
+
+  //     //2.2 给标签为div的元素们设置样式.
+  //     $('div').css({
+  //       width: 300,
+  //       'height': '300px',
+  //       'background-color': 'green',
+  //       'border': '10px solid red',
+  //       marginTop: 10
+  //     });
+  //     //隐式迭代,把每一个div都设置了同样的样式.
+
+  //   });
+
+  // });
+
+  /* yznaisy */
+
+
+  $(function () {
+    $("#getBtn").click(function () {
+      //获取样式: css()方法设置参数为要获取值的样式名.
+      console.log($("#div1").css("width"));
+      console.log($("#div1").css("height"));
+      console.log($("#div1").css("backgroundColor"));
+      console.log($("#div1").css("border"));
+      console.log($("div").css("width")); //获取包含了多个dom元素的jQuery对象的样式,只能获取到第一个dom对象的样式.
+    });
+    $("#setBtn").click(function () {
+      //设置样式: css()方法要给样式名和样式值.
+      //设置单样式
+      // $("#div1").css("width", 300);
+      // $("#div1").css("width", 300);
+      // $("#div1").css("backgroundColor", "red");
+      //多样式:利用对象可以设置多个样式
+      // $("#div1").css({
+      //   "width": "300px",
+      //   "height": 300,
+      //   "backgroundColor": "red",
+      //   "border": "10px solid yellow"
+      // });
+      $("div").css({
+        "width": "300px",
+        "height": 300,
+        "backgroundColor": "red",
+        "border": "10px solid green",
+        "marginTop": 10
+      });
+    });
+  })
+</script>

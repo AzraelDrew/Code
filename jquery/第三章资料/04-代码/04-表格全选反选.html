@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表格全选反选</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />
+                    </th>
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>JavaScript</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>css</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>html</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>jQuery</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="one"></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // $(function () {
+    //     //需求1:上面的多选框选中,下面的多选框们跟着选中,上面的多选框没有选中,下面的多选框们跟着不选中.
+    //     //需求2:下面的多选框们,都有单击事件:
+    //     //如果下面的多选框们都选中了,那么上面的那个多选框跟着选中,如果下面多选框有一个没有选中,那么上面的多选框就不选中.
+
+    //     //需求1：
+    //     $('#j_cbAll').click(function () {
+    //         //获取这多选框的checked值。
+    //         var checkedValue = $(this).prop('checked');
+    //         //console.log(checkedValue);
+    //         //让下面的多选框们的checked跟随这个checkedValue
+    //         $('#j_tb input').prop('checked', checkedValue);
+    //     });
+
+    //     //需求2：
+    //     $('#j_tb input').click(function () {
+    //         //判断下面的那四个多选框是否都被选中了。
+    //         var numOfAll = $('#j_tb input').length; //获取到下面所有多选框的个数。
+    //         var numOfSelect = $('#j_tb input:checked').length; //获取到下面被选中的多选框的个数。
+    //         console.log(numOfAll + ":" + numOfSelect);
+    //         //判断
+    //         // if(numOfAll == numOfSelect){
+    //         //     //全部被选中。
+    //         //     $('#j_cbAll').prop('checked',true);
+    //         // }else {
+    //         //     //有的有没选中。
+    //         //     $('#j_cbAll').prop('checked',false);
+    //         // }
+
+    //         //上面这个判断其实可以优化。
+    //         $('#j_cbAll').prop('checked', numOfAll == numOfSelect);
+    //     });
+
+    // });
+
+    /* yznaisy */
+    $(function () {
+        $("#j_cbAll").click(function () {
+            let checkedValue = $(this).prop("checked");
+            $("#j_tb input").prop("checked", checkedValue);
+        })
+        $("#j_tb input").click(function () {
+            let numOfAll = $("#j_tb input").length;
+            let numOfSelect = $("#j_tb input:checked").length;
+            // if(numOfAll == numOfSelect){
+            //     //全部被选中。
+            //     $('#j_cbAll').prop('checked',true);
+            // }else {
+            //     //有的有没选中。
+            //     $('#j_cbAll').prop('checked',false);
+            // }
+
+            //上面这个判断其实可以优化。
+            $('#j_cbAll').prop('checked', numOfAll == numOfSelect);
+        })
+    })
+</script>
+
+</html>

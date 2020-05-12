@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>动画-案例《轮播图》</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .slider {
+            height: 340px;
+            width: 790px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .slider li {
+            position: absolute;
+            display: none;
+        }
+
+        .slider li:first-child {
+            display: block;
+        }
+
+
+        .arrow {
+            display: none;
+        }
+
+        .slider:hover .arrow {
+            display: block;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            font-family: "SimSun", "宋体";
+            width: 30px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .arrow-left:hover,
+        .arrow-right:hover {
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="slider">
+    <!--图片容器  8图 -->
+    <ul>
+        <li><a href="#"><img src="images/jd/1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/3.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/4.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/5.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/6.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/7.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/jd/8.jpg" alt=""></a></li>
+    </ul>
+    <!--箭头-->
+    <div class="arrow">
+        <span class="arrow-left">&lt;</span>
+        <span class="arrow-right">&gt;</span>
+    </div>
+</div>
+<script src="jquery/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        /*获取所有的图片*/
+        var $lis = $('.slider li');
+        /*轮播图的程序的核心点  索引*/
+        var index = 0;
+        /*1.当点击左边按钮   图片切换上一张*/
+        $('.arrow-left').click(function () {
+            index --;
+            /*循环的判断*/
+            if(index < 0){
+                index = $lis.length-1;
+            }
+            /*根据索引去找到对应的图片淡入显示  其他的图片淡出隐藏*/
+            $lis.eq(index).fadeIn().siblings().fadeOut();
+        });
+        /*2.当点击右边按钮   图片切换下一张*/
+        $('.arrow-right').click(function () {
+            index ++;
+            /*循环的判断*/
+            if(index > ($lis.length-1)){
+                index = 0;
+            }
+            /*根据索引去找到对应的图片淡入显示  其他的图片淡出隐藏*/
+            $lis.eq(index).fadeIn().siblings().fadeOut();
+        });
+    })
+</script>
+</body>
+</html>
