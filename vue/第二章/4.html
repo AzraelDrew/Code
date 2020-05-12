@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="counter++">Increase</button>
+        <button @click="counter--">Decrease</button>
+        <p>Counter:{{counter}}</p>
+        <p>Result:{{result()}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            counter: 0,
+        },
+        methods: {
+            result: function () {
+                return this.counter > 5 ? "Great 5" : "small 5"
+            }
+        }
+    })
+</script>
+
+</html>

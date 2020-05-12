@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业2</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button @click="ShowAlert">Show alert</button>
+        </div>
+        <div>
+            <input type="text" @keyup="vlaue1=$event.target.value"> <!-- 随时更新value -->
+            <!-- $event.target.value表示输入框中的值 -->
+            <p>{{vlaue1}}</p>
+        </div>
+        <div>
+            <input type="text" @keyup.enter="vlaue2=$event.target.value"> <!-- 当按下回车键后才会更新value -->
+            <p>{{vlaue2}}</p>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            vlaue1: "",
+            vlaue2: ""
+        },
+        methods: {
+            ShowAlert: function () {
+                alert("Show alert")
+            }
+        }
+    })
+</script>
+
+</html>

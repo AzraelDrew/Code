@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Word</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 </body>
 <script>
     new Vue({
-        el: "#app",
+        el: "#app", // 选择器 
         data: {
             title: "Hello Word", //会在html中查找此属性
             yznaisy: "yznaisy"
@@ -28,6 +28,7 @@
             }
         },
     })
+    console.log(this.title);
 </script>
 
 </html>
