@@ -10,7 +10,7 @@
 
 <body>
     <div id="app">
-        <input type="text" v-on:input="changrTitle">
+        <input type="text" v-on:input="changrTitle"><!-- v-on事件监听，当有内容输入input就会调用changrTitle -->
         <p>{{title}}</p> <!-- vue特殊语法：会在html中查找data中的值与之匹配，如果匹配到就把想对应的值转给它 -->
         <p>{{yznaisy}}</p>
     </div>
@@ -19,11 +19,11 @@
     new Vue({
         el: "#app",
         data: {
-            title: "Hello Word",
+            title: "Hello Word", //会在html中查找此属性
             yznaisy: "yznaisy"
         },
         methods: {
-            changrTitle: function (e) {
+            changrTitle: function (e) { //会在html中查找此方法
                 this.title = e.target.value;
             }
         },
