@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="../vue.js"></script>
+    <style>
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app1">
+        <div class="demo" @click="attach= !attach" :class="divClasses"></div> <!-- 点击此div时改变attach的值   -->
+        <!-- attach 的值为true时更改颜色 -->
+        <div class="demo" :class="{red:attach}"></div>
+        <div class="demo" :class="color"></div>
+        <hr>
+        <input type="text" v-model="color">
+    </div>
+    <div id="app2">
+        <div class="demo" :style="{backgroundColor:color}"></div>
+        <div class="demo" :style="myStyle"></div>
+        <div class="demo" :style="[myStyle,{height:width+'px'}]"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+    </div>
+</body>
+<script>
+    // class绑样式
+    let app1 = new Vue({
+        el: "#app1",
+        data: {
+            attach: false,
+            color: "green"
+        },
+        computed: {
+            divClasses: function () {
+                return {
+                    red: this.attach,
+                    blue: !this.attach
+                }
+            }
+        },
+    });
+
+    // style绑定样式
+    let app2 = new Vue({
+        el: "#app2",
+        data: {
+            color: "gray",
+            width: 100
+        },
+        computed: {
+            myStyle: function () {
+                return {
+                    backgroundColor: this.color,
+                    width: this.width + "px"
+                }
+            }
+        },
+    })
+</script>
+
+</html>

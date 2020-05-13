@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业3</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <p></p>
+            <button @click="value+=5">Add 5</button>
+            <button @click="value+=1">Add 1</button>
+            <p>{{result}}</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            value: 0,
+            a: 0
+        },
+        computed: {
+            result: function () {
+                console.log(this.value);
+                return this.value == 37 ? "done" : "no done"
+            }
+        },
+        watch: {
+            result: function () {
+                let vm = this;
+                setTimeout(function () {
+                    vm.value = 0
+                }, 5000);
+            }
+        },
+    })
+</script>
+
+</html>

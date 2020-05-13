@@ -12,8 +12,10 @@
     <div id="app">
         <button @click="counter++">Increase</button>
         <button @click="counter--">Decrease</button>
-        <p>Counter:{{counter}}</p>
-        <p>Result:{{result()}}</p>
+        <button @click="secoendCounter++">Increase secoend</button>
+        <button @click="counter--">Decrease</button>
+        <p>Counter:{{counter}}|{{secoendCounter}}</p>
+        <p>Result:{{result()}}|{{optput}}</p>
     </div>
 </body>
 <script>
@@ -21,9 +23,26 @@
         el: "#app",
         data: {
             counter: 0,
+            secoendCounter: 0
         },
-        methods: {
+        computed: { //computed中的方法可以像data调用属性一样调用computed中的方法不需要括号
+            //computed中的方法只有使用到了向对应的的属性才会调用词方法
+            optput: function () {
+                console.log("computed");
+                return this.counter > 5 ? "Great 5" : "small 5"
+            }
+        },
+        watch: {
+            counter: function (vlaue) {
+                let vm = this;
+                setTimeout(function () {
+                    vm.counter = 0;
+                }, 2000)
+            }
+        },
+        methods: { //methods中的方法会重复执行
             result: function () {
+                console.log("methods");
                 return this.counter > 5 ? "Great 5" : "small 5"
             }
         }

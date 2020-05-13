@@ -5,37 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试</title>
+    <script src="./vue/vue.js"></script>
 </head>
-<style>
-    body {
-        height: 2000px;
-    }
-
-    div {
-        width: 200px;
-        height: 200px;
-        background-color: blue;
-        margin-bottom: 300px;
-    }
-
-    #div1 {
-        background-color: blueviolet;
-        position: fixed;
-        z-index: 2;
-    }
-
-    #div2 {
-        position: relative;
-        top: 400px;
-    }
-</style>
 
 <body>
-    <div id="div1"></div>
-    <div id="div2"></div>
+    <div id="app">
+        <input type="text" @keyup="a=$event.target.value">
+        <p>{{a}}</p>
+    </div>
 </body>
 
 <script>
+    new Vue({
+        el: "#app",
+        data: {
+            a: ""
+        },
+        methods: {},
+    })
     // var a;
     // const func = (a,
     //     c = () =>
@@ -65,23 +52,27 @@
     //     console.log(num);
     // }
     // a();
-    let a = 1;
+    // let a = 1;
 
-    function sc() {
-        return function () {
-            let b = 2;
-            console.log(a);
-            console.log(b);
-        }
+    // function sc() {
+    //     return function () {
+    //         let b = 2;
+    //         console.log(a);
+    //         console.log(b);
+    //     }
 
-        return function () {
-            let c = 3;
-            console.log(a);
-            console.log(b);
-            console.log(c);
-        }
-    }
-    sc();
+    //     return function () {
+    //         let c = 3;
+    //         console.log(a);
+    //         console.log(b);
+    //         console.log(c);
+    //     }
+    // }
+    // sc();
+    // let arr1 = [1, 2, 5, 9, 2, 6, 4, 5, 6, 7, 8];
+    // let a = arr1.push(1);
+    // console.log(arr1);
+    // console.log(a);
 </script>
 
 
