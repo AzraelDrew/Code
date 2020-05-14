@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button @click="show=!show">Toggle</button>
+            <p v-show="show">You either see me...</p> <!-- 使用display隐藏 -->
+            <p v-show="!show">...or me</p>
+            <p v-if="show">You either see me...</p><!-- 直接删除元素 -->
+            <p v-else>...or me</p>
+        </div>
+        <div>
+            <ul>
+                <li v-for="(value,index) in arr">{{value}}:{{index}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li v-for="arrobj in obj">
+                    <div v-for="(value,key,index) in arrobj">{{key}}:{{value}}:({{index}})</div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li v-for="value in testData">
+                    <template v-if="Array.isArray(value)">
+                        <div v-for="element in value">{{element}}</div>
+                    </template>
+                    <template v-else>
+                        {{value}}
+                    </template>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            show: true,
+            arr: ["name", "age", "index"],
+            obj: [{
+                    name: "yznaisy",
+                    age: 20,
+                    index: 1
+                },
+                {
+                    name: "yzn",
+                    age: 10,
+                    index: 2
+                }
+            ],
+            testData: {
+                name: "tsetdata",
+                id: 10,
+                data: [2.3, 45.23, 34, 2.34]
+            }
+        },
+
+
+    })
+</script>
+
+</html>
