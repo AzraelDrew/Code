@@ -11,14 +11,17 @@
 <body>
     <div id="app">
         <input type="text" @keyup="a=$event.target.value">
-        <p>{{a}}</p>
+        <p></p>
     </div>
 </body>
 
 <script>
-    let value = "abasdfcasd";
-    let a = `123${value}`
-    console.log(a);
+    const word = ["php", "css"];
+    const string = "我喜欢在后盾人学习php与css知识";
+    const title = word.reduce((pre, word) => {
+        return pre;
+    }, string);
+    console.log(title);
 </script>
 
 
