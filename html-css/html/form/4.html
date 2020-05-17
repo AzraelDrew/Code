@@ -10,9 +10,13 @@
     <form action="1.php" method="post">
         <fieldset>
             <legend>后盾人</legend>
-            <input type="radio" name="sex" id="boy" value="boy">
+            <!-- 
+                radio:单选 
+                checked:默认选中
+                -->
+            <input type="radio" name="sex" id="boy" value="boy" checked>
             <label for="boy">男孩</label>
-            <input type="radio" checked name="sex" id="girl" value="girl">
+            <input type="radio" name="sex" id="girl" value="girl">
             <label for="girl">女孩</label>
             <hr>
             <input type="checkbox" name="register[]" id="email" value="email">

@@ -15,13 +15,23 @@
                 <input type="text" name="username">
             </label>
             <label>
+                <!-- 文本框 -->
                 介绍
                 <textarea placeholder="请输入介绍信息" name="info" cols="20" rows="3">这是默认值</textarea>
+                <!-- 
+                    placeholder:提示内容
+                -->
             </label>
             <label>栏目
                 <select name="category[]">
+                    <!-- 
+                        multiple:支持多选 
+                        selected:选中状态
+                        size:列表框高度
+                    -->
                     <optgroup label="新闻">
-                        <option value="1">新闻</option>
+                        <!-- optgroup	选项组 -->
+                        <option value="1" selected>新闻</option>
                         <option value="2">游戏</option>
                     </optgroup>
                     <optgroup label="开发">

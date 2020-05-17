@@ -17,6 +17,15 @@
                     maxlength   限制最大字段长度
                     size  设置长度
                     readonly  不能更改
+                    type类型:
+                        text:文本
+                        password:密码
+                        email:邮箱
+                        url:网络地址
+                        tel:电话
+                        number:数值
+                        hidedn:隐藏表单
+                        submit:提交表单
                 -->
             </label>
             <hr>
@@ -28,7 +37,21 @@
             </label>
         </fieldset>
         <button>提交</button>
+        <fieldset>
+            <!-- 表单验证 -->
+            <legend>后盾人</legend>
+            <label>
+                用户名
+                <input type="text" pattern="[A-z]{5}}" oninvalid="validate('请输入5-20为字母的用户名')" required name="username">
+            </label>
+            <button type="submit">提交</button>
+        </fieldset>
     </form>
 </body>
+<script>
+    function validate(massage) {
+        alert(massage);
+    }
+</script>
 
 </html>
