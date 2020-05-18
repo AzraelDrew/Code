@@ -3,8 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>选择器原理与标签选择器</title>
     <style>
+        /* 
+        *{}:选择所有元素
+        element{}:元素选择器
+        #id{}:id选择器
+        .class{}:类选择器
+        div h1{}:选择div中的所有h1
+        h1,h2{}:选择所有的h1和h2
+        div>p{}:选择父元素为div的所有p元素
+        */
+        * {
+            color: red;
+        }
+
         h1,
         h2 {
             color: yellow;
