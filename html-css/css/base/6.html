@@ -3,10 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>属性选择器</title>
     <style>
-        h1[title|="houdunren"] {
+        /* 
+        h1[title]:选择有title属性的h1 
+        h1[title][id]:选择有title和id属性的h1 
+        h1[title="houdunren"]:选择title属性值为houdunren的h1
+        h1[title^="houdunren"]:选择title属性值以开始houdunren的h1
+        h1[title$="houdunren"]:选择title属性值以结束houdunren的h1
+        */
+        /* h1[title][id] {
             color: red;
+        }
+
+        h1[title] {
+            color: green;
+        } */
+
+        h1[title^="houdunren"] {
+            color: yellow;
+        }
+
+        h1[title$="com"] {
+            color: gray;
         }
     </style>
 </head>
@@ -14,7 +33,7 @@
 <body>
     <main>
         <article>
-            <h1 title="houdunren">后盾人</h1>
+            <h1 title="houdunren" id>后盾人</h1>
             <h1 title="houdunren-com">houdunwang.com</h1>
             <aside>
                 <h2>houdunren.com</h2>

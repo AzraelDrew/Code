@@ -3,9 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>结构选择器</title>
     <style>
+        article h1~* {
+            /* article h1~h2 选择h1后面所有的h2 */
+            /* 用于选择后面的所有兄弟元素 */
+            color: red;
+        }
+
         article h1+h2 {
+            /* 用于选择紧挨着的同级兄弟元素。 */
             color: green;
         }
     </style>
