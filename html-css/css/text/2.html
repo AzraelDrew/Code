@@ -3,8 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>字重与字号</title>
     <style>
+        /* 字重指字的粗细定义。取值范围 normal | bold | bolder | lighter | 100 ~900400对应 normal,700对应 bold ，一般情况下使用 bold 或 normal 较多 */
+        /* 
+        字号用于控制字符的显示大小，包括 xx-small | x-small | small | meidum | large | x-large | xx-large 
+        百分数是子元素相对于父元素的大小，如父元素是20px，子元素设置为 200%即为你元素的两倍大小
+        em单位等同于百分数单位。
+        */
         article {
             /* 1em m 100% */
             font-size: 14px;
