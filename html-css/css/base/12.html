@@ -3,15 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>编号选择</title>
     <style>
+        article :nth-child(2) {
+            /* 第一个 */
+            color: red;
+        }
+
+        main>ul li:nth-child(odd) {
+            /* 奇数 */
+            color: green;
+        }
+
+        main>ul li:nth-child(even) {
+            /* 偶数 */
+            color: blue;
+        }
+
+        main>ul li:nth-child(n) {
+            /* 所有的 */
+            color: yellow;
+        }
+
         main>ul li:nth-child(n+2) {
+            /* 除了第一个 */
+            color: red;
+        }
+
+        /* main>ul li:nth-child(n+2) {
             color: red;
         }
 
         article h1:nth-of-type(2) {
             color: red;
-        }
+        } */
     </style>
 </head>
 

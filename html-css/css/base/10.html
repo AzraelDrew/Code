@@ -3,9 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>首尾选择器</title>
     <style>
+        article :first-child {
+            /*  选择article及其后代的第一个元素*/
+            color: red;
+        }
+
+        article h1:first-of-type {
+            /* 选择article及其后代的第一个h1 */
+            color: green;
+        }
+
         article>h2:last-of-type {
+            /* 选择article子元素的最后一个h2 */
             color: red;
         }
     </style>
@@ -15,12 +26,12 @@
     <main>
         <article>
             <h2>hdcms</h2>
-
+            <h1>后盾人</h1>
             <aside>
                 <h2>houdunren.com</h2>
+                <h1>yznaisy</h1>
             </aside>
             <h2>hdcms.com</h2>
-            <h1>后盾人</h1>
         </article>
     </main>
 </body>

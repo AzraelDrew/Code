@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>表单</title>
     <style>
         input:disabled {
+            /* 禁用的表单 */
             border: solid 1px #ddd !important;
         }
 
@@ -22,18 +23,22 @@
         }
 
         input:optional {
+            /* 非必填 */
             border: solid 1px green;
         }
 
         input:required {
+            /* 必填 */
             border: solid 1px red;
         }
 
         input:valid {
+            /* 有效 */
             background: yellowgreen;
         }
 
         input:invalid {
+            /* 无效 */
             background: rebeccapurple;
         }
     </style>

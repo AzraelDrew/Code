@@ -11,6 +11,9 @@
         h1[title="houdunren"]:选择title属性值为houdunren的h1
         h1[title^="houdunren"]:选择title属性值以开始houdunren的h1
         h1[title$="houdunren"]:选择title属性值以结束houdunren的h1
+        h1[title*="houdunren"]:选择title属性值中任意位置出现houdunren的h1 
+        h1[title~="houdunren"]:选择title属性值中出现houdunren这个单词的h1(houdunren左右两边有空白)
+        h1[title|="houdunren"]:选择title属性值以houdunrenkais或者后面跟-连接的h1
         */
         /* h1[title][id] {
             color: red;
@@ -19,13 +22,23 @@
         h1[title] {
             color: green;
         } */
-
+        /* 
         h1[title^="houdunren"] {
             color: yellow;
         }
 
         h1[title$="com"] {
             color: gray;
+        } */
+        /* h1[title*="houdunren"] {
+            color: red;
+        }
+
+        h1[title~="houdunren"] {
+            color: green;
+        } */
+        h1[title|="houdunren"] {
+            color: red;
         }
     </style>
 </head>
@@ -34,7 +47,7 @@
     <main>
         <article>
             <h1 title="houdunren" id>后盾人</h1>
-            <h1 title="houdunren-com">houdunwang.com</h1>
+            <h1 title="houdunren.com">houdunwang.com</h1>
             <aside>
                 <h2>houdunren.com</h2>
             </aside>

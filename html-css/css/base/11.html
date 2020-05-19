@@ -3,9 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>伪类唯一选择器</title>
     <style>
+        article :only-child {
+            /*  	选择属于其父元素的唯一子元素的每个元素 */
+            color: green;
+        }
+
         article>h1:only-of-type {
+            /* 后代中唯一的h1 */
+            /* 	选择属于其父元素唯一的元素的每个元素  */
             color: red;
         }
     </style>

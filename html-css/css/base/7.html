@@ -3,27 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>伪类选择器</title>
     <style>
         a:link {
+            /* 选择所有未被访问的链接 */
             color: red;
         }
 
         a:visited {
+            /* 选择所有已被访问的链接 */
             color: yellow;
         }
 
         a:hover {
+            /* 鼠标移动到元素上时 */
             color: green;
         }
 
         a:active {
+            /* 点击正在发生时 */
             color: black;
         }
 
         input:focus {
+            /* 选择获得焦点的 input 元素 */
             background: blue;
             outline: none
+                /* 去除获取焦点后的边框 */
         }
 
         input:hover {
