@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>负值与边距合并</title>
     <style>
         body {
             padding: 100px;
@@ -23,7 +24,11 @@
 
         h2 {
             border: solid 1px red;
-            margin-bottom: 60px;
+            /* 
+            边距合并
+            当有两个相对方向的边距会取边距大的哪一个
+            */
+            margin-bottom: 30px;
             margin-top: 30px;
         }
 
