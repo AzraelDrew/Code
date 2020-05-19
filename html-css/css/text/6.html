@@ -3,25 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>文本线条</title>
     <style>
-        h2 {
-            /* text-decoration: line-through; */
+        /* 去除线 */
+        a {
+            text-decoration: none;
         }
 
-        a,
-        u {
-            text-decoration: none;
+        /* 下划线 */
+        span.underline {
+            text-decoration: underline;
+        }
+
+        /* 删除线 */
+        span.through {
+            text-decoration: line-through;
+        }
+
+        /* 上划线 */
+        span.overline {
+            text-decoration: overline;
         }
     </style>
 </head>
 
 <body>
-    <article>
-        <a href="">hdcms.com</a>
-        <u>houdunwang</u>
-        <h2>houdunren.com</h2>
-    </article>
+    <a href="">houdunren.com</a>
+    <hr>
+    <span class="underline">下划线</span>
+    <hr>
+    <span class="through">删除线</span>
+    <hr>
+    <span class="overline">上划线</span>
 </body>
 
 </html>

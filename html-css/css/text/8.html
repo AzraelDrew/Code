@@ -3,8 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>空白和文本溢出</title>
     <style>
+        /* 
+        pre 	保留文本中的所有空白，类似使用 pre 标签
+        nowrap 	禁止文本换行
+        pre-wrap 	保留空白，保留换行符
+        pre-line 	空白合并，保留换行符 */
         h2 {
             white-space: pre-line;
         }
@@ -13,6 +18,7 @@
             border: solid 1px #ddd;
             width: 300px;
             white-space: nowrap;
+            /* 文本溢出处理 */
             overflow: hidden;
             text-overflow: ellipsis;
         }
