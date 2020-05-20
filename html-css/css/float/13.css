@@ -1,32 +1,41 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 body {
-  background: #F3F3EF;
-}
-ul {
-  list-style: none;
+  background: #f3f3f3;
 }
 header {
-  background: #fff;
-  box-shadow: 0 5px 5px rgba(100, 100, 100, 0.3);
+  background-color: #fff;
+  background: 0 5px 5px rgba(100, 100, 100, 0.3);
   border-bottom: solid 3px #1791A7;
 }
 header nav {
-  padding: 20px 10px 40px 0px;
+  padding: 20px 10px;
   width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 header nav ul {
+  list-style: none;
   float: left;
+  margin-right: 20px;
+}
+header nav ul li {
+  float: left;
+  color: #438a98;
+}
+header nav ul li .logo {
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
 }
 header nav ul li a {
+  text-decoration: none;
   color: #555;
 }
 header nav div.button {
   float: right;
-  width: 100px;
 }
 main {
   width: 1200px;
@@ -35,27 +44,28 @@ main {
   margin-top: 20px;
 }
 main article {
-  height: 300px;
-  background: greenyellow;
-  box-sizing: border-box;
+  width: 1000px;
+  height: 800px;
   border: solid 1px #ccc;
+  box-sizing: border-box;
+  background: yellowgreen;
   float: left;
-  width: 900px;
 }
 main aside {
-  width: 280px;
+  width: 180px;
   height: 300px;
   float: right;
   border: solid 1px #ccc;
+  background: red;
   box-sizing: border-box;
 }
 footer {
   background: #fff;
   border-top: solid 1px #ddd;
-  padding: 30px;
   margin-top: 30px;
+  padding: 30px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
 footer div {
