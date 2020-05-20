@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>before与after</title>
     <style>
         h2 {
             position: relative;
@@ -11,13 +11,12 @@
         }
 
         h2:hover::before {
+            /* 获取data-title的属性值 */
             content: attr(data-title);
-            color: green;
             position: absolute;
             background: #555;
-            color: #fff;
-            left: 10px;
-            bottom: -30px;
+            color: red;
+            bottom: -40px;
             padding: 5px;
             border: solid 1px #333;
 
