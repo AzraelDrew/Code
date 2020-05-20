@@ -3,14 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>多图定义与组合语句</title>
     <style>
         article {
             height: 500px;
             border: dashed 10px black;
-            /* background-image: url(xj-small.png), url(bg.png);
+            background-image: url(xj-small.png), url(bg.png);
             background-position: top left, center;
-            background-repeat: no-repeat, repeat; */
-            background: red url(xj-small.png) no-repeat center;
+            background-repeat: no-repeat, no-repeat;
+            /* background: red url(xj-small.png) no-repeat center; */
+            /* 
+            可以一次定义多个背景图片。
+            background: url(xj-small.png) left 50% no-repeat,
+            url(bg.png) right 100% no-repeat red;
+             */
         }
     </style>
 </head>

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>背景重复与滚动</title>
     <style>
         article {
             height: 500px;
@@ -12,9 +13,20 @@
 
         div {
             height: 3000px;
-            background-image: url(bg.png);
+            background-image: url(houdunren.jpg);
+            /* 
+            repeat 	水平、垂直重复
+            repeat-x 	水平重复
+            repeat-y 	垂直重复
+            no-repeat 	不重复
+            space 	背景图片对称均匀分布
+             */
             background-repeat: no-repeat;
-            background-attachment: scroll;
+            /* 
+            scroll 	背景滚动
+            fixed 	背景固定
+             */
+            background-attachment: fixed;
         }
     </style>
 </head>

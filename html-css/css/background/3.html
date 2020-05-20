@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>背景位置与背景尺寸</title>
     <style>
         article {
             height: 500px;
@@ -10,16 +11,20 @@
             overflow: auto;
             background-image: url(houdunren.jpg);
             background-repeat: no-repeat;
-            /* background-position: -80px 50%; */
-            background-size: contain;
+            /* 
+            left 	左对齐
+            right 	右对齐
+            center 	居中对齐
+            top 	顶端对齐
+            bottom 	底部对齐
+             */
+            background-position: -80px 50%;
+            /* 
+            cover 	背景完全覆盖，可能会有背景溢出
+            contain 	图片不溢出的放在容器中，可能会漏出部分区域
+             */
+            background-size: cover;
         }
-
-        /* div {
-            height: 3000px;
-            background-image: url(bg.png);
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-        } */
     </style>
 </head>
 

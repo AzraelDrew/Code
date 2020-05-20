@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>背景颜色与裁切</title>
     <style>
         article {
             border: dashed 10px black;
@@ -10,6 +11,11 @@
             background-color: rgba(255, 0, 0, 0.5);
             /* background-image: url(houdunren.jpg); */
             height: 500px;
+            /* 
+            border-box 	包括边框
+            padding-box 	不含边框，包括内边距
+            content-box 	内容区域
+             */
             background-clip: border-box;
         }
     </style>
