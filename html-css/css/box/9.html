@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>visibility</title>
     <style>
         article {
             padding: 30px;
@@ -18,9 +19,10 @@
         }
 
         div:nth-of-type(1) {
+            /* display不会保留空间位，visibility会保留空间为与设置透明度相似 */
             /* display: none; */
             /* visibility: hidden; */
-            opacity: 0;
+            opacity: 0.6;
         }
     </style>
 </head>
