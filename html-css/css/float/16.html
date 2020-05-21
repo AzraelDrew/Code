@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>环绕模式</title>
     <style>
         p {
             border: solid 1px #ddd;
@@ -22,8 +22,21 @@
             /* shape-outside: circle(); */
             /* clip-path: ellipse(50% 60%); */
             /* shape-outside: ellipse(50% 60%); */
-            /* clip-path: polygon(0 0, 100% 100%, 0 100%); */
-            /* shape-outside: polygon(0 0, 100% 100%, 0 100%); */
+            /* 
+            形状
+            circle 	圆形
+            ellipse 	椭圆
+            polygon 	多边形
+            */
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            /* 
+            环绕模式
+            circle 	圆形环绕
+            ellipse 	椭圆环绕
+            url 	图片环绕
+            polygan 	多边环绕
+            */
+            shape-outside: polygon(0 0, 100% 100%, 0 100%);
 
         }
     </style>

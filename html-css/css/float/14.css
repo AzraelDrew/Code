@@ -4,11 +4,7 @@ p {
   overflow: hidden;
 }
 p span.shape {
-  width: 100px;
-  height: 100px;
   float: left;
-  padding: 30px;
-  border: solid 20px red;
   margin: 0px;
   shape-outside: margin-box;
 }

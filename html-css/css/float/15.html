@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>浮动区域形状</title>
     <style>
         p {
             border: solid 1px #ddd;
@@ -18,9 +18,13 @@
             padding: 30px;
             background: green;
             margin: 0px;
-            /* clip-path: circle(50% at 100% 100%); */
+            /* 圆 */
+            /* clip-path: circle(50%); */
+            /* 椭圆 */
             /* clip-path: ellipse(20% 30%); */
+            /* 多边形 */
             clip-path: polygon(0 0, 100% 100%, 0 100%);
+            shape-outside: margin-box;
         }
     </style>
 </head>
