@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+article {
+  background-color: #bfa;
+  position: relative;
+}
+article ul {
+  position: absolute;
+}
+article ul li {
+  list-style: none;
+  float: left;
+}
+article ol {
+  position: absolute;
+  top: 350px;
+  left: 500px;
+}
+article ol li {
+  list-style: circle;
+  background-color: red;
+  float: left;
+  margin-right: 20px;
+}
