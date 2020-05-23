@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>弹性布局移动端通用菜单</title>
     <style>
-        * {
+        /* * {
             padding: 0;
             margin: 0;
         }
@@ -33,7 +33,6 @@
 
         footer section {
             flex: 1;
-            /* background: red; */
             border-right: solid 1px #ccc;
             display: flex;
             flex-direction: column-reverse;
@@ -70,6 +69,80 @@
             border-bottom: solid 1px #ccc;
             cursor: pointer;
 
+        }
+
+        footer section ul li:last-child {
+            border-bottom: none;
+        } */
+        /* yznaisy */
+
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            background: #f3f3f3;
+        }
+
+        footer {
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-top: solid 1px #ccc;
+        }
+
+        footer section {
+            flex: 1;
+            border-right: solid 1px #ccc;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        footer section:last-child {
+            border-right: none;
+        }
+
+        footer section h4 {
+            flex: 0 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+
+        footer section h4:hover+ul {
+            display: flex;
+        }
+
+        footer section ul {
+            display: none;
+            flex-direction: column;
+            border: solid 1px #ccc;
+            text-align: center;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        footer section ul li {
+            flex: 1 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: solid 1px #ccc;
+            cursor: pointer;
         }
 
         footer section ul li:last-child {

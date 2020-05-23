@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-12 13:57:17
- * @LastEditTime: 2020-05-23 15:26:44
+ * @LastEditTime: 2020-05-23 15:34:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Code\html-css\css\flex\15.html
@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>弹性元素空用空间分配</title>
+    <title>元素动态缩小</title>
     <style>
         * {
             padding: 0;
@@ -32,6 +32,8 @@
             padding: 10px;
         }
 
+        /* flex-shrink
+        与 flex-grow 相反 flex-shrink 是在弹性盒子装不下元素时定义的缩小值。 */
         /* 200 - (200/(200X1 + 200X3)*3) * 200  */
         article div:nth-child(1) {
             flex-shrink: 0;

@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 15:45:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\16.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>主轴的基准尺寸定义</title>
     <style>
         * {
             padding: 0;
@@ -25,6 +33,11 @@
             flex-direction: column;
         }
 
+        /* flex-basis
+        flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。
+        可以是长度单位，也可以是百分比。flex-basis的优先级高于width、height属性。
+        优先级
+        flex-basis 优先级大于 width、height。 */
         article div {
             flex-basis: 100px;
             max-height: 50px;
@@ -37,12 +50,6 @@
             font-size: 30px;
             color: white;
         }
-
-        article div:nth-child(1) {}
-
-        article div:nth-child(2) {}
-
-        article div:nth-child(3) {}
     </style>
 </head>
 

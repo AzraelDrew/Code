@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 16:21:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\19.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后盾人</title>
     <style>
-        * {
+        /* * {
             padding: 0;
             margin: 0;
         }
@@ -48,6 +56,46 @@
             padding: 10px;
             background: #333;
             cursor: pointer;
+        } */
+        /* yznaisy */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 10px;
+        }
+
+        article {
+            height: 600px;
+            border: blue 1px solid;
+            display: flex;
+            flex-direction: column;
+        }
+
+        article section {
+            flex: 1 0 100px;
+            background: blueviolet;
+            text-align: center;
+            background-clip: content-box;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        article section div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        article section span {
+            padding: 10px;
+            background: #333;
         }
     </style>
 </head>
