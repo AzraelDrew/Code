@@ -1,9 +1,17 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-22 22:42:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\position\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>定位设置尺寸</title>
     <style>
         * {
             padding: 0;
@@ -19,15 +27,16 @@
             overflow: hidden;
         }
 
+        /* 如果元素没有设置宽高则可以通过定位的偏移值设置元素的尺寸。*/
         div {
-            background: blueviolet;
+            background: blue;
             /* width: 200px;
             height: 200px; */
             position: absolute;
-            left: 300px;
+            left: 100px;
             top: 100px;
-            right: -100px;
-            bottom: 100px;
+            right: 0px;
+            bottom: 0px;
             border-radius: 50%;
         }
     </style>

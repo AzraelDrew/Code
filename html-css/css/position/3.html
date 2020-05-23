@@ -1,9 +1,17 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-22 22:31:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\position\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>absolute</title>
     <style>
         * {
             padding: 0;
@@ -17,12 +25,13 @@
             padding: 30px;
             margin-top: 100px;
             margin-left: 100px;
-            position: relative;
+            /* position: relative; */
         }
 
         p img {
             width: 30px;
             height: 30px;
+            /* absolute默认相对于body，如果父元素有定位属性则参照父元素(兄弟元素的定位没有影响)，不会保留原位置 */
             position: absolute;
             right: 0;
             /* top: 0; */
@@ -30,6 +39,15 @@
             /* top: 0; */
             bottom: 0;
             /* left: 50%; */
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     </style>
 </head>
@@ -39,6 +57,7 @@
         <img src="xj.png" alt="">
         后盾人自2010年创立至今，免费发布了大量高质量视频教程，视频在优酷、土豆、酷六等视频网站均有收录，很多技术爱好者受益其中。除了免费视频外，后盾人还为大家提供了面授班、远程班、公益公开课、VIP系列课程等众多形式的学习途径。后盾人有一群认真执着的老师，他们一心为同学着想，将真正的知识传授给大家是后盾人永远不变的追求。
     </p>
+    <span></span>
 </body>
 
 </html>

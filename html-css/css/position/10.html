@@ -1,9 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 09:40:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\position\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>京东购物车</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1772247_vdlz48v6etf.css">
     <style>
         * {
             padding: 0;
@@ -46,6 +55,27 @@
             z-index: 2;
         }
 
+        article div:nth-of-type(1) span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.5em;
+            position: relative;
+            top: -12px;
+            left: 8px;
+            z-index: 3;
+        }
+
+        article div:nth-of-type(1) i {
+            background: #fff;
+            position: relative;
+            right: 20px;
+            z-index: 2;
+        }
+
         article div:nth-of-type(2) {
             width: 300px;
             position: absolute;
@@ -58,7 +88,9 @@
 
 <body>
     <article>
-        <div>我的购物车</div>
+        <div>
+            <span>60</span>
+            <i class="iconfont iconxiaoxi"></i>我的购物车</div>
         <div>购物车中暂无商品</div>
     </article>
 </body>

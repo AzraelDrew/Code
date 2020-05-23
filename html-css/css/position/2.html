@@ -1,9 +1,17 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-22 22:12:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\position\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>后盾人</title>
+    <title>relative</title>
     <style>
         * {
             padding: 0;
@@ -20,10 +28,11 @@
         p img {
             width: 30px;
             height: 30px;
+            /* 相对于当前位置进行定位，当前位置会保留 */
             position: relative;
             top: -10px;
             /* left: 20px; */
-            /* right: 30px; */
+            right: 30px;
             /* bottom: 30px; */
         }
     </style>
