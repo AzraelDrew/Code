@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 15:03:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\13.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>弹性元素交叉轴控制</title>
     <style>
         * {
             padding: 0;
@@ -24,6 +32,14 @@
             align-items: flex-end;
         }
 
+        /* align-self
+        用于控制单个元素在交叉轴上的排列方式，align-items 用于控制容器中所有元素的排列，而 align-self 用于控制一个弹性元素的交叉轴排列。
+
+        选项	说明
+        stretch	将空间平均分配给元素
+        flex-start	元素紧靠主轴起点
+        flex-end	元素紧靠主轴终点
+        center	元素从弹性容器中心开始 */
         article :first-child {
             align-self: flex-start;
         }

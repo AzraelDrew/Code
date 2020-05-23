@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 14:37:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>交叉轴元素的多种排列</title>
     <style>
         * {
             padding: 0;
@@ -16,6 +24,15 @@
             padding-top: 15px;
         }
 
+        /* align-items
+        用于控制容器元素在交叉轴上的排列方式。
+        选项	说明
+        stretch	元素被拉伸以适应容器（默认值）
+        center	元素位于容器的中心
+        flex-start	元素位于容器的交叉轴开头
+        flex-end	元素位于容器的交叉轴结尾
+        拉伸适应交叉轴
+        如果设置了 width | height | min-height | min-width | max-width | max-height ，将影响stretch 的结果，因为 stretch 优先级你于宽高设置 */
         article {
             border: solid 5px silver;
             width: 550px;

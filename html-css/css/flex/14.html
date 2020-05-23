@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 15:17:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\14.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>弹性元素空用空间分配</title>
     <style>
         * {
             padding: 0;
@@ -23,9 +31,33 @@
             background: blueviolet;
         }
 
+        /* flex-grow
+        用于将弹性盒子的可用空间，分配给弹性元素。可以使用整数或小数声明。
+        全为1表示平均分配
+         */
         main {
-            flex-grow: 1;
+            height: 800px;
             background: #ccc;
+            display: flex;
+        }
+
+        main div {
+            height: 100px;
+            background: red;
+            border: 1px blue solid;
+            display: flex;
+        }
+
+        main :nth-child(1) {
+            flex-grow: 5;
+        }
+
+        main :nth-child(2) {
+            flex-grow: 7;
+        }
+
+        main :nth-child(3) {
+            flex-grow: 9;
         }
 
         footer {
@@ -37,7 +69,11 @@
 
 <body>
     <header></header>
-    <main></main>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </main>
     <footer></footer>
 </body>
 

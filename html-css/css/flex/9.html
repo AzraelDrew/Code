@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 14:22:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>主轴与交叉轴</title>
     <style>
         * {
             padding: 0;
@@ -25,7 +33,7 @@
             flex-wrap: wrap;
         }
 
-        article * {
+        article div {
             width: 100px;
             height: 100px;
             background: blueviolet;
@@ -44,6 +52,16 @@
         <div>2</div>
         <div>3</div>
     </article>
+
+    <section>
+        水平排列下面是使用 flex-flow: row wrap 的主轴与交叉轴说明。
+        <img src="http://houdunren.gitee.io/note/assets/img/image-20190825175808514.241ce400.png" alt="">
+    </section>
+    <section>
+        下面是使用flex-flow: row-reverse wrap-reverse 的主轴与交叉轴说明。
+        <img src="http://houdunren.gitee.io/note/assets/img/image-20190825180523789.c688ac2e.png" alt="">
+    </section>
+
 </body>
 
 </html>

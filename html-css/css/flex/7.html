@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 14:13:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>弹性元素溢出换行</title>
     <style>
         * {
             padding: 0;
@@ -16,6 +24,12 @@
             padding-top: 15px;
         }
 
+        /* flex-wrap
+        flex-wrap 属性规定flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。
+        选项	说明
+        nowrap	元素不拆行或不拆列（默认值）
+        wrap	容器元素在必要的时候拆行或拆列。
+        wrap-reverse	容器元素在必要的时候拆行或拆列，但是以相反的顺序 */
         article {
             border: solid 5px silver;
             width: 500px;
@@ -25,7 +39,7 @@
             flex-wrap: wrap-reverse;
         }
 
-        article * {
+        article div {
             width: 100px;
             height: 100px;
             background: blueviolet;

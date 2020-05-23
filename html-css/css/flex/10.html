@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 13:57:17
+ * @LastEditTime: 2020-05-23 14:32:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Code\html-css\css\flex\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>主轴元素的多种排列</title>
     <style>
         * {
             padding: 0;
@@ -16,6 +24,16 @@
             padding-top: 15px;
         }
 
+        /* 
+        justify-content
+        用于控制元素在主轴上的排列方式，再次强调是主轴的排列方式。
+        选项	说明
+        flex-start	元素紧靠主轴起点
+        flex-end	元素紧靠主轴终点
+        center	元素从弹性容器中心开始
+        space-between	第一个元素靠起点，最后一个元素靠终点，余下元素平均分配空间
+        space-around	每个元素两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
+        space-evenly 元素间距离平均分配 */
         article {
             border: solid 5px silver;
             width: 650px;
