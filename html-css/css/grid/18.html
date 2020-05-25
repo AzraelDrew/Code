@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-25 10:59:46
+ * @FilePath     : \Code\html-css\css\grid\18.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>栅格流动方向</title>
     <style>
         * {
             padding: 0;
@@ -23,6 +30,9 @@
             display: grid;
             grid-template-rows: repeat(3, 1fr);
             grid-template-columns: repeat(3, 1fr);
+            /* 
+            强制填充
+            当元素在栅格中放不下时，将会发生换行产生留白，使用grid-auto-flow: row dense; 可以执行填充空白区域操作。 */
             grid-auto-flow: row dense;
         }
 

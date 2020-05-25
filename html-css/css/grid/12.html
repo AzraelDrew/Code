@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-25 10:00:13
+ * @FilePath     : \Code\html-css\css\grid\12.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>元素定位简写</title>
     <style>
         * {
             padding: 0;
@@ -35,6 +42,9 @@
             font-size: 25px;
         }
 
+        /* grid-area更加简洁是同时对 grid-row 与 grid-column 属性的组合声明。
+            语法结构如下：
+            grid-row-start/grid-column-start/grid-row-end/grid-column-end。 */
         div:first-child {
             grid-area: 1/1/span 3/span 1;
             /* grid-row: 1/span 3; */

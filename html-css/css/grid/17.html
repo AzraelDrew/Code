@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-25 10:56:29
+ * @FilePath     : \Code\html-css\css\grid\17.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>区域占位符优化布局代码</title>
     <style>
         * {
             padding: 0;
@@ -17,7 +24,9 @@
             display: grid;
             grid-template-rows: 60px 1fr 60px;
             grid-template-columns: 60px 1fr;
-            grid-template-areas: "header header"
+            /* 区域占位
+            使用一个或多个 . 定义区域占位。 */
+            grid-template-areas: ". ."
                 "main main"
                 "footer footer";
         }
@@ -61,7 +70,7 @@
         <!-- <header></header>
         <nav></nav>
         <main></main>-->
-        <main></main>
+        <main>123</main>
         <footer>
             <div></div>
             <div></div>

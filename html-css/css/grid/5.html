@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-24 18:20:21
+ * @FilePath     : \Code\html-css\css\grid\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>minmax控制尺寸范围</title>
     <style>
         article {
             width: 300px;
@@ -12,8 +19,11 @@
             border: solid 5px silver;
             display: grid;
             /* min-width max-width */
-            grid-template-rows: repeat(2, minmax(50px, 100px));
-            grid-template-columns: repeat(5, 1fr);
+            /* grid-template-rows: repeat(2, minmax(50px, 100px)); */
+            /* 设置最小值为50，最大值为100 */
+            /* grid-template-columns: repeat(5, 1fr); */
+            /*grid-tempalte 是 grid-template-rows、grid-template-columns、grid-template-areas 的三个属性的简写。  */
+            grid-template: repeat(2, minmax(50px, 100px))/repeat(5, 1fr);
         }
 
         div {
