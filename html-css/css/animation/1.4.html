@@ -1,0 +1,81 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-27 21:00:13
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-27 21:14:35
+ * @FilePath     : \Code\html-css\css\animation\1.4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单案例</title>
+    </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #34495e;
+        }
+
+        body main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -200px;
+            width: 400px;
+            height: 400px;
+            border: solid 5px silver;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .field {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .field::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, white, #1abc9c, #f1c40f, #e74c3c, white);
+            transform: translateX(-100%);
+            transition: 2s;
+        }
+
+        .field:hover::before {
+            transform: translateX(100%);
+        }
+
+        .field input {
+            border: none;
+            outline: none;
+            background: #ecf0f1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="field"><input type="text" placeholder="请输入账号" value=""></div>
+        <div class="field"><input type="password" placeholder="请输入密码" value=""></div>
+    </main>
+</body>
+
+
+</html>

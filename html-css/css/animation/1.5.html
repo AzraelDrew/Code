@@ -1,0 +1,127 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-27 21:17:32
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-27 22:07:24
+ * @FilePath     : \Code\html-css\css\animation\1.5.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1772247_vdlz48v6etf.css">
+    <title>页面切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        body::after {
+            content: "yznaisy";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: .5;
+            font-size: 3em;
+        }
+
+        main {
+            flex: 1;
+            position: relative;
+        }
+
+        main>div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: 1s;
+            z-index: 1;
+        }
+
+        main>div:target {
+            transform: translateY(0px);
+        }
+
+        main>div:nth-of-type(1):target {
+            background: #27ae60;
+        }
+
+        main>div:nth-of-type(2):target {
+            background: #e67e22;
+        }
+
+        main>div:nth-of-type(3):target {
+            background: #2980b9;
+        }
+
+        nav {
+            height: 8vh;
+            background: #34495e;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: white;
+            opacity: .8;
+            text-transform: uppercase;
+            flex: 1;
+            text-align: center;
+        }
+
+        nav a:nth-child(2) {
+            border-right: solid 1px silver;
+            border-left: solid 1px silver;
+        }
+
+        i[class^="iconfont"] {
+            font-size: 8em;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="home">
+            <i class="iconfont iconyonghu"></i>
+        </div>
+        <div id="video">
+            <i class="iconfont iconshouji"></i>
+        </div>
+        <div id="live">
+            <i class="iconfont iconphone"></i>
+        </div>
+    </main>
+    <nav>
+        <a href="#home">home</a>
+        <a href="#video">video</a>
+        <a href="#live">live</a>
+    </nav>
+</body>
+
+</html>
