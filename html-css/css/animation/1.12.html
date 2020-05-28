@@ -1,0 +1,86 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-28 12:54:51
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-28 12:58:27
+ * @FilePath     : \Code\html-css\css\animation\1.12.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D旋转</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            /* 弹性居中 */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* margin-left: -200px;
+            margin-top: -200px; */
+            /* 动画居中 */
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border: solid 5px silver;
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateY(-45deg);
+            /* transform: perspective(900px) rotateX(-45deg); */
+        }
+
+        div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            transition: 1s;
+
+        }
+
+        div:nth-child(1) {
+            background: #1e90ff;
+        }
+
+        div:hover {
+            /* 
+            rotateY/rotateX/rotateZ
+            按X轴/Y轴/Z轴旋转
+            rotate
+            2D旋转（与Z轴旋转效果一致）
+             */
+            /* transform: perspective(900px) rotateY(90deg); */
+            /* transform: perspective(900px) rotateX(90deg); */
+            transform: perspective(900px) rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+
+
+</html>

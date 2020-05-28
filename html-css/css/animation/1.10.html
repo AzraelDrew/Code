@@ -1,0 +1,85 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-28 11:04:41
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-28 11:23:20
+ * @FilePath     : \Code\html-css\css\animation\1.10.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图集案例</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #57606f;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+        /* 每个图片单独缩放 */
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        overflow: hidden;
+        border: solid 2px #747d8c;
+        transition: 1s;
+
+    }
+
+    div>img {
+        height: 100%;
+        /* 每个图片单独缩放 */
+        /* transition: 1s; */
+    }
+
+    /* 所有图片以前缩放 */
+    main:hover div {
+        /* 模糊 */
+        filter: blur(25px);
+        transform: scale(.6);
+    }
+
+    main:hover div:hover {
+        transform: scale(1.6);
+        filter: none;
+    }
+
+    /* 每个图片单独缩放 */
+    /* 
+    main div img:hover {
+        transform: scale(.6);
+    } */
+</style>
+
+<body>
+    <main>
+        <div><img src="images/5.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
+        <div><img src="images/2.jpg" alt=""></div>
+    </main>
+</body>
+
+</html>
