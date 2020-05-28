@@ -2,8 +2,8 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:17
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-28 21:52:13
- * @FilePath     : \Code\html-css\css\transform\20.html
+ * @LastEditTime : 2020-05-28 21:37:19
+ * @FilePath     : \Code\html-css\css\transform\16.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>倾斜语法</title>
+    <title>参数叠加与顺序对变形结果的影响</title>
     <style>
         * {
             padding: 0;
@@ -28,6 +28,8 @@
             width: 400px;
             height: 400px;
             border: solid 5px silver;
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateY(-45deg);
         }
 
         div {
@@ -38,28 +40,32 @@
             margin-top: -100px;
             width: 200px;
             height: 200px;
+            transition: 1s;
+            /* transform: translate(100%, 100%); */
+            /* 那个轴先旋转的顺序不一样得到结果也会不一样 */
+            transform: rotateX(45deg) rotateY(45deg);
         }
 
         div:nth-child(1) {
-            background: #2ecc71;
-        }
-
-        div:nth-child(2) {
             background: #e67e22;
-            transition: 1s;
         }
 
-        main:hover div:nth-child(2) {
-            /* transform: skewX(45deg); */
-            /* transform: skewY(45deg); */
-            transform: skew(-45deg, 45deg);
+        main:hover div:nth-of-type(1) {
+            /* 
+            如果一个元素有两个transform属性，
+            后面的属性不会在原来的基础上进行添加而是覆盖
+            需要写在一个ransform属性中
+             */
+            /* transform: perspective(900px)  rotateX(45deg) ; */
+            /* transform: perspective(900px) translate(100%, 100%) rotateX(45deg); */
+            transform: perspective(900px);
         }
     </style>
 </head>
 
 <body>
+    <h2>houdunren</h2>
     <main>
-        <div></div>
         <div></div>
     </main>
 </body>

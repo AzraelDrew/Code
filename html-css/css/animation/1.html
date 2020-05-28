@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:17
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-27 19:45:17
+ * @LastEditTime : 2020-05-28 21:21:48
  * @FilePath     : \Code\html-css\css\animation\1.html
 -->
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X/Y轴移动</title>
     <style>
-        /* * {
+        * {
             padding: 0;
             margin: 0;
         }
@@ -52,61 +52,6 @@
             100% {
                 background: #e74c3c;
             }
-        } */
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        main {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -200px;
-            margin-top: -200px;
-            width: 400px;
-            height: 400px;
-            border: solid 5px silver;
-        }
-
-        div {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -100px;
-            margin-top: -100px;
-            width: 200px;
-            height: 200px;
-
-        }
-
-        div:nth-child(1) {
-            background: #2ecc71;
-        }
-
-        div:nth-child(2) {
-            background: #e67e22;
-            /* 变化持续时间 */
-            transition: 1s;
-        }
-
-        main:hover div:nth-child(2) {
-            /* 
-            translateX/translateY
-            参数可以是像素、百分比、em等
-            注意：百分比是自身的百分比
-            */
-            /* transform: translateX(200px); */
-            /* transform: translateX(100%); */
-            /* transform: translateX(10em); */
-            /* transform: translateY(200px); */
-            /* transform: translateY(100%); */
-            /* transform: translateY(10em); */
-            /* 二维移动 */
-            /* transform: translateX(100px) translateY(100px); */
-            /* 二位简写属性 */
-            transform: translate(100px, -100px);
         }
     </style>
 </head>

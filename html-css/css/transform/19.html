@@ -1,11 +1,69 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-28 22:18:13
+ * @FilePath     : \Code\html-css\css\transform\19.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>houdunren</title>
+    <title>倾斜案例</title>
     <style>
+        /* 立体盒子 */
+        /* * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2c3e50;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            color: #ecf0f1;
+            text-decoration: none;
+            width: 200px;
+            height: 40px;
+            background: #e74c3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform: skewX(25deg) rotate(-15deg);
+            letter-spacing: .5em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn::before {
+            content: '';
+            width: 10px;
+            height: 100%;
+            left: -10px;
+            background: #000;
+            position: absolute;
+            transform: skewY(-45deg) translate(0, 5px);
+        }
+
+        .btn::after {
+            content: '';
+            width: 100%;
+            height: 10px;
+            bottom: -10px;
+            background: #000;
+            position: absolute;
+            transform: skewX(-45deg) translate(-5px, 0);
+        } */
         * {
             padding: 0;
             margin: 0;
@@ -13,53 +71,55 @@
         }
 
         body {
-            width: 100vw;
             height: 100vh;
+            width: 100vw;
+            background: #2c3e50;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #2c3e50;
         }
 
-        main div {
-            cursor: pointer;
-            color: #ecf0f1;
-            font-size: 2em;
+        main {
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        main>div>strong {
-            display: inline-block;
+        main a {
+            color: #8e44ad;
+            font-size: 1.5em;
+            text-decoration: none;
+            border: solid 3px #e74c3c;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: "";
+            width: 0;
+            position: absolute;
+            transform: skew(45deg);
+            height: 100%;
+            background: #e74c3c;
+            z-index: -1;
             transition: 1s;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            text-align: center;
         }
 
-        main div>strong:nth-of-type(1) {
-            background: #f1c40f;
-        }
-
-        main div>strong:nth-of-type(2) {
-            background: #1abc9c;
-        }
-
-        main div:hover>strong:nth-of-type(1) {
-            transform: rotate(360deg);
-        }
-
-        main div:hover>strong:nth-of-type(2) {
-            transform: rotate(-360deg);
-
+        .btn:hover::after {
+            width: 300px;
         }
     </style>
 </head>
 
 <body>
     <main>
-        <div>
-            <strong>h</strong>ou<strong>d</strong>unren
-        </div>
+        <a href="" class="btn"> houdunren</a>
     </main>
 </body>
 
