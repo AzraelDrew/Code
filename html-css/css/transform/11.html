@@ -1,69 +1,94 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-28 10:33:40
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-28 11:03:51
+ * @FilePath     : \Code\html-css\css\animation\1.9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 100vw;
-            height: 100vh;
-        }
-
-        main {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
-            border: solid 5px silver;
-            transform-style: preserve-3d;
-            transform: perspective(900px) rotateY(45deg);
-            transition: 2s;
-        }
-
-        div {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -100px;
-            margin-top: -100px;
-            width: 200px;
-            height: 200px;
-        }
-
-        div:nth-child(1) {
-            background: #2ecc71;
-        }
-
-        div:nth-child(2) {
-            background: #e67e22;
-            transition: 1s;
-            transform: translateZ(-300px);
-        }
-
-        main:hover div:nth-child(2) {
-            transform: translateZ(-300px);
-        }
-
-        body:hover main {
-            transform: perspective(900px) rotateY(45deg) scale3d(2, 2, 6);
-        }
-    </style>
+    <title>缩放菜单</title>
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    ul li strong {
+        padding: 5px 30px;
+
+        background: #2980b9;
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+    }
+
+    ul li {
+        margin-right: 10px;
+    }
+
+    ul li strong+div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #95a5a6;
+        padding: 10px;
+        transition: .6s;
+        transform: scale(0);
+        z-index: -1;
+        /* 控制缩放基点 */
+        transform-origin: left top;
+    }
+
+    ul li strong+div a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+
+    ul li:hover strong+div {
+        transform: scale(1);
+    }
+</style>
 
 <body>
     <main>
-        <div></div>
-        <div></div>
+        <ul>
+            <li>
+                <strong>video</strong>
+                <div>
+                    <a href="">HDCMS</a>
+                    <a href="">PHP</a>
+                </div>
+            </li>
+            <li>
+                <strong>live</strong>
+                <div>
+                    <a href="">LINUX</a>
+                    <a href="">CSS3</a>
+                </div>
+            </li>
+        </ul>
     </main>
 </body>
 

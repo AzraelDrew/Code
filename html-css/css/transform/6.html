@@ -1,10 +1,18 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-27 21:00:13
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-27 21:14:35
+ * @FilePath     : \Code\html-css\css\animation\1.4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>表单案例</title>
+    </title>
     <style>
         * {
             padding: 0;
@@ -13,18 +21,17 @@
         }
 
         body {
-            width: 100vw;
-            height: 100vh;
             background: #34495e;
         }
 
-        main {
+        body main {
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            margin-left: -200px;
+            margin-top: -200px;
+            width: 400px;
+            height: 400px;
             border: solid 5px silver;
             display: flex;
             flex-direction: column;
@@ -39,7 +46,7 @@
         }
 
         .field::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             height: 2px;
@@ -65,13 +72,10 @@
 
 <body>
     <main>
-        <div class="field">
-            <input type="text" placeholder="请输入后盾人帐号">
-        </div>
-        <div class="field">
-            <input type="text" placeholder="请输入密码">
-        </div>
+        <div class="field"><input type="text" placeholder="请输入账号" value=""></div>
+        <div class="field"><input type="password" placeholder="请输入密码" value=""></div>
     </main>
 </body>
+
 
 </html>

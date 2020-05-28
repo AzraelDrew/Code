@@ -1,10 +1,18 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-27 20:50:51
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-27 21:00:03
+ * @FilePath     : \Code\html-css\css\animation\1.2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>Z轴</title>
+    </title>
     <style>
         * {
             padding: 0;
@@ -12,24 +20,14 @@
             box-sizing: border-box;
         }
 
-        body {
-            width: 100vw;
-            height: 100vh;
-            background: #34495e;
-            /* display: flex;
-            justify-content: center;
-            align-items: center; */
-        }
-
         main {
             position: absolute;
             left: 50%;
             top: 50%;
-            /* margin-left: -230px;
-            margin-top: -230px; */
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            margin-left: -200px;
+            margin-top: -200px;
+            width: 400px;
+            height: 400px;
             border: solid 5px silver;
         }
 
@@ -42,20 +40,23 @@
             width: 200px;
             height: 200px;
             transition: 1s;
+            transform: perspective(900px) rotateY(45deg);
         }
 
         div:nth-child(1) {
             background: #2ecc71;
-            transform: perspective(900px) rotateY(45deg);
         }
 
         div:nth-child(2) {
             background: #e67e22;
-            transform: perspective(900px) rotateY(45deg) translateZ(0px);
+            transform: perspective(900px) rotateY(45deg) translateZ(0);
         }
 
         main:hover div:nth-child(2) {
-            transform: perspective(900px) rotateY(45deg) translateZ(-900px);
+            /* translateZ不能是百分比 */
+            transform: perspective(900px) rotateY(45deg) translateZ(300px);
+
+        }
     </style>
 </head>
 
@@ -65,5 +66,6 @@
         <div></div>
     </main>
 </body>
+
 
 </html>

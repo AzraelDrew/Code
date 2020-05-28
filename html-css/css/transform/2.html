@@ -1,10 +1,18 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-27 19:46:33
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-28 21:06:29
+ * @FilePath     : \Code\html-css\css\transform\1.1.html
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>居中</title>
     <style>
         * {
             padding: 0;
@@ -12,12 +20,24 @@
             box-sizing: border-box;
         }
 
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            /* 弹性居中 */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
         main {
             position: absolute;
             left: 50%;
             top: 50%;
-            margin-left: -200px;
-            margin-top: -200px;
+            /* margin-left: -200px;
+            margin-top: -200px; */
+            /* 动画居中 */
+            transform: translate(-50%, -50%);
             width: 400px;
             height: 400px;
             border: solid 5px silver;
@@ -31,6 +51,7 @@
             margin-top: -100px;
             width: 200px;
             height: 200px;
+
         }
 
         div:nth-child(1) {
@@ -39,12 +60,26 @@
 
         div:nth-child(2) {
             background: #e67e22;
+            /* 变化持续时间 */
             transition: 1s;
         }
 
         main:hover div:nth-child(2) {
-            /* transform: translateX(100%) translateY(100px); */
-            transform: translate(-100%, -100px);
+            /* 
+            translateX/translateY
+            参数可以是像素、百分比、em等
+            注意：百分比是自身的百分比
+            */
+            /* transform: translateX(200px); */
+            /* transform: translateX(100%); */
+            /* transform: translateX(10em); */
+            /* transform: translateY(200px); */
+            /* transform: translateY(100%); */
+            /* transform: translateY(10em); */
+            /* 二维移动 */
+            /* transform: translateX(100px) translateY(100px); */
+            /* 二维简写属性 */
+            transform: translate(100px, -100px);
         }
     </style>
 </head>
@@ -55,5 +90,6 @@
         <div></div>
     </main>
 </body>
+
 
 </html>
