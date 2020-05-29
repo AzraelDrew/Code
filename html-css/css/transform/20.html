@@ -2,8 +2,8 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:17
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-29 20:29:53
- * @FilePath     : \Code\html-css\css\transform\18.html
+ * @LastEditTime : 2020-05-29 22:28:42
+ * @FilePath     : \Code\html-css\css\transform\20.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>倾斜语法</title>
+    <title>2D参考点</title>
     <style>
         * {
             padding: 0;
@@ -38,6 +38,7 @@
             margin-top: -100px;
             width: 200px;
             height: 200px;
+            transform-origin: right bottom;
         }
 
         div:nth-child(1) {
@@ -50,9 +51,7 @@
         }
 
         main:hover div:nth-child(2) {
-            /* transform: skewX(-45deg); */
-            /* transform: skewY(85deg); */
-            transform: skew(-45deg, 45deg);
+            transform: skewY(45deg);
         }
     </style>
 </head>

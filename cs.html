@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-18 23:09:58
- * @LastEditTime : 2020-05-27 20:29:34
+ * @LastEditTime : 2020-05-29 21:46:16
  * @LastEditors  : yznaisy
  * @Description: In User Settings Edit
  * @FilePath     : \Code\cs.html
@@ -15,14 +15,30 @@
     <!-- <link rel="stylesheet" href="cs.css"> -->
     <title>Document</title>
     <style>
-        div {
-            width: 100px;
-            height: 100px;
-            background: coral;
+        article {
+            width: 500px;
+            height: 500px;
+            background: #7f8c8d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: -1;
         }
 
-        div.red {
-            background: red;
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: #2980b9;
+            position: absolute;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: #e67e22;
+            position: absolute;
+            left: 50%;
         }
     </style>
 </head>
@@ -30,9 +46,8 @@
 <body>
 
     <article>
-        <div class="red"></div>
-        <div></div>
-        <div></div>
+        <div id="div1"></div>
+        <div id="div2"></div>
     </article>
 </body>
 <script>
