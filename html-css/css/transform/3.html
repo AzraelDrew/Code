@@ -1,17 +1,18 @@
 <!--
  * @Author       : yznaisy
- * @Date         : 2020-05-12 13:57:17
+ * @Date         : 2020-05-27 19:46:33
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-28 21:11:10
- * @FilePath     : \Code\html-css\css\transform\1.html
+ * @LastEditTime : 2020-05-28 21:06:29
+ * @FilePath     : \Code\html-css\css\transform\1.1.html
 -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X/Y轴</title>
+    <title>居中</title>
     <style>
         * {
             padding: 0;
@@ -19,12 +20,24 @@
             box-sizing: border-box;
         }
 
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            /* 弹性居中 */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
         main {
             position: absolute;
             left: 50%;
             top: 50%;
-            margin-left: -200px;
-            margin-top: -200px;
+            /* margin-left: -200px;
+            margin-top: -200px; */
+            /* 动画居中 */
+            transform: translate(-50%, -50%);
             width: 400px;
             height: 400px;
             border: solid 5px silver;
@@ -65,7 +78,7 @@
             /* transform: translateY(10em); */
             /* 二维移动 */
             /* transform: translateX(100px) translateY(100px); */
-            /* 二位简写属性 */
+            /* 二维简写属性 */
             transform: translate(100px, -100px);
         }
     </style>
@@ -77,5 +90,6 @@
         <div></div>
     </main>
 </body>
+
 
 </html>
