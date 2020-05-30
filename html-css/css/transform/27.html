@@ -1,3 +1,11 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-30 14:55:38
+ * @FilePath     : \Code\html-css\css\transform\27.html
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>后盾人</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1772247_vdlz48v6etf.css">
+    <title>优化旋转菜单</title>
     <style>
         * {
             padding: 0;
@@ -14,85 +23,216 @@
         }
 
         body {
-            background: #2c3e50;
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
-            height: 100vh;
         }
 
-        ul {
-            width: 300px;
-            height: 300px;
-            background: #000;
-        }
-
-        li {
-            width: 80px;
-            height: 80px;
-            background: #e74c3c;
+        nav {
+            /* 定位方法 */
+            /* width: 200px;
+            height: 200px;
+            background: #8e44ad;
+            border: solid 1px #fff;
+            position: relative; */
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* flex方法 */
+        nav::before {
+            content: "";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #8e44ad;
+            border: solid 1px #fff;
+            position: absolute;
+
+        }
+
+        nav::after {
+            content: "yznaisy";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #8e44ad;
+            border: solid 1px #fff;
             position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 3em;
+            font-size: 2em;
             color: white;
+        }
+
+        ul {
+            transform: scale(0);
             transition: 1s;
+            width: 300px;
+            height: 300px;
+            /* border: solid 1px #fff; */
+            /* 定位方法 */
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); */
+        }
+
+        nav:hover ul {
+            transform: scale(1);
+
+        }
+
+        ul li {
+            width: 80px;
+            height: 80px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            /* font-size: 1em; */
+            color: white;
+            transition: 2s;
             transform-origin: 150px 150px;
         }
 
-        ul:hover li:nth-child(1) {
+        nav li span {
+            transition: 2s;
+        }
+
+        nav:hover li:nth-child(1) {
             transform: rotate(40deg);
         }
 
-        ul:hover li:nth-child(2) {
-            transform: rotate(80deg);
-        }
-
-        ul:hover li:nth-child(3) {
-            transform: rotate(120deg);
-        }
-
-        ul:hover li:nth-child(4) {
-            transform: rotate(160deg);
-        }
-
-        ul:hover li:nth-child(5) {
-            transform: rotate(200deg);
-        }
-
-        ul:hover li:nth-child(6) {
-            transform: rotate(240deg);
-        }
-
-        ul:hover li:nth-child(7) {
-            transform: rotate(280deg);
-        }
-
-        ul:hover li:nth-child(8) {
+        nav:hover li:nth-child(1) span {
             transform: rotate(320deg);
         }
 
-        ul:hover li:nth-child(9) {
+        nav:hover li:nth-child(2) {
+            transform: rotate(80deg);
+        }
+
+        nav:hover li:nth-child(2) span {
+            transform: rotate(640deg);
+        }
+
+        nav:hover li:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        nav:hover li:nth-child(3) span {
+            transform: rotate(960deg);
+        }
+
+        nav:hover li:nth-child(4) {
+            transform: rotate(160deg);
+        }
+
+        nav:hover li:nth-child(4) span {
+            transform: rotate(1280deg);
+        }
+
+        nav:hover li:nth-child(5) {
+            transform: rotate(200deg);
+        }
+
+        nav:hover li:nth-child(5) span {
+            transform: rotate(1600deg);
+        }
+
+        nav:hover li:nth-child(6) {
+            transform: rotate(240deg);
+        }
+
+        nav:hover li:nth-child(6) span {
+            transform: rotate(1920deg);
+        }
+
+        nav:hover li:nth-child(7) {
+            transform: rotate(280deg);
+        }
+
+        nav:hover li:nth-child(7) span {
+            transform: rotate(2240deg);
+        }
+
+        nav:hover li:nth-child(8) {
+            transform: rotate(320deg);
+        }
+
+        nav:hover li:nth-child(8) span {
+            transform: rotate(2560deg);
+        }
+
+        nav:hover li:nth-child(9) {
             transform: rotate(360deg);
+        }
+
+        nav:hover li:nth-child(9) span {
+            transform: rotate(3240deg);
         }
     </style>
 </head>
 
 <body>
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-    </ul>
+    <nav>
+        <ul>
+            <li>
+                <span>
+                    <i class="iconfont iconshouji"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconmimasuo"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconyonghu"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconbluetoothoff"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconbluetoothon"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconsave"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconphone"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconvideo"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="iconfont iconicon-test6"></i>
+                </span>
+            </li>
+        </ul>
+    </nav>
 </body>
 
 </html>

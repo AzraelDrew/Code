@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-30 13:41:12
+ * @FilePath     : \Code\html-css\css\transform\26.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,176 +12,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>houdunren.com</title>
+    <title>旋转菜单</title>
     <style>
         * {
             padding: 0;
             margin: 0;
+            list-style: none;
         }
 
         body {
-            background: #2c3e50;
             width: 100vw;
             height: 100vh;
+            background: #34495e;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        main {
-            width: 400px;
-            height: 400px;
+        nav {
+            /* flex方法 */
+            /* width: 400px;
+            height: 400px; */
+            /* 定位方法 */
+            /* width: 200px;
+            height: 200px;
+            background: #8e44ad;
+            border: solid 1px #fff;
+            position: relative; */
             border-radius: 50%;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
 
-        .clock {
-            width: 400px;
-            height: 400px;
+        /* flex方法 */
+        nav::before {
+            content: "";
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: linear-gradient(to right, #f1c40f, #e67e22, #e74c3c);
-            position: relative;
-            z-index: -2;
-        }
-
-        .clock::after {
-            content: '';
+            background: #8e44ad;
+            border: solid 1px #fff;
             position: absolute;
-            width: 90%;
-            height: 90%;
+
+        }
+
+        nav::after {
+            content: "yznaisy";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #8e44ad;
+            border: solid 1px #fff;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        ul {
+            width: 300px;
+            height: 300px;
+            /* border: solid 1px #fff; */
+            /* 定位方法 */
+            /* position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); */
+        }
+
+        ul li {
+            width: 80px;
+            height: 80px;
+            background: #e74c3c;
             border-radius: 50%;
-            background: #2c3e50;
-            z-index: -1;
-        }
-
-        .line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: absolute;
-            width: 80%;
-            height: 80%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            /* background: #000; */
+            font-size: 2em;
+            color: white;
+            transition: 2s;
+            transform-origin: 150px 150px;
         }
 
-        .line::before {
-            content: '';
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 90%;
-            position: absolute;
-            background: #2c3e50;
-            border-radius: 50%;
-            z-index: 2;
+        nav:hover li:nth-child(1) {
+            transform: rotate(40deg);
         }
 
-        .line::after {
-            content: '';
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            z-index: 2;
+        nav:hover li:nth-child(2) {
+            transform: rotate(80deg);
         }
 
-        .line>div {
-            width: 8px;
-            background: #fff;
-            height: 100%;
-            position: absolute;
-            left: 50%;
+        nav:hover li:nth-child(3) {
+            transform: rotate(120deg);
         }
 
-        .line>div:nth-of-type(1) {
-            transform: translateX(-50%) rotate(0deg);
+        nav:hover li:nth-child(4) {
+            transform: rotate(160deg);
         }
 
-        .line>div:nth-of-type(2) {
-            transform: translateX(-50%) rotate(30deg);
+        nav:hover li:nth-child(5) {
+            transform: rotate(200deg);
         }
 
-        .line>div:nth-of-type(3) {
-            transform: translateX(-50%) rotate(60deg);
+        nav:hover li:nth-child(6) {
+            transform: rotate(240deg);
         }
 
-        .line>div:nth-of-type(4) {
-            transform: translateX(-50%) rotate(90deg);
+        nav:hover li:nth-child(7) {
+            transform: rotate(280deg);
         }
 
-        .line>div:nth-of-type(5) {
-            transform: translateX(-50%) rotate(120deg);
+        nav:hover li:nth-child(8) {
+            transform: rotate(320deg);
         }
 
-        .line>div:nth-of-type(6) {
-            transform: translateX(-50%) rotate(150deg);
-        }
-
-        .hour {
-            width: 8px;
-            background: #fff;
-            height: 15%;
-            bottom: 50%;
-            transform: translateX(-50%);
-            position: absolute;
-            transform-origin: bottom;
-            left: 50%;
-        }
-
-        .minute {
-            width: 5px;
-            background: #fff;
-            height: 25%;
-            bottom: 50%;
-            position: absolute;
-            left: 50%;
-            transform-origin: bottom;
-            transform: translateX(-50%) rotate(60deg);
-        }
-
-        .second {
-            width: 1px;
-            background: #fff;
-            height: 35%;
-            bottom: 50%;
-            transform: translateX(-50%) rotate(90deg);
-            position: absolute;
-            transform-origin: bottom;
-            left: 50%;
-            transition: 10s;
-        }
-
-        main:hover .second {
-            transform: translateX(-50%) rotate(360deg);
+        nav:hover li:nth-child(9) {
+            transform: rotate(360deg);
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <div class="clock">
-            <div class="line">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="hour"></div>
-            <div class="minute"></div>
-            <div class="second"></div>
-        </div>
-    </main>
+    <nav>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+    </nav>
 </body>
 
 </html>

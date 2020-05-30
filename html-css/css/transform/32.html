@@ -1,12 +1,19 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-30 21:04:20
+ * @FilePath     : \Code\html-css\css\transform\32.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>3D立方体</title>
     <style>
-        body {
+        /* body {
             width: 100vw;
             height: 100vh;
             background: #2c3e50;
@@ -17,31 +24,224 @@
 
         main {
             display: flex;
-            border: solid 5px silver;
-            width: 400px;
-            height: 300px;
-            /* transform-style: preserve-3d; */
-            transform: perspective(900px) rotateY(45deg);
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+            transition: 2s;
+            transform-origin: center center 100px;
+        }
+
+        body:hover main {
+            transform: perspective(900px) rotateY(340deg);
         }
 
         div {
-            position: absolute;
             width: 200px;
             height: 200px;
-            background: #f1c40f;
+            position: absolute;
+            background: #27ae60;
+            font-size: 4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center 100px;
+            opacity: .8;
+        }
+
+        div:nth-child(1) {
+            background: #e67e22;
+            transform: rotateY(90deg);
         }
 
         div:nth-child(2) {
-            background: #2ecc71;
-            transform: translateZ(-500px);
+            background: #2980b9;
+            transform: rotateY(180deg);
+        }
+
+        div:nth-child(3) {
+            background: #e74c3c;
+            transform: rotateY(270deg);
+        }
+
+        div:nth-child(4) {
+            background: #8e44ad;
+            transform: rotateY(360deg);
+        }
+
+        div:nth-child(5) {
+            background: #e67e22;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        div:nth-child(6) {
+            background: #e67e22;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        } */
+        /* 正方体 */
+        /* body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+            transition: 1s;
+            transform-origin: center center -100px;
+
+        }
+
+        main:hover {
+            transform: perspective(900px) rotateY(180deg);
+        }
+
+        main>div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: #27ae60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;
+            color: white;
+            transform-origin: center center -100px;
+            opacity: .8;
+        }
+
+        div:nth-child(1) {
+            background: #3498db;
+            transform: rotateY(360deg);
+        }
+
+        div:nth-child(2) {
+            background: #e74c3c;
+            transform: rotateY(90deg);
+        }
+
+        div:nth-child(3) {
+            background: #16a085;
+            transform: rotateY(180deg);
+        }
+
+        div:nth-child(4) {
+            background: #95a5a6;
+            transform: rotateY(270deg);
+        }
+
+        div:nth-child(5) {
+            background: #9b59b6;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+
+        div:nth-child(6) {
+            background: #f39c12;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        } */
+        /* 长方体 */
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+            transition: 1s;
+            transform-origin: center center -100px;
+        }
+
+        main:hover {
+            transform: perspective(900px) rotateY(180deg);
+        }
+
+        main>div {
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            background: #27ae60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;
+            color: white;
+            transform-origin: center center -100px;
+            opacity: .8;
+        }
+
+        div:nth-child(1) {
+            background: #3498db;
+            transform: rotateY(360deg);
+        }
+
+        div:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            transform-origin: center center -200px;
+            background: #e74c3c;
+            transform: rotateY(90deg) translateX(-100px);
+        }
+
+        div:nth-child(3) {
+            background: #16a085;
+            transform: rotateY(180deg);
+        }
+
+        div:nth-child(4) {
+            width: 200px;
+            height: 200px;
+            background: #95a5a6;
+            transform: rotateY(270deg) translateX(100px);
+            transform-origin: center center -200px;
+
+        }
+
+        div:nth-child(5) {
+            background: #9b59b6;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+
+        div:nth-child(6) {
+            background: #f39c12;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
         }
     </style>
 </head>
 
 <body>
     <main>
-        <div></div>
-        <div></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+
     </main>
 </body>
 
