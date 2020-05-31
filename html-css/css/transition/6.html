@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-31 14:22:12
+ * @FilePath     : \Code\html-css\css\transition\6.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>transition-duration过渡时间/运行轨迹</title>
     <style>
         * {
             padding: 0;
@@ -29,12 +36,32 @@
             width: 200px;
             height: 200px;
             background: #9b59b6;
-            transition-timing-function: linear;
-            transition-duration: 3s;
+            /* 
+            
+            transition-timing-function
+            linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+            ease	开始慢，然后快，慢下来，结束时非常慢（cubic-bezier(0.25,0.1,0.25,1)）
+            ease-in	开始慢，结束快（等于 cubic-bezier(0.42,0,1,1)）
+            ease-out	开始快，结束慢（等于 cubic-bezier(0,0,0.58,1)）
+            ease-in-out	中间快，两边慢（等于 cubic-bezier(0.42,0,0.58,1)）
+            cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值 */
+            transition-timing-function: cubic-bezier(.97, .21, .29, .81);
+            /* 可使用单位为 ms毫秒、s秒
+            默认值为0s不产生过渡效果
+            一个值时，所有属性使用同样的时间
+            二个值时，奇数属性使用第一个，偶数属性使用第二个
+            变化属性数量大于时间数量时，后面的属性再从第一个时间开始重复使用 */
+            /* transition-property: background, width, height, border-radius;
+            transition-duration: 3s, 3s, .5s; */
+            transition-duration: 2s;
             border: solid 20px white;
         }
 
+        /* 
+hover状态时会使用hover的过渡时间，其他状态会继承父元素的过渡时间
+ */
         div:hover {
+            /* transition-duration: 3s; */
             background: #e74c3c;
             border-radius: 50%;
             width: 400px;

@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-31 15:04:47
+ * @FilePath     : \Code\html-css\css\transition\7.3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,15 +34,15 @@
         }
 
         section {
-            width: 800px;
+            width: 1200px;
             height: 200px;
             display: flex;
-            transition-duration: 1s;
-            transition-timing-function: step-start;
+            transition-duration: 2s;
+            transition-timing-function: steps(2, start);
         }
 
         main:hover section {
-            transform: translateX(-400px);
+            transform: translateX(-800px);
         }
 
         div {
@@ -58,6 +65,7 @@
     <main>
         <section>
             <div><img src="1.jpg" alt=""></div>
+            <div><img src="5.jpg" alt=""></div>
             <div>
                 <h2>houdunren.com</h2>
             </div>

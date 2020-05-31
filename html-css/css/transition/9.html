@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-31 15:17:20
+ * @FilePath     : \Code\html-css\css\transition\9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>transition简写属性</title>
     <style>
         * {
             padding: 0;
@@ -34,6 +41,15 @@
             transition-duration: 2s;
             transition-timing-function: linear; */
             /* transition: all linear 2s 1s; */
+            /* 
+            第一个参数表示需要过渡的属性
+            第二个参数表示贝塞尔曲线
+            第三个参数表示过渡时间
+            第四个参数表示延迟时间
+            注意：
+                必须设置过渡时间
+                延迟时间放在逗号或结束前
+             */
             transition: border-radius linear 2s 0s,
                 background 2s 2s,
                 width linear 2s 4s,

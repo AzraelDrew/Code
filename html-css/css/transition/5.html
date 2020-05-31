@@ -1,12 +1,19 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-05-31 13:59:51
+ * @FilePath     : \Code\html-css\css\transition\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>transitionAPI接口</title>
     <style>
-        * {
+        /* * {
             padding: 0;
             margin: 0;
         }
@@ -64,6 +71,68 @@
 
         div.move::after {
             transform: translateX(0px) skew(0deg);
+        } */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            widows: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+
+        }
+
+        div::before {
+            content: "后盾人";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            font-size: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #95a5a6;
+            transition-duration: 1s;
+        }
+
+        div:hover::before {
+            transform: rotate(360deg);
+        }
+
+        div::after {
+            content: "yznaisy";
+            position: absolute;
+            bottom: 60px;
+            font-size: 2em;
+            width: 200px;
+            text-align: center;
+            transform: translateX(-1000px) skewX(45deg);
+            transition-duration: 2s;
+        }
+
+        div.move::after {
+            transform: translateX(0px) skewX(0deg);
         }
     </style>
 </head>
