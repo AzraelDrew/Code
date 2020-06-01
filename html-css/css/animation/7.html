@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>多动画控制移端引导背景页</title>
     <style>
         * {
             padding: 0;
@@ -22,6 +22,10 @@
             transform: scale(0);
             animation-name: scale, background, radius;
             animation-duration: 2s, 4s, 1s;
+            /*  
+            animation-fill-mode: forwards;
+            停在最后一帧，不会回到初始状态
+            */
             animation-fill-mode: forwards;
             display: flex;
             justify-content: center;

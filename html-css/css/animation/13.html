@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>animation-direction控制动画方向</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
@@ -23,8 +23,8 @@
 
         ul {
             list-style: none;
-            width: 500px;
-            height: 120px;
+            width: 1000px;
+            height: 150px;
             display: flex;
         }
 
@@ -45,6 +45,13 @@
             position: absolute;
         }
 
+        /* 
+            animation-direction
+            normal	从0%到100%运行动画
+            reverse	从100%到0%运行动画
+            alternate	先从0%到100%，然后从100%到0%
+            alternate-reverse	先从100%到0%，然后从0%到100%
+             */
         li:nth-child(1)>i {
             animation-direction: normal;
         }

@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 16:27:40
+ * @FilePath     : \Code\html-css\css\animation\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>跳动的心</title>
     <style>
         * {
             padding: 0;
@@ -28,23 +35,23 @@
         }
 
         .heart::before {
-            content: '';
+            content: "";
             width: 200px;
             height: 200px;
             border-radius: 50%;
             position: absolute;
-            background: #e74c3c;
             transform: translateX(-100px);
+            background: #e74c3c;
         }
 
         .heart::after {
-            content: '';
+            content: "";
             width: 200px;
             height: 200px;
             border-radius: 50%;
             position: absolute;
+            transform: translateY(-50%);
             background: #e74c3c;
-            transform: translateY(-100px);
         }
     </style>
 </head>

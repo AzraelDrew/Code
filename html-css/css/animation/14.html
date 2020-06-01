@@ -1,13 +1,20 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 21:52:10
+ * @FilePath     : \Code\html-css\css\animation\14.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>跳动小球</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        * {
+        /* * {
             padding: 0;
             margin: 0;
         }
@@ -60,6 +67,64 @@
             to {
                 transform: translateY(-300px);
             }
+        } */
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(at center, #e67e22, #e74c3c);
+            border-radius: 50%;
+            animation-name: ball;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        section {
+            width: 400px;
+            height: 40px;
+            background: rgb(0, 0, 0, 0.3);
+            position: absolute;
+            transform: translateY(100px);
+            z-index: -1;
+            border-radius: 50%;
+            animation-name: shadow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            filter: blur(5px);
+        }
+
+        @keyframes ball {
+            to {
+                transform: translateY(-300px);
+            }
+
+        }
+
+        @keyframes shadow {
+            to {
+                width: 400px;
+                height: 40px;
+                background: rgb(0, 0, 0, .1);
+                position: absolute;
+                filter: blur(35px);
+            }
+
         }
     </style>
 </head>

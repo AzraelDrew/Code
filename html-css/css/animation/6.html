@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 15:25:15
+ * @FilePath     : \Code\html-css\css\animation\6.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>属性重叠对动画的影响</title>
     <style>
         * {
             padding: 0;
@@ -31,10 +38,15 @@
             height: 100px;
             background: #f1c40f;
             animation-name: translate, background, radius;
-            animation-duration: 4s, 2s, 2s;
+            animation-duration: 4s, 2s, 1s;
 
         }
 
+        /* 
+            当animation-name: translate, background, radius;
+            中的属性有重复时后出现的权重比较高，会优先使用后面的样式，
+            当权重比较高的处理完了相对应的时间，会继续交给权重高的去执行
+        */
         @keyframes translate {
             25% {
                 transform: translateX(300px);
@@ -52,11 +64,12 @@
         @keyframes background {
             25% {
                 background: #2ecc71;
-                /* transform: translateX(300px); */
             }
 
             50% {
                 background: #e67e22;
+                transform: translateX(300px);
+
             }
 
             75% {

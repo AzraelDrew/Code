@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:18
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-31 15:17:20
+ * @LastEditTime : 2020-06-01 14:05:47
  * @FilePath     : \Code\html-css\css\transition\9.html
 -->
 <!DOCTYPE html>
@@ -46,15 +46,15 @@
             第二个参数表示贝塞尔曲线
             第三个参数表示过渡时间
             第四个参数表示延迟时间
+            如果参数的值为负数为直接显示，不会又过渡效果
             注意：
                 必须设置过渡时间
                 延迟时间放在逗号或结束前
              */
             transition: border-radius linear 2s 0s,
                 background 2s 2s,
-                width linear 2s 4s,
-                height linear 2s 4s;
-
+                width linear 2s 2s,
+                height linear 2s -2s;
             border: solid 20px white;
         }
 

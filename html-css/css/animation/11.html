@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 16:43:16
+ * @FilePath     : \Code\html-css\css\animation\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>心动了</title>
     <style>
         * {
             padding: 0;
@@ -47,15 +54,15 @@
                 transform: rotate(45deg) scale(1);
             }
 
-            85% {
+            to {
                 opacity: .5;
                 transform: rotate(45deg) scale(.5);
             }
 
-            to {
+            /* to {
                 opacity: 1;
                 transform: rotate(45deg) scale(1);
-            }
+            } */
         }
 
         .heart::before {
@@ -65,7 +72,7 @@
             border-radius: 50%;
             position: absolute;
             background: #e74c3c;
-            transform: translateX(-100px);
+            transform: translateX(-50%);
         }
 
         .heart::after {
@@ -75,7 +82,7 @@
             border-radius: 50%;
             position: absolute;
             background: #e74c3c;
-            transform: translateY(-100px);
+            transform: translateY(-50%);
         }
     </style>
 </head>

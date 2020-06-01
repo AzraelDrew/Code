@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 14:47:56
+ * @FilePath     : \Code\html-css\css\animation\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>移动小方块</title>
     <style>
         * {
             padding: 0;
@@ -35,6 +42,10 @@
         }
 
         @keyframes hd {
+
+            /* 
+            方块的移动相对于起始位置而不是移动后的位置
+             */
             25% {
                 transform: translateX(300px);
             }

@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:17
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-05-28 21:04:31
+ * @LastEditTime : 2020-06-01 14:37:18
  * @FilePath     : \Code\html-css\css\animation\2.html
 -->
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>0%/100%帧动画</title>
     <style>
         * {
             padding: 0;
@@ -35,9 +35,12 @@
             animation-duration: 2s;
         }
 
+        /* 
+        0%与100%没有设置时系统会自动设置帧，使用当前元素的样式
+        */
         @keyframes hd {
             0% {
-                background: #e74c3c;
+                background: blue;
             }
 
             100% {

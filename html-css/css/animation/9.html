@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 16:15:10
+ * @FilePath     : \Code\html-css\css\animation\9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>animation-iteration-count动画次数</title>
     <style>
         * {
             padding: 0;
@@ -32,7 +39,17 @@
             background: #f1c40f;
             animation-name: translate, background, radius;
             animation-duration: 2s;
-            animation-iteration-count: infinite, 2;
+
+            /* 
+            animation-iteration-count
+            设置动画次数
+            可以分别设置某个动画的属性
+            也可以添加关键字一直循环
+             */
+            /* animation-iteration-count: 2, 1, 1; */
+            /* animation-iteration-count: 2; */
+            animation-iteration-count: infinite;
+
         }
 
         @keyframes translate {
