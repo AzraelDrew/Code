@@ -1,0 +1,80 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-01 09:10:07
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-01 09:16:05
+ * @FilePath     : \Code\html-css\css\transform\1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>target</title>
+</head>
+
+<body>
+    <style>
+        article {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            position: relative;
+            border: solid 5px silver;
+            color: white;
+        }
+
+        article div a {
+            color: white;
+            text-decoration: none;
+        }
+
+        article div,
+        article div aside {
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 5px;
+            border: solid 2px blueviolet;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        article div aside {
+            position: absolute;
+            display: none;
+            width: 100px;
+            height: 100px;
+        }
+
+        aside:target {
+            display: block;
+            transform: translateY(150px);
+            box-shadow: 0 0 10px #ddd;
+        }
+    </style>
+
+    <article>
+        <div>
+            <a href="#hdcms">hdcms</a>
+            <aside id="hdcms">
+                内容管理系统
+            </aside>
+        </div>
+        <div>
+            <a href="#houdunren">houdunren</a>
+            <aside id="houdunren">
+                在线社区
+            </aside>
+        </div>
+    </article>
+
+</body>
+
+</html>
