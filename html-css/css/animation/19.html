@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 09:13:37
+ * @FilePath     : \Code\html-css\css\animation\19.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>小球</title>
     <style>
         * {
             padding: 0;
@@ -17,6 +24,15 @@
             background: #34495e;
             display: grid;
             grid-template: 1fr/repeat(5, 1fr);
+            /* 
+            小球居中
+             */
+            /* justify-items: center; */
+            /* 
+            弹性
+             */
+            display: flex;
+            justify-content: center;
         }
 
         div {
@@ -25,15 +41,29 @@
             width: 50px;
             border-radius: 50%;
             background: #e67e22;
+            /* 
+            小球居中
+             */
             justify-self: center;
             animation-name: move;
-            animation-duration: 4s;
+            animation-duration: 6s;
             animation-iteration-count: infinite;
         }
 
+        /* 
+            move动画
+            0到15为0-90vh
+            15到30为90vh-10vh
+            30到45为10vh-90vh
+            45到60为90vh-30vh
+            60到75为30vh-90vh
+            75到90为90vh-60vh
+            90到100为60vh-90vh
+        */
         @keyframes move {
             0% {
                 transform: translateY(0vh);
+                /* 向下弹越来越快 */
                 transition-timing-function: ease-in;
             }
 
@@ -43,26 +73,21 @@
             }
 
             60% {
-                transform: translateY(40vh);
+                transform: translateY(30vh);
                 transition-timing-function: ease-in;
             }
 
-            80% {
+            90% {
                 transform: translateY(60vh);
-                transition-timing-function: ease-in;
-            }
-
-            95% {
-                transform: translateY(75vh);
                 transition-timing-function: ease-in;
             }
 
             15%,
             45%,
             75%,
-            85%,
             100% {
                 transform: translateY(90vh);
+                /* 向上弹越来越慢 */
                 transition-timing-function: ease-out;
             }
         }

@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 09:18:37
+ * @FilePath     : \Code\html-css\css\animation\20.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>阴影</title>
     <style>
         * {
             padding: 0;
@@ -15,7 +22,7 @@
             width: 100vw;
             height: 100vh;
             display: grid;
-            grid-template: 1fr/1fr/
+            grid-template: 1fr/1fr;
         }
 
         div {
@@ -25,7 +32,8 @@
             align-self: center;
             justify-self: start;
             color: yellowgreen;
-            box-shadow: 55px 55px 0 currentColor;
+            /* currentColor获取当前元素定义文本颜色 */
+            box-shadow: 55px 55px 5px currentColor;
         }
     </style>
 </head>

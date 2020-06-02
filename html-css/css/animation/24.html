@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 10:21:13
+ * @FilePath     : \Code\html-css\css\animation\24.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>播放状态</title>
     <style>
         * {
             padding: 0;
@@ -73,6 +80,12 @@
         }
 
         main:hover div::before {
+            /* 
+            使用 animation-play-state 可以控制动画的暂停与运行。
+            选项	说明
+            paused	暂停
+            running	运行
+             */
             animation-play-state: running;
         }
     </style>

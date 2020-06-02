@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 09:39:59
+ * @FilePath     : \Code\html-css\css\animation\22.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>steps动画</title>
     <style>
         * {
             padding: 0;
@@ -16,11 +23,13 @@
             height: 100vh;
             background: #2c3e50;
             display: grid;
+            justify-items: center;
+            align-items: center;
         }
 
         main {
-            align-self: center;
-            justify-self: center;
+            /* align-self: center;
+            justify-self: center; */
             width: 400px;
             height: 200px;
             display: grid;
@@ -39,29 +48,24 @@
         div:nth-child(5)::before {
             animation-name: hd;
             animation-iteration-count: infinite;
-            animation-duration: 2s;
+            animation-duration: 4s;
             z-index: 2;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         div:nth-child(1)::before {
             content: 'START';
-            width: 100px;
-            height: 100px;
             background: #8e44ad;
-            position: absolute;
-            left: 0;
-            top: 0;
             animation-timing-function: steps(4, start);
         }
 
         div:nth-child(5)::before {
             content: 'END';
-            width: 100px;
-            height: 100px;
             background: #27ae60;
-            position: absolute;
-            left: 0;
-            top: 0;
             animation-timing-function: steps(4, end);
         }
 

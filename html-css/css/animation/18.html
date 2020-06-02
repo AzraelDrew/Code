@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 08:49:51
+ * @FilePath     : \Code\html-css\css\animation\18.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>贝塞尔曲线控制动画速率</title>
     <style>
         * {
             padding: 0;
@@ -16,22 +23,43 @@
             height: 100vh;
             display: grid;
             background: #34495e;
+            /* 
+            一行一列
+             */
             grid-template: 1fr/1fr;
         }
 
         ul {
             display: grid;
+            /* 
+            一行六列
+             */
             grid-template: 1fr/repeat(6, 1fr);
             list-style: none;
             gap: 10px;
+            /* 
+            弹性方法
+             */
+            /*
+            list-style: none; 
+            display: flex;
+            justify-content: center;
+            align-items: center; */
         }
 
         li {
+            /* 
+            弹性方法
+             */
+            /* margin: 10px;
+            height: 100%;
+            flex: 1;
+            */
             background: #e67e22;
-            /* height: 50px; */
             animation-name: move;
             animation-duration: 3s;
             animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
 
         li:nth-child(1) {
@@ -60,7 +88,7 @@
 
         @keyframes move {
             to {
-                transform: translateY(90vh);
+                transform: translateY(97vh);
             }
         }
     </style>

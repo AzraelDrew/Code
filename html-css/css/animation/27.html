@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:17
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-02 10:49:01
+ * @FilePath     : \Code\html-css\css\animation\27.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
+    <title>填充模式</title>
     <style>
         * {
             padding: 0;
@@ -40,6 +47,16 @@
             justify-items: center;
         }
 
+        /* 
+        animation-fill-mode 用于定义动画播放结束后的处理模式，是回到原来状态还是停止在动画结束状态。
+
+        选项	说明
+        none	需要等延迟结束，起始帧属性才应用
+        backwards	动画效果在起始帧，不等延迟结束
+        forwards	结束后停留动画的最后一帧
+        both	包含backwards与forwards规则，即动画效果在起始帧，不等延迟结束，并且在结束后停止在最后一帧
+        #效果对比
+        */
         li:nth-child(1) {
             animation-name: hd;
         }
