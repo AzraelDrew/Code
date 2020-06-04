@@ -1,0 +1,32 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-03 22:02:39
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-04 08:02:32
+ * @FilePath     : \Code\ES5\变量、作用域、内存\1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function setName(obj) {
+            obj.name = "nich";
+            var obj = new Object();
+            obj.name = "greg"
+        }
+        var person = new Object();
+        setName(person)
+        console.log(person.name);
+    </script>
+
+</body>
+
+</html>

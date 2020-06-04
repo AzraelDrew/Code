@@ -1,0 +1,91 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-03 08:47:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-03 21:58:18
+ * @FilePath     : \Code\ES5\基本概念\数据类型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+
+<body>
+    <script>
+        // undefined  这个值为定义
+        var message;
+        console.log(message == undefined); //true
+        console.log(message); //undefined
+        // console.log(age); // age is not defined
+        console.log(typeof message); //undefined
+        //对于为声明的变量执行typeof返回值也会时undefined
+        console.log(typeof age); //undefined
+        // null
+        // 如果一个变量准备用来保存对象，最后初始化变量为null，
+        // 这样就值需要检测变量的值是否为null就能知道是否已经存放了一个对象的引用
+        var car = null;
+        console.log(typeof car); //object
+        // boolean  布尔值
+        // true /flase  会区分大小写  True/False都不是boolean值
+        //  其他数据类型转换为boolean值见JavaScript26页
+        var found = true;
+        var lost = false;
+        // string  字符串
+        //number  数值 
+        var intnum = 55;
+        console.log(typeof intnum); //  number
+        // object  对象或者null
+        // function   函数
+        var a = "asdf3573457af4356";
+        var age = 11;
+        var b = age.toString();
+        console.log(typeof b);
+        var value;
+        var c = String(value);
+        console.log(toString(c));
+        var num = (1, 2, 3);
+        console.log(num);
+        var i = 10;
+        do {
+            i += 2;
+            console.log(i);
+        } while (i < 10);
+        for (var i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        // for (var proName in window) {
+        //     console.log(proName);
+        // }
+        switch ("goodbye") {
+            case "hello" + "world":
+                console.log(1);
+                break;
+            case "goodbye":
+                console.log(2);
+                break;
+            default:
+                console.log(3);
+        }
+
+        function sayHi(num1, num2) {
+            "use strict"
+            arguments[0] = 20;
+            if (arguments.length == 1) {
+                console.log(num1 + 10);
+            } else if (arguments.length == 2) {
+                console.log(arguments[0] + num2);
+            }
+        }
+        sayHi(10);
+        if (true) {
+            var color = "blue";
+        }
+        console.log(color);
+    </script>
+</body>
+
+</html>

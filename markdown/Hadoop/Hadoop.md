@@ -218,7 +218,7 @@ systemctl disable firewalld.service  //开机禁用防火墙
 - 配置Hadoop文件
      1. hadoop-env.sh
                         使用gedit对文件进行编辑：
-                           在文件中找到：
+                                 在文件中找到：
 
         ```
         export JAVA_HOME=${JAVA_HOME}
@@ -235,14 +235,18 @@ systemctl disable firewalld.service  //开机禁用防火墙
      2. yarn-env.sh
                         在文件的靠前的部分找到下面的一行代码：
 
-                           将这行代码修改为下面的代码（将#号去掉）
+           ```
+# export JAVA_HOME=/home/y/libexec/jdk1.6.0/
+        ```
+        
+        将其修改为
 
         ```
-        # export JAVA_HOME=/home/y/libexec/jdk1.6.0/
-        ```
-
-                        然后保存文件。
-
+export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
+                 ```
+                 
+                                 然后保存文件。
+                 
   3. core-site.xml 
                                        用下面的代码替换 core-site.xml 中的内容：
   
@@ -273,14 +277,14 @@ systemctl disable firewalld.service  //开机禁用防火墙
          <property>
          <name>hadoop.tmp.dir</name>
          <value>/home/yznaisy/hadoop/hadoopdata</value>
-         </property>
+       </property>
         
         </configuration>
-        ```
-
+      ```
+  
   5. hdfs-site.xml
                         用下面的代码替换 hdfs-site.xml 中的内容：
-
+  
         ```
         <?xml version="1.0" encoding="UTF-8"?>
         <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -303,14 +307,14 @@ systemctl disable firewalld.service  //开机禁用防火墙
         <configuration>
          <property>
          <name>dfs.replication</name>
-         <value>1</value>
+       <value>1</value>
          </property>
         </configuration>
-        ```
-
+      ```
+  
   6.   yarn-site.xml
                         用下面的代码替换yarn-site.xml中的内容:
-
+  
         ```
         <?xml version="1.0"?>
         <!--
@@ -352,16 +356,16 @@ systemctl disable firewalld.service  //开机禁用防火墙
          </property>
         <property>
          <name>yarn.resourcemanager.webapp.address</name>
-         <value>master:18088</value>
+       <value>master:18088</value>
          </property>
         </configuration>
         ```
-
-  7.   mapred-site.xml
+  
+7.   mapred-site.xml
                         复制mapred-site-template.xml 文件：
                         cp mapred-site.xml.template mapred-site.xml 
                         用下面的代码替换 mapred-site.xml 中的内容:
-
+  
         ```
         <?xml version="1.0"?>
         <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -385,7 +389,7 @@ systemctl disable firewalld.service  //开机禁用防火墙
         
         <property>
         <name>mapreduce.framework.name</name>
-        <value>yarn</value>
+      <value>yarn</value>
         </property>
         </configuration>
         ```
@@ -393,47 +397,47 @@ systemctl disable firewalld.service  //开机禁用防火墙
   8. slaves
                         使用 gedit 编辑：
                         用下面的代码替换 slaves 中的内容：
-
-        ```
+  
+      ```
         slave1
-        slave2
+      slave2
         ```
-
-        
-
+  
+      
+  
   9. 配置环境变量
                         在你刚才配置环境变量的文件中添加如下配置：
-
-        ```
+  
+      ```
         export HADOOP_HOME=/home/yznaisy/hadoop/hadoop
-        export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+      export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
         ```
-
+  
                          将配置好的Hadoop文件和环境变量发送到slave1和slave2
 
   9. 创建数据目录
-                 使用mkdir来创建目录，如：mkdir /home/yznaisy/hadoop/hadoopdata 这个路径与你配置hadoop文件的路径相同(注意三台主机都需要创建目录)
+               使用mkdir来创建目录，如：mkdir /home/yznaisy/hadoop/hadoopdata 这个路径与你配置hadoop文件的路径相同(注意三台主机都需要创建目录)
                  格式化文件系统
-
+  
   10. 格式化文件系统
 
       ```
-      hdfs namenode -foramt
+    hdfs namenode -foramt
       ```
-
+  
       
 
   11. 启动Hadoop
                       进入Hadoop安装目录使用命令来启动Hadoop，命令如下：
-                      ./sbin/start-all.sh
-
+                    ./sbin/start-all.sh
+  
   12. 查看hadoop是否启动
                       使用jps查看进程
 
                       Web UI 查看集群是否成功启动
                       在 master 上启动 Firefox 浏览器，在浏览器地址栏中输入输入 http://master:50070/，检查
                       namenode 和 datanode 是否正常。UI 页面如下图所示。
-
+  
                       
 
 ## 安装Hive
@@ -478,7 +482,7 @@ systemctl disable firewalld.service  //开机禁用防火墙
 - 连接mysql
   
 1. 将mysql-connector-java-x.x.x-bin.jar复制在hive/lib/目录下
-  
+
 - 配置环境变量
 
   ```
