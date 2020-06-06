@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-03 22:02:39
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-04 08:02:32
+ * @LastEditTime : 2020-06-05 08:53:42
  * @FilePath     : \Code\ES5\变量、作用域、内存\1.html
 -->
 <!DOCTYPE html>
@@ -17,14 +17,31 @@
 <body>
 
     <script>
-        function setName(obj) {
-            obj.name = "nich";
-            var obj = new Object();
-            obj.name = "greg"
+        var reg = /\d/;
+        console.log(typeof reg);
+        console.log(reg instanceof RegExp);
+        var color = "red";
+
+        function changeColor() {
+            if (color == "blue") {
+                color = "red"
+            } else {
+                color = "blue";
+            }
         }
-        var person = new Object();
-        setName(person)
-        console.log(person.name);
+        changeColor();
+        console.log("Color is now " + color);
+
+        function createPerson(name) {
+            var localPerson = new Object();
+            localPerson.name = name;
+            return localPerson;
+        }
+        var globalPerson = createPerson("Nicholas");
+        // console.log(globalPerson.name);
+        console.log(globalPerson);
+        // 释放内存
+        globalPerson = null;
     </script>
 
 </body>

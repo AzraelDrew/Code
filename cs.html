@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-18 23:09:58
- * @LastEditTime : 2020-06-03 08:37:29
+ * @LastEditTime : 2020-06-06 16:59:22
  * @LastEditors  : yznaisy
  * @Description: In User Settings Edit
  * @FilePath     : \Code\cs.html
@@ -14,32 +14,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .c {
+            color: red;
+        }
 
+        a.c {
+            color: blue;
+        }
+
+
+        body.c {
+            color: blue;
+        }
+
+        div.div2 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        body.div2 {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
     </style>
 </head>
-<script>
-    function test() {
-        var message = "hi";
-        console.log(message);
-    }
-    test(); //  hi
-    // var定义在函数中当函数退出后这个变量就会被销毁
-    // console.log(message); // message is not defined  
-    function test1() {
-        //没有使用var声明时会创建一个全局变量，
-        // 只要调用一次test1函数后message1就会被定义
-        // 就可以在任何地方被调用
-        message1 = "Hello"
-        console.log(message1);
-    }
-    test1(); //  Hello
-    console.log(message1); //Hello  
-</script>
+
 
 <body>
-
+    <div>
+        <a href="" class="c">123</a>
+    </div>
+    <div class="div2"></div>
 </body>
-<script>
-</script>
+
 
 </html>

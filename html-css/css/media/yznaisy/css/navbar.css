@@ -1,0 +1,51 @@
+header {
+  border-bottom: solid 5px #27ae60;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+header .navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+header .navbar .logo {
+  color: #27ae60;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 1.3em;
+}
+header .collapse {
+  flex-grow: 1;
+  display: flex;
+}
+header .links {
+  margin-right: auto;
+}
+header .links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+header .links li a {
+  color: #777;
+  margin: 0 10px;
+}
+header .links li a:hover {
+  font-weight: bold;
+  color: #333;
+}
+header .form a {
+  border: solid 1px #27ae60;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1rem;
+  color: #1abc9c;
+}
+header .form a.form-bg {
+  background: #16a085;
+  color: white;
+}

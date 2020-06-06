@@ -1,0 +1,71 @@
+header {
+    border-bottom: solid 5px #27ae60;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    // display: flex;
+    // justify-content: center;
+
+    .navbar {
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 1.3em;
+        }
+    }
+
+    .collapse {
+        // 自动填充
+        flex-grow: 1;
+        display: flex;
+
+    }
+
+    .links {
+        // 导航栏内容与登录之间走动充满
+        margin-right: auto;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+
+            a {
+                color: #777;
+                margin: 0 10px;
+
+                &:hover {
+                    font-weight: bold;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    .form {
+        a {
+            border: solid 1px #27ae60;
+            border-radius: .3rem;
+            padding: .3rem 1rem;
+            color: #1abc9c;
+
+            &.form-bg {
+                background: #16a085;
+                color: white;
+            }
+        }
+
+
+
+    }
+}

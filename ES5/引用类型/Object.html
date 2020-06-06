@@ -1,0 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-05 10:08:41
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-05 10:22:52
+ * @FilePath     : \Code\ES5\引用类型\Object.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function displayInfo(args) {
+            var output = "";
+            if (typeof args.name == "string") {
+                output += "Name:" + args.name + "\n";
+
+            }
+            if (typeof args.age == "number") {
+                output += "Age:" + args.age + "\n";
+            }
+            console.log(output);
+        }
+        displayInfo({
+            name: "Nicholas",
+            age: 28,
+        })
+        displayInfo({
+            name: "yznaisy",
+        })
+        let person = {
+            name: "yznaisy",
+            age: 20,
+            score: 90,
+        }
+        console.log(person["name"]);
+        //推荐使用点语法访问属性
+    </script>
+</body>
+
+</html>

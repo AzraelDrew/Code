@@ -1,0 +1,32 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-05 10:23:03
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-05 16:57:18
+ * @FilePath     : \Code\ES5\引用类型\Array.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var colors = ["red", "blue", "green"];
+        console.log(colors.toString());
+        console.log(colors.valueOf());
+        console.log(colors);
+        console.log(colors.join(","));
+        console.log(colors.join("||"));
+        colors.push("black");
+        console.log(colors.join("||"));
+        colors.pop();
+        console.log(colors.join("||"));
+    </script>
+</body>
+
+</html>
