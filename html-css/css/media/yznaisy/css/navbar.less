@@ -1,71 +1,127 @@
 header {
     border-bottom: solid 5px #27ae60;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
-    // display: flex;
-    // justify-content: center;
 
     .navbar {
-        height: 60px;
+        padding: 1rem 0;
         display: flex;
         align-items: center;
+
+        .iconfont {
+            font-size: 2rem;
+
+        }
+
+        .iconGPUyunzhuji {
+            position: relative;
+            top: 3px;
+            right: 5px;
+            color: #27ae60;
+        }
 
         .logo {
             color: #27ae60;
             font-weight: bold;
             margin-right: 20px;
             font-size: 1.3em;
+
+            &+label {
+                display: none;
+
+            }
+        }
+
+        .collapse {
+            // 自动填充
+            flex-grow: 1;
+            display: flex;
+
+            .links {
+                // 导航栏内容与登录之间走动充满
+
+                margin-right: auto;
+                display: flex;
+
+                ul {
+                    display: flex;
+                }
+
+                li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 10px;
+
+                    a {
+                        color: #777;
+                        margin: 0 10px;
+
+                        &:hover {
+                            font-weight: bold;
+                            color: #333;
+                        }
+                    }
+                }
+
+
+            }
+
+            .form {
+                a {
+                    border: solid 1px #27ae60;
+                    border-radius: .3rem;
+                    padding: .3rem 1rem;
+                    color: #27ae60;
+
+                    &.form-bg {
+                        background: #16a085;
+                        color: white;
+                    }
+                }
+
+            }
         }
     }
 
-    .collapse {
-        // 自动填充
-        flex-grow: 1;
-        display: flex;
+}
 
-    }
+@media only screen and (max-width:960px) {
+    header {
+        .navbar {
+            flex-flow: row wrap;
 
-    .links {
-        // 导航栏内容与登录之间走动充满
-        margin-right: auto;
+            .logo {
+                margin-right: auto;
 
-        ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+                &+label {
+                    display: block;
+                    border: solid 1px #ddd;
+                    padding: .5rem 1rem;
+                    color: #555;
+                    cursor: pointer;
 
-        li {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 10px;
+                }
+            }
 
-            a {
-                color: #777;
-                margin: 0 10px;
+            .collapse {
 
-                &:hover {
-                    font-weight: bold;
-                    color: #333;
+                // display: none;
+                width: 100%;
+                flex-direction: column;
+
+                .links {
+                    ul {
+                        flex-direction: column;
+
+                    }
+
+                    margin-bottom: 1.5rem;
+
+                    li {
+                        margin: .5rem 0
+                    }
                 }
             }
         }
-    }
-
-    .form {
-        a {
-            border: solid 1px #27ae60;
-            border-radius: .3rem;
-            padding: .3rem 1rem;
-            color: #1abc9c;
-
-            &.form-bg {
-                background: #16a085;
-                color: white;
-            }
-        }
-
-
-
     }
 }

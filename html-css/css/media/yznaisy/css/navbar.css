@@ -3,9 +3,18 @@ header {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 header .navbar {
-  height: 60px;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
+}
+header .navbar .iconfont {
+  font-size: 2rem;
+}
+header .navbar .iconGPUyunzhuji {
+  position: relative;
+  top: 3px;
+  right: 5px;
+  color: #27ae60;
 }
 header .navbar .logo {
   color: #27ae60;
@@ -13,39 +22,69 @@ header .navbar .logo {
   margin-right: 20px;
   font-size: 1.3em;
 }
-header .collapse {
+header .navbar .logo + label {
+  display: none;
+}
+header .navbar .collapse {
   flex-grow: 1;
   display: flex;
 }
-header .links {
+header .navbar .collapse .links {
   margin-right: auto;
+  display: flex;
 }
-header .links ul {
+header .navbar .collapse .links ul {
+  display: flex;
+}
+header .navbar .collapse .links li {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 10px;
 }
-header .links li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-}
-header .links li a {
+header .navbar .collapse .links li a {
   color: #777;
   margin: 0 10px;
 }
-header .links li a:hover {
+header .navbar .collapse .links li a:hover {
   font-weight: bold;
   color: #333;
 }
-header .form a {
+header .navbar .collapse .form a {
   border: solid 1px #27ae60;
   border-radius: 0.3rem;
   padding: 0.3rem 1rem;
-  color: #1abc9c;
+  color: #27ae60;
 }
-header .form a.form-bg {
+header .navbar .collapse .form a.form-bg {
   background: #16a085;
   color: white;
+}
+@media only screen and (max-width: 960px) {
+  header .navbar {
+    flex-flow: row wrap;
+  }
+  header .navbar .logo {
+    margin-right: auto;
+  }
+  header .navbar .logo + label {
+    display: block;
+    border: solid 1px #ddd;
+    padding: 0.5rem 1rem;
+    color: #555;
+    cursor: pointer;
+  }
+  header .navbar .collapse {
+    width: 100%;
+    flex-direction: column;
+  }
+  header .navbar .collapse .links {
+    margin-bottom: 1.5rem;
+  }
+  header .navbar .collapse .links ul {
+    flex-direction: column;
+  }
+  header .navbar .collapse .links li {
+    margin: 0.5rem 0;
+  }
 }
