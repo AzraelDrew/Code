@@ -1,3 +1,8 @@
+@import url(margin.css);
+@import url(page.css);
+@import url(list-group.css);
+@import url(title.css);
+@import url(card.css);
 @import url(common.css);
 @import url(navbar.css);
 @import url(small-x.css) only screen and (max-width:768px);

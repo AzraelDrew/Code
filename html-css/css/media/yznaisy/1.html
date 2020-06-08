@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-06 13:33:07
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-06 21:11:05
+ * @LastEditTime : 2020-06-07 17:50:38
  * @FilePath     : \Code\html-css\css\media\yznaisy\1.html
 -->
 <!DOCTYPE html>
@@ -12,18 +12,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yznaisy</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1772247_vdlz48v6etf.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1772247_02ds6gy6q0zo.css">
     <link rel="stylesheet" href="css/yznaisy.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar container">
+    <header class="mb-2">
+        <nav class="navbar container ">
             <i class="iconfont iconGPUyunzhuji"></i>
             <a class="logo" href="">yznaisy</a>
-            <label for="">
+            <label for="toggle-nav">
                 <i class="iconfont iconicon-test13"></i>
             </label>
+            <input type="checkbox" name="" id="toggle-nav">
             <article class="collapse">
                 <section class="links">
                     <ul>
@@ -40,6 +41,67 @@
             </article>
         </nav>
     </header>
+    <main class="container">
+        <article class="row">
+            <!-- 
+                使用类的方法来控制大小
+            -->
+            <div class="col-9  col-sx-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>最近更新</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li>
+                                <a href="">fasdfasdf</a>
+                                <span>
+                                    2020.6.7
+                                </span>
+                            </li>
+                            <li>
+                                <a href="">fasdfasdf</a>
+                                <span>
+                                    2020.6.7
+                                </span>
+                            </li>
+                            <li>
+                                <a href="">fasdfasdf</a>
+                                <span>
+                                    2020.6.7
+                                </span>
+                            </li>
+                            <li>
+                                <a href="">fasdfasdf</a>
+                                <span>
+                                    2020.6.7
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="page">
+                            <a href="">
+                                <</a> <a href="">1
+                            </a>
+                            <a href="" class="current">2</a>
+                            <a href="">3</a>
+                            <a href="">4</a>
+                            <a href="">5</a>
+                            <a href="">></a></>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3  col-sx-12">
+                <div class="card">
+                    <div class="crad-header">
+                        <h2>社区小贴</h2>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
 </body>
 
 </html>

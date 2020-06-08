@@ -1,6 +1,6 @@
 header {
     border-bottom: solid 5px #27ae60;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 
     .navbar {
         padding: 1rem 0;
@@ -9,7 +9,6 @@ header {
 
         .iconfont {
             font-size: 2rem;
-
         }
 
         .iconGPUyunzhuji {
@@ -28,6 +27,9 @@ header {
             &+label {
                 display: none;
 
+                &+input {
+                    display: none;
+                }
             }
         }
 
@@ -38,7 +40,6 @@ header {
 
             .links {
                 // 导航栏内容与登录之间走动充满
-
                 margin-right: auto;
                 display: flex;
 
@@ -62,15 +63,13 @@ header {
                         }
                     }
                 }
-
-
             }
 
             .form {
                 a {
                     border: solid 1px #27ae60;
-                    border-radius: .3rem;
-                    padding: .3rem 1rem;
+                    border-radius: 0.3rem;
+                    padding: 0.3rem 1rem;
                     color: #27ae60;
 
                     &.form-bg {
@@ -78,47 +77,56 @@ header {
                         color: white;
                     }
                 }
-
             }
         }
     }
-
 }
 
-@media only screen and (max-width:960px) {
+@media only screen and (max-width: 960px) {
     header {
         .navbar {
+            // flex按行排列当大小不够时换行
             flex-flow: row wrap;
 
             .logo {
+                // 当links换行时让logo与图标之间的区域填充
                 margin-right: auto;
 
                 &+label {
+                    // 让其下拉图标显示
                     display: block;
                     border: solid 1px #ddd;
-                    padding: .5rem 1rem;
+                    padding: 0.5rem 1rem;
                     color: #555;
                     cursor: pointer;
 
+                    // &+input {
+                    //     display: none;
+                    // }
+                    // 当选中iput时让collapse隐藏
+                    &+input:checked {
+                        &+.collapse {
+                            display: block;
+                        }
+                    }
                 }
             }
 
             .collapse {
-
-                // display: none;
                 width: 100%;
                 flex-direction: column;
+                display: none;
 
                 .links {
-                    ul {
-                        flex-direction: column;
-
-                    }
-
                     margin-bottom: 1.5rem;
 
+                    ul {
+                        flex-direction: column;
+                    }
+
+
                     li {
-                        margin: .5rem 0
+                        margin: 0.5rem 0;
                     }
                 }
             }

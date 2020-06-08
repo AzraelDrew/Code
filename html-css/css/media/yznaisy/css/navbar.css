@@ -25,6 +25,9 @@ header .navbar .logo {
 header .navbar .logo + label {
   display: none;
 }
+header .navbar .logo + label + input {
+  display: none;
+}
 header .navbar .collapse {
   flex-grow: 1;
   display: flex;
@@ -74,9 +77,13 @@ header .navbar .collapse .form a.form-bg {
     color: #555;
     cursor: pointer;
   }
+  header .navbar .logo + label + input:checked + .collapse {
+    display: block;
+  }
   header .navbar .collapse {
     width: 100%;
     flex-direction: column;
+    display: none;
   }
   header .navbar .collapse .links {
     margin-bottom: 1.5rem;
