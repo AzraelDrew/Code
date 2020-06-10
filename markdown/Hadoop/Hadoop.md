@@ -1,4 +1,4 @@
-# Hadoop安装手册
+#  Hadoop安装手册
 
 ## centos7安装
 
@@ -24,12 +24,12 @@
 
 - 配置主机名
 
-  使用 gedit 编辑主机名，如果不可以使用 gedit，请直接使用 vi 编辑器（后面用到   	          gedit 的地方也同此处处理一致）
+  使用 vi编辑主机名（后面用到vi的地方也与此处一致）
 
 ​      在命令行输入：
 
 ```
-gedit /etc/sysconfig/network
+vi /etc/sysconfig/network
 ```
 
 ​      配置信息如下：
@@ -60,7 +60,7 @@ service network restart
 ​     修改配置文件：
 
 ```
-gedit /etc/sysconfig/network-scripts/ifcfg-ens33 
+vi /etc/sysconfig/network-scripts/ifcfg-ens33 
 ```
 
 ​      将以下配置添加再文件中(文件已有的配置则将其修改，没有的进行添加)：
@@ -86,20 +86,16 @@ DNS1=8.8.8.8 # DNS服务器
 service network restart
 ```
 
-​	  ping www.baidu.com 或者ping你电脑的IP看是否能ping通，如果使用以上放还不能成功可以点击此[链接](https://www.bilibili.com/video/BV1bA411b7vs)
-
-​	  如图表示成功：
-
-  ![](ping-baidu.png)
+​	  ping www.baidu.com 或者ping你电脑的IP看是否能ping通，如果使用以上放还不能成功可以点	 击此	  [链接](https://www.bilibili.com/video/BV1bA411b7vs)如图表示成功： ![](ping-baidu.png)
 
 
 
 - 配置hosts列表
 
-​      使用gedit命令编辑hosts看列表：
+​     使用gedit命令编辑hosts看列表：
 
 ```
-gedit /etc/hosts
+vi /etc/hosts
 ```
 
 ​      将下面三行添加到/etc/hosts 文件中：
@@ -110,7 +106,7 @@ gedit /etc/hosts
 192.168.11.130 slave2
 ```
 
-​      (slave1和slave2可以在现在配置也可以在克隆后再配置)master和slave1、slave2代	  表你的主机名
+​      (slave1和slave2可以在现在配置也可以在克隆后再配置)master和slave1、slave2代表你的主机名
 
 ​	  接着重启网络服务，输入：service network restart
 
@@ -120,8 +116,6 @@ gedit /etc/hosts
 systemctl stop firewalld.service   //临时关闭防火墙
 systemctl disable firewalld.service  //开机禁用防火墙
 ```
-
-
 
 ## 安装jdk
 
@@ -201,244 +195,233 @@ systemctl disable firewalld.service  //开机禁用防火墙
 ## 安装Hadoop
 
 - 上传解压Hadoop
-              将解压后的文件夹重命名为hadoop，如：
+          将解压后的文件夹重命名为hadoop，如：
 
   ```
   mv hadoop-2.7.7 hadoop
   ```
 
-              使用cd命令进入的Hadoop文件夹如：
+   使用cd命令进入的Hadoop文件夹如：
 
   ```
   cd /hadoop-2.7.7/etc/hadoop
   ```
 
-  
-
 - 配置Hadoop文件
+
      1. hadoop-env.sh
-                        使用gedit对文件进行编辑：
-                                 在文件中找到：
 
-        ```
-        export JAVA_HOME=${JAVA_HOME}
-        ```
-
-                        将其修改为：
-
-        ```
-        export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
-        ```
-
-                        然后保存文件。
+     ```
+     在文件中找到：export JAVA_HOME=${JAVA_HOME}
+     将其修改为：
+     export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
+     然后保存文件。
+     ```
 
      2. yarn-env.sh
-                        在文件的靠前的部分找到下面的一行代码：
 
-           ```
-# export JAVA_HOME=/home/y/libexec/jdk1.6.0/
-        ```
-        
-        将其修改为
+     ```
+     在靠前部分找到:export JAVA_HOME=/home/y/libexec/jdk1.6.0/
+     将其修改为:
+     export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
+     然后保存文件。
+     ```
 
-        ```
-export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
-                 ```
-                 
-                                 然后保存文件。
-                 
-  3. core-site.xml 
-                                       用下面的代码替换 core-site.xml 中的内容：
-  
-  4. ```
-        <?xml version="1.0" encoding="UTF-8"?>
-        <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-        <!--
-          Licensed under the Apache License, Version 2.0 (the "License");
-          you may not use this file except in compliance with the License.
-          You may obtain a copy of the License at
-        
-            http://www.apache.org/licenses/LICENSE-2.0
-        
-          Unless required by applicable law or agreed to in writing, software
-          distributed under the License is distributed on an "AS IS" BASIS,
-          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-          See the License for the specific language governing permissions and
-          limitations under the License. See accompanying LICENSE file.
-        -->
-        
-        <!-- Put site-specific property overrides in this file. -->
-        
-        <configuration>
-         <property>
-         <name>fs.defaultFS</name>
-         <value>hdfs://master:9000</value>
-         </property>
-         <property>
-         <name>hadoop.tmp.dir</name>
-         <value>/home/yznaisy/hadoop/hadoopdata</value>
+     3. core-site.xml
+
+        用下面的代码替换 core-site.xml 中的内容：
+
+     ```
+     <?xml version="1.0" encoding="UTF-8"?>
+     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+     <!--
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+     
+         http://www.apache.org/licenses/LICENSE-2.0
+     
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License. See accompanying LICENSE file.
+     -->
+     
+     <!-- Put site-specific property overrides in this file. -->
+     
+     <configuration>
+      <property>
+      <name>fs.defaultFS</name>
+      <value>hdfs://master:9000</value>
+      </property>
+      <property>
+      <name>hadoop.tmp.dir</name>
+      <value>/home/yznaisy/hadoop/hadoopdata</value>
+     </property>
+      
+      </configuration>
+     ```
+
+     4. hdfs-site.xml
+
+     ​        用下面代码替换hdfs-site.xml中的内容：
+
+     ```
+     <?xml version="1.0" encoding="UTF-8"?>
+     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+     <!--
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+     
+         http://www.apache.org/licenses/LICENSE-2.0
+     
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License. See accompanying LICENSE file.
+     -->
+     
+     <!-- Put site-specific property overrides in this file. -->
+     
+     <configuration>
+      <property>
+      <name>dfs.replication</name>
+     <value>1</value>
        </property>
-        
-        </configuration>
-      ```
-  
-  5. hdfs-site.xml
-                        用下面的代码替换 hdfs-site.xml 中的内容：
-  
-        ```
-        <?xml version="1.0" encoding="UTF-8"?>
-        <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-        <!--
-          Licensed under the Apache License, Version 2.0 (the "License");
-          you may not use this file except in compliance with the License.
-          You may obtain a copy of the License at
-        
-            http://www.apache.org/licenses/LICENSE-2.0
-        
-          Unless required by applicable law or agreed to in writing, software
-          distributed under the License is distributed on an "AS IS" BASIS,
-          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-          See the License for the specific language governing permissions and
-          limitations under the License. See accompanying LICENSE file.
-        -->
-        
-        <!-- Put site-specific property overrides in this file. -->
-        
-        <configuration>
-         <property>
-         <name>dfs.replication</name>
-       <value>1</value>
-         </property>
-        </configuration>
-      ```
-  
-  6.   yarn-site.xml
-                        用下面的代码替换yarn-site.xml中的内容:
-  
-        ```
-        <?xml version="1.0"?>
-        <!--
-          Licensed under the Apache License, Version 2.0 (the "License");
-          you may not use this file except in compliance with the License.
-          You may obtain a copy of the License at
-        
-            http://www.apache.org/licenses/LICENSE-2.0
-        
-          Unless required by applicable law or agreed to in writing, software
-          distributed under the License is distributed on an "AS IS" BASIS,
-          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-          See the License for the specific language governing permissions and
-          limitations under the License. See accompanying LICENSE file.
-        -->
-        <configuration>
-        
-        <!-- Site specific YARN configuration properties -->
-        
-        <property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-        </property>
-        <property>
-         <name>yarn.resourcemanager.address</name>
-         <value>master:18040</value>
-         </property>
-        <property>
-         <name>yarn.resourcemanager.scheduler.address</name>
-         <value>master:18030</value>
-         </property>
-        <property>
-         <name>yarn.resourcemanager.resource-tracker.address</name>
-         <value>master:18025</value>
-         </property>
-        <property>
-         <name>yarn.resourcemanager.admin.address</name>
-         <value>master:18141</value>
-         </property>
-        <property>
-         <name>yarn.resourcemanager.webapp.address</name>
-       <value>master:18088</value>
-         </property>
-        </configuration>
-        ```
-  
-7.   mapred-site.xml
-                        复制mapred-site-template.xml 文件：
-                        cp mapred-site.xml.template mapred-site.xml 
-                        用下面的代码替换 mapred-site.xml 中的内容:
-  
-        ```
-        <?xml version="1.0"?>
-        <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-        <!--
-          Licensed under the Apache License, Version 2.0 (the "License");
-          you may not use this file except in compliance with the License.
-          You may obtain a copy of the License at
-        
-            http://www.apache.org/licenses/LICENSE-2.0
-        
-          Unless required by applicable law or agreed to in writing, software
-          distributed under the License is distributed on an "AS IS" BASIS,
-          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-          See the License for the specific language governing permissions and
-          limitations under the License. See accompanying LICENSE file.
-        -->
-        
-        <!-- Put site-specific property overrides in this file. -->
-        
-        <configuration>
-        
-        <property>
-        <name>mapreduce.framework.name</name>
-      <value>yarn</value>
-        </property>
-        </configuration>
-        ```
+      </configuration>
+     ```
 
-  8. slaves
-                        使用 gedit 编辑：
-                        用下面的代码替换 slaves 中的内容：
-  
-      ```
-        slave1
-      slave2
-        ```
-  
-      
-  
-  9. 配置环境变量
-                        在你刚才配置环境变量的文件中添加如下配置：
-  
-      ```
-        export HADOOP_HOME=/home/yznaisy/hadoop/hadoop
-      export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
-        ```
-  
-                         将配置好的Hadoop文件和环境变量发送到slave1和slave2
+       5.yarn-site.xml	
 
-  9. 创建数据目录
-               使用mkdir来创建目录，如：mkdir /home/yznaisy/hadoop/hadoopdata 这个路径与你配置hadoop文件的路径相同(注意三台主机都需要创建目录)
-                 格式化文件系统
-  
-  10. 格式化文件系统
+     ​	    用下面代码替换yarn-site.xml中的内容：
 
-      ```
-    hdfs namenode -foramt
-      ```
-  
-      
+     ```
+     <?xml version="1.0"?>
+     <!--
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+     
+         http://www.apache.org/licenses/LICENSE-2.0
+     
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License. See accompanying LICENSE file.
+     -->
+     <configuration>
+     
+     <!-- Site specific YARN configuration properties -->
+     
+     <property>
+     <name>yarn.nodemanager.aux-services</name>
+     <value>mapreduce_shuffle</value>
+     </property>
+     <property>
+      <name>yarn.resourcemanager.address</name>
+      <value>master:18040</value>
+      </property>
+     <property>
+      <name>yarn.resourcemanager.scheduler.address</name>
+      <value>master:18030</value>
+      </property>
+     <property>
+      <name>yarn.resourcemanager.resource-tracker.address</name>
+      <value>master:18025</value>
+      </property>
+     <property>
+      <name>yarn.resourcemanager.admin.address</name>
+      <value>master:18141</value>
+      </property>
+     <property>
+      <name>yarn.resourcemanager.webapp.address</name>
+      <value>master:18088</value>
+      </property>
+     </configuration>
+     ```
 
-  11. 启动Hadoop
-                      进入Hadoop安装目录使用命令来启动Hadoop，命令如下：
-                    ./sbin/start-all.sh
-  
-  12. 查看hadoop是否启动
-                      使用jps查看进程
+      6.mapred-site.xml
 
-                      Web UI 查看集群是否成功启动
-                      在 master 上启动 Firefox 浏览器，在浏览器地址栏中输入输入 http://master:50070/，检查
-                      namenode 和 datanode 是否正常。UI 页面如下图所示。
-  
-                      
+     ​		     复制mapred-site-template.xml 文件
+
+     ​            cp mapred-site.xml.template mapred-site.xml 
+
+     ​            用下面的代码替换 mapred-site.xml 中的内容
+
+     ```
+     <?xml version="1.0"?>
+     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+     <!--
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+     
+         http://www.apache.org/licenses/LICENSE-2.0
+     
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License. See accompanying LICENSE file.
+     -->
+     
+     <!-- Put site-specific property overrides in this file. -->
+     
+     <configuration>
+     
+     <property>
+     <name>mapreduce.framework.name</name>
+     <value>yarn</value>
+     </property>
+     
+     
+     
+     </configuration>
+     
+     ```
+
+     7. slaves
+
+     ```
+     slave1
+     slave2
+     ```
+
+     8. 配置环境变量
+
+     ```
+     export HADOOP_HOME=/home/yznaisy/hadoop/hadoop
+     export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+     将配置好的Hadoop文件和环境变量发送到slave1和slave2
+     ```
+
+     9. 创建目录
+
+        使用mkdir来创建目录，如：mkdir /home/yznaisy/hadoop/hadoopdata 这个路径与你配    置hadoop文件的路径相同(注意三台主机都需要创建目录)格式化文件系统
+
+     10. 格式化文件系统
+
+     ```
+     hadoop namenode -format
+     ```
+
+     11. 启动hadoop
+
+     ```
+     start-all.sh
+     或者分别启动
+     start-dfs.sh
+     start-yarn.sh
+     ```
+
+     12. 查看Hadoop是否启动成功
+
+         使用jps查看进程Web UI 查看集群是否成功启动
+         在 master 上启动 Firefox 浏览器，在浏览器地址栏中输入输入 http://master:50070/,检查namenode 和 datanode 是否正常。UI 页面如下图所示。
 
 ## 安装Hive
 
@@ -481,7 +464,8 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
 
 - 连接mysql
   
-1. 将mysql-connector-java-x.x.x-bin.jar复制在hive/lib/目录下
+
+​          1. 将mysql-connector-java-x.x.x-bin.jar复制在hive/lib/目录下
 
 - 配置环境变量
 
@@ -515,7 +499,9 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
      rpm -ivh mysql57-community-release-el7-9.noarch.rpm
      ```
 
-     ​	    执行完成后会在/etc/yum.repos.d/目录下生成两个repo文件mysql-	  community.repo mysql-          community-source.repo
+     ​	    执行完成后会在/etc/yum.repos.d/目录下生成两个repo文件
+
+     ​		mysql-community.repo mysql-community-source.repo
 
   2. 使用yum命令即可完成安装
 
@@ -589,15 +575,15 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
 
 - 登录mysql
 
-  ​        然后执行 mysql -uroot -p ，输入上面的到的密码进入，用该密码登录后，必须马上修改新的密码，不然会报如下错误：
+  ​        然后执行 mysql -uroot -p ，输入上面的到的密码进入，用该密码登录后，必须马上修改新的密码，不		 然会报如下错误：
 
   ​        mysql> use mysql;
 
-  ​        ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. 
+  ​        ERROR 1820 (HY000): You must reset your password using ALTER USER statement before 		 executing this statement. 
 
   ​        错误信息为：在执行此语句之前，必须使用ALTER USER语句重置密码。
 
-  ​        如果你想要设置一个简单的测试密码的话，比如设置为123456，会提示这个错误，报错的意思就是你的密码不符合要求
+  ​        如果你想要设置一个简单的测试密码的话，比如设置为123456，会提示这个错误，报错的意思就是你		 的密码不符合要求
 
   ​        mysql> alter user 'root'@'localhost' identified by '123456';
 
@@ -611,33 +597,17 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
 
   ​        首先需要设置密码的验证强度等级，设置 validate_password_policy 的全局参数为 LOW 即可，
 
-  ​        输入设值语句 “ 
+  ​        输入设值语句 “set global validate_password_policy=LOW;进行设值，
 
-  ```
-  set global validate_password_policy=LOW;
-  ```
-
-   ” 进行设值，
-
-  ​        当前密码长度为 8 ，如果不介意的话就不用修改了，按照通用的来讲，设置为 6 位的密码，设置 validate_password_length 的全局参数为 6 即可，
-
-  ​        输入设值语句 “ 
-
-  ```
-  set global validate_password_length=6;
-  ```
-
-   ” 进行设值，
+  ​        当前密码长度为 8 ，如果不介意的话就不用修改了，按照通用的来讲，设置为 6 位的密码，设置      		 validate_password_length 的全局参数为 6 即可，
+  
+  ​        输入设值语句“set global validate_password_length=6;进行设值，
 
   ​        现在可以为 mysql 设置简单密码了，只要满足六位的长度即可，
 
-  ​        输入修改语句 “ 
+  ​        输入修改语句 “ ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 
-  ```
-  ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
-  ```
-
-   ” 可以看到修改成功，表示密码策略修改成功了！！
+  ​        可以看到修改成功，表示密码策略修改成功了！！
 
 - 新建hive数据库
 
@@ -758,12 +728,10 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
      slave2
      ```
 
-  2. 修改hbase-site.xml：
-
-     ​	内容如下
+  2. 修改hbase-site.xml：内容如下
 
      ```
-     <?xml version="1.0"?>
+<?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <!--
      /**
@@ -813,22 +781,22 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
      </property>
      </configuration>
      ```
-
+     
   3. 修改hbase-env.sh：
 
      ​        在hbase-env.sh中添加如下两行:
 
      ```
-     export JAVA_HOME=/home/yznaisy/hadoop/hadoop/jdk1.8.0_141
+   export JAVA_HOME=/home/yznaisy/hadoop/hadoop/jdk1.8.0_141
      export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
      ```
-
+  
      ​        找到如下代码将前面的#号去掉:
 
      ```
-     #export HBASE MANAGES ZK=true
+   #export HBASE MANAGES ZK=true
      ```
-
+  
 - 配置环境变量
 
   ```
@@ -923,7 +891,6 @@ export JAVA_HOME=/home/yznaisy/hadoop/jdk1.8.0_141
   1+2;  //res0 :Int=3  表示成功
   ```
 
-  
 
 ##  安装Sqoop
 

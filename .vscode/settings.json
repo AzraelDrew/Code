@@ -5,5 +5,6 @@
     //改变注释颜色
     "editor.tokenColorCustomizations": {
         "comments": "#ff4f81" // 注释
-    }, //如果后面还加内容，记得块末用逗号隔开
+    },
+    "git.ignoreLimitWarning": true, //如果后面还加内容，记得块末用逗号隔开
 }

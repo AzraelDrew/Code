@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-18 23:09:58
- * @LastEditTime : 2020-06-08 16:01:45
+ * @LastEditTime : 2020-06-10 09:07:31
  * @LastEditors  : yznaisy
  * @Description: In User Settings Edit
  * @FilePath     : \Code\cs.html
@@ -14,36 +14,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-
   </style>
 </head>
 
+<style>
+
+</style>
 
 <body>
-  <h1>houdunren.com</h1>
-  <h2>hdcms.com</h2>
-  <h1>后盾人</h1>
+
 </body>
 
-<body>
-  <main>
-    <span>houdunwang</span>
-    <span>hdcms.com</span>
-    <span>houdunren.com</span>
-  </main>
-</body>
 <script>
-  const main = document.querySelector("main");
-  const reg = /<(span)>([\s\S]+?)<\/span>/gi;
-  main.innerHTML = main.innerHTML.replace(reg, (v, p1, p2) => {
-    console.log(v);
-    console.log(p1);
-    console.log(p2);
-    return `<h4 style="color:red">后盾人-${p2}</h4>`;
-  });
+  console.log(sum(10, 20));
+
+  function sum(num1, num2) {
+    return num1 + num2;
+  }
 </script>
-
-
-
 
 </html>
