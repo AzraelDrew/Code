@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-18 23:09:58
- * @LastEditTime : 2020-06-10 09:07:31
+ * @LastEditTime : 2020-06-10 10:16:36
  * @LastEditors  : yznaisy
  * @Description: In User Settings Edit
  * @FilePath     : \Code\cs.html
@@ -26,11 +26,15 @@
 </body>
 
 <script>
-  console.log(sum(10, 20));
-
-  function sum(num1, num2) {
-    return num1 + num2;
+  function callSomeFuntion(someFuntion, some) {
+    return someFuntion(some)
   }
+
+  function add(num) {
+    return num + 10;
+  }
+  var result1 = callSomeFuntion(add, 20);
+  console.log(result1);
 </script>
 
 </html>
