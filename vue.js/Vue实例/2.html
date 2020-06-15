@@ -1,0 +1,59 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-15 09:49:28
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-15 22:22:46
+ * @FilePath     : \Code\vue.js\Vue实例\2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据于方法</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{a}}
+    </div>
+    <div id="app2">
+        {{foo}}
+    </div>
+    <script>
+        var data = {
+            a: 1
+        }
+        var data2 = {
+            b: 2
+        }
+        var app = new Vue({
+            el: "#app",
+            data: data
+        });
+        // $watch()第一个参数表示你要观察的值
+        // 回调函数的第一个参数表示最新的值，第二个参数表示原来的值
+        app.$watch("a", function (newVal, oldVal) {
+            console.log(newVal, oldVal)
+        })
+
+        data.a = "hi ...new..."
+        app.a = "hi ...Vue...";
+        //如果想一个属性或者一个变量能够实现响应式的就必须在new Vue()实例的时候提前把变量声明
+        var obj = {
+            foo: 'bar'
+        }
+        // Object.freeze()，这会阻止修改现有的 property，也意味着响应系统无法再追踪变化。
+        Object.freeze(obj)
+
+        var app2 = new Vue({
+            el: '#app2',
+            data: obj
+        })
+        obj.foo = "123";
+    </script>
+</body>
+
+</html>
