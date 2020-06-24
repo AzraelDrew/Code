@@ -1,0 +1,35 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-16 16:51:30
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-16 16:55:41
+ * @FilePath     : \Code\vue.js\Vue模板语法\2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指令</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-if -->
+        <p v-if="seen">现在你看到我了</p>
+        <a v-bind:href="url">baidu</a>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                seen: false,
+                url: "https://www.baidu.com"
+            }
+        })
+    </script>
+</body>
+
+</html>

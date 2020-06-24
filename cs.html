@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-18 23:09:58
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-15 07:58:13
+ * @LastEditTime : 2020-06-19 10:42:36
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -16,8 +16,16 @@
 
 <body>
   <script>
-    var stringvalue = "Hell World";
-    console.log(stringvalue.substring(-3));
+    var o = {
+      toString: function () {
+        return "My Object"
+      }
+    };
+    for (var prop in o) {
+      if (prop == "toString") {
+        console.log("Found to String")
+      }
+    }
   </script>
 </body>
 

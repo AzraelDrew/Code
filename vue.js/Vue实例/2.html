@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-15 09:49:28
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-15 22:22:46
+ * @LastEditTime : 2020-06-16 10:50:01
  * @FilePath     : \Code\vue.js\Vue实例\2.html
 -->
 <!DOCTYPE html>
@@ -40,6 +40,9 @@
         })
 
         data.a = "hi ...new..."
+        app.$watch("a", function (newVal, oldVal) {
+            console.log(newVal, oldVal)
+        })
         app.a = "hi ...Vue...";
         //如果想一个属性或者一个变量能够实现响应式的就必须在new Vue()实例的时候提前把变量声明
         var obj = {

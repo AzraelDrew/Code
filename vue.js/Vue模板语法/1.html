@@ -1,0 +1,60 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-16 16:11:37
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-16 16:51:00
+ * @FilePath     : \Code\vue.js\Vue模板语法\1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 爽大括号语法 -->
+        <p>{{message}}</p>
+        <!-- v-once指令 -->
+        <p v-once>这个message不会被保存:{{message1}}</p>
+        <!-- v-html指令 -->
+        <p v-html="message2"></p>
+        <!-- v-bind -->
+        <p v-bind:id="color">test</p>
+        <p v-bind:id="color2">test2</p>
+        <!-- javascript表达式 -->
+        <p>{{number+1}}</p>
+        <p>{{ok ? "YES":"NO"}}</p>
+        <p>{{message.split("").reverse().join("")}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "Hi Vue",
+                message1: "123",
+                message2: "<span style='color:red;'>121354</span>",
+                color: "red",
+                color2: "blue",
+                number: 2,
+                ok: true
+            }
+        })
+    </script>
+</body>
+<style>
+    #red {
+        color: red;
+    }
+
+    #blue {
+        color: blue;
+        font-size: 100px;
+    }
+</style>
+
+</html>
