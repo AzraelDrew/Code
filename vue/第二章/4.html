@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 18:34:23
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 15:04:01
+ * @FilePath     : \Code\vue\第二章\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +33,7 @@
             secoendCounter: 0
         },
         computed: { //computed中的方法可以像data调用属性一样调用computed中的方法不需要括号
-            //computed中的方法只有使用到了向对应的的属性才会调用词方法
+            //computed中的方法只有使用到了向对应的的属性才会调用此方法
             optput: function () {
                 console.log("computed");
                 return this.counter > 5 ? "Great 5" : "small 5"

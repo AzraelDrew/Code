@@ -1,0 +1,38 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-27 16:17:34
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-27 16:36:46
+ * @FilePath     : \Code\vue.js\Vue模板语法\4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="type==='A'">A</div>
+        <div v-else-if="type==='B'">B</div>
+        <div v-else-if="type==='C'">c</div>
+        <div v-else>Not A/B/C</div>
+        <!-- v-show 切换元素的display属性 -->
+        <h1 v-show="ok">Hello!</h1>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            type: "",
+            ok: true
+        }
+    })
+</script>
+
+</html>

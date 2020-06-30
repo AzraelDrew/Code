@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-13 14:40:34
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-29 12:59:28
+ * @FilePath     : \Code\vue\第二章\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +33,10 @@
         .green {
             background-color: green;
         }
+
+        .yellow {
+            background-color: yellow;
+        }
     </style>
 </head>
 
@@ -33,7 +44,7 @@
     <div id="app1">
         <div class="demo" @click="attach= !attach" :class="divClasses"></div> <!-- 点击此div时改变attach的值   -->
         <!-- attach 的值为true时更改颜色 -->
-        <div class="demo" :class="{red:attach}"></div>
+        <div class="demo" :class="{red:!attach}"></div>
         <div class="demo" :class="color"></div>
         <hr>
         <input type="text" v-model="color">

@@ -1,17 +1,26 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-14 10:26:39
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-29 22:31:21
+ * @FilePath     : \Code\vue\第三章\1.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue</title>
     <script src="../vue.js"></script>
 </head>
 
 <body>
     <div id="app">
-        <p v-if="show">You can see me!</p> <!-- v-if的返回值为false时会直接删除元素而不是隐藏， -->
-        <p v-else>Now you see me!</p><!-- v-if的返回值为false时就显示v-else中的内容 -->
+        <p v-if="show">You can see me!</p>
+        <!-- v-if的返回值为false时会直接删除元素而不是隐藏， -->
+        <p v-else>Now you see me!</p>
+        <!-- v-if的返回值为false时就显示v-else中的内容 -->
         <!-- 
             多个v-if不需要写v-else-if
             只需要写v-if
@@ -20,18 +29,23 @@
             <!-- template标签不会渲染在元素中看不见template标签只有被template包裹的标签 -->
             <p>Inside a template</p>
         </template>
-        <p v-show="show">Do you also see me!</p> <!-- v-show是设置样式displat:none让其隐藏，而不是直接删除 -->
+        <p v-show="show">Do you also see me!</p>
+        <!-- v-show是设置样式displat:none让其隐藏，而不是直接删除 -->
         <button @click="show=!show">Swicth</button>
         <div>
             <ul>
-                <li v-for="(ingredient,i) in ingredients" :key="ingredient">{{ingredient}}({{i}})</li>
+                <li v-for="(ingredient,i) in ingredients" :key="ingredient">
+                    {{ingredient}}({{i}})
+                </li>
                 <!-- 第一个参数表示数组的值，第二个表示下标 -->
             </ul>
             <button @click="ingredients.push('spices')">Add new</button>
             <hr>
             <ul>
                 <li v-for="person in persons">
-                    <div v-for="(value,key,index) in person">{{key}}:{{value}}({{index}})</div>
+                    <div v-for="(value,key,index) in person">
+                        {{key}}:{{value}}({{index}})
+                    </div>
                 </li>
                 <span v-for="n in 10">{{n}}</span>
             </ul>
@@ -48,7 +62,11 @@
         el: "#app",
         data: {
             show: true,
-            ingredients: ["meat", "fruit", "cookies"],
+            ingredients: [
+                "meat",
+                "fruit",
+                "cookies"
+            ],
             persons: [{
                     name: "Max",
                     age: 27,
@@ -60,7 +78,7 @@
                     color: "blue"
                 }
             ]
-        }
+        },
     })
 </script>
 

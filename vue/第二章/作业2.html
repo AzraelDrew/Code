@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 17:44:39
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 13:07:00
+ * @FilePath     : \Code\vue\第二章\作业2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +18,7 @@
 <body>
     <div id="app">
         <div>
-            <button @click="ShowAlert">Show alert</button>
+            <button @click="showAlert">Show alert</button>
         </div>
         <div>
             <input type="text" @keyup="vlaue1=$event.target.value"> <!-- 随时更新value -->
@@ -32,7 +39,7 @@
             vlaue2: ""
         },
         methods: {
-            ShowAlert: function () {
+            showAlert: function () {
                 alert("Show alert")
             }
         }

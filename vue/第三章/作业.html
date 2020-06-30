@@ -1,10 +1,17 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-14 12:40:08
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-29 23:00:14
+ * @FilePath     : \Code\vue\第三章\作业.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>作业</title>
     <script src="../vue.js"></script>
 </head>
 
@@ -32,6 +39,7 @@
         <div>
             <ul>
                 <li v-for="value in testData">
+                    <!-- 判断是否为数组 -->
                     <template v-if="Array.isArray(value)">
                         <div v-for="element in value">{{element}}</div>
                     </template>

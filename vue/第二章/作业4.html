@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>作业4</title>
     <script src="../vue.js"></script>
     <style>
         #effect {
@@ -28,7 +28,7 @@
         }
 
         .float {
-            float: right;
+            float: left;
         }
 
         .text-color {
@@ -45,6 +45,17 @@
             height: 20px;
             border: 1px solid black;
         }
+
+        .pro {
+            margin-top: 20px;
+        }
+
+
+        .clearfix::before {
+            content: "";
+            display: block;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -54,9 +65,9 @@
             <button @click="statEffect">Start Effect</button>
             <div id="effect" :class="effectClasses"></div>
         </div>
-        <div :class="['float','blue','text-color']">I got no class</div>
+        <div :class="['float',{'blue':effectClasses.shrink},'text-color']">I got no class</div>
         <!-- 默认有visible类，也可以添加已有的类 -->
-        <div>
+        <div class="clearfix">
             <input type="text" v-model="userClass">
             <div :class="[{visible:true},userClass]"></div>
         </div>
@@ -75,7 +86,7 @@
         <!-- 进度条 -->
         <div>
             <button @click="startProgress">Start Progress</button>
-            <div :class="['progress-bar']">
+            <div class="pro" :class="['progress-bar']">
                 <div :class="['progress-bar']" :style="progressBar"></div>
             </div>
         </div>
@@ -89,6 +100,7 @@
                 highlight: false, //为true时添加此类，false反之
                 shrink: true,
             },
+            float: 'float',
             userClass: "",
             isVisible: true,
             myStyle: {
@@ -97,9 +109,9 @@
                 backgroundColor: "gray"
             },
             progressBar: {
-                width: 0,
+                width: "0px",
                 backgroundColor: "red",
-                border: 0
+                border: 0,
             }
         },
         methods: {
@@ -118,6 +130,10 @@
                     this.progressBar.width = width + "px";
                     if (width == 200) {
                         clearInterval(a);
+                        let vm = this;
+                        setTimeout(function () {
+                            vm.progressBar.width = 0 + "px";
+                        }, 2000)
                     }
                 }, 500)
             }

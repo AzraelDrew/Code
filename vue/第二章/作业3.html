@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-13 13:59:41
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 15:38:04
+ * @FilePath     : \Code\vue\第二章\作业3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +21,7 @@
             <p></p>
             <button @click="value+=5">Add 5</button>
             <button @click="value+=1">Add 1</button>
+            <p>{{value}}</p>
             <p>{{result}}</p>
         </div>
     </div>
@@ -24,11 +32,12 @@
         el: "#app",
         data: {
             value: 0,
-            a: 0
+            a: 0,
         },
         computed: {
             result: function () {
                 console.log(this.value);
+                console.log("computed")
                 return this.value == 37 ? "done" : "no done"
             }
         },
@@ -36,7 +45,7 @@
             result: function () {
                 let vm = this;
                 setTimeout(function () {
-                    vm.value = 0
+                    vm.value = 0;
                 }, 5000);
             }
         },

@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-16 16:51:30
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-16 16:55:41
+ * @LastEditTime : 2020-06-27 15:13:30
  * @FilePath     : \Code\vue.js\Vue模板语法\2.html
 -->
 <!DOCTYPE html>
@@ -21,12 +21,29 @@
         <p v-if="seen">现在你看到我了</p>
         <a v-bind:href="url">baidu</a>
     </div>
+    <div id=app2 @click="click1">
+        <div @click.stop="click2">click me </div>
+    </div>
     <script>
         var app = new Vue({
             el: "#app",
             data: {
                 seen: false,
                 url: "https://www.baidu.com"
+            }
+        })
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+
+            },
+            methods: {
+                click1: function () {
+                    console.log("click1...")
+                },
+                click2: function () {
+                    console.log("click2...")
+                }
             }
         })
     </script>

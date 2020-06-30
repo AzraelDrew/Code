@@ -1,0 +1,65 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-27 15:16:01
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-27 16:19:22
+ * @FilePath     : \Code\vue.js\Vue模板语法\3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class与style绑定</title>
+</head>
+<script src="../vue.js"></script>
+<style>
+    .active {
+        background: #F00;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+    }
+
+    .active2 {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+    }
+
+    .green {
+        background: green;
+    }
+
+    .test {
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <!-- <div :class="{active:isActive,active2:isActive2,green:isGreen}">Hi Vue</div> -->
+        <div class="test" :class="[isActive ? 'active' : '',isGreen ? 'green' : '','active2']">Hi Vue</div>
+        <div :style="{color:color,fontSize:size,background:isRed ? 'red':''}">
+            Hi Vue
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            isActive: false,
+            isActive2: true,
+            isGreen: true,
+            color: "#FFF",
+            size: "50px",
+            isRed: true
+        }
+    })
+</script>
+
+</html>

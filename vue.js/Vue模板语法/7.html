@@ -1,0 +1,74 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-27 22:57:31
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 10:30:45
+ * @FilePath     : \Code\vue.js\Vue模板语法\7.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单输入绑定</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="message" type="text">
+        <p>Message is :{{message}}</p>
+        <textarea v-model="message2" name="" id="" cols="30" rows="10"></textarea>
+        <p>Message is :{{message2}}</p>
+        <div>
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="john" v-model="checkedNames">
+            <label for="john">john</label>
+            <input type="checkbox" id="mike" value="mike" v-model="checkedNames">
+            <label for="mike">mike</label>
+            <input type="checkbox" id="yznaisy" value="yznaisy" v-model="checkedNames">
+            <label for="yznaisy">yznaisy</label>
+            <br>
+            <span>checkedNames:{{checkedNames}}</span>
+        </div>
+        <div>
+            <input type="radio" id="one" value="One" v-model="picked">
+            <label for="one">One</label>
+            <br>
+            <input type="radio" id="Two" value="Two" v-model="picked">
+            <label for="Two">Two</label>
+            <br>
+            <input type="radio" id="three" value="three" v-model="picked">
+            <label for="three">three</label>
+            <br>
+            <span>Picked:{{picked}}</span>
+        </div>
+        <button type="button" @click="submit">提交</button>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "",
+            message2: "",
+            checkedNames: ["Jack"],
+            picked: ""
+        },
+        methods: {
+            submit: function () {
+                var postObj = {
+                    msg1: this.message,
+                    msg2: this.message2,
+                    pick: this.picked,
+                    checkval: this.checkedNames,
+                }
+                console.log(postObj)
+            }
+        },
+    })
+</script>
+
+</html>

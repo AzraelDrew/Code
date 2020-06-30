@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-18 23:09:58
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-19 10:42:36
+ * @LastEditTime : 2020-06-27 14:35:58
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -16,16 +16,15 @@
 
 <body>
   <script>
-    var o = {
-      toString: function () {
-        return "My Object"
-      }
+    const rectg = {
+      width: 5,
+      height: 10
     };
-    for (var prop in o) {
-      if (prop == "toString") {
-        console.log("Found to String")
-      }
-    }
+    const changeWidth = (rect = {
+      ...rectg
+    }) => rect.width += 1;
+    changeWidth(rectg);
+    console.log(rectg.width)
   </script>
 </body>
 

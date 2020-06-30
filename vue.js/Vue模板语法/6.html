@@ -1,0 +1,45 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-27 22:44:35
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 10:32:18
+ * @FilePath     : \Code\vue.js\Vue模板语法\6.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件处理</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="exampel-1">
+            <button @click="counter+=1">数值:{{counter}}</button>
+            <!-- 双击 -->
+            <button @dblclick="greet('abc',$event)">Greet</button>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            counter: 0,
+            name: "Vue",
+        },
+        methods: {
+            greet: function (str, e) {
+                console.log(str)
+                console.log(e)
+                console.log("1");
+                console.log(this.name)
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 17:16:08
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 13:01:49
+ * @FilePath     : \Code\vue\第二章\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +19,7 @@
     <div id="app">
         <button @click="increase(2,$event)"> Click me</button>
         <p>{{count}}</p>
-        <p @mousemove="update"> x:y{{x}}/{{y}}
+        <p @mousemove="update"> x:y-{{x}}/{{y}}
             <span @mousemove.stop="">stop</span> <!-- @mousemove.stop与调用dummy方法效果一样 -->
         </p>
         <input type="text" @keyup.enter.space.a="alertMe"> <!-- @keyup.enter.space="alertMe"按下空格或者回车键会触发下面的函数 -->
@@ -29,6 +36,7 @@
         methods: {
             increase: function (step, event) {
                 this.count += step;
+                console.log(event)
             },
             update: function (e) {
                 this.x = e.clientX //获取坐标

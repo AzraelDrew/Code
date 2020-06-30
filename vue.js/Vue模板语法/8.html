@@ -1,0 +1,53 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-06-28 10:32:42
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-06-28 10:45:25
+ * @FilePath     : \Code\vue.js\Vue模板语法\8.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件基础</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button-counter title="title1" @clicknow="clicknow"></button-counter>
+    </div>
+</body>
+<script>
+    Vue.component("button-counter", {
+        props: ["title"],
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button @click="countfun">{{title}}-You clicked me {{count}} times</button>',
+        methods: {
+            countfun: function () {
+                this.count++;
+                this.$emit("clicknow", this.count);
+            }
+        },
+    })
+    var app = new Vue({
+        el: "#app",
+
+        data: {
+
+        },
+        methods: {
+            clicknow: function (e) {
+                console.log(e)
+            }
+        },
+    })
+</script>
+
+</html>
