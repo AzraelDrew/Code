@@ -39,17 +39,22 @@
 
 .log ul .player-turn {
     color: blue;
-    background-color: #e4e8ff;
+    background-color: #eccc68;
+}
+
+.log ul .player-fa {
+    color: green;
+    background-color: #eccc68;
 }
 
 .log ul .player-heal {
     color: blue;
-    background-color: green;
+    background-color: #2ecc71;
 }
 
 .log ul .monster-turn {
-    color: red;
-    background-color: #ffc0c1;
+    color: white;
+    background-color: #c0392b;
 }
 
 button {

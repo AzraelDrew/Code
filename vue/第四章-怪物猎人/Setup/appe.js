@@ -82,7 +82,7 @@ new Vue({
       // var damage = Math.max(Math.floor(Math.random() * max) + 1, min)
       this.monsterAttack();
     },
-    finalAttack: function () {
+    specialAttack: function () {
       var damage = this.calculateDamage(10, 20);
       this.monsterHealth -= damage;
       this.turns.unshift({

@@ -1,8 +1,8 @@
 <!--
  * @Author       : yznaisy
- * @Date         : 2020-05-18 23:09:58
+ * @Date         : 2020-07-01 17:48:15
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-27 14:35:58
+ * @LastEditTime : 2020-07-01 20:24:59
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -11,21 +11,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Vue</title>
+  <script src="vue.js"></script>
 </head>
 
 <body>
-  <script>
-    const rectg = {
-      width: 5,
-      height: 10
-    };
-    const changeWidth = (rect = {
-      ...rectg
-    }) => rect.width += 1;
-    changeWidth(rectg);
-    console.log(rectg.width)
-  </script>
+
+  <div id="app">
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
+  </div>
 </body>
+<script>
+  Vue.component('hello', {
+
+    template: '<h1>Hello!</h1>'
+  });
+  var app = new Vue({
+    el: "#app"
+  })
+</script>
 
 </html>

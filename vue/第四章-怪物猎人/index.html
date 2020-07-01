@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-14 13:25:03
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-30 09:57:14
+ * @LastEditTime : 2020-06-30 14:44:38
  * @FilePath     : \Code\vue\第四章-怪物猎人\index.html
 -->
 <!DOCTYPE html>
@@ -53,14 +53,14 @@
         <section class="row log" v-if="turns.length>0">
             <div class="small-12 columns">
                 <ul>
-                    <li v-for="turn in turns" :class="{'player-turn':turn.isPlayer,'monster-turn':!turn.isPlayer}">
+                    <li v-for="turn in turns" :class="getTurnClass(turn)">
                         {{turn.text}}
                     </li>
                 </ul>
             </div>
         </section>
     </div>
-    <script src="app.js"></script>
+    <script src="appe.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 18:34:23
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-28 15:04:01
+ * @LastEditTime : 2020-07-01 17:00:23
  * @FilePath     : \Code\vue\第二章\4.html
 -->
 <!DOCTYPE html>
@@ -40,11 +40,13 @@
             }
         },
         watch: {
+            // 当data中的counter变化时会执行此函数,自动将变化后的值传给value
             counter: function (vlaue) {
-                let vm = this;
-                setTimeout(function () {
-                    vm.counter = 0;
-                }, 2000)
+                // let vm = this;
+                // console.log(vlaue)
+                // setTimeout(function () {
+                //     vm.counter = 0;
+                // }, 2000)
             }
         },
         methods: { //methods中的方法会重复执行
