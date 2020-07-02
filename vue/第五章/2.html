@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-01 17:48:15
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-01 18:29:49
+ * @LastEditTime : 2020-07-01 21:46:38
  * @FilePath     : \Code\vue\第五章\2.html
 -->
 <!DOCTYPE html>
@@ -20,15 +20,22 @@
         <h1 ref="heading">{{title}}--{{lowercaseTitle}}</h1>
         <button @click="show" ref="myButton">Show Paragraph</button>
         <p v-if="showParagraph">This is not always visible</p>
+        <hello></hello>
+        <hello></hello>
+        <hello></hello>
+        <hello></hello>
     </div>
-    <div id="app2"></div>
-    <hello></hello>
-    <hello></hello>
-    <hello></hello>
-    <hello></hello>
+    <div id="app2">
+        <div-yz></div-yz>
+    </div>
 </body>
 <script>
+    //注册必须在Vue实例之前
+    Vue.component('hello', {
+        template: '<h1>Hello</h1>',
+    });
     var app1 = new Vue({
+        el: "#app1",
         data: {
             title: "The VueJS Instancd",
             showParagraph: false,
@@ -46,7 +53,6 @@
             updateTitle: function (title) {
                 this.title = title;
             },
-
         },
         computed: {
             lowercaseTitle: function () {
@@ -61,10 +67,8 @@
         },
     });
     //$mount("el")  挂载模板
-    app1.$mount("#app1");
     //自定义模板,此模板不可复用，值对第一个生效
     var app2 = new Vue({
-        el: "hello",
         data: {
             title: "Hello World"
         },
@@ -73,10 +77,6 @@
     app2.$mount("#app2")
     // app2.$mount();
     // document.querySelector("#app2").appendChild(app2.$el);
-    //组件
-    Vue.component("hello", {
-        template: "<h1>Hello</h1>"
-    });
 </script>
 
 </html>

@@ -4,7 +4,7 @@
     "materialTheme.accent": "Graphite",
     //改变注释颜色
     "editor.tokenColorCustomizations": {
-        "comments": "#ff4f81" // 注释
+        "comments": "#d63031" // 注释
     },
     "git.ignoreLimitWarning": true, //如果后面还加内容，记得块末用逗号隔开
 }

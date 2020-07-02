@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-30 21:53:09
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-01 17:07:10
+ * @LastEditTime : 2020-07-01 21:20:12
  * @FilePath     : \Code\vue\第五章\1.html
 -->
 <!DOCTYPE html>
@@ -46,7 +46,6 @@
                 updateTitle: function (title) {
                     this.title = title;
                 },
-
             },
             computed: {
                 lowercaseTitle: function () {
@@ -74,7 +73,6 @@
                     app1.title = "Changed!";
                     app1.$refs.myButton.innerHTML = "Changed";
                     console.log(app2.$data.title);
-
                 }
             }
         });
