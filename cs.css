@@ -1,40 +1,15 @@
-* {
-  padding: 0;
-  margin: 0;
+body span {
+  display: block;
+  height: 300px;
+  width: 300px;
+  background-color: blue;
+  transition: 2s;
 }
-article {
-  background-color: #bfa;
-  position: relative;
-}
-article ul {
-  position: absolute;
-}
-article ul li {
-  list-style: none;
-  float: left;
-}
-article ol {
-  position: absolute;
-  top: 350px;
-  left: 500px;
-}
-article ol li {
-  list-style: circle;
+body span::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
   background-color: red;
-  float: left;
-  margin-right: 20px;
-}
-.a {
-  width: 200px;
-  height: 200px;
-}
-#menu a {
-  color: red;
-  width: 200px;
-  height: 200px;
-}
-#menu b {
-  color: red;
-  width: 200px;
-  height: 200px;
+  transform: translateX(200px);
 }

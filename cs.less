@@ -1,54 +1,18 @@
-* {
-    padding: 0;
-    margin: 0;
-}
+body {
+    span {
+        display: block;
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+        transition: 2s;
 
-article {
-    // width: 500px;
-    // height: 800px;
-    background-color: #bfa;
-    position: relative;
-    // overflow: hidden;
-
-    ul {
-        position: absolute;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: translateX(200px);
+        }
     }
-
-    ul li {
-        list-style: none;
-        float: left;
-
-    }
-
-    ol {
-        position: absolute;
-        // bottom: 10px;
-        top: 350px;
-        left: 500px;
-    }
-
-    ol li {
-        list-style: circle;
-        // width: 100px;
-        // height: 100px;
-        background-color: red;
-        float: left;
-        margin-right: 20px;
-        // border: 2px solid rgba(255, 255, 255, 0.5);
-    }
-}
-
-.a {
-    width: 200px;
-    height: 200px;
-}
-
-#menu a {
-    color: red;
-    .a();
-}
-
-#menu b {
-    color: red;
-    .a();
 }
