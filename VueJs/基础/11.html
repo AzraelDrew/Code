@@ -2,8 +2,8 @@
  * @Author       : yznaisy
  * @Date         : 2020-06-28 10:32:42
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-01 18:24:42
- * @FilePath     : \Code\vue.js\Vue模板语法\8.html
+ * @LastEditTime : 2020-07-04 20:49:33
+ * @FilePath     : \Code\VueJs\基础\11.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +18,12 @@
 <body>
     <div id="app">
         <button-counter title="title1" @clicknow="clicknow"></button-counter>
+        <test>
+        </test>
     </div>
 </body>
 <script>
+    //全局注册
     Vue.component("button-counter", {
         props: ["title"],
         data: function () {
@@ -32,7 +35,7 @@
         methods: {
             countfun: function () {
                 this.count++;
-                this.$emit("clicknow", this.count);
+                // this.$emit("clicknow", this.count);
             }
         },
     })
@@ -47,6 +50,12 @@
                 console.log(e)
             }
         },
+        // 局部注册
+        components: {
+            test: {
+                template: "<h1>h1...</h1>"
+            }
+        }
     })
 </script>
 

@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-01 21:58:12
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-01 22:45:13
+ * @LastEditTime : 2020-07-04 22:40:23
  * @FilePath     : \Code\vue\第五章\3.html
 -->
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
-        <button @click="title='Changed'">Update Title</button>
+        <button @click="title='Changed',btitle='Changed title'">{{btitle}}</button>
         <button @click="destroy">Destroy</button>
     </div>
 </body>
@@ -26,7 +26,8 @@
     var app = new Vue({
         el: "#app",
         data: {
-            title: "The VueJS Instance"
+            title: "The VueJS Instance",
+            'btitle': "Update Title",
         },
         // 创建实例之前
         beforeCreate() {
