@@ -1,0 +1,50 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-04 23:18:56
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-07 10:11:26
+ * @FilePath     : \Code\VueJs\组件\2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prop</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <blog-post title="Hello" :likes="42" :is-published="false" :comment-ids="[234, 266, 273]" :author="{
+            name: 'Veronica',
+            company: 'Veridian Dynamics'
+          }"></blog-post>
+
+    </div>
+
+    <script>
+        Vue.component("blog-post", {
+            props: {
+                title: String,
+                likes: Number,
+                isPublished: Boolean,
+                commentIds: Array,
+                author: Object,
+                callback: Function,
+                contactsPromise: Promise,
+            },
+            template: '<h3>title:{{title}}<br>number:{{likes}}<br>Boolean:{{isPublished}}<br>Array:{{commentIds}}<br>Object:{{author}}<br>Function:{{callback}}<br>Promise:{{contactsPromise}}</h3>'
+        })
+        new Vue({
+            data() {
+                return {
+
+                }
+            },
+        }).$mount('#app');
+    </script>
+</body>
+
+</html>

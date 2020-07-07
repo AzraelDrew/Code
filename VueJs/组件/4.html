@@ -1,0 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-07 10:43:03
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-07 15:29:52
+ * @FilePath     : \Code\VueJs\组件\4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插槽</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <navigation-link>
+            <span class="fa fa-user">123</span>
+            Your Profile
+        </navigation-link>
+    </div>
+
+
+    <script>
+        Vue.component("navigation-link", {
+            template: '<av-bind:href="url" class="nav-link" ><slot></slot></a > '
+        })
+        let a = '';
+        console.log(a)
+    </script>
+</body>
+
+</html>

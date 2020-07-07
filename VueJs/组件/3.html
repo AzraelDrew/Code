@@ -1,0 +1,55 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-05 13:49:41
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-07 10:42:16
+ * @FilePath     : \Code\VueJs\组件\3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义事件</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <base-checkbox v-model="lovingVue"></base-checkbox>
+    </div>
+
+
+
+
+
+    <script>
+        Vue.component('base-checkbox', {
+            model: {
+                prop: 'checked',
+                event: 'change'
+            },
+            props: {
+                checked: Boolean
+            },
+            template: `
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+  `,
+            methods: {
+                change: function (e) {
+                    console.log("234")
+                }
+            },
+        })
+        new Vue({
+
+        }).$mount("#app");
+    </script>
+</body>
+
+</html>

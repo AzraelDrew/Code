@@ -1,0 +1,78 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-04 22:45:42
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-04 23:20:55
+ * @FilePath     : \Code\VueJs\组件\1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件注册</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button-name @click="show"></my-button-name>
+        <my-button-title></my-button-title>
+        <my-button-com></my-button-com>
+
+    </div>
+
+
+    <script>
+        // 全局注册(在Vue实例中均可直接使用)   组件注册必须在Vue实例之前
+        Vue.component("my-button-name", {
+            template: "<button @click='showName'>click</button>",
+            methods: {
+                showName: function () {
+                    console.log("name-click");
+                }
+            },
+        })
+        let Components = {
+            data() {
+                return {
+
+                }
+            },
+            template: "<button @click='showCom'>click</button>",
+            methods: {
+                showCom: function () {
+                    console.log("com-click");
+                }
+            },
+
+        };
+        // Vue.component("my-button-com", Components);
+        let vm = new Vue({
+            el: "#app",
+            data() {
+                return {
+
+                }
+            },
+            methods: {
+                show: function () {}
+            },
+            // 局部注册(只能在当前实例中使用)
+            components: {
+                "my-button-title": {
+                    template: "<button @click='showTitle'>click</button>",
+                    methods: {
+                        showTitle: function () {
+                            console.log("title-click")
+                        }
+                    },
+                },
+                "my-button-com": Components,
+            }
+        });
+    </script>
+</body>
+
+</html>
