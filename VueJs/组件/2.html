@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-04 23:18:56
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-07 10:11:26
+ * @LastEditTime : 2020-07-10 13:26:32
  * @FilePath     : \Code\VueJs\组件\2.html
 -->
 <!DOCTYPE html>
@@ -13,7 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prop</title>
     <script src="../vue.js"></script>
+
 </head>
+<style>
+</style>
 
 <body>
     <div id="app">
@@ -23,7 +26,7 @@
           }"></blog-post>
 
     </div>
-
+    <header></header>
     <script>
         Vue.component("blog-post", {
             props: {
@@ -44,6 +47,22 @@
                 }
             },
         }).$mount('#app');
+        let header_a = Vue.extend({
+            template: `<p>{{message}}--{{a}}</p>`,
+            data() {
+                return {
+                    message: "Hello , I am header",
+                }
+            },
+            props: {
+                a: String
+            }
+        });
+        new header_a({
+            propsData: {
+                a: "142"
+            }
+        }).$mount("header");
     </script>
 </body>
 

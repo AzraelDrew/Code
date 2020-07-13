@@ -1,0 +1,53 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-08 21:59:40
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-08 22:19:58
+ * @FilePath     : \Code\VueJs\基础\12.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义指令</title>
+    <script src="../vue.js"></script>
+    <style>
+        :root {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="app">
+        <div v-yznaisy="color">{{num}}</div>
+        <button @click="add">ADD</button>
+    </div>
+    <script>
+        Vue.directive("yznaisy", function (el, binding) {
+            //  el表示你使用指令的标签
+            // binding
+            console.log(el);
+            console.log(binding)
+            el.style.color = binding.value
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                num: 1,
+                color: "red"
+            },
+            methods: {
+                add: function () {
+                    this.num++;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

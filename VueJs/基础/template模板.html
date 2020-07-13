@@ -1,0 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-09 21:15:45
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-09 21:23:11
+ * @FilePath     : \Code\VueJs\基础\template模板.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template模板</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+
+    </div>
+    <template id="app2">
+        <h2>我是template标签模板</h2>
+    </template>
+    <script type="x-template" id="app3">
+        <h2>我是script标签模板</h2>
+    </script>
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    message: "Hello World!"
+                }
+            },
+            // template: `<h2>我是选项模板</h2>` //会替换el挂载的所有内容
+            template: "#app3"
+        });
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-07 10:43:03
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-07 15:29:52
+ * @LastEditTime : 2020-07-10 14:07:02
  * @FilePath     : \Code\VueJs\组件\4.html
 -->
 <!DOCTYPE html>
@@ -17,19 +17,30 @@
 
 <body>
     <div id="app">
+        <!-- 
+            当组件渲染的时候，<slot></slot> 将会被替换为“Your Profile”。
+            插槽内可以包含任何模板代码，包括 HTML,甚至其它的组件 
+        -->
         <navigation-link>
             <span class="fa fa-user">123</span>
             Your Profile
+            <navigation>123</navigation>
         </navigation-link>
     </div>
 
 
     <script>
         Vue.component("navigation-link", {
-            template: '<av-bind:href="url" class="nav-link" ><slot></slot></a > '
-        })
-        let a = '';
-        console.log(a)
+            //如果 <navigation-link> 的 template 中没有包含一个 <slot> 元素，则该组件起始标签和结束标签之间的任何内容都会被抛弃
+            template: '<a href="" class="nav-link"><slot></slot></a > '
+        });
+        Vue.component("navigation", {
+            // 当<navigation>没有内容时会使用<slot>中的内容,当有内容时会被替换
+            template: '<button><slot>789</slot></button> '
+        });
+        new Vue({
+            el: "#app"
+        });
     </script>
 </body>
 

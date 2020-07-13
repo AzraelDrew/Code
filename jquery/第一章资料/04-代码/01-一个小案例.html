@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:20
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-12 22:03:00
+ * @FilePath     : \Code\jquery\第一章资料\04-代码\01-一个小案例.html
+-->
 <!DOCTYPE html>
 <html>
 
@@ -67,6 +74,7 @@
     let btnTwo = document.querySelector("#btnTwo");
     let btnThree = document.querySelector("#btnThree");
     let divs = document.querySelectorAll("div");
+    console.log(divs)
     btnOne.addEventListener("click", function () {
       for (let i = 0; i < divs.length; i++) {
         divs[i].style.border = "1px solid red";
