@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-07 10:43:03
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-10 14:07:02
+ * @LastEditTime : 2020-07-14 12:19:10
  * @FilePath     : \Code\VueJs\组件\4.html
 -->
 <!DOCTYPE html>
@@ -26,10 +26,46 @@
             Your Profile
             <navigation>123</navigation>
         </navigation-link>
+        <!-- 具名插槽、可以为每个插槽命名 -->
+        <base-layout>
+            <template v-slot:header>
+                <p>Here might be a page title</p>
+            </template>
+
+            <template v-slot:default>
+                <p>A paragraph for the main content.</p>
+                <p>And another one.</p>
+            </template>
+
+            <template v-slot:footer>
+                <p>Here's some contact info</p>
+            </template>
+        </base-layout>
     </div>
 
 
     <script>
+        Vue.component("base-layout", {
+            template: `
+                    <div class="container">
+                    <header>
+                        <slot name="header">{{user.message}}</slot>
+                    </header>
+                    <main>
+                        <slot></slot>
+                    </main>
+                    <footer>
+                        <slot name="footer"></slot>
+                    </footer>
+                    </div>`,
+            data() {
+                return {
+                    user: {
+                        message: "562345234"
+                    }
+                }
+            },
+        });
         Vue.component("navigation-link", {
             //如果 <navigation-link> 的 template 中没有包含一个 <slot> 元素，则该组件起始标签和结束标签之间的任何内容都会被抛弃
             template: '<a href="" class="nav-link"><slot></slot></a > '

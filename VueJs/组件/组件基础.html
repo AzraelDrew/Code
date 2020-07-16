@@ -1,0 +1,57 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-15 21:54:04
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-16 14:37:11
+ * @FilePath     : \Code\VueJs\组件\组件基础.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件基础</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn></cpn>
+    <my-cpn></my-cpn>
+  </div>
+  <script>
+    const cpn = Vue.extend({
+      template: `
+      <div>
+        <h2>我是标题</h2>
+        <p>哈哈</p>
+        <p>哈哈</p>
+      </div>`
+    })
+    // 全局注册
+    Vue.component("cpn", cpn)
+    const app = new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      computed: {},
+      components: {
+        // 局部注册
+        "my-cpn": {
+          template: `
+            <div>
+              <p>yznaisy</p>
+              <h2>1544676</h2>
+            </div>`
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

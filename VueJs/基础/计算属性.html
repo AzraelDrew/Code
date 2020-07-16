@@ -1,0 +1,73 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-15 10:06:08
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-15 15:44:58
+ * @FilePath     : \Code\VueJs\基础\计算属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{getFullName()}}</h1>
+    <h1>{{getFullName()}}</h1>
+    <h1>{{getFullName()}}</h1>
+    <h1>{{getFullName()}}</h1>
+
+
+    <h1>{{fullName}}</h1>
+    <h1>{{fullName}}</h1>
+    <h1>{{fullName}}</h1>
+    <h1>{{fullName}}</h1>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        firstName: "kobe",
+        lastName: "Bryant"
+      },
+      computed: {
+        // computed内部有缓存当属性中的值没有发生变化时会把原先的值直接返回不会计算，当值发生改变时会计算
+        fullName: {
+          // 计算属性一般没有set方法，只读属性
+          // 改变fullName的值的时候会触发set方法
+          set: function (newValue) {
+            const names = newValue.split(" ");
+            this.firstName = names[0]
+            this.lastName = names[1]
+          },
+          // 一般只需要实现get方法
+          get: function () {
+            console.log("fullName")
+            return this.firstName + " " + this.lastName;
+          }
+        }
+        // 当只有get时简写
+        // 属性名: function () {
+        //     return 你想要返回的内容
+        // }
+      },
+      // methods每次都会计算
+      methods: {
+        getFullName: function () {
+          console.log("getFullName");
+          return this.firstName + " " + this.lastName;
+        }
+      },
+    });
+
+  </script>
+</body>
+
+</html>

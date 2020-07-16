@@ -1,0 +1,56 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-16 15:12:25
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-16 15:17:52
+ * @FilePath     : \Code\VueJs\组件\组件模板分离.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn2></cpn2>
+  </div>
+  <template id="cpn2">
+    <div>
+      <h2>我是标题2</h2>
+      <p>我是内容2</p>
+    </div>
+  </template>
+  <script type="text/x-template" src="" id="cpn">
+    <div>
+      <h2>我是标题1</h2>
+      <p>我是内容1</p>
+    </div>
+</script>
+  <script>
+    Vue.component("cpn", {
+      template: "#cpn",
+    })
+    Vue.component("cpn2", {
+      template: "#cpn2",
+    })
+    const app = new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      computed: {},
+      components: {}
+    });
+
+  </script>
+</body>
+
+</html>
