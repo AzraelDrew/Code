@@ -1,0 +1,104 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-18 23:09:58
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-21 18:39:10
+ * @FilePath     : \Code\VueJs\组件\组件通信案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn :number1="num1" :number2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+    <p>app:{{ num1 }}</p>
+    <p>app:{{ num2 }}</p>
+  </div>
+  <template id="cpn">
+    <div>
+      <div>
+        <h2>props:{{ number1 }}</h2>
+        <h2>data:{{ dbnumber1 }}</h2>
+        <input type="text" :value="dbnumber1" @input="num1input">
+        <h2>props:{{ number2 }}</h2>
+        <h2>data:{{ dbnumber2 }}</h2>
+        <input type="text" :value="dbnumber2" @input="num2input">
+        <!-- <h2>props:{{ number1 }}</h2>
+        <h2>data:{{ dbnumber1 }}</h2>
+        <input type="text" v-model="dbnumber1">
+        <h2>props:{{ number2 }}</h2>
+        <h2>data:{{ dbnumber2 }}</h2>
+        <input type="text" v-model="dbnumber2"> -->
+      </div>
+  </template>
+  <script>
+    const cpn = {
+      template: "#cpn",
+      props: {
+        number1: Number,
+        number2: Number,
+      },
+      data() {
+        return {
+          dbnumber1: this.number1,
+          dbnumber2: this.number2,
+        }
+      },
+      methods: {
+        num1input(event) {
+          this.dbnumber1 = event.target.value
+          this.$emit("num1change", this.dbnumber1)
+          this.dbnumber2 = this.dbnumber1 * 100
+          this.$emit("num2change", this.dbnumber2)
+        },
+        num2input(event) {
+          this.dbnumber2 = event.target.value
+          this.$emit("num2change", this.dbnumber2)
+          this.dbnumber1 = this.dbnumber2 / 100
+          this.$emit("num1change", this.dbnumber1)
+        }
+      },
+      // watch: {
+      //   dbnumber1(newValue) {
+      //     this.dbnumber2 = newValue * 100
+      //     this.$emit("num1change", newValue)
+      //   },
+      //   dbnumber2(newValue) {
+      //     this.dbnumber1 = newValue / 100
+      //     this.$emit("num2change", newValue)
+      //   }
+      // },
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+        num1: 1,
+        num2: 0
+      },
+      methods: {
+        num1change(value) {
+          this.num1 = parseFloat(value)
+        },
+        num2change(value) {
+          this.num2 = parseFloat(value)
+        }
+      },
+      computed: {},
+      components: {
+        cpn
+      }
+    });
+
+  </script>
+</body>
+
+</html>

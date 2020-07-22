@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-21 17:23:10
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-21 17:50:46
+ * @LastEditTime : 2020-07-21 18:36:54
  * @FilePath     : \Code\VueJs\组件\slot.html
 -->
 <!DOCTYPE html>
@@ -19,30 +19,66 @@
 
 <body>
   <div id="app">
-    <cpn>
+    <cpn v-show="isShow">
       <span slot="right">biaoti</span>
       <button slot="center">按钮</button>
       <span slot="left">按钮</span>
     </cpn>
+    <cpn2>
+      <!-- 作用域插槽 -->
+      <template slot-scope="slot">
+        <span v-for="item in slot.data">{{ item }}</span>
+        <br>
+        <span>{{ slot.data.join("-") }}</span>
+      </template>
+    </cpn2>
   </div>
   <template id="cpn">
     <div>
+      <!-- 具名插槽 -->
       <slot name="right"><span>左边</span></slot>
       <slot name="center"><span>中间</span></slot>
       <slot name="left"><span>右边</span></slot>
+      <!-- 作用域 -->
+      <span v-show="isShow">子组件</span>
+    </div>
+  </template>
+  <template id="cpn2">
+    <div>
+      <!-- 作用域插槽 -->
+      <slot :data="Language">
+        <ul>
+          <li v-for="item in Language">{{ item }}</li>
+        </ul>
+      </slot>
     </div>
   </template>
   <script>
-    const cpn = {
-      template: "#cpn"
-    }
     const app = new Vue({
       el: '#app',
-      data: {},
+      data: {
+        message: "yznaisy",
+        isShow: true
+      },
       methods: {},
       computed: {},
       components: {
-        cpn
+        cpn: {
+          template: "#cpn",
+          data() {
+            return {
+              isShow: false
+            }
+          },
+        },
+        cpn2: {
+          template: "#cpn2",
+          data() {
+            return {
+              Language: ["javascript", "java", "python", "c++"]
+            }
+          },
+        }
       }
     });
 
