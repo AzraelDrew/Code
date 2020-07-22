@@ -1,0 +1,71 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-18 23:09:58
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-16 18:19:26
+ * @FilePath     : \Code\VueJs\基础\10.1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <select name="abc" id="" v-model="fruit">
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="榴莲">榴莲</option>
+      <option value="葡萄">葡萄</option>
+    </select>
+    <h2>{{ fruit }}</h2>
+    <select name="abc" id="" v-model="fruits" multiple>
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="榴莲">榴莲</option>
+      <option value="葡萄">葡萄</option>
+    </select>
+    <h2>{{ fruits }}</h2>
+    <!-- 值绑定 -->
+    <label v-for="item in originHobbies" :for="item">
+      <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}
+    </label>
+    <h2>{{hobbies}}</h2>
+    <!-- 修饰符 -->
+    <!-- 1.lazy   失去焦点后绑定-->
+    <input type="text" v-model.lazy="message">
+    <h2>{{ message }}</h2>
+    <!-- 2.number -->
+    <input type="number" v-model.number="age">
+    <h2>{{typeof age}}</h2>
+    <!-- 3.trim -->
+    <input type="text" v-model.trim="name">
+    <h2>{{ name }}</h2>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          message: "你好",
+          age: 0,
+          name: " ",
+          fruit: "香蕉",
+          fruits: ["香蕉"],
+          hobbies: [],
+          originHobbies: ["篮球", "足球", "乒乓球", "羽毛球", "台球", "高尔夫球"]
+        }
+      },
+    })
+
+  </script>
+</body>
+
+</html>

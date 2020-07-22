@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-18 23:09:58
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-15 21:48:17
+ * @LastEditTime : 2020-07-16 21:57:00
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -19,51 +19,84 @@
 
 <body>
   <div id="app">
-    <select name="abc" id="" v-model="fruit">
-      <option value="苹果">苹果</option>
-      <option value="香蕉">香蕉</option>
-      <option value="榴莲">榴莲</option>
-      <option value="葡萄">葡萄</option>
-    </select>
-    <h2>{{ fruit }}</h2>
-    <select name="abc" id="" v-model="fruits" multiple>
-      <option value="苹果">苹果</option>
-      <option value="香蕉">香蕉</option>
-      <option value="榴莲">榴莲</option>
-      <option value="葡萄">葡萄</option>
-    </select>
-    <h2>{{ fruits }}</h2>
-    <!-- 值绑定 -->
-    <label v-for="item in originHobbies" :for="item">
-      <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}
-    </label>
-    <h2>{{hobbies}}</h2>
-    <!-- 修饰符 -->
-    <!-- 1.lazy   失去焦点后绑定-->
-    <input type="text" v-model.lazy="message">
-    <h2>{{ message }}</h2>
-    <!-- 2.number -->
-    <input type="number" v-model.number="age">
-    <h2>{{typeof age}}</h2>
-    <!-- 3.trim -->
-    <input type="text" v-model.trim="name">
-    <h2>{{ name }}</h2>
+    <cpn :number1="num1" :number2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+    <p>app:{{ num1 }}</p>
+    <p>app:{{ num2 }}</p>
   </div>
+  <template id="cpn">
+    <div>
+      <div>
+        <h2>props:{{ number1 }}</h2>
+        <h2>data:{{ dbnumber1 }}</h2>
+        <input type="text" :value="dbnumber1" @input="num1input">
+        <h2>props:{{ number2 }}</h2>
+        <h2>data:{{ dbnumber2 }}</h2>
+        <input type="text" :value="dbnumber2" @input="num2input">
+        <!-- <h2>props:{{ number1 }}</h2>
+        <h2>data:{{ dbnumber1 }}</h2>
+        <input type="text" v-model="dbnumber1">
+        <h2>props:{{ number2 }}</h2>
+        <h2>data:{{ dbnumber2 }}</h2>
+        <input type="text" v-model="dbnumber2"> -->
+      </div>
+  </template>
   <script>
-    new Vue({
-      el: "#app",
+    const cpn = {
+      template: "#cpn",
+      props: {
+        number1: Number,
+        number2: Number,
+      },
       data() {
         return {
-          message: "你好",
-          age: 0,
-          name: " ",
-          fruit: "香蕉",
-          fruits: ["香蕉"],
-          hobbies: [],
-          originHobbies: ["篮球", "足球", "乒乓球", "羽毛球", "台球", "高尔夫球"]
+          dbnumber1: this.number1,
+          dbnumber2: this.number2,
         }
       },
-    })
+      methods: {
+        num1input(event) {
+          this.dbnumber1 = event.target.value
+          this.$emit("num1change", this.dbnumber1)
+          this.dbnumber2 = this.dbnumber1 * 100
+          this.$emit("num2change", this.dbnumber2)
+        },
+        num2input(event) {
+          this.dbnumber2 = event.target.value
+          this.$emit("num2change", this.dbnumber2)
+          this.dbnumber1 = this.dbnumber2 / 100
+          this.$emit("num1change", this.dbnumber1)
+        }
+      },
+      // watch: {
+      //   dbnumber1(newValue) {
+      //     this.dbnumber2 = newValue * 100
+      //     this.$emit("num1change", newValue)
+      //   },
+      //   dbnumber2(newValue) {
+      //     this.dbnumber1 = newValue / 100
+      //     this.$emit("num2change", newValue)
+      //   }
+      // },
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+        num1: 1,
+        num2: 0
+      },
+      methods: {
+        num1change(value) {
+          this.num1 = parseFloat(value)
+        },
+        num2change(value) {
+          this.num2 = parseFloat(value)
+        }
+      },
+      computed: {},
+      components: {
+        cpn
+      }
+    });
 
   </script>
 </body>

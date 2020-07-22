@@ -1,0 +1,76 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-16 17:15:12
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-16 17:44:51
+ * @FilePath     : \Code\VueJs\组件\组件通信-子传父.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn @itemclick="cpnClick"></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      <button v-for="item in categoties" @click="btnClick(item)">{{ item.name }}</button>
+    </div>
+  </template>
+  <script>
+    //子传父:$emit
+    const cpn = {
+      template: "#cpn",
+      data() {
+        return {
+          categoties: [{
+              id: 'aaa',
+              name: '热门推荐'
+            },
+            {
+              id: 'bbb',
+              name: '手机数码'
+            },
+            {
+              id: 'ccc',
+              name: '家用家电'
+            },
+            {
+              id: 'ddd',
+              name: '电脑办公'
+            },
+          ]
+        }
+      },
+      methods: {
+        btnClick(item) {
+          // console.log(item)
+          this.$emit("itemclick", item)
+        }
+      }
+    }
+    const app = new Vue({
+      el: "#app",
+      components: {
+        cpn
+      },
+      methods: {
+        cpnClick(item) {
+          console.log("cpnClick", item)
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

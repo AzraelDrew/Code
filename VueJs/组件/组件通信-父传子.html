@@ -1,0 +1,83 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-16 15:31:28
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-16 17:03:47
+ * @FilePath     : \Code\VueJs\组件\组件通信.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn :cmovies="movies" :cmessage="message"></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      <h2>{{cmessage}}</h2>
+      <ul>
+        <li v-for="(item, index) in cmovies" :key="index">{{item}}</li>
+      </ul>
+    </div>
+  </template>
+  <script>
+    function Person(firstName, lastName) {
+      this.firstName = firstName
+      this.lastName = lastName
+    }
+    // 父传子：props
+    const cpn = {
+      template: "#cpn",
+      // props: ['cmovies', 'cmessage'], //数组写法
+      props: {
+        // 类型限制(多个类使用数组)
+        // cmovies:Array,
+        // cmessage:String,
+        // cmessage:['String','Number']
+        cmovies: {
+          type: Array, //类型限制
+          required: true, //必传值
+          //类型是Object/Array，默认值必须是一个函数
+          default () { //默认值
+            return [1, 2, 3, 4, 5, 67, 7]
+          }
+        },
+        cmessage: {
+          type: String,
+          default () {
+            return "afdsfas"
+          }
+        },
+      },
+      data() {
+        return {
+
+        }
+      },
+    }
+    const app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          message: "你好啊",
+          movies: ["海王", "哪吒", "半个喜剧"]
+        }
+      },
+      components: {
+        cpn
+      }
+    });
+
+  </script>
+</body>
+
+</html>
