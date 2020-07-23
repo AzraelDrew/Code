@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-18 23:09:58
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-22 16:55:33
+ * @LastEditTime : 2020-07-23 17:06:54
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -12,36 +12,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>yznaisy</title>
-  <link href='https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.css' rel='stylesheet'>
-  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
-  <script src='https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js'></script>
+  <title>综合练习</title>
+  <style>
+    .active {
+      background-color: red;
+    }
+
+  </style>
 </head>
 
 <body>
-</body>
-<script>
-  const obj = {
-    aaa() {
-      console.log(this)
-      setTimeout(function () {
-        console.log(this);
-      })
-      setTimeout(() => {
-        setTimeout(function () {
-          console.log(this);
-        })
-        setTimeout(() => {
-          console.log(this)
-        })
-      })
-    }
-  }
-  obj.aaa();
+  <div id="app">
+    <!-- 数组的响应式方法 -->
+    <ul>
+      <li v-for="(item,index) in movies" @click="liClick(index)" :class="{active:index===curIndex}">{{index+"---"+item}}
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        movies: ['复仇者联盟', '蝙蝠侠', '海贼王', '星际穿越'],
+        curIndex: -1
+      },
+      methods: {
+        liClick(index) {
+          this.curIndex = index
+        }
+      }
+    })
 
-</script>
-
-
+  </script>
 </body>
 
 </html>
