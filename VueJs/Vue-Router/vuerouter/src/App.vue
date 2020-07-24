@@ -2,11 +2,13 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-22 16:55:05
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-23 22:02:25
+ * @LastEditTime : 2020-07-24 20:48:43
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\App.vue
 -->
 <template>
   <div id="app">
+    <h1>App组件</h1>
+    <keep-alive></keep-alive>
     <!--
       to：跳转到指定路径
       tag：将router-link渲染成指定的标签
@@ -21,10 +23,17 @@
     <button @click="aboutClick">关于</button>-->
     <router-link to="/home" replace>首页</router-link>
     <router-link to="/about" replace>关于</router-link>
-    <!-- 动态路由 -->
-    <router-link :to="'/user/'+userId" replace>用户</router-link>
+    <!-- 动态路由(params) -->
+    <!-- <router-link :to="'/user/'+userId" replace>用户</router-link> -->
+    <!-- 参数传递(query) -->
+    <!-- <router-link :to="{path:'/profile',query:{name:'yznaisy',age:'20',height:'170'}}" replace>档案</router-link> -->
+
+    <button @click="userClick">用户</button>
+    <button @click="profileClick">档案</button>
     <!-- 组件渲染的位置 -->
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -45,6 +54,20 @@ export default {
     aboutClick() {
       // this.$router.push("/about");
       this.$router.replace("/about");
+    },
+    // 代码参数传递
+    userClick() {
+      this.$router.push("/user/" + this.userId);
+    },
+    profileClick() {
+      this.$router.push({
+        path: "/profile",
+        query: {
+          name: "yznaisy",
+          age: "19",
+          height: "175",
+        },
+      });
     },
   },
 };

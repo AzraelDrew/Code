@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-23 16:38:56
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-23 19:18:09
+ * @LastEditTime : 2020-07-24 15:31:59
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\components\About.vue
 -->
 <template>
@@ -18,6 +18,10 @@ export default {
   data() {
     return {};
   },
+  // created() {
+  //   console.log("created");
+  //   document.title = "关于";
+  // },
 };
 </script>
 
