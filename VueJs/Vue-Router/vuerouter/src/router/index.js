@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-22 16:55:05
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-24 21:14:48
+ * @LastEditTime : 2020-07-26 22:22:27
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\router\index.js
  */
 import Vue from 'vue'
@@ -24,6 +24,12 @@ const Profile = () => import('../components/Profile')
 
 // 安装/使用插件
 Vue.use(Router)
+
+// 路由重复
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 // 映射关系
 const routes = [{
@@ -60,7 +66,7 @@ const routes = [{
       title: "关于"
     },
     beforeEnter: (to, from, next) => {
-      // console.log("about ----------")
+      console.log("about ----------")
       next();
     }
   },

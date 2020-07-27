@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-24 13:50:04
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-24 15:31:50
+ * @LastEditTime : 2020-07-26 14:50:59
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\components\Profile.vue
 -->
 <template>
@@ -16,8 +16,18 @@
 
 <script>
 export default {
+  name: "Profile",
   data() {
     return {};
+  },
+  // 创建后
+  created() {
+    // console.log("profile created");
+    // document.title = "首页";
+  },
+  // 销毁后
+  destroyed() {
+    // console.log("profile destroyed");
   },
   // created() {
   //   console.log("created");

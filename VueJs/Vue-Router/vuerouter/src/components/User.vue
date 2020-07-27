@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-23 19:14:10
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-24 15:32:07
+ * @LastEditTime : 2020-07-26 22:21:30
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\components\User.vue
 -->
 <template>
@@ -20,13 +20,19 @@
 
 <script>
 export default {
+  name: "User",
   data() {
     return {};
   },
-  // created() {
-  //   console.log("created");
-  //   document.title = "用户";
-  // },
+  // 创建后
+  created() {
+    // console.log("user created");
+    // document.title = "首页";
+  },
+  // 销毁后
+  destroyed() {
+    // console.log("user destroyed");
+  },
   methods: {
     btnClick() {
       // 所有组件继承自Vue类原型

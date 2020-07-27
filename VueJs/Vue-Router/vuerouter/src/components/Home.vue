@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-23 16:38:37
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-24 21:38:09
+ * @LastEditTime : 2020-07-26 22:22:43
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\components\Home.vue
 -->
 <template>
@@ -26,26 +26,27 @@ export default {
   },
   // 创建后
   created() {
-    console.log("created");
+    // console.log("home created");
     // document.title = "首页";
   },
   // 销毁后
   destroyed() {
-    console.log("destroyed");
+    // console.log("home destroyed");
   },
   /*   activated和deactivated这两个函数只有在该组件保持了状态使用了keep-alive时
   才是有效的 */
   // 活跃时调用
   activated() {
     this.$router.push(this.path);
-    console.log("activated");
+    // console.log("activated");
   },
   // 不活跃
   deactivated() {
-    console.log("deactivated");
+    // console.log("deactivated");
   },
   // 组件内导航守卫
   beforeRouteLeave(to, from, next) {
+    // console.log(this.$route.path);
     this.path = this.$route.path;
     next();
   },

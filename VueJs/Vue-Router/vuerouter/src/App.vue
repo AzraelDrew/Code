@@ -2,13 +2,12 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-22 16:55:05
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-24 20:48:43
+ * @LastEditTime : 2020-07-26 15:13:53
  * @FilePath     : \Code\VueJs\Vue-Router\vuerouter\src\App.vue
 -->
 <template>
   <div id="app">
     <h1>App组件</h1>
-    <keep-alive></keep-alive>
     <!--
       to：跳转到指定路径
       tag：将router-link渲染成指定的标签
@@ -31,7 +30,12 @@
     <button @click="userClick">用户</button>
     <button @click="profileClick">档案</button>
     <!-- 组件渲染的位置 -->
-    <keep-alive>
+    <!-- keep-alive 不会频繁的创建和销毁 -->
+    <keep-alive exclude="Profile,User">
+      <!--
+        include:组件name,多个name   组件会缓存，不会被频繁创建
+        exclude:组件name,多个name   组件不会缓存，会频繁被创建销毁
+      -->
       <router-view></router-view>
     </keep-alive>
   </div>
