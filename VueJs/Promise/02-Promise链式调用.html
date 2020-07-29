@@ -1,0 +1,86 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-27 20:43:48
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-27 22:06:23
+ * @FilePath     : \Code\VueJs\Promise\02-Promise链式调用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise链式调用</title>
+</head>
+
+<body>
+
+  <script>
+    // new Promise((resolve, reject) => {
+    //   // 第一次请求代码
+    //   setTimeout(() => {
+    //     resolve();
+    //   }, 1000);
+    // }).then(() => {
+    //   // 第一次处理代码
+    //   console.log("第一次");
+    //   console.log("第一次");
+    //   console.log("第一次");
+    //   return new Promise((resolve, reject) => {
+    //     // 第二次请求代码
+    //     setTimeout(() => {
+    //       resolve();
+    //     }, 1000);
+    //   }).then(() => {
+    //     // 第二次处理代码
+    //     console.log("第二次");
+    //     console.log("第二次");
+    //     console.log("第二次");
+    //     return new Promise((resolve, reject) => {
+    //       // 第三次请求代码
+    //       setTimeout(() => {
+    //         resolve();
+    //       }, 1000);
+    //     }).then(() => {
+    //       // 第三次处理代码
+    //       console.log("第三次");
+    //       console.log("第三次");
+    //       console.log("第三次");
+    //     })
+    //   })
+    // })
+
+
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("aaa")
+      }, 1000)
+      // 自己处理
+    }).then(res => {
+      console.log(res, "第一层处理")
+      // 对结果的第一次处理
+      // return new Promise(resolve => {
+      //   resolve(res + "111")
+      // })
+      //简写
+      // return Promise.resolve(res + "111")
+      return res + "111"
+    }).then(res => {
+      console.log(res, "第二层处理")
+      // return new Promise(resolve => {
+      //   resolve(res + "222")
+      // })
+      //简写
+      // return Promise.resolve(res + "222")
+      return res + "222"
+      // 第三层处理
+    }).then(res => {
+      console.log(res, "第三层处理")
+    })
+
+  </script>
+</body>
+
+</html>

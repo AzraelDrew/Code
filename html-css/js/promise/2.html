@@ -1,28 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-27 13:08:12
+ * @FilePath     : \Code\html-css\js\promise\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function loadImag(src, resolve, reject) {
-      let image = new Image();
-      image.src = src;
-      image.onload = () => {
-        resolve(image);
-      };
-      image.onerror = reject;
+
+<head>
+  <meta charset="UTF-8" />
+  <title>后盾人</title>
+</head>
+
+<body></body>
+<script>
+  function loadImag(src, resolve, reject) {
+    let image = new Image();
+    image.src = src;
+    image.onload = () => {
+      resolve(image);
+    };
+    image.onerror = reject;
+  }
+  loadImag(
+    "./images/houdunren.png",
+    image => {
+      document.body.appendChild(image);
+    },
+    () => {
+      console.log("加载失败");
     }
-    loadImag(
-      "images/houdunren.png2",
-      image => {
-        document.body.appendChild(image);
-      },
-      () => {
-        console.log("加载失败");
-      }
-    );
-    console.log("后盾人");
-  </script>
+  );
+  console.log("后盾人");
+
+</script>
+
 </html>

@@ -6,5 +6,5 @@
   "editor.tokenColorCustomizations": {
     "comments": "#ED4C67" // 注释
   },
-  "git.ignoreLimitWarning": true, //如果后面还加内容，记得块末用逗号隔开
+  "git.ignoreLimitWarning": true, //如果后面还加内容，记得块末用逗号隔开,
 }

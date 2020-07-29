@@ -1,0 +1,96 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-27 12:11:02
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-27 21:11:10
+ * @FilePath     : \Code\VueJs\Promise\01-基本使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+</head>
+
+<body>
+  <script>
+    // Promise用于异步操作，对异步进行操作
+    // setTimeout(() => {
+    //   console.log(123)
+    // }, 1000)
+
+    // Proimse参数   函数（resolve,reject）
+    // resolve,reject  本身也是函数
+    // then参数  函数
+
+
+
+    // new Promise((resolve, reject) => {
+    //   // 第一次请求代码
+    //   setTimeout(() => {
+    //     resolve();
+    //   }, 1000);
+    // }).then(() => {
+    //   // 第一次处理代码
+    //   console.log("第一次");
+    //   console.log("第一次");
+    //   console.log("第一次");
+    //   return new Promise((resolve, reject) => {
+    //     // 第二次请求代码
+    //     setTimeout(() => {
+    //       resolve();
+    //     }, 1000);
+    //   }).then(() => {
+    //     // 第二次处理代码
+    //     console.log("第二次");
+    //     console.log("第二次");
+    //     console.log("第二次");
+    //     return new Promise((resolve, reject) => {
+    //       // 第三次请求代码
+    //       setTimeout(() => {
+    //         resolve();
+    //       }, 1000);
+    //     }).then(() => {
+    //       // 第三次处理代码
+    //       console.log("第三次");
+    //       console.log("第三次");
+    //       console.log("第三次");
+    //     })
+    //   })
+    // })
+
+
+
+    // new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve("Hello World"); //成功时调用
+    //     reject("error message");
+    //   }, 1000)
+    // }).then((data) => { //成功时处理
+    //   console.log(data)
+    // }).catch((err) => { //失败时处理
+    //   console.log(err)
+    // })
+
+
+
+    //另一种处理方式
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Hello vuejs");
+        // reject("error message vuejs");
+      })
+      // then中可以传递两个参数，第一个表示成功时处理，第二个表示失败时处理
+    }, 1000).then(data => {
+      console.log(data)
+    }, err => {
+      console.log(err)
+    })
+
+  </script>
+</body>
+
+</html>

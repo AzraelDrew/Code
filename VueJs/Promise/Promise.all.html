@@ -1,0 +1,61 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-07-28 14:32:38
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-28 14:46:53
+ * @FilePath     : \Code\VueJs\Promise\Promise.all.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yznaisy</title>
+</head>
+
+<body>
+  <script>
+    // 等到all里面的数据都请求完后执行then里面的代码
+    Promise.all([
+      // new Promise((resolve, reject) => {
+      //   $.ajax({
+      //     url: "url1",
+      //     success(data) {
+      //       resolve(data)
+      //     }
+      //   })
+      // }),
+      // new Promise((resolve, reject) => {
+      //   $.ajax({
+      //     url: "url2",
+      //     success(data) {
+      //       resolve(data)
+      //     }
+      //   })
+      // }),
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({
+            name: "yzn",
+            age: 18
+          })
+        }, 5000);
+      }),
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({
+            name: "sy",
+            age: 18
+          })
+        }, 1000);
+      })
+    ]).then(results => {
+      console.log(results)
+    })
+
+  </script>
+</body>
+
+</html>
