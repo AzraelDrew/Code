@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-07-29 14:11:31
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-29 14:22:44
+ * @LastEditTime : 2020-07-29 15:27:19
  * @FilePath     : \Code\VueJs\axios\axios-cli2\src\main.js
  */
 import Vue from 'vue'
@@ -20,5 +20,8 @@ new Vue({
 })
 
 axios({
-  url: ""
+  url: "http://123.207.32.32:8000/home/data?type=sell&page=3",
+  method: "get"
+}).then(res => {
+  console.log(res)
 })
