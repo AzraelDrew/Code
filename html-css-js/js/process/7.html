@@ -1,36 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 19:39:57
+ * @FilePath     : \Code\html-css-js\js\process\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <input type="password" name="password" />
-    <span id="msg"></span>
-    <script>
-      document
-        .querySelector("[name='password']")
-        .addEventListener("keyup", function() {
-          let length = this.value.length;
-          let span = document.querySelector("#msg");
-          let msg = "";
-          if (length > 10) {
-            msg = "密码无敌安全";
-          } else if (length > 6) {
-            msg = "中级密码强度";
-          } else {
-            msg = "密码太弱";
-          }
-          span.innerHTML = msg;
-        });
-      // let status = false;
-      // if (status) {
-      //   console.log("houdunren");
-      // } else {
-      //   console.log("hdcms");
-      // }
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>if/else</title>
+</head>
+
+<body>
+  <input type="password" name="password" />
+  <span id="msg"></span>
+  <script>
+    document
+      .querySelector("[name='password']")
+      .addEventListener("keyup", function () {
+        let length = this.value.length;
+        let span = document.querySelector("#msg");
+        let msg = "";
+        if (length > 10) {
+          msg = "密码无敌安全";
+        } else if (length > 6) {
+          msg = "中级密码强度";
+        } else {
+          msg = "密码太弱";
+        }
+        span.innerHTML = msg;
+      });
+    // let status = false;
+    // if (status) {
+    //   console.log("houdunren");
+    // } else {
+    //   console.log("hdcms");
+    // }
+
+  </script>
+</body>
+
 </html>

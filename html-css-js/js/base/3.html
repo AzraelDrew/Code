@@ -1,47 +1,118 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-29 18:11:55
+ * @FilePath     : \Code\html-css-js\js\base\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      // var web = 'houdunren.com';
-      // console.log(web);
-      // var class = 'hdcms';
-      // var web;
-      // console.log(web);
-      // var web = "hdcms.com";
 
-      // web = "hdcms.com";
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>变量提升/let&const</title>
+</head>
 
-      // if (false) {
-      //   console.log("abc");
-      // }
-      // function hd() {
-      //   if (false) {
-      //     var web = "houdunren.com";
-      //   }
-      //   console.log(web);
-      // }
-      // hd();
-      // console.log(web);
-      // var web = "houdunren.com";
+<body>
+  <script>
+    // var web = 'houdunren.com';
+    // console.log(web);
+    // var class = 'hdcms';
 
-      // let web = "houdunren.com";
-      // console.log(web);
 
-      // let web = "hdcms.com";
-      // function func() {
-      //   let web = "houdunren.com";
-      //   console.log(web);
-      // }
-      // func();
+    // var web;
+    // console.log(web);
+    // var web = "hdcms.com";
 
-      function run(a = 3, b = a) {}
-      run();
-    </script>
-  </body>
+    // web = "hdcms.com";
+
+    // if (false) {
+    //   console.log("abc");
+    // }
+    // function hd() {
+    //   if (false) {
+    //     var web = "houdunren.com";
+    //   }
+    //   console.log(web);
+    // }
+    // hd();
+    // console.log(web);
+    // var web = "houdunren.com";
+
+    // let web = "houdunren.com";
+    // console.log(web);
+
+    // let web = "hdcms.com";
+    // function func() {
+    //   let web = "houdunren.com";
+    //   console.log(web);
+    // }
+    // func();
+
+    // function run(a = 3, b = a) {}
+    // run();
+
+
+    /* yznaisy */
+
+    // var web = "houdunre.com";
+    // console.log(web);
+    // var class = "hdcms"; //会直接报错而不会先输出houdunren.com后再报错
+
+    // console.log(web);
+    // var web = "hdcms.com";
+
+    // 上面代码会发生变量提升，代码为：
+    // var web;
+    // console.log(wed);  //因为没有赋值所以为undefined
+    // web = "hdcms";
+
+
+    // if (true) {
+    //   console.log("abc")
+    // }
+
+    // function hd() {
+    //   if (false) {
+    //     var web = "hdcms.com";
+    //   }
+    //   console.log(web);
+    // }
+    // hd();
+
+    // 上面代码也会有变量提升，代码为：
+    // function hd() {
+    //   var web;
+    //   if (false) {
+    //     var web = "hdcms.com";
+    //   }
+    //   console.log(web);
+    // }
+    // hd();
+
+
+    /* let&const */
+    // console.log(web);
+    // let web = "houdunre.com"; //使用let声明变量，必须在使用前声明
+
+
+    // let web = "houdunre.com";
+
+    // function func() {
+    //   console.log(web);
+    //   let web = "hdcms.com" //函数中有作用域，使用let声明也必须在使用前声明
+    // }
+    // func();
+
+    // function run(a = b, b = 3) {}  //在使用时必须要先赋值
+    // run();
+
+    function run(a = 3, b = a) {}
+    run();
+
+  </script>
+</body>
+
 </html>

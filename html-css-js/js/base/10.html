@@ -1,24 +1,37 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 14:58:12
+ * @FilePath     : \Code\html-css-js\js\base\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      //传值 传址
-      let a = 1;
-      let b = a;
-      console.log(a, b);
-      b = 3;
-      console.log(a, b);
-      let e = { name: "hdcms" };
-      let f = e;
-      console.log(e, f);
-      f.name = "houdunren";
-      console.log(e, f);
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>传值和传址</title>
+</head>
+
+<body>
+  <script>
+    //传值 传址
+    let a = 1;
+    let b = a; //b会重新开辟一块内存空间（标量）
+    console.log(a, b);
+    b = 3;
+    console.log(a, b);
+    let e = {
+      name: "hdcms"
+    };
+    let f = e; //会将e的内存地址传给f（引用类型）
+    console.log(e, f);
+    f.name = "houdunren";
+    console.log(e, f);
+
+  </script>
+</body>
+
 </html>

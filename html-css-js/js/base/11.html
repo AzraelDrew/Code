@@ -1,34 +1,67 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 15:06:37
+ * @FilePath     : \Code\html-css-js\js\base\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      //null undefined
-      // let config={} ;
-      // let web = '';
-      // function show(name) {
-      //   console.log(name);
-      // }
-      // console.log(show());
 
-      let a = 324;
-      let b;
-      console.log(typeof f);
-      function star(num = 5) {
-        num = num || 5;
-        // if (num == undefined) {
-        //   num = 5;
-        // }
-        for (let i = 0; i < num; i++) {
-          document.write("*");
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>null和undefined</title>
+</head>
+
+<body>
+  <script>
+    /*     //null undefined
+    // let config={} ;
+    // let web = '';
+    // function show(name) {
+    //   console.log(name);
+    // }
+    // console.log(show());
+
+    let a = 324;
+    let b;
+    console.log(typeof f);
+
+    function star(num = 5) {
+      num = num || 5;
+      // if (num == undefined) {
+      //   num = 5;
+      // }
+      for (let i = 0; i < num; i++) {
+        document.write("*");
       }
-      star();
-    </script>
-  </body>
+    }
+    star(); */
+
+    /* yznaisy */
+
+    // function show(name) {
+    //   console.log(name) //undefined
+    // }
+    // console.log(show()); //undefined
+
+    // let a = 4355;
+    // let b;
+    // console.log(typeof a);
+    // console.log(typeof b);
+    // console.log(typeof f);
+
+    function star(num) {
+      num = num || 5;
+      for (let i = 0; i < num; i++) {
+        document.write("*")
+      }
+    }
+    star(20)
+
+  </script>
+</body>
+
 </html>

@@ -1,21 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 15:52:16
+ * @FilePath     : \Code\html-css-js\js\process\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      let n = 1;
-      // n=n+1
-      // ++n;
-      // n++;
-      // console.log(n);
-      let f = 2;
-      let d = f + n++;
-      console.log(d);
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>一元运算符，前置/后置</title>
+</head>
+
+<body>
+  <script>
+    let n = 1;
+    // n=n+1
+    // ++n;
+    // n++;
+    // console.log(n);
+    let f = 2;
+    let d = f + n++;
+    console.log(d);
+    console.log(n)
+    let e = f + ++n;
+    console.log(e)
+    console.log(n)
+
+  </script>
+</body>
+
 </html>

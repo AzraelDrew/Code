@@ -1,46 +1,96 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-31 14:36:42
+ * @FilePath     : \Code\html-css-js\js\type\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-    <style>
-      ul {
-        list-style: none;
-      }
-      li {
-        padding: 10px;
-      }
-      li:nth-child(odd) {
-        background: #16a085;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <script>
-      // let str = "houdunren.com";
-      // str += " 后盾人";
-      // console.log(str);
-      // function show() {
-      //   return "houdunren.com";
-      // }
-      // let hd = `www.${5 + 9}`;
-      // console.log(hd);
 
-      let lessons = [
-        { title: "媒体查询响应式布局" },
-        { title: "FLEX 弹性盒模型" },
-        { title: "GRID 栅格系统" }
-      ];
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>模板字面量使用技巧</title>
+  <style>
+    ul {
+      list-style: none;
+    }
 
-      function template() {
-        return `
+    li {
+      padding: 10px;
+    }
+
+    li:nth-child(odd) {
+      background: #16a085;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+  <script>
+    /*     // let str = "houdunren.com";
+    // str += " 后盾人";
+    // console.log(str);
+    // function show() {
+    //   return "houdunren.com";
+    // }
+    // let hd = `www.${5 + 9}`;
+    // console.log(hd);
+
+    let lessons = [{
+        title: "媒体查询响应式布局"
+      },
+      {
+        title: "FLEX 弹性盒模型"
+      },
+      {
+        title: "GRID 栅格系统"
+      }
+    ];
+
+    function template() {
+      return `
         <ul>${lessons.map(item => `<li>${item.title}</li>`).join("")}</ul>
         `;
+    }
+    document.body.innerHTML = template(); */
+
+
+    /* yznaisy */
+
+    function show() {
+      return "houduren.com";
+    }
+    let hd = `www.${show()}`; //也能调用函数,js表达式
+    console.log(hd);
+
+    let lessons = [{
+        title: "媒体查询响应式布局"
+      },
+      {
+        title: "FLEX 弹性盒模型"
+      },
+      {
+        title: "GRID 栅格系统"
       }
-      document.body.innerHTML = template();
-    </script>
-  </body>
+    ];
+
+    function template() {
+      return `
+        <ul>${lessons.map(item=>`<li>${item.title}</li>`).join("")}</ul>`; //字面量中可以嵌套字面量
+    }
+    // function template() {
+    //   return `
+    //     <ul>${lessons.map(item => `<li>${item.title}</li>`).join("")}</ul>
+    //     `;
+    // }
+    document.body.innerHTML = template();
+
+  </script>
+</body>
+
 </html>

@@ -1,19 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-04 13:51:24
+ * @FilePath     : \Code\html-css-js\js\type\13.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      while (true) {
-        const year = prompt("后盾人哪年成立的？").trim();
-        if (!year) continue;
-        console.log(year == "2010" ? "回答正确" : "输入错误");
-        break;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Boolean示例</title>
+</head>
+
+<body>
+  <script>
+    /*     while (true) {
+      const year = prompt("后盾人哪年成立的？").trim();
+      if (!year) continue;
+      console.log(year == "2010" ? "回答正确" : "输入错误");
+      break;
+    } */
+
+
+    /* yznaisy */
+    while (true) {
+      const year = prompt("后盾人那年成立的？").trim();
+      // console.log(year);2010
+
+      if (!year) {
+        continue
       }
-    </script>
-  </body>
+      console.log(year == "2010" ? "回答正确" : "回答错误");
+      break;
+    }
+
+  </script>
+</body>
+
 </html>

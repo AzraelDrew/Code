@@ -1,30 +1,53 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 17:46:46
+ * @FilePath     : \Code\html-css-js\js\process\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      function star(num) {
-        return "*".repeat(num || 5);
-      }
-      console.log(star());
-      // let a = 6,
-      //   b = 0;
-      // let sex = prompt("请输入必须") || "保密";
-      // console.log(sex);
-      // let f = b || a;
-      // console.log(f);
-      // if (a || b) {
-      //   console.log("houdunren");
-      // }
-      // console.log(b == true);
-      // if (a) {
-      //   console.log(33);
-      // }
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>短路运算</title>
+</head>
+
+<body>
+  <script>
+    /*     function star(num) {
+      return "*".repeat(num || 5);
+    }
+    console.log(star());
+    // let a = 6,
+    //   b = 0;
+    // let sex = prompt("请输入必须") || "保密";
+    // console.log(sex);
+    // let f = b || a;
+    // console.log(f);
+    // if (a || b) {
+    //   console.log("houdunren");
+    // }
+    // console.log(b == true);
+    // if (a) {
+    //   console.log(33);
+    // } */
+
+
+    /* yznaisy */
+
+
+    function start(num = 5) {
+      return "*".repeat(num);
+    }
+    // function start(num) {
+    //   return "*".repeat(num || 5);
+    // }
+    console.log(start());
+
+  </script>
+</body>
+
 </html>

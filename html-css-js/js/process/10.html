@@ -1,26 +1,68 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 21:08:55
+ * @FilePath     : \Code\html-css-js\js\process\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      function table(options = { tr: 5, td: 3 }) {
-        document.write(`<table border="1" width="100%">`);
-        while (options.tr-- != 0) {
-          let td = options.td;
-          document.write(`<tr>`);
-          while (td-- != 0) {
-            document.write(`<td>${td}</td>`);
-          }
-          document.write(`</td>`);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>while</title>
+</head>
+
+<body>
+  <script>
+    /*     function table(options = {
+      tr: 5,
+      td: 3
+    }) {
+      document.write(`<table border="1" width="100%">`);
+      while (options.tr-- != 0) {
+        let td = options.td;
+        document.write(`<tr>`);
+        while (td-- != 0) {
+          document.write(`<td>${td}</td>`);
         }
-        document.write(`</table>`);
+        document.write(`</tr>`);
       }
-      table({ tr: 20, td: 10 });
-    </script>
-  </body>
+      document.write(`</table>`);
+    }
+    table({
+      tr: 20,
+      td: 10
+    }); */
+
+    /* yznaisy */
+
+
+    function table(options = {
+      tr: 5,
+      td: 3
+    }) {
+      document.write(`<table border="1" width="100%">`);
+      while (options.tr-- != 0) {
+        let td = options.td;
+        document.write(`<tr>`)
+        while (td-- != 0) {
+          document.write(`<td>${td}</td>`)
+        }
+
+        document.write(`</tr>`)
+      }
+
+      document.write(`<table>`);
+    }
+    table({
+      tr: 10,
+      td: 5
+    });
+
+  </script>
+</body>
+
 </html>

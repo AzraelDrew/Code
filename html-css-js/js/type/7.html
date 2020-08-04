@@ -1,28 +1,64 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-04 12:58:17
+ * @FilePath     : \Code\html-css-js\js\type\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      const hd = "Houdunren.com";
-      // console.log(hd.lastIndexOf("o", 9));
-      // console.log(hd.includes("o", 12));
-      // if (hd.indexOf("h") != -1) {
-      //   console.log("找到了");
-      // }
-      // console.log(hd.toLowerCase().endsWith("m"));
-      const word = ["@@", "css"];
-      const string = "我喜欢在后盾人学习php与css知识";
-      const status = word.some(word => {
-        return string.includes(word);
-      });
-      if (status) {
-        console.log("找到了关键词");
-      }
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>检索字符串</title>
+</head>
+
+<body>
+  <script>
+    /*     const hd = "Houdunren.com";
+    // console.log(hd.lastIndexOf("o", 9));
+    // console.log(hd.includes("o", 12));
+    // if (hd.indexOf("h") != -1) {
+    //   console.log("找到了");
+    // }
+    // console.log(hd.toLowerCase().endsWith("m"));
+    const word = ["@@", "css"];
+    const string = "我喜欢在后盾人学习php与css知识";
+    const status = word.some(word => {
+      return string.includes(word);
+    });
+    if (status) {
+      console.log("找到了关键词");
+    }
+ */
+
+    /* yznaisy */
+
+    const hd = "Houdunren.com";
+    console.log(hd.indexOf("o", 9)); //找到时显示索引位置，没找到为-1
+    console.log(hd.lastIndexOf("o", 9)); //找到时显示索引位置，没找到为-1
+    console.log(hd.includes("o", 1)); //找到时返回true,没找到为false
+
+
+    console.log(hd.startsWith("h")); //会区分大小写   //以什么开头aa
+    console.log(hd.toUpperCase().startsWith("H")); //会区分大小写
+
+    console.log(hd.endsWith("m")); //以什么结尾  会区分大小写
+    console.log(hd.toUpperCase().endsWith("M")); //会区分大小写
+
+    const word = ["aaphp", "css"];
+    const string = "我喜欢在后盾人学习php和css知识";
+    const status = word.some(word => {
+      console.log(word);
+      return string.includes(word);
+    })
+    if (status) {
+      console.log("找到了关键词")
+    }
+
+  </script>
+</body>
+
 </html>

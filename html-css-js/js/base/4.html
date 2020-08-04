@@ -1,25 +1,49 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-29 18:19:36
+ * @FilePath     : \Code\html-css-js\js\base\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      const web = "houdunren.com";
-      function show() {
-        const web = "后盾人";
-        function run() {
-          var web = "run .. web";
-          console.log(web);
-        }
-        run();
-        console.log(web);
-      }
-      show();
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>var&let&const共同点</title>
+</head>
+
+<body>
+  <script>
+    // const web = "houdunren.com";
+
+    // function show() {
+    //   const web = "后盾人";
+
+    //   function run() {
+    //     var web = "run .. web";
+    //     console.log(web);
+    //   }
+    //   run();
+    //   console.log(web);
+    // }
+    // show();
+    // console.log(web);
+
+    /* yznaisy */
+
+    var web = "houduren.com"; //此处使用var-let-const声明都为全局变量
+
+    function show() {
+      var web = "后盾人"; //此处使用关键字声明都为局部变量，没有使用关键字声明则向上查找
       console.log(web);
-    </script>
-  </body>
+    }
+    show();
+    console.log(web)
+
+  </script>
+</body>
+
 </html>

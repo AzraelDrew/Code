@@ -1,46 +1,98 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-04 13:22:34
+ * @FilePath     : \Code\html-css-js\js\type\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      // const string = "99";
-      // console.log(typeof string);
-      // console.log(string * 1 + 78);
-      // console.log(Number(string) + 88);
 
-      // const number = 66;
-      // console.log(typeof number);
-      // const str = number + "";
-      // console.log(typeof str);
-      // console.log(typeof String(number));
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>类型转换技巧(字符串)</title>
+</head>
 
-      // const string = "99.78houdunren";
-      // console.log(parseInt(string));
+<body>
+  <script>
+    /*     // const string = "99";
+    // console.log(typeof string);
+    // console.log(string * 1 + 78);
+    // console.log(Number(string) + 88);
 
-      // const cms = "hdcms";
-      // console.log(cms.split("").length);
-      // const array = ["hdcms", "houdunren"];
-      // console.log(array.join("|"));
+    // const number = 66;
+    // console.log(typeof number);
+    // const str = number + "";
+    // console.log(typeof str);
+    // console.log(typeof String(number));
 
-      // let str = "houdunren";
-      // console.log(typeof str);
-      // console.log(str.substr(3));
+    // const string = "99.78houdunren";
+    // console.log(parseInt(string));
 
-      // let cms = new String("hdcms");
-      // console.log(typeof cms);
-      // console.log(cms.substr(3));
+    // const cms = "hdcms";
+    // console.log(cms.split("").length);
+    // const array = ["hdcms", "houdunren"];
+    // console.log(array.join("|"));
 
-      const array = ["hdcms", "houdunren"];
-      console.log(array.toString());
+    // let str = "houdunren";
+    // console.log(typeof str);
+    // console.log(str.substr(3));
 
-      const number = 99;
-      const newNumber = number.toString();
-      console.log(newNumber + 78);
-    </script>
-  </body>
+    // let cms = new String("hdcms");
+    // console.log(typeof cms);
+    // console.log(cms.substr(3));
+
+    const array = ["hdcms", "houdunren"];
+    console.log(array.toString());
+
+    const number = 99;
+    const newNumber = number.toString();
+    console.log(newNumber + 78); */
+
+
+    /* yznaisy */
+
+    // const string = "99";
+    // console.log(typeof string);
+    // console.log(string * 1 + 81); //隐式转换
+    // console.log(Number(string) + 81); //构造函数
+
+
+    // const number = 66;
+    // console.log(typeof number);
+    // const str = number + " "; //隐式转换
+    // console.log(typeof str);
+    // console.log(typeof String(number))
+
+
+    // const string = "99.98houdunren";
+    // console.log(parseInt(string))
+    // console.log(parseFloat(string))
+
+    // const cms = "hdcms";
+    // console.log(cms.split("")); //拆分为一个数组
+
+    // const array = ["hdcms", "houdunren"];
+    // console.log(array.join("|")); //以|连接
+
+    // let str = "houdunren";
+    // console.log(typeof str);
+    // let cms = new String("hdcms");
+    // console.log(typeof cms);
+
+    const array = ["hdcms", "houdunren"];
+    console.log(array);
+    console.log(array.toString());
+
+
+    const number = 99;
+    console.log(typeof number)
+    const newNumber = number.toString();
+    console.log(newNumber + 78)
+
+  </script>
+</body>
+
 </html>

@@ -1,28 +1,64 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 14:40:30
+ * @FilePath     : \Code\html-css-js\js\base\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      // const URL = "https://houdunren.com/api/v1";
-      // function show() {
-      //   const URL = "https://houdunren.com/api/v1";
-      //   console.log(URL);
-      // }
-      // show();
-      // const CONFIG = {};
-      // CONFIG.URL = "HOUDUNREN.COM";
-      // console.log(CONFIG);
-      const URL = "hdcms.com";
-      {
-        const URL = "HOUDURNEN.COM";
-        console.log(URL);
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>const</title>
+</head>
+
+<body>
+  <script>
+    /*     // const URL = "https://houdunren.com/api/v1";
+    // function show() {
+    //   const URL = "https://houdunren.com/api/v1";
+    //   console.log(URL);
+    // }
+    // show();
+    // const CONFIG = {};
+    // CONFIG.URL = "HOUDUNREN.COM";
+    // console.log(CONFIG);
+    const URL = "hdcms.com"; {
+      const URL = "HOUDURNEN.COM";
       console.log(URL);
-    </script>
-  </body>
+    }
+    console.log(URL); */
+
+
+    /* yznaisy */
+
+
+    //  const定义的变量在同一个作用域中不能修改(不能修改内存地址)
+    // const URL = "houduren.com";
+    // URL = "hdcms";
+
+    const URL = "houdunren.com";
+
+    function show() {
+      const URL = "houdunren.com.cn";
+      console.log(URL);
+    }
+    show();
+    const CONFIG = {}
+    CONFIG.URL = "HOUDUNREN.COM" //是对CONFIG中的数据进行修改，而不是更改CONFIG的内存地址
+    console.log(CONFIG.URL)
+
+
+    const url = "hdcms.com"; {
+      const url = "HOUDUNREN.COM";
+      console.log(url)
+    }
+    console.log(url)
+
+  </script>
+</body>
+
 </html>

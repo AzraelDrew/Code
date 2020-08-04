@@ -1,58 +1,69 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 20:22:46
+ * @FilePath     : \Code\html-css-js\js\process\9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      function message(age) {
-        let msg = "";
 
-        switch (2 > 1) {
-          case age > 60:
-            msg = "老年";
-            break;
-          case age > 40:
-            msg = "中年";
-            break;
-          case age > 20:
-            msg = "青年";
-            break;
-        }
-        return msg;
-        // if (age > 60) {
-        //   msg = "老年";
-        // } else if (age > 40) {
-        //   msg = "中年";
-        // } else if (age > 20) {
-        //   msg = "青年";
-        // }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>switch</title>
+</head>
+
+<body>
+  <script>
+    function message(age) {
+      let msg = "";
+
+      switch (2 > 1) {
+        case age > 60:
+          msg = "老年";
+          break;
+        case age > 40:
+          msg = "中年";
+          break;
+        case age > 20:
+          msg = "青年";
+          break;
       }
-      console.log(message(67));
-      // let error = "notice";
-      // switch (error) {
-      //   case "notice":
-      //   case "warning":
-      //     console.log("提示或警告消息");
-      //     break;
-      //   case "error":
-      //   default:
-      //     console.log("错误消息");
+      return msg;
+      // if (age > 60) {
+      //   msg = "老年";
+      // } else if (age > 40) {
+      //   msg = "中年";
+      // } else if (age > 20) {
+      //   msg = "青年";
       // }
-      // let name = "线下";
-      // switch (name) {
-      //   case "产品":
-      //     console.log("hdcms.com");
-      //     break;
-      //   case "视频":
-      //     console.log("houdunren.com");
-      //     break;
-      //   default:
-      //     console.log("houdunwang.com");
-      // }
-    </script>
-  </body>
+    }
+    console.log(message(67));
+    // let error = "notice";
+    // switch (error) {
+    //   case "notice":
+    //   case "warning":
+    //     console.log("提示或警告消息");
+    //     break;
+    //   case "error":
+    //   default:
+    //     console.log("错误消息");
+    // }
+    // let name = "线下";
+    // switch (name) {
+    //   case "产品":
+    //     console.log("hdcms.com");
+    //     break;
+    //   case "视频":
+    //     console.log("houdunren.com");
+    //     break;
+    //   default:
+    //     console.log("houdunwang.com");
+    // }
+
+  </script>
+</body>
+
 </html>

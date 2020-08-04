@@ -1,68 +1,81 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 21:42:08
+ * @FilePath     : \Code\html-css-js\js\process\14.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <style>
-      ul {
-        list-style: none;
-      }
-      li {
-        border: solid 1px #ddd;
-        height: 50px;
-        width: 200px;
-      }
-    </style>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <script>
-      let lis = document.querySelectorAll("li");
-      for (const li of lis) {
-        li.addEventListener("click", function() {
-          li.style.backgroundColor = "red";
-        });
-      }
 
-      // let hd = [
-      //   { title: "第一章 走进JAVASCRIPT黑洞", lesson: 3 },
-      //   { title: "ubuntu19.10 配置好用的编程工作站", lesson: 5 },
-      //   { title: "媒体查询响应式布局", lesson: 8 }
-      // ];
-      // document.write(`
-      //   <table border="1" width="100%">
-      //   <thead><tr><th>标题</th><th>课程数量</th></thead>
-      // `);
-      // for (let video of hd) {
-      //   document.write(`
-      //   <tr><td>${video.title}</td><td>${video.lesson}</td></tr>
-      //   `);
-      // }
-      // document.write("</table>");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>for-in/for-of</title>
+</head>
 
-      // let houdunren = ["hdcms", "houdunren.com"];
-      // for (let key in houdunren) {
-      //   console.log(houdunren[key]);
-      // }
+<body>
+  <style>
+    ul {
+      list-style: none;
+    }
 
-      // for (let key in window) {
-      //   console.log(key);
-      //   // console.log(window[key]);
-      // }
-      // let houdunren = ["hdcms", "houdunren.com"];
-      // for (const value of houdunren) {
-      //   console.log(value);
-      // }
+    li {
+      border: solid 1px #ddd;
+      height: 50px;
+      width: 200px;
+    }
 
-      // for (let v of "houdunren") {
-      //   console.log(v);
-      // }
-    </script>
-  </body>
+  </style>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    let lis = document.querySelectorAll("li");
+    for (const li of lis) {
+      li.addEventListener("click", function () {
+        li.style.backgroundColor = "red";
+      });
+    }
+
+    // let hd = [
+    //   { title: "第一章 走进JAVASCRIPT黑洞", lesson: 3 },
+    //   { title: "ubuntu19.10 配置好用的编程工作站", lesson: 5 },
+    //   { title: "媒体查询响应式布局", lesson: 8 }
+    // ];
+    // document.write(`
+    //   <table border="1" width="100%">
+    //   <thead><tr><th>标题</th><th>课程数量</th></thead>
+    // `);
+    // for (let video of hd) {
+    //   document.write(`
+    //   <tr><td>${video.title}</td><td>${video.lesson}</td></tr>
+    //   `);
+    // }
+    // document.write("</table>");
+
+    // let houdunren = ["hdcms", "houdunren.com"];
+    // for (let key in houdunren) {
+    //   console.log(houdunren[key]);
+    // }
+
+    // for (let key in window) {
+    //   console.log(key);
+    //   // console.log(window[key]);
+    // }
+    // let houdunren = ["hdcms", "houdunren.com"];
+    // for (const value of houdunren) {
+    //   console.log(value);
+    // }
+
+    // for (let v of "houdunren") {
+    //   console.log(v);
+    // }
+
+  </script>
+</body>
+
 </html>

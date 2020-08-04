@@ -1,45 +1,99 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-04 13:42:09
+ * @FilePath     : \Code\html-css-js\js\type\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <script>
-      // const boolean = new Boolean(false);
-      // console.log(typeof boolean);
-      // console.log(boolean.valueOf());
-      // if (boolean.valueOf()) {
-      //   console.log("houdunren.com");
-      // }
-      // let hd = false;
-      // console.log(typeof hd);
-      // if (hd) {
-      //   console.log("hdcms");
-      // }
-      // let number = 89;
-      // if (number) console.log("number");
-      //false 0   0    true 1   1==90
-      // console.log(number == true);
-      // console.log(Boolean(number));
 
-      // let hd = "11";
-      // false 0 hd   1 === 1
-      // console.log(hd == true);
-      // console.log(Boolean(hd));
-      // if (hd) console.log("houdunren.com");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Boolean隐式转换原理</title>
+</head>
 
-      let array = [];
-      // console.log(Number(array));
-      // console.log(array == false);  []  {}
-      console.log(Boolean([]));
-      // if ([]) console.log("houdunren.com");
+<body>
+  <script>
+    /*     // const boolean = new Boolean(false);
+    // console.log(typeof boolean);
+    // console.log(boolean.valueOf());
+    // if (boolean.valueOf()) {
+    //   console.log("houdunren.com");
+    // }
+    // let hd = false;
+    // console.log(typeof hd);
+    // if (hd) {
+    //   console.log("hdcms");
+    // }
+    // let number = 89;
+    // if (number) console.log("number");
+    //false 0   0    true 1   1==90
+    // console.log(number == true);
+    // console.log(Boolean(number));
 
-      // console.log(Boolean({}));
-      if ({}) console.log("hdcms");
-      //
-    </script>
-  </body>
+    // let hd = "11";
+    // false 0 hd   1 === 1
+    // console.log(hd == true);
+    // console.log(Boolean(hd));
+    // if (hd) console.log("houdunren.com");
+
+    let array = [];
+    // console.log(Number(array));
+    // console.log(array == false);  []  {}
+    console.log(Boolean([]));
+    // if ([]) console.log("houdunren.com");
+
+    // console.log(Boolean({}));
+    if ({}) console.log("hdcms"); */
+
+    /* yznaisy */
+
+    // const boolean = new Boolean(true);
+    // console.log(typeof boolean);
+    // console.log(boolean.valueOf());
+    // if (boolean.valueOf()) {
+    //   console.log("houdunren.com")
+    // }
+
+
+    // let hd = true;
+    // console.log(typeof hd)
+    // if (hd) {
+    //   console.log("hdcms")
+    // }
+
+    // let number = 99;
+    // if (number) {
+    //   console.log("number")
+    // }
+
+    // 0为false  1为true
+    // console.log(0 == false);
+    // console.log(1 == true);
+    // console.log(2 == true);
+
+    // let hd = "0";
+    // console.log(hd == false)
+
+    // if (hd) {
+    //   console.log("houdunren.com")
+    // }
+
+    let array1 = [];
+    let array2 = [1];
+    let array3 = [1, 2, 3];
+    console.log(Number(array1));
+    console.log(Number(array2));
+    console.log(Number(array3));
+
+    if (array1) {
+      console.log("array")
+    }
+
+  </script>
+</body>
+
 </html>

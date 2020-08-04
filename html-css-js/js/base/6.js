@@ -1,9 +1,16 @@
-(function() {
+/*
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-07-30 14:30:13
+ * @FilePath     : \Code\html-css-js\js\base\6.js
+ */
+(function () {
   var $ = (window.$ = {});
   $.web = "hdcms";
-  var url = "hdcms.com";
+  var url = "hdcms.com"; //url和site没有开发给$所以在外部访问不到，只能通过getUrl()
   var site = "后盾人";
-  $.getUrl = function() {
+  $.getUrl = function () {
     return url;
   };
 }.bind(window)());
