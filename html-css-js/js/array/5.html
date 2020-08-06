@@ -1,28 +1,54 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-05 10:09:11
+ * @FilePath     : \Code\html-css-js\js\array\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>houdunren.com</title>
-  </head>
-  <body></body>
-  <script>
-    let arr = ["hdcms", "houdunren"];
-    let hd = ["js", "css"];
-    // function sum(...args) {
-    //   // console.log(args);
-    //   return args.reduce((s, v) => {
-    //     return (s += v);
-    //   }, 0);
-    // }
-    // console.log(sum(1, 2, 34, 54, 5));
-    // arr = [...arr, ...hd];
-    // console.log(arr);
 
-    // for (const value of hd) {
-    //   arr.push(value);
-    // }
-    // console.table(arr);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>展开语法</title>
+</head>
+
+<body></body>
+<script>
+  /*   let arr = ["hdcms", "houdunren"];
+  let hd = ["js", "css"];
+  // function sum(...args) {
+  //   // console.log(args);
+  //   return args.reduce((s, v) => {
+  //     return (s += v);
+  //   }, 0);
+  // }
+  // console.log(sum(1, 2, 34, 54, 5));
+  // arr = [...arr, ...hd];
+  // console.log(arr);
+
+  // for (const value of hd) {
+  //   arr.push(value);
+  // }
+  // console.table(arr); */
+
+
+  /* yznaisy */
+
+  let arr = ["hdcms", "houdunren"];
+  let hd = ["js", "css"];
+  arr = [...arr, ...hd];
+  console.log(arr);
+
+  function show(...args) {
+    return args.reduce((s, v) => {
+      return (s += v);
+    }, 0)
+  }
+  console.log(show(1, 2, 3, 4))
+
+</script>
+
 </html>

@@ -1,24 +1,51 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-05 11:31:16
+ * @FilePath     : \Code\html-css-js\js\array\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function move(array, from, to) {
-      if (from < 0 || to >= array.length) {
-        console.error("参数错误");
-        return;
-      }
-      const newArray = [...array];
-      let item = newArray.splice(from, 1);
-      newArray.splice(to, 0, item[0]);
-      return newArray;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>移动数组函数</title>
+</head>
+
+<body></body>
+<script>
+  /*   function move(array, from, to) {
+    if (from < 0 || to >= array.length) {
+      console.error("参数错误");
+      return;
     }
-    let array = [1, 2, 3, 4];
-    console.table(move(array, 1, 3));
-  </script>
+    const newArray = [...array];
+    let item = newArray.splice(from, 1);
+    newArray.splice(to, 0, item[0]);
+    return newArray;
+  }
+  let array = [1, 2, 3, 4];
+  console.table(move(array, 2, 3));
+  console.log(array) */
+
+
+  /* yznaisy */
+  function move(array, from, to) {
+    if (from < 0 || to >= array.length) {
+      console.error("参数错误");
+      return;
+    }
+    const newArray = [...array];
+    let item = newArray.splice(from, 1);
+    newArray.splice(to, 1, ...item);
+    return newArray
+  }
+  let array = [1, 2, 3, 4];
+  console.table(move(array, 1, 3));
+
+</script>
+
 </html>

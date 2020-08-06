@@ -1,27 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-05 18:03:26
+ * @FilePath     : \Code\html-css-js\js\array\24.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let arr = ["hdcms", "houdunren.com"];
-    // let newArray = arr.filter(function(value, index, arr) {
-    //   return false;
-    // });
-    // console.table(newArray);
 
-    let lessons = [
-      { title: "媒体查询响应式布局", category: "css" },
-      { title: "FLEX 弹性盒模型", category: "css" },
-      { title: "MYSQL多表查询随意操作", category: "mysql" }
-    ];
-    const cssLessons = lessons.filter(function(lesson) {
-      return lesson["category"] == "css";
-    });
-    console.table(cssLessons);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>filter过滤</title>
+</head>
+
+<body></body>
+<script>
+  // let arr = ["hdcms", "houdunren.com"];
+  // let newArray = arr.filter(function(value, index, arr) {
+  //   return false;
+  // });
+  // console.table(newArray);
+
+  let lessons = [{
+      title: "媒体查询响应式布局",
+      category: "css"
+    },
+    {
+      title: "FLEX 弹性盒模型",
+      category: "css"
+    },
+    {
+      title: "MYSQL多表查询随意操作",
+      category: "mysql"
+    }
+  ];
+  const cssLessons = lessons.filter(function (lesson) {
+    return lesson.category == "css";
+    // return lesson["category"] == "css";
+  });
+  console.table(cssLessons);
+
+</script>
+
 </html>

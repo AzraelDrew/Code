@@ -1,35 +1,76 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-05 15:08:59
+ * @FilePath     : \Code\html-css-js\js\array\17.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function find(array, callback) {
-      for (const value of array) {
-        if (callback(value)) return value;
-      }
-      return undefined;
-    }
-    let arr = [1, 2, 3, 4, 5];
-    // console.log(
-    //   find(arr, function(item) {
-    //     return item == 22;
-    //   })
-    // );
 
-    Array.prototype.findValue = function(callback) {
-      for (const value of this) {
-        if (callback(value)) return value;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>find实现原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   function find(array, callback) {
+    for (const value of array) {
+      if (callback(value)) return value;
+    }
+    return undefined;
+  }
+  let arr = [1, 2, 3, 4, 5];
+  // console.log(
+  //   find(arr, function(item) {
+  //     return item == 22;
+  //   })
+  // );
+
+  Array.prototype.findValue = function (callback) {
+    for (const value of this) {
+      if (callback(value)) return value;
+    }
+    return undefined;
+  };
+  const res = arr.findValue(function (item) {
+    return item == 223;
+  });
+  console.log(res); */
+
+
+  /* yznaisy */
+
+  function find(array, callback) {
+    for (const value of array) {
+      if (callback(value)) {
+        return value;
       }
-      return undefined;
-    };
-    const res = arr.findValue(function(item) {
-      return item == 223;
-    });
-    console.log(res);
-  </script>
+    }
+    return undefined;
+  }
+
+
+  let arr = [1, 2, 3, 4, 5, 6];
+  console.log(find(arr, function (item) {
+    return item == 6;
+  }))
+  Array.prototype.findValue = function (callback) {
+    for (const value of this) {
+      if (callback(value)) {
+        return value;
+      }
+    }
+    return undefined;
+  }
+
+  console.log(arr.findValue(function (item) {
+    return item == 3;
+  }))
+
+</script>
+
 </html>

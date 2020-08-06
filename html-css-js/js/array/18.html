@@ -1,28 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-05 15:12:35
+ * @FilePath     : \Code\html-css-js\js\array\18.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let arr = [1, 5, 7, 3, 4];
-    // arr = arr.sort(function(a, b) {
-    //   //  -1  从小到大   1 正数  从大到小
-    //   return b - a;
-    // });
-    // console.table(arr);
 
-    let cart = [
-      { name: "iphone", price: 12000 },
-      { name: "imac", price: 18000 },
-      { name: "ipad", price: 3200 }
-    ];
-    cart = cart.sort(function(a, b) {
-      return b.price - a.price;
-    });
-    console.table(cart);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>排序</title>
+</head>
+
+<body></body>
+<script>
+  let arr = [1, 5, 7, 3, 4];
+  // arr = arr.sort(function(a, b) {
+  //   //  -1  从小到大   1 正数  从大到小
+  //   return b - a;
+  // });
+  // console.table(arr);
+
+  let cart = [{
+      name: "iphone",
+      price: 12000
+    },
+    {
+      name: "imac",
+      price: 18000
+    },
+    {
+      name: "ipad",
+      price: 3200
+    }
+  ];
+  cart = cart.sort(function (a, b) {
+    return b.price - a.price;
+  });
+  console.table(cart);
+
+</script>
+
 </html>
