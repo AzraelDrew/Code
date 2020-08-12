@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-08 12:57:00
+ * @FilePath     : \Code\html-css-js\js\set\6.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +12,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>后盾人</title>
+  <title>并集/交集/差集</title>
 </head>
 
 <body></body>
 <script>
-  // let a = new Set([1, 2, 3, 4, 5]);
+  /*   // let a = new Set([1, 2, 3, 4, 5]);
   // let b = new Set([4, 5, 2, 9]);
   // //并集
   // // console.log(new Set([...a, ...b]));
@@ -30,7 +37,19 @@
   })));
   console.log(new Set([...a].filter(function (item) {
     return b.has(item);
-  })));
+  }))); */
+
+  /* yznaisy */
+
+  let a = new Set([1, 2, 3, 4, 5]);
+  let b = new Set([4, 5, 2, 9]);
+  console.log(new Set([...a, ...b])); //并集
+  console.log(
+    new Set([...a].filter(function (item) {
+      // return !b.has(item) //差集(a中不含b的)
+      return b.has(item) //交集(a中含有b的)
+    })))
+
 </script>
 
 </html>

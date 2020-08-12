@@ -1,26 +1,42 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-12 14:36:36
+ * @FilePath     : \Code\html-css-js\js\map\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = new Map([["houdunren", "后盾人"], ["hdcms", "开源系统"]]);
-    //a => b => a
-    // console.log([...hd]);
-    // console.log([...hd.entries()]);
-    // console.log([...hd.keys()]);
-    // console.log([...hd.values()]);
-    // for (const [key, value] of hd) {
-    //   console.log(key, value);
-    // }
-    let newArr = [...hd].filter(item => {
-      return item[1].includes("后盾人");
-    });
-    let edu = new Map(newArr);
-    console.log(...edu.values());
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Map类型转换</title>
+</head>
+
+<body></body>
+<script>
+  let hd = new Map([
+    ["houdunren", "后盾人"],
+    ["hdcms", "开源系统"]
+  ]);
+  //a => b => a
+  // console.log([...hd]);
+  // console.log([...hd.entries()]);
+  // console.log([...hd.keys()]);
+  // console.log([...hd.values()]);
+  // for (const [key, value] of hd) {
+  //   console.log(key, value);
+  // }
+  let newArr = [...hd].filter(item => {
+    return item[1].includes("后盾人");
+  });
+  console.log(newArr);
+  let edu = new Map(newArr);
+  console.log(edu);
+  console.log(...edu.values());
+
+</script>
+
 </html>

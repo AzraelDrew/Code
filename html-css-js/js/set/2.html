@@ -1,24 +1,50 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-08 12:21:26
+ * @FilePath     : \Code\html-css-js\js\set\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let set = new Set(["hdcms", "houdunren"]);
-    // console.log(set.clear());
-    // console.log(set.delete("hdcms.com"));
-    console.log(set.size);
-    // console.log(set.delete("hdcms"));
-    // console.log(set.size);
-    // console.log(set.values());
-    //add has
-    // console.log(set.size);
-    // console.log(set.has("hdcms.com"));
-    // let set = new Set([..."hdcms"]);
-    // console.log(set);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>set类型检测与管理</title>
+</head>
+
+<body></body>
+<script>
+  /*   let set = new Set(["hdcms", "houdunren"]);
+  // console.log(set.clear());
+  // console.log(set.delete("hdcms.com"));
+  console.log(set.size);
+  // console.log(set.delete("hdcms"));
+  // console.log(set.size);
+  // console.log(set.values());
+  //add has
+  // console.log(set.size);
+  // console.log(set.has("hdcms.com"));
+  // let set = new Set([..."hdcms"]);
+  // console.log(set);
+*/
+
+
+
+  /* yznaisy */
+  let set = new Set(["hdcms", "houdunren"]);
+  console.log(set.size); //个数
+  console.log(set.has("hdcms")); //元素是否存在
+  console.log(set.delete("hdcms")); //删除元素  返回值为Boolean类型
+  // console.log(set.size);
+  // console.log(set.values())
+  console.log(set.clear()); //清空  返回值为undefined
+  console.log(set.size);
+  let set2 = new Set([..."hdcms"]);
+  console.log(set2)
+
+</script>
+
 </html>

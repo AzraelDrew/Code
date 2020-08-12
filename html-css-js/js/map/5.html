@@ -1,28 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-12 14:38:16
+ * @FilePath     : \Code\html-css-js\js\map\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <div name="后盾人">houdunren.com</div>
-    <div name="开源内容管理系统">hdcms.com</div>
-  </body>
 
-  <script>
-    let map = new Map();
-    document.querySelectorAll("div").forEach(item => {
-      map.set(item, {
-        content: item.getAttribute("name")
-      });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Map管理DOM</title>
+</head>
+
+<body>
+  <div name="后盾人">houdunren.com</div>
+  <div name="开源内容管理系统">hdcms.com</div>
+</body>
+
+<script>
+  let map = new Map();
+  document.querySelectorAll("div").forEach(item => {
+    map.set(item, {
+      content: item.getAttribute("name")
     });
-    // console.log(map);
-    map.forEach((config, elem) => {
-      elem.addEventListener("click", () => {
-        alert(config.content);
-      });
+  });
+  console.log(map);
+  map.forEach((config, elem) => {
+    elem.addEventListener("click", () => {
+      alert(config.content);
     });
-  </script>
+  });
+
+</script>
+
 </html>

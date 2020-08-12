@@ -1,25 +1,66 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-07 15:10:31
+ * @FilePath     : \Code\html-css-js\js\symbol\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = Symbol("后盾人在线教程");
-    // let edu = Symbol("网址是houdunren.com");
-    // console.log(hd == edu);
-    // hd.name = "后盾人";
-    // console.log(hd.name);
-    // console.log(hd.description);
-    let cms = Symbol.for("hdcms");
-    // let edu = Symbol.for("hdcms");
-    // console.log(cms == edu);
-    let houdunren = Symbol("houdunren");
-    let houdunren2 = Symbol("houdunren");
-    let houdunren3 = Symbol("houdunren");
-    console.log(Symbol.keyFor(houdunren));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>声明方式</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let hd = Symbol("后盾人在线教程");
+  // let edu = Symbol("网址是houdunren.com");
+  // console.log(hd == edu);
+  // hd.name = "后盾人";
+  // console.log(hd.name);
+  // console.log(hd.description);
+  let cms = Symbol.for("hdcms");
+  // let edu = Symbol.for("hdcms");
+  // console.log(cms == edu);
+  let houdunren = Symbol("houdunren");
+  let houdunren2 = Symbol("houdunren");
+  let houdunren3 = Symbol("houdunren");
+  console.log(Symbol.keyFor(houdunren)); */
+
+
+  /* yznaisy */
+  // Symbol 的值是唯一的，独一无二的不会重复的
+  // let hd = Symbol();
+  // let edu = Symbol();
+  // console.log(hd);
+  // console.log(hd == edu);
+
+  // let hd = Symbol();
+  // hd.name = "后盾人";
+  // console.log(hd.name); //Symbol 不可以添加属性
+  // console.log(hd.description)
+
+  //  使用Symbol.for会在系统中将Symbol登记(如果内存中已经存在Symbol会根据描述获取Symbol，如果不存在则新建一个Symbol)
+  // 使用Symbol则不会登记
+  // let hd = Symbol.for("后盾人");
+  // let edu = Symbol.for("后盾人");
+  // let cms = Symbol.for("hdcms")
+  // console.log(hd == edu);
+  // console.log(hd == cms);
+  // console.log(edu == cms);
+
+
+  let cms = Symbol.for("hdcms");
+  let houdunren = Symbol("houdunren");
+  let houdunren2 = Symbol("houdunren");
+  let houdunren3 = Symbol("houdunren");
+  console.log(Symbol.keyFor(cms));
+  console.log(Symbol.keyFor(houdunren));
+
+</script>
+
 </html>

@@ -1,19 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-08 14:06:18
+ * @FilePath     : \Code\html-css-js\js\set\8.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = { name: "后盾人" };
-    let edu = hd;
-    let arr = [hd];
-    hd = null;
-    edu = null;
-    arr[0] = null;
-    console.log(arr);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>垃圾回收原理</title>
+</head>
+
+<body></body>
+<script>
+  // WeaSet保存的对象不会增加引用计数器，如果一个对象不被引用了会自动删除。
+  let hd = {
+    name: "后盾人"
+  };
+  let edu = hd;
+  let arr = [hd];
+  console.log(hd)
+  console.log(edu)
+  console.log(arr)
+  hd = null;
+  edu = null;
+  arr[0] = null;
+  console.log(arr);
+
+</script>
+
 </html>

@@ -1,25 +1,51 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-08 13:10:45
+ * @FilePath     : \Code\html-css-js\js\set\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <div></div>
-    <div></div>
-  </body>
-  <script>
-    // let set = new WeakSet();
-    // set.add(["hdcms", "houdunren"]);
-    let nodes = new WeakSet();
-    let divs = document.querySelectorAll("div");
-    divs.forEach(function(item) {
-      nodes.add(item);
-    });
-    nodes.delete(divs[0]);
-    console.log(nodes.has(divs[0]));
-    console.log(nodes);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>WeakSet</title>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+</body>
+<script>
+  /*   // let set = new WeakSet();
+  // set.add(["hdcms", "houdunren"]);
+  let nodes = new WeakSet();
+  let divs = document.querySelectorAll("div");
+  divs.forEach(function (item) {
+    nodes.add(item);
+  });
+  nodes.delete(divs[0]);
+  console.log(nodes.has(divs[0]));
+  console.log(nodes);
+ */
+
+  // let set = new WeakSet("hdcms") //WeakSet结构同样不会存储重复的值，它的成员必须只能是对象类型的值。
+  // let set = new WeakMap(["hdcms", "houdunren"]); //此方法是将数组中的两个元素拆开分别添加而不是直接添加一个数组
+  // let set = new WeakSet();
+  // set.add(["hdcms", "houdunren"]); //此方法是将整个数组直接添加
+
+  let nodes = new WeakSet();
+  let divs = document.querySelectorAll("div");
+  divs.forEach(function (item) {
+    nodes.add(item);
+  })
+  nodes.delete(divs[0]);
+  console.log(nodes.has(divs[1]))
+  console.log(nodes)
+
+</script>
+
 </html>

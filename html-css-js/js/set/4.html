@@ -1,14 +1,23 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-08 12:34:19
+ * @FilePath     : \Code\html-css-js\js\set\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let set = new Set(["hdcms", "houdunren"]);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>set类型遍历</title>
+</head>
+
+<body></body>
+<script>
+  /*     let set = new Set(["hdcms", "houdunren"]);
     // console.log(set.entries());
     // set.forEach(function(value, key, set) {
     //   console.log(set);
@@ -16,6 +25,23 @@
     //set.values()
     // for (const value of set) {
     //   console.log(value);
-    // }
-  </script>
+    // } */
+
+
+  /* yznaisy */
+  let set = new Set(["hdcms", "houdunren"]);
+  console.log(set.values());
+  console.log(set.keys())
+  console.log(set.entries())
+
+  set.forEach((value, key, set) => {
+    console.log(value, key, set)
+  })
+
+  for (const value of set) {
+    console.log(value)
+  }
+
+</script>
+
 </html>
