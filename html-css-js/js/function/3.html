@@ -1,29 +1,64 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-12 21:45:02
+ * @FilePath     : \Code\html-css-js\js\function\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function hd() {
-    //   console.log("houdunren.com");
-    // }
-    // var hd = function() {
-    //   console.log("后盾人");
-    // };
-    // console.log(hd instanceof Object);
-    // let cms = hd;
-    // cms();
-    // show();
-    function sum(...args) {
-      // console.log(args);
-      return args.reduce(function(a, b) {
-        return a + b;
-      });
-    }
-    console.log(sum(1, 2, 3, 34, 45, 5));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>匿名函数与函数提升</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function hd() {
+  //   console.log("houdunren.com");
+  // }
+  // var hd = function() {
+  //   console.log("后盾人");
+  // };
+  // console.log(hd instanceof Object);
+  // let cms = hd;
+  // cms();
+  // show();
+  function sum(...args) {
+    // console.log(args);
+    return args.reduce(function (a, b) {
+      return a + b;
+    });
+  }
+  console.log(sum(1, 2, 3, 34, 45, 5)); */
+
+
+
+  /* yznaisy */
+  // 函数提升
+  // show();
+
+  // function show() {
+  //   console.log("houdunren.com");
+  // }
+
+  // console.log(show instanceof Object);
+  // let cms = show;
+  // cms();
+
+
+  function sum(...args) {
+    // console.log(args);
+    return args.reduce((a, b) => {
+      return a + b;
+    })
+  }
+
+  console.log(sum(1, 2, 3, 4, 5, 5, 6, 7))
+
+</script>
+
 </html>

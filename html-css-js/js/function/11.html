@@ -1,18 +1,30 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 11:03:10
+ * @FilePath     : \Code\html-css-js\js\function\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function star(sum) {
-      return sum
-        ? document.write("*".repeat(sum) + "<br/>") || star(--sum)
-        : "";
-    }
-    star(5);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>递归倒三角</title>
+</head>
+
+<body></body>
+<script>
+  function star(sum) {
+    // console.log(document.write("*".repeat(sum) + "<br/>"))   //undefined   为false
+    return sum ?
+      document.write("*".repeat(sum) + "<br/>") || star(--sum) :
+      "";
+  }
+  star(5);
+
+</script>
+
 </html>

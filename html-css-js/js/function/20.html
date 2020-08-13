@@ -1,34 +1,82 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 21:23:10
+ * @FilePath     : \Code\html-css-js\js\function\20.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function Request() {
-      this.get = function(params) {
-        let str = Object.keys(params)
-          .map(k => `${k}=${params[k]}`)
-          .join("&");
-        let url = `https://api.houdunren.com?${this.url}/${str}`;
-        document.write(url + "<hr/>");
-      };
-    }
-    //https://houdunren.com/article/lists?id=1&cat=js
-    function Article() {
-      this.url = "article/lists";
-      Request.apply(this);
-    }
-    let a = new Article();
-    console.log(a.get({ id: 1, cat: "js" }));
-    function User() {
-      this.url = "user/lists";
-      Request.call(this);
-    }
-    let user = new User();
-    user.get({ id: 2, role: "admin" });
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>构造函数方法继承</title>
+</head>
+
+<body></body>
+<script>
+  /*   function Request() {
+    this.get = function (params) {
+      let str = Object.keys(params)
+        .map(k => `${k}=${params[k]}`)
+        .join("&");
+      let url = `https://api.houdunren.com?${this.url}/${str}`;
+      document.write(url + "<hr/>");
+    };
+  }
+  //https://houdunren.com/article/lists?id=1&cat=js
+  function Article() {
+    this.url = "article/lists";
+    Request.apply(this);
+  }
+  let a = new Article();
+  console.log(a.get({
+    id: 1,
+    cat: "js"
+  }));
+
+  function User() {
+    this.url = "user/lists";
+    Request.call(this);
+  }
+  let user = new User();
+  user.get({
+    id: 2,
+    role: "admin"
+  }); */
+
+  /* yznaisy */
+  function Request() {
+    this.get = function (params) {
+      console.log(Object.keys(params));
+      let str = Object.keys(params).map(k => `${k}=${params[k]}`).join("&");
+      let url = `https://api.houdunren.com?${this.url}/${str}`;
+      console.log(url)
+    };
+  }
+
+  function Article() {
+    this.url = "article/lists";
+    Request.call(this)
+  }
+
+  function User() {
+    this.url = "user/lists";
+    Request.call(this)
+  }
+  let a = new Article();
+  a.get({
+    id: 1,
+    cat: "js"
+  });
+  let user = new User()
+  user.get({
+    id: 2,
+    role: "admin"
+  })
+
+</script>
+
 </html>

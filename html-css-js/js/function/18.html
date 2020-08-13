@@ -1,24 +1,51 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 20:57:59
+ * @FilePath     : \Code\html-css-js\js\function\18.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //apply call bind
-    // {name:'李四'}
-    //{}  {}
-    function User(name) {
-      this.name = name;
-      // return { a: "houdunren.com" };
-    }
-    let lisi = new User("李四");
-    console.log(lisi);
-    let hdcms = { url: "hdcms.com" };
-    User.call(hdcms, "开源系统");
-    console.log(hdcms);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>this构造原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   //apply call bind
+  // {name:'李四'}
+  //{}  {}
+  function User(name) {
+    this.name = name;
+    // return { a: "houdunren.com" };
+  }
+  let lisi = new User("李四");
+  console.log(lisi);
+  let hdcms = {
+    url: "hdcms.com"
+  };
+  User.call(hdcms, "开源系统");
+  console.log(hdcms); */
+
+  /* yznaisy */
+
+  function User(name) {
+    this.name = name;
+  }
+  let lisi = new User("李四");
+  console.log(lisi)
+
+  let hdcms = {
+    url: "hdcms.com"
+  }
+  User.call(hdcms, "开源系统"); //第一个参数为你需要改变的this，第二个参数为User的参数name
+  console.log(hdcms);
+
+</script>
+
 </html>

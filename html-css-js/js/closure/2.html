@@ -1,24 +1,37 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 22:51:05
+ * @FilePath     : \Code\html-css-js\js\closure\2.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let title = "后盾人";
-    function show() {
-      let url = "houdunren.com";
-      function hd() {
-        let site = "hdcms";
-        console.log(url);
-      }
-      hd();
+
+<head>
+  <meta charset="UTF-8" />
+  <title>函数的环境与作用域原理</title>
+</head>
+
+<body></body>
+<script>
+  let title = "后盾人";
+
+  function show() {
+    let url = "houdunren.com";
+
+    function hd() {
+      let site = "hdcms";
+      console.log(url);
     }
-    show();
-    show();
-    show();
-    show();
-    show();
-  </script>
+    hd();
+  }
+  show();
+  show();
+  show();
+  show();
+  show();
+
+</script>
+
 </html>

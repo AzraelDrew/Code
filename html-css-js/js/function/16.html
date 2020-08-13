@@ -1,28 +1,59 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 17:17:50
+ * @FilePath     : \Code\html-css-js\js\function\16.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let Lesson = {
-      site: "后盾人",
-      lists: ["js", "css", "mysql"],
-      show: function() {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>改变this</title>
+</head>
+
+<body></body>
+<script>
+  /*   let Lesson = {
+    site: "后盾人",
+    lists: ["js", "css", "mysql"],
+    show: function () {
+      // console.log(this.site);
+      // console.log(this.lists);
+      // const self = this;
+      return this.lists.map(function (value) {
+        // console.log(this);
         // console.log(this.site);
-        // console.log(this.lists);
-        // const self = this;
-        return this.lists.map(function(value) {
-          // console.log(this);
-          // console.log(this.site);
-          return `${this.site}-${value}`;
-          // console.log(this);
-        }, this);
-      }
-    };
-    console.table(Lesson.show());
-  </script>
+        return `${this.site}-${value}`;
+        // console.log(this);
+      }, this);
+    }
+  };
+  console.table(Lesson.show()); */
+
+
+  /* yznaisy */
+  let Lesson = {
+    site: "后盾人",
+    lists: ["js", "css", "mysql"],
+    show() {
+      // console.log(this)
+      const self = this;
+      return this.lists.map(function (value) {
+        // console.log(self);
+        return `${this.site}-${value}`
+      }, this)
+      // return this.lists.map(function (value) {
+      //   // console.log(self);
+      //   return `${self.site}-${value}`
+      // })
+    }
+  }
+  console.log(Lesson.show())
+
+</script>
+
 </html>

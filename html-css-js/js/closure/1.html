@@ -1,24 +1,35 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-13 22:50:10
+ * @FilePath     : \Code\html-css-js\js\closure\1.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <!-- <button>houdunren.com</button> -->
-  </body>
-  <script>
-    // let title = "后盾人";
-    // function hd() {
-    //   alert(title);
-    // }
-    // document.querySelector("button").addEventListener("click", hd);
-    // console.log(title);
 
-    let title = "后盾人";
-    function show() {
-      console.log(title);
-    }
-    show();
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>什么是环境与作用域</title>
+</head>
+
+<body>
+  <button>houdunren.com</button>
+</body>
+<script>
+  // 全局环境不会被回收
+  let title = "后盾人";
+
+  function hd() {
+    alert(title);
+  }
+  document.querySelector("button").addEventListener("click", hd);
+
+  function show() {
+    console.log(title);
+  }
+  show();
+
+</script>
+
 </html>
