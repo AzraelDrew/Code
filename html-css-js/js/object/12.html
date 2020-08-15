@@ -1,35 +1,50 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-15 13:09:54
+ * @FilePath     : \Code\html-css-js\js\object\12.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = { name: "后盾人" };
-    // let arr = ["houdunren.com", "hdcms"];
-    // console.log(arr);
-    // console.log(arr.hasOwnProperty("length"));
-    // console.log(arr.hasOwnProperty("concat"));
 
-    // console.log("concat" in arr);
+<head>
+  <meta charset="UTF-8" />
+  <title>对象与原型链属性检测</title>
+</head>
 
-    let a = {
-      name: "后盾人"
-    };
-    let b = {
-      url: "houdunren.com"
-    };
-    Object.setPrototypeOf(a, b);
-    console.log(a);
-    console.log(a.hasOwnProperty("url"));
-    console.log("url" in a);
+<body></body>
+<script>
+  // let hd = { name: "后盾人" };
+  // let arr = ["houdunren.com", "hdcms"];
+  // console.log(arr);
+  // console.log(arr.hasOwnProperty("length"));
+  // console.log(arr.hasOwnProperty("concat"));
 
-    function oss(options) {
-      if (!options.hasOwnProperty("host")) {
-        throw new Error("必须设置主机地址");
-      }
+  // console.log("concat" in arr);   //会检测原型链
+
+  let a = {
+    name: "后盾人"
+  };
+  let b = {
+    url: "houdunren.com"
+  };
+  Object.setPrototypeOf(a, b); //将a的原型改为b
+  console.log(a);
+  console.log(a.hasOwnProperty("url"));
+  console.log("url" in a);
+
+  function oss(options) {
+    if (!options.hasOwnProperty("host")) {
+      throw new Error("必须设置主机地址");
     }
-    oss({ user: "admin" });
-  </script>
+    console.log(`${options.host}/${options.user}`)
+  }
+  oss({
+    user: "admin",
+    host: "192.168.1.1"
+  });
+
+</script>
+
 </html>

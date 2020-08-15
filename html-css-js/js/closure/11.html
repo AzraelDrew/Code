@@ -1,27 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 14:05:20
+ * @FilePath     : \Code\html-css-js\js\closure\11.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <style>
-      button {
-        position: absolute;
-      }
-    </style>
-    <button message="后盾人">houdunren</button>
-    <button message="hdcms">hdcms</button>
-  </body>
-  <script>
-    let btns = document.querySelectorAll("button");
-    btns.forEach(function(item) {
-      item.addEventListener("click", function() {
-        let left = 1;
-        setInterval(function() {
-          item.style.left = left++ + "px";
-        }, 100);
-      });
+
+<head>
+  <meta charset="UTF-8" />
+  <title>后盾人</title>
+</head>
+
+<body>
+  <style>
+    button {
+      position: absolute;
+    }
+
+  </style>
+  <button message="后盾人">houdunren</button>
+  <!-- <button message="hdcms">hdcms</button> -->
+</body>
+<script>
+  let btns = document.querySelectorAll("button");
+  btns.forEach(function (item) {
+    item.addEventListener("click", function () {
+      let left = 8; // 每次点击都会重新生成一个left和setInterval，多次点击会出现抖动和加快移动
+      setInterval(function () {
+        item.style.left = left++ + "px";
+      }, 10);
     });
-  </script>
+  });
+
+</script>
+
 </html>

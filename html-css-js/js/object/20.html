@@ -1,31 +1,45 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-15 15:40:13
+ * @FilePath     : \Code\html-css-js\js\object\20.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let xj = {};
-    // xj.name = "向军";
-    // xj.show = function(name) {
-    //   console.log(name);
-    // };
-    // 抽象
-    function User(name, age) {
-      let data = { name, age };
-      let info = function() {
-        return data.age > 50 ? "老年" : "青年";
-      };
-      this.show = function() {
-        console.log(data.name + info());
-      };
-    }
-    let xj = new User("向军");
-    this.name = "后盾人";
-    xj.info = function() {
-      return "";
+
+<head>
+  <meta charset="UTF-8" />
+  <title>面向对象的封装与抽象</title>
+</head>
+
+<body></body>
+<script>
+  // let xj = {};
+  // xj.name = "向军";
+  // xj.show = function(name) {
+  //   console.log(name);
+  // };
+  // 抽象
+  function User(name, age) {
+    let data = {
+      name,
+      age
     };
-    xj.show();
-  </script>
+    let info = function () {
+      return data.age > 50 ? "老年" : "青年";
+    };
+    this.show = function () {
+      console.log(data.name + info());
+    };
+  }
+  let xj = new User("向军");
+  this.name = "后盾人";
+  xj.info = function () {
+    return "";
+  };
+  xj.show();
+
+</script>
+
 </html>

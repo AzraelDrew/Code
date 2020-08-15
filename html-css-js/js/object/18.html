@@ -1,27 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-15 14:36:50
+ * @FilePath     : \Code\html-css-js\js\object\18.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    function User(name) {
-      this.name = name;
-      this.show = function() {
-        console.log(this);
-        // console.log(this.name);
-      };
-      // return this;
-      // return {};
-    }
-    let xj = new User("向军");
-    // console.log(xj);
-    // xj.show();
-    let func = xj.show;
-    // func
-    // console.log(this);
-    func();
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>构造函数创建对象</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+
+  function User(name) {
+    this.name = name;
+    this.show = function () {
+      console.log(this);
+      // console.log(this.name);
+    };
+    // return this;
+    // return {};
+  }
+  let xj = new User("向军");
+  console.log(xj);
+  // xj.show();
+  let func = xj.show;
+  // func
+  console.log(this);
+  func();
+
+</script>
+
 </html>

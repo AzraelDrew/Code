@@ -1,32 +1,61 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 12:35:17
+ * @FilePath     : \Code\html-css-js\js\closure\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function Hd() {
-      let n = 1;
-      this.sum = function() {
-        console.log(++n);
-      };
+
+<head>
+  <meta charset="UTF-8" />
+  <title>构造函数的作用域</title>
+</head>
+
+<body></body>
+<script>
+  /*   function Hd() {
+    let n = 1;
+    this.sum = function () {
+      console.log(++n);
+    };
+  }
+  // function Hd() {
+  //   let n = 1;
+  //   function sum() {
+  //     console.log(++n);
+  //   }
+  //   return {
+  //     sum: sum
+  //   };
+  // }
+  let a = new Hd();
+  // console.log(a);
+  a.sum();
+  a.sum();
+  let b = new Hd();
+  b.sum();
+  b.sum(); */
+
+  /* yznaisy */
+
+  function Hd() {
+    let n = 1;
+
+    function sum() {
+      console.log(++n);
     }
-    // function Hd() {
-    //   let n = 1;
-    //   function sum() {
-    //     console.log(++n);
-    //   }
-    //   return {
-    //     sum: sum
-    //   };
-    // }
-    let a = new Hd();
-    // console.log(a);
-    a.sum();
-    a.sum();
-    let b = new Hd();
-    b.sum();
-    b.sum();
-  </script>
+    return {
+      sum
+    }
+  }
+
+  let a = new Hd();
+  a.sum();
+  a.sum();
+  let b = new Hd();
+
+</script>
+
 </html>

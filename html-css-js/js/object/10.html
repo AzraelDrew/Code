@@ -1,14 +1,31 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 22:57:37
+ * @FilePath     : \Code\html-css-js\js\object\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function hd(name, { sex, age }) {
-      console.log(name, sex, age);
-    }
-    hd("向军", { sex: "男", age: 18 });
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>函数参数的解构特性使用技巧</title>
+</head>
+
+<body></body>
+<script>
+  function hd(name, {
+    sex,
+    age
+  }) {
+    console.log(name, sex, age);
+  }
+  hd("向军", {
+    sex: "男",
+    age: 18
+  });
+
+</script>
+
 </html>

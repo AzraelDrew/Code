@@ -2,20 +2,20 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:18
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-06-18 16:37:09
- * @FilePath     : \Code\html-css\js\object\1.html
+ * @LastEditTime : 2020-08-14 17:17:30
+ * @FilePath     : \Code\html-css-js\js\object\1.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title>后盾人</title>
+  <title>函数编程与面向对象编程</title>
 </head>
 
 <body></body>
 <script>
-  // let name = "向军";
+  /*   // let name = "向军";
   // let grade = [
   //   { name: "js", score: 99 },
   //   { name: "docker", score: 76 }
@@ -42,7 +42,48 @@
     }
   };
   // console.log(user);
-  console.log(user.average());
+  console.log(user.average()); */
+
+
+  /* yznaisy */
+
+  /*   let name = "向军";
+    let grade = [{
+        name: "js",
+        score: 99
+      },
+      {
+        name: "docker",
+        score: 76
+      }
+    ];
+
+    function average(grade, name) {
+      let total = grade.reduce((t, l) => t + l.score, 0);
+      // console.log(total / grade.length);
+      return `${name}的平均成绩是:${total/grade.length}`
+    }
+    console.log(average(grade, name)) */
+
+
+  let user = {
+    name: "后盾人",
+    grade: [{
+        name: "js",
+        score: 99
+      },
+      {
+        name: "docker5",
+        score: 76
+      }
+    ],
+    average() {
+      let total = this.grade.reduce((t, l) => t + l.score, 0);
+      return `${this.name}的平均成绩是:${total/this.grade.length}`
+    }
+  }
+  console.log(user.average())
+
 </script>
 
 </html>

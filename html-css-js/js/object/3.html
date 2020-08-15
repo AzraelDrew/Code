@@ -1,32 +1,46 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 17:25:30
+ * @FilePath     : \Code\html-css-js\js\object\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let user = {};
-    // let hd = user;
-    // user.name = "向军";
-    // console.log(hd.name);
 
-    //传值
-    // function show(a) {
-    //   // console.log(a);
-    //   a = a + 100;
-    //   console.log(a);
-    // }
-    // let a = 1;
-    // show(a);
+<head>
+  <meta charset="UTF-8" />
+  <title>传址</title>
+</head>
+
+<body></body>
+<script>
+  // let user = {};
+  // let hd = user;
+  // user.name = "向军";
+  // console.log(hd.name);
+
+  //传值
+  // function show(a) {
+  //   // console.log(a);
+  //   a = a + 100;
+  //   console.log(a);
+  // }
+  // let a = 1;
+  // show(a);
+  // console.log(a);
+  let user = {
+    name: "后盾人"
+  };
+
+  function show(user) {
     // console.log(a);
-    let user = { name: "后盾人" };
-    function show(user) {
-      // console.log(a);
-      user.age = 18;
-      console.log(user);
-    }
-    show(user);
+    user.age = 18;
     console.log(user);
-  </script>
+  }
+  show(user);
+  console.log(user);
+
+</script>
+
 </html>

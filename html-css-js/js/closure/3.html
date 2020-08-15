@@ -1,24 +1,35 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 12:34:35
+ * @FilePath     : \Code\html-css-js\js\closure\3.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function hd() {
-      let n = 1;
-      return function sum() {
-        // console.log(++n);
-        let m = 1;
-        return function show() {
-          console.log("m:" + ++m);
-          console.log("n:" + ++n);
-        };
+
+<head>
+  <meta charset="UTF-8" />
+  <title>延申环境生命周期</title>
+</head>
+
+<body></body>
+<script>
+  function hd() {
+    let n = 1;
+    return function sum() {
+      // console.log(++n);
+      let m = 1;
+      return function show() {
+        console.log("m:" + ++m);
+        console.log("n:" + ++n);
       };
-    }
-    let a = hd()();
-    a();
-    a();
-  </script>
+    };
+  }
+  let a = hd()();
+  a();
+  a();
+
+</script>
+
 </html>

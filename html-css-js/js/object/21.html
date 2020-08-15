@@ -1,32 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-15 17:19:06
+ * @FilePath     : \Code\html-css-js\js\object\21.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    const user = {
-      name: "向军",
-      age: 18
-    };
 
-    console.log(
-      JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"), null, 2)
-    );
-    console.log(
-      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
-    );
+<head>
+  <meta charset="UTF-8" />
+  <title>对象的属性特征</title>
+</head>
 
-    // user.lesson = "js";
-    // console.log(user);
-    // delete user.lesson;
-    // console.log(user);
+<body></body>
+<script>
+  const user = {
+    name: "向军",
+    age: 18
+  };
 
-    // let arr = ["后盾人", "hdcms"];
-    // console.log(arr);
-    // for (const [key, value] of Object.entries(arr)) {
-    //   console.log(key, value);
-    // }
-  </script>
+  console.log(
+    JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"), null, 2)
+  );
+  console.log(
+    JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+  );
+
+  // user.lesson = "js";
+  // console.log(user);
+  // delete user.lesson;
+  // console.log(user);
+
+  // let arr = ["后盾人", "hdcms"];
+  // console.log(arr);
+  // for (const [key, value] of Object.entries(arr)) {
+  //   console.log(key, value);
+  // }
+
+</script>
+
 </html>

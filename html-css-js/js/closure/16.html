@@ -1,24 +1,37 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 14:34:49
+ * @FilePath     : \Code\html-css-js\js\closure\16.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = {
-      user: "后盾人",
-      get: function() {
-        // console.log(this);
-        // let This = this;
-        return () => {
-          return this.user;
-        };
-      }
-    };
-    let a = hd.get();
-    console.log(a());
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>this指向问题</title>
+</head>
+
+<body></body>
+<script>
+  let user = "后盾热呢"
+  let hd = {
+    user: "后盾人",
+    get: function () {
+      // console.log(this);
+      // let This = this;
+      return () => {
+        // console.log(this)
+        return this.user;
+      };
+    }
+  };
+  let a = hd.get();
+  console.log(a());
+
+</script>
+
 </html>

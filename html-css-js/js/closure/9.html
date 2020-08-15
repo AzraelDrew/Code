@@ -1,19 +1,31 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 13:21:47
+ * @FilePath     : \Code\html-css-js\js\closure\9.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function hd() {
-      let n = 1;
-      return function sum() {
-        console.log(++n);
-      };
-    }
-    let a = hd();
-    a();
-    a();
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>什么是闭包</title>
+</head>
+
+<body></body>
+<script>
+  //函数可以访问到其他函数的作用域
+  function hd() {
+    let n = 1;
+    return function sum() {
+      console.log(++n);
+    };
+  }
+  let a = hd();
+  a();
+  a();
+
+</script>
+
 </html>

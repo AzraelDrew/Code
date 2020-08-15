@@ -1,17 +1,29 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-08-14 12:37:14
+ * @FilePath     : \Code\html-css-js\js\closure\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    {
-      var a = 1;
-    }
-    {
-      const a = 2;
-    }
-    console.log(window.a);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>块作用域</title>
+</head>
+
+<body></body>
+<script>
+  {
+    let a = 2
+  } {
+    var a = 1;
+  } {
+    const a = 2;
+  }
+  console.log(window.a);
+
+</script>
+
 </html>
