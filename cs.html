@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-18 23:09:58
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-07-23 17:06:54
+ * @LastEditTime : 2020-09-04 11:27:56
  * @FilePath     : \Code\cs.html
 -->
 <!DOCTYPE html>
@@ -14,36 +14,124 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>综合练习</title>
   <style>
-    .active {
-      background-color: red;
-    }
 
   </style>
 </head>
 
 <body>
-  <div id="app">
-    <!-- 数组的响应式方法 -->
-    <ul>
-      <li v-for="(item,index) in movies" @click="liClick(index)" :class="{active:index===curIndex}">{{index+"---"+item}}
-      </li>
-    </ul>
-
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script>
-    const app = new Vue({
-      el: "#app",
-      data: {
-        movies: ['复仇者联盟', '蝙蝠侠', '海贼王', '星际穿越'],
-        curIndex: -1
-      },
-      methods: {
-        liClick(index) {
-          this.curIndex = index
-        }
-      }
-    })
+    // let hd = ["a"];
+    // console.log(hd.concat("b"));  //["a","b"]
+    // console.log(hd);  //["a"]
+
+    // let hd = {
+    //   name: "后盾人"
+    // };
+    // console.log(hd);
+
+
+    // let x = {};
+    // let y = {};
+    // console.log(Object.getPrototypeOf(x) == Object.getPrototypeOf(y));  //true
+
+
+    // let hd = {
+    //   name: 3
+    // };
+    // console.log(hd.hasOwnProperty("name"));
+
+    // let yzn = Object.create(null, {
+    //   name: {
+    //     value: "yzn"
+    //   }
+    // });
+    // console.log(yzn.hasOwnProperty("name")); //is not function
+
+
+    //函数拥有多个原型，prototype 用于实例对象使用，__proto__用于函数对象使用
+    // function User() {}
+    // User.__proto__.view = function () {
+    //   console.log("User function view method");
+    // };
+    // User.view(); //User function view method
+
+    // User.prototype.show = function () {
+    //   console.log("后盾人");
+    // }
+
+    // let hd = new User();
+    // console.log(hd);
+    // hd.show();
+    // hd.__proto__.constructor.view()
+    // // hd.view();  //is not function
+    // console.log(User.prototype == hd.__proto__);
+
+    // function User() {}
+
+    // console.dir(User);
+
+    // let hd = new User();
+    // console.log(hd);
+
+
+    // function User() {}
+    // let xj = new User();
+    // console.log(xj.__proto__ == User.prototype);
+    // console.dir(User);
+    // console.dir(xj);
+
+
+    // let hd = new Object();
+    // hd.name = "后盾人";
+    // Object.prototype.show = function () {
+    //   console.log("hodunren.com");
+    // };
+    // hd.show();
+    // console.log(hd);
+
+    // function User() {}
+    // let xj = new User();
+    // xj.show();
+    // User.show();
+    // Object.show();
+
+
+    // let hd = [];
+    // console.log(hd);
+    // console.log(hd.__proto__ == Array.prototype);
+
+    // let str = "";
+    // console.log(str.__proto__ == String.prototype);
+
+    // let hd = {};
+    // let parent = {
+    //   name: "parent"
+    // };
+    // Object.setPrototypeOf(hd, parent); //设置hd发原型为parent
+    // console.log(hd);
+    // console.log(Object.getPrototypeOf(hd)); //获取hd的原型
+
+    // function User() {}
+    // let hd = new User();
+    // console.log(hd);
+
+
+    // function hd() {
+    //   this.show = function () {
+    //     return "show method";
+    //   }
+    // }
+
+    // const obj = new hd();
+    // console.dir(obj);
+    // console.log(obj instanceof hd);
+
+    // const obj2 = new obj.constructor();
+    // console.dir(obj2.show());
+
+
+    let str = "1234"
+    console.log(str.split("").join("+"));
 
   </script>
 </body>
