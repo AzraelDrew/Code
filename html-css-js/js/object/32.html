@@ -1,26 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:35:58
+ * @FilePath     : \Code\html-css-js\js\object\32.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    const hd = { name: "后盾人" };
-    const proxy = new Proxy(hd, {
-      get(obj, property) {
-        // console.log(obj);
-        return obj[property];
-      },
-      set(obj, property, value) {
-        obj[property] = value;
-        return true;
-      }
-    });
-    console.log(proxy.name);
-    proxy.name = "向军";
-    console.log(proxy.name);
-    console.log(proxy);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>proxy代理拦截</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  const hd = {
+    name: "后盾人"
+  };
+  const proxy = new Proxy(hd, {
+    get(obj, property) {
+      // console.log(obj);
+      return obj[property];
+    },
+    set(obj, property, value) {
+      obj[property] = value;
+      return true;
+    }
+  });
+  console.log(proxy.name);
+  proxy.name = "向军";
+  console.log(proxy.name);
+  console.log(proxy);
+
+</script>
+
 </html>

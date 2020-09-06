@@ -1,26 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:22:31
+ * @FilePath     : \Code\html-css-js\js\object\30.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    const DATA = Symbol();
-    const user = {
-      // name: "后盾人",
-      [DATA]: { name },
-      age: 10,
-      set name(value) {
-        this[DATA].name = value;
-      },
-      get name() {
-        return this[DATA].name;
-      }
-    };
-    user.name = "hdcms";
-    // user.data.name = "你好";
-    console.log(user[Symbol()]);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>访问器优先级</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  const DATA = Symbol();
+  const user = {
+    // name: "后盾人",
+    [DATA]: {
+      name
+    },
+    age: 10,
+    set name(value) { //访问器的优先级高于其他的操作方式
+      this[DATA].name = value;
+    },
+    get name() {
+      return this[DATA].name;
+    }
+  };
+  user.name = "hdcms";
+  // user.data.name = "你好";
+  console.log(user[Symbol()]);
+
+</script>
+
 </html>

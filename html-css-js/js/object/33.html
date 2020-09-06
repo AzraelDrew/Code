@@ -1,21 +1,32 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:41:50
+ * @FilePath     : \Code\html-css-js\js\object\33.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function factorial(num) {
-      return num == 1 ? 1 : num * factorial(num - 1);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用代理proxy控制函数</title>
+</head>
+
+<body></body>
+<script>
+  function factorial(num) {
+    return num == 1 ? 1 : num * factorial(num - 1);
+  }
+  let proxy = new Proxy(factorial, {
+    apply(func, obj, args) {
+      console.time("run");
+      func.apply(this, args);
+      console.timeEnd("run");
     }
-    let proxy = new Proxy(factorial, {
-      apply(func, obj, args) {
-        console.time("run");
-        func.apply(this, args);
-        console.timeEnd("run");
-      }
-    });
-    proxy.apply({}, [1000]);
-  </script>
+  });
+  proxy.apply({}, [1000]);
+
+</script>
+
 </html>

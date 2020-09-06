@@ -1,27 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 19:41:31
+ * @FilePath     : \Code\html-css-js\js\object\39.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //xml JSON
-    let data = {
-      name: "后盾人",
-      data: {
-        title: "php"
-      }
-    };
 
-    let lessons = [{ name: "js" }];
-    let json = JSON.stringify(lessons, null, 2);
-    console.log(json);
-    // let json = JSON.stringify(data, null, 2);
-    // console.log(json);
+<head>
+  <meta charset="UTF-8" />
+  <title>后盾人</title>
+</head>
 
-    // let phpJSon = `{"name":"\u540e\u76fe\u4eba","url":"hdcms.com"}`;
-    // let obj = JSON.parse(phpJSon);
-    // console.log(obj.url);
-  </script>
+<body></body>
+<script>
+  //xml JSON
+  let data = {
+    name: "后盾人",
+    data: {
+      title: "php"
+    }
+  };
+
+  let lessons = [{
+    name: "js"
+  }];
+  let json = JSON.stringify(lessons, null, 2);
+  console.log(json);
+  // let json = JSON.stringify(data, null, 2);
+  // console.log(json);
+  // let phpJSon = `{"name":"\u540e\u76fe\u4eba","url":"hdcms.com"}`;
+  // let obj = JSON.parse(phpJSon);
+  // console.log(obj.url);
+
+</script>
+
 </html>

@@ -1,34 +1,44 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:45:21
+ * @FilePath     : \Code\html-css-js\js\object\34.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    const lessons = [
-      {
-        title: "媒体查询响应式布局",
-        category: "css"
-      },
-      {
-        title: "FLEX模型",
-        category: "css"
-      },
-      {
-        title: "MYSQL多表查询随意操作",
-        category: "mysql"
-      }
-    ];
-    let proxy = new Proxy(lessons, {
-      get(array, key) {
-        const title = array[key].title;
-        const len = 10;
-        array[key].title =
-          title.length > len ? title.substr(0, len) + ".".repeat(3) : title;
-        return array[key];
-      }
-    });
-    console.log(JSON.stringify(proxy[1], null, 2));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>数组使用代理拦截</title>
+</head>
+
+<body></body>
+<script>
+  const lessons = [{
+      title: "媒体查询响应式布局",
+      category: "css"
+    },
+    {
+      title: "FLEX模型",
+      category: "css"
+    },
+    {
+      title: "MYSQL多表查询随意操作",
+      category: "mysql"
+    }
+  ];
+  let proxy = new Proxy(lessons, {
+    get(array, key) {
+      const title = array[key].title;
+      const len = 10;
+      array[key].title =
+        title.length > len ? title.substr(0, len) + ".".repeat(3) : title;
+      return array[key];
+    }
+  });
+  console.log(JSON.stringify(proxy[1], null, 2));
+
+</script>
+
 </html>

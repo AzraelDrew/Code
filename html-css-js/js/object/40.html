@@ -1,31 +1,42 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 16:25:12
+ * @FilePath     : \Code\html-css-js\js\object\40.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = {
-      title: "后盾人",
-      url: "houdunren.com",
-      teacher: {
-        name: "向军大叔"
-      },
-      toJSON: function() {
-        return {
-          title: this.title,
-          teacher: this.teacher.name
-        };
-      }
-    };
-    let json = JSON.stringify(hd, null, 2);
-    console.log(json);
-    // let json = JSON.stringify(hd, ["title", "url"], 2);
-    // console.log(json);
 
-    // let arr = ["后盾人", "hdcms.com"];
-    // let arrJson = JSON.stringify(arr, ["title", "url"], 2);
-    // console.log(arrJson);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>json序列化与自定义toJSON</title>
+</head>
+
+<body></body>
+<script>
+  let hd = {
+    title: "后盾人",
+    url: "houdunren.com",
+    teacher: {
+      name: "向军大叔"
+    },
+    toJSON: function () {
+      return {
+        title: this.title,
+        teacher: this.teacher.name
+      };
+    }
+  };
+  let json = JSON.stringify(hd, null, 2);
+  console.log(json);
+  // let json = JSON.stringify(hd, ["title", "url"], 2);
+  // console.log(json);
+
+  // let arr = ["后盾人", "hdcms.com"];
+  // let arrJson = JSON.stringify(arr, ["title", "url"], 2);
+  // console.log(arrJson);
+
+</script>
+
 </html>

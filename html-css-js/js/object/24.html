@@ -1,25 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-05 16:25:00
+ * @FilePath     : \Code\html-css-js\js\object\24.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    const user = {
-      name: "后盾人",
-      age: 18
-    };
-    // Object.seal(user);
-    // console.log();
-    console.log(
-      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
-    );
-    if (!Object.isSealed(user)) {
-      user.site = "houdunren.com";
-      delete user.name;
-    }
-    console.log(user);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>封闭对象</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  const user = {
+    name: "后盾人",
+    age: 18
+  };
+  // Object.seal(user); //封闭对象
+  // console.log();
+  console.log(
+    JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+  );
+  if (!Object.isSealed(user)) {
+    user.site = "houdunren.com";
+    delete user.name;
+  }
+  console.log(user);
+
+</script>
+
 </html>

@@ -1,25 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:15:38
+ * @FilePath     : \Code\html-css-js\js\object\28.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    const web = {
-      name: "后盾人",
-      url: "houdunren.com",
-      get site() {
-        return `${this.name}的网址是${this.url}`;
-      },
-      set site(value) {
-        [this.name, this.url] = value.split(",");
-      }
-    };
-    // web.name = '开源产品';
-    web.site = "开源产品,www.hdcms.com";
-    // console.log(web.url);
-    console.log(web.site);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用访问器批量设置属性</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  const web = {
+    name: "后盾人",
+    url: "houdunren.com",
+    get site() {
+      return `${this.name}的网址是${this.url}`;
+    },
+    set site(value) {
+      [this.name, this.url] = value.split(",");
+    }
+  };
+  // web.name = '开源产品';
+  web.site = "开源产品,www.hdcms.com";
+  // console.log(web.url);
+  console.log(web.site);
+
+</script>
+
 </html>

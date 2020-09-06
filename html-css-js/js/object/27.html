@@ -1,24 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-06 14:14:42
+ * @FilePath     : \Code\html-css-js\js\object\27.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    let Lesson = {
-      lists: [
-        { name: "js", price: 100 },
-        { name: "mysql", price: 212 },
-        { name: "vue.js", price: 98 }
-      ],
-      get total() {
-        return this.lists.reduce((t, l) => t + l.price, 0);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>访问器伪造属性</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  let Lesson = {
+    lists: [{
+        name: "js",
+        price: 100
+      },
+      {
+        name: "mysql",
+        price: 212
+      },
+      {
+        name: "vue.js",
+        price: 98
       }
-    };
-    console.log(Lesson.total);
-    Lesson.total = 8388;
-    console.log(Lesson.total);
-  </script>
+    ],
+    get total() {
+      return this.lists.reduce((t, l) => t + l.price, 0);
+    }
+  };
+  console.log(Lesson.total);
+  Lesson.total = 8388; //伪造的属性，在对象中查找不到
+  console.log(Lesson.total);
+
+</script>
+
 </html>

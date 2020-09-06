@@ -1,27 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-05 16:42:44
+ * @FilePath     : \Code\html-css-js\js\object\26.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    "use strict";
-    const user = {
-      data: { name: "后盾人", age: 10 },
-      set age(value) {
-        if (typeof value != "number" || value < 10 || value > 100) {
-          throw new Error("年龄格式错误");
-        }
-        this.data.age = value;
-      },
-      get age() {
-        return this.data.age + "岁";
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用访问器保护数据</title>
+</head>
+
+<body></body>
+<script>
+  "use strict";
+  const user = {
+    data: {
+      name: "后盾人",
+      age: 10
+    },
+    set age(value) { //可以过滤数据
+      console.log("set run...");
+      if (typeof value != "number" || value < 10 || value > 100) {
+        throw new Error("年龄格式错误");
       }
-    };
-    // user.setAge(999);
-    user.age = 87;
-    console.log(user.age);
-    // user.age = 19999;
-  </script>
+      this.data.age = value;
+    },
+    get age() {
+      console.log("get run...");
+      return this.data.age + "岁";
+    }
+  };
+  // user.setAge(999);
+  user.age = 87;
+  console.log(user.age);
+  // user.age = 19999;
+
+</script>
+
 </html>
