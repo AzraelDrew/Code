@@ -1,20 +1,51 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-12 21:17:38
+ * @FilePath     : \Code\html-css-js\js\prototype\6.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = new Object();
-    hd.name = "后盾人";
-    Object.prototype.show = function() {
-      console.log("hodunren.com");
-    };
-    hd.show();
-    function User() {}
-    let xj = new User();
-    xj.show();
-    User.show();
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原型关系详解与属性继承实例</title>
+</head>
+
+<body></body>
+<script>
+  /*   let hd = new Object();
+  hd.name = "后盾人";
+  Object.prototype.show = function () {
+    console.log("hodunren.com");
+  };
+  hd.show();
+
+  function User() {}
+  let xj = new User();
+  xj.show();
+  User.show(); */
+
+
+  /* yznaisy */
+
+
+  let hd = new Object();
+  hd.name = "后盾人";
+  console.dir(hd);
+  console.dir(Object);
+  Object.prototype.show = function () {
+    console.log("houdunren.com");
+  }
+  hd.show()
+
+  function User() {}
+  console.dir(User);
+  console.log(User.prototype.__proto__ == User.__proto__.__proto__);
+  let xj = new User();
+  xj.show();
+
+</script>
+
 </html>

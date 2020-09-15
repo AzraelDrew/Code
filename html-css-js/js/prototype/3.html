@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:18
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-09-06 17:21:22
+ * @LastEditTime : 2020-09-09 16:49:46
  * @FilePath     : \Code\html-css-js\js\prototype\3.html
 -->
 <!DOCTYPE html>
@@ -23,12 +23,14 @@
   console.log(xj);
   console.log(xj.hasOwnProperty("name"));
   //完全数据字典对象
+
+  //完全的数据字典对象
   let hd = Object.create(null, {
     name: {
       value: "后盾人"
     }
   });
-  console.log(hd.hasOwnProperty("name"));
+  console.log(hd.hasOwnProperty("name")); //is not function
 
 </script>
 

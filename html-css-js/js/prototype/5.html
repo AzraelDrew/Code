@@ -1,27 +1,66 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-10 21:08:47
+ * @FilePath     : \Code\html-css-js\js\prototype\5.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = {};
-    // console.dir(hd);
-    //new String new Number new Boolean new RegExp
-    function User() {}
-    User.__proto__.view = function() {
-      console.log("User function view method");
-    };
-    User.view();
-    // User.apply
-    // console.dir(User);
-    // User.prototype.show = function() {
-    //   console.log("后盾人");
-    // };
-    // let hd = new User();
 
-    // hd.show();
-    // console.log(User.prototype == hd.__proto__);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>函数拥有多个原型</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let hd = {};
+  // console.dir(hd);
+  //new String new Number new Boolean new RegExp
+  function User() {}
+  User.__proto__.view = function () {
+    console.log("User function view method");
+  };
+  User.view();
+  // User.apply
+  // console.dir(User);
+  // User.prototype.show = function() {
+  //   console.log("后盾人");
+  // };
+  // let hd = new User();
+
+  // hd.show();
+  // console.log(User.prototype == hd.__proto__); */
+
+
+  /* yznaisy */
+
+  // let hd = {};
+  // console.dir(hd);
+
+  function User() {}
+  console.dir(User);
+
+  //
+  User.__proto__.view = function () {
+    console.log("User function view methods");
+  }
+  User.__proto__.show1 = function () {
+    console.log("后盾人--__proto__");
+  }
+  User.prototype.show2 = function () {
+    console.log("后盾人--prototype");
+  }
+
+  let hd = new User();
+  User.show1();
+  User.view();
+  // hd.show1();
+  hd.show2();
+  // hd.view(); //is not function
+  console.log(User.prototype == hd.__proto__);
+
+</script>
+
 </html>

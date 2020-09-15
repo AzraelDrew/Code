@@ -1,23 +1,52 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-09 16:57:01
+ * @FilePath     : \Code\html-css-js\js\prototype\4.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = {
-      show() {
-        console.log("后盾人");
-      },
-      render() {
-        console.log("hd . render");
-      }
-    };
-    console.log(hd);
-    hd.__proto__.render = function() {
-      console.log("向军");
-    };
-    hd.render();
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原型方法与对象方法优先级</title>
+</head>
+
+<body></body>
+<script>
+  /*   let hd = {
+    show() {
+      console.log("后盾人");
+    },
+    render() {
+      console.log("hd . render");
+    }
+  };
+  console.log(hd);
+  hd.__proto__.render = function () {
+    console.log("向军");
+  };
+  hd.render(); */
+
+
+  /* yznaisy */
+
+  let hd = {
+    show() {
+      console.log("后盾人");
+    },
+    render() { //当自己有方法时会优先使用自己的方法而不会使用原型的方法
+      console.log("hd. render");
+    }
+  };
+  console.dir(hd);
+  hd.__proto__.render = function () {
+    console.log("向军");
+  }
+  hd.render(); //hd.render
+  hd.show(); //后盾人
+
+</script>
+
 </html>

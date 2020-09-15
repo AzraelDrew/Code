@@ -1,23 +1,59 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-15 21:19:04
+ * @FilePath     : \Code\html-css-js\js\prototype\12.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function A() {}
-    function B() {}
-    function C() {}
-    let c = new C();
-    B.prototype = c;
-    let b = new B();
-    A.prototype = b;
-    let a = new A();
-    //A.prototype
-    console.log(a instanceof A);
-    console.log(a instanceof C);
-    console.log(a instanceof C);
-    console.log(b instanceof A);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原型链检测instanceof</title>
+</head>
+
+<body></body>
+<script>
+  /*   function A() {}
+
+  function B() {}
+
+  function C() {}
+  let c = new C();
+  B.prototype = c;
+  let b = new B();
+  A.prototype = b;
+  let a = new A();
+  //A.prototype
+  console.log(a instanceof A);
+  console.log(a instanceof C);
+  console.log(a instanceof C);
+  console.log(b instanceof A); */
+
+
+  /* yznaisy */
+
+  function A() {}
+
+  function B() {}
+
+  function C() {}
+  let c = new C();
+  B.prototype = c
+  let b = new B();
+  A.prototype = b;
+  let a = new A();
+  console.log(a instanceof A);
+  console.log(a instanceof B);
+  console.log(a instanceof C);
+  console.log(b instanceof A);
+  console.log(b instanceof B);
+  console.log(b instanceof C);
+  console.log(c instanceof A);
+  console.log(c instanceof B);
+  console.log(c instanceof C);
+
+</script>
+
 </html>

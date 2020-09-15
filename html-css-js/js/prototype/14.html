@@ -1,22 +1,59 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-15 21:31:53
+ * @FilePath     : \Code\html-css-js\js\prototype\14.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let a = { url: "houdunren" };
-    let b = { name: "后盾人" };
-    // Object.prototype.web = "hdcms.com";
-    // console.log("web" in a);
-    Object.setPrototypeOf(a, b);
-    // console.log("name" in a);
-    // console.log(a.hasOwnProperty("name"));
-    for (const key in a) {
-      if (a.hasOwnProperty(key)) {
-        console.log(a[key]);
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>in与hasOwnProperty属性检测的区别</title>
+</head>
+
+<body></body>
+<script>
+  /*   let a = {
+    url: "houdunren"
+  };
+  let b = {
+    name: "后盾人"
+  };
+  // Object.prototype.web = "hdcms.com";
+  // console.log("web" in a);
+  Object.setPrototypeOf(a, b);
+  // console.log("name" in a);
+  // console.log(a.hasOwnProperty("name"));
+  for (const key in a) {
+    if (a.hasOwnProperty(key)) {
+      console.log(a[key]);
     }
-  </script>
+  } */
+
+
+  /* yznaisy */
+
+
+
+  let a = {
+    url: "houdunren"
+  };
+  let b = {
+    name: "后盾人"
+  };
+  console.log("url" in a); //检测原型及其原型链
+  Object.setPrototypeOf(a, b);
+  console.log("name" in a);
+  console.log(a.hasOwnProperty("name")); //检测当前对象
+
+  for (const key in a) {
+    if (a.hasOwnProperty(key)) {
+      console.log(a[key]);
+    }
+  }
+
+</script>
+
 </html>

@@ -1,12 +1,21 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-15 21:03:30
+ * @FilePath     : \Code\html-css-js\js\prototype\10.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function User(name) {
+
+<head>
+  <meta charset="UTF-8" />
+  <title>借用构造函数创建对象</title>
+</head>
+
+<body></body>
+<script>
+  /*     function User(name) {
       this.name = name;
     }
     User.prototype = {
@@ -22,6 +31,28 @@
       return new constructor(...args);
     }
     let xj = createByObject(hd, "向军");
-    xj.show();
-  </script>
+    xj.show(); */
+
+  /* yznaisy */
+
+  function User(name) {
+    this.name = name
+  }
+  User.prototype = {
+    constructor: User,
+    show() {
+      console.log(this.name);
+    }
+  }
+  let hd = new User("后盾人");
+
+  function createByObject(obj, ...args) {
+    const constructor = Object.getPrototypeOf(obj).constructor;
+    return new constructor(...args)
+  }
+  let xj = createByObject(hd, "向军");
+  xj.show();
+
+</script>
+
 </html>

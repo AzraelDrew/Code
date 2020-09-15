@@ -1,29 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-12 21:27:49
+ * @FilePath     : \Code\html-css-js\js\prototype\7.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = {}; // Object
-    // console.log(hd.__proto__ == Object.prototype);
-    Array.prototype.show = function() {
-      console.log("后盾人");
-    };
-    let arr = []; // new Array
-    console.log(arr.__proto__ == Array.prototype);
-    arr.show();
-    let str = ""; //new String
-    console.log(str.__proto__ == String.prototype);
 
-    let bool = true;
-    console.log(bool.__proto__ == Boolean.prototype);
+<head>
+  <meta charset="UTF-8" />
+  <title>系统构造函数的体现</title>
+</head>
 
-    let reg = /a/i; // new RegExp
-    console.log(reg.__proto__ == RegExp.prototype);
+<body></body>
+<script>
+  // let hd = {}; // Object
+  // console.log(hd.__proto__ == Object.prototype);
+  Array.prototype.show = function () {
+    console.log("后盾人");
+  };
+  let arr = []; // new Array
+  console.log(arr.__proto__ == Array.prototype);
+  arr.show();
+  String.prototype.show = function () {
+    console.log("String");
+  }
+  let str = ""; //new String
+  str.show();
+  console.log(str.__proto__ == String.prototype);
+  let bool = true;
+  console.log(bool.__proto__ == Boolean.prototype);
 
-    let obj = {};
-    console.log(obj.__proto__ == Object.prototype);
-  </script>
+  let reg = /a/i; // new RegExp
+  console.log(reg.__proto__ == RegExp.prototype);
+
+  let obj = {};
+  console.log(obj.__proto__ == Object.prototype);
+
+</script>
+
 </html>

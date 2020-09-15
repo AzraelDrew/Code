@@ -1,20 +1,54 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-15 21:46:03
+ * @FilePath     : \Code\html-css-js\js\prototype\16.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let arr = [1, 3, 43, 4];
-    console.log(Math.max(...arr));
-    let hd = {
-      data: [1, 2, 3, 34, 5, 7]
-    };
-    console.log(Math.max.call(null, ...hd.data));
-    let xj = {
-      lessons: { js: 87, php: 63, node: 99, linux: 88 }
-    };
-    console.log(Math.max.apply(null, Object.values(xj.lessons)));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>优化借用</title>
+</head>
+
+<body></body>
+<script>
+  /*   let arr = [1, 3, 43, 4];
+  console.log(Math.max(...arr));
+  let hd = {
+    data: [1, 2, 3, 34, 5, 7]
+  };
+  console.log(Math.max.call(null, ...hd.data));
+  let xj = {
+    lessons: {
+      js: 87,
+      php: 63,
+      node: 99,
+      linux: 88
+    }
+  };
+  console.log(Math.max.apply(null, Object.values(xj.lessons)));
+ */
+
+  /* yznaisy */
+  let arr = [1, 3, 43, 4];
+  let hd = {
+    data: [1, 2, 3, 34, 5, 7]
+  };
+  let xj = {
+    lessons: {
+      js: 87,
+      php: 63,
+      node: 99,
+      linux: 88
+    }
+  };
+  console.log(Math.max(...arr));
+  console.log(Math.max.call(null, ...hd.data));
+  console.log(Math.max.call(null, ...Object.values(xj.lessons)));
+
+</script>
+
 </html>
