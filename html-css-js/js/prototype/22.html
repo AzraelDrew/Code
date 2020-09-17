@@ -1,29 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-16 20:04:36
+ * @FilePath     : \Code\html-css-js\js\prototype\22.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let user = {
-      show() {
-        return this.name;
-      }
-    };
-    //prototype
-    //定义对象的原型，不能获取
-    // let hd = Object.create(user, {
-    //   name: {
-    //     value: "后盾人"
-    //   }
-    // });
-    // console.log(hd.show());
-    let hd = { name: "后盾人" };
-    // hd.__proto__ = user;
-    // console.log(hd.__proto__);   __proto__
-    Object.setPrototypeOf(hd, user);
-    console.log(hd.show());
-    console.log(Object.getPrototypeOf(hd));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用setPrototypeOf代替__proto__</title>
+</head>
+
+<body></body>
+<script>
+  let user = {
+    show() {
+      return this.name;
+    }
+  };
+  //prototype
+  //定义对象的原型，不能获取
+  // let hd = Object.create(user, {
+  //   name: {
+  //     value: "后盾人"
+  //   }
+  // });
+  // console.log(hd.show());
+  let hd = {
+    name: "后盾人"
+  };
+  // hd.__proto__ = user;
+  // console.log(hd.__proto__);   __proto__
+  Object.setPrototypeOf(hd, user);
+  console.log(hd);
+  console.log(hd.show());
+  console.log(Object.getPrototypeOf(hd));
+
+</script>
+
 </html>

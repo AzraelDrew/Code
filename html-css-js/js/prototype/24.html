@@ -1,32 +1,76 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-16 20:38:29
+ * @FilePath     : \Code\html-css-js\js\prototype\24.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //原型的继承，而不是改变构造函数的原型
-    function User() {}
-    User.prototype.name = function() {
-      console.log("user.name");
-    };
-    // let hd = new User();
-    // hd.name();
 
-    function Admin() {}
-    Admin.prototype = User.prototype;
-    Admin.prototype.role = function() {
-      console.log("admin.role");
-    };
+<head>
+  <meta charset="UTF-8" />
+  <title>改变构造函数原型并不是继承</title>
+</head>
 
-    function Member() {}
-    Member.prototype = User.prototype;
-    Member.prototype.role = function() {
-      console.log("member.role");
-    };
+<body></body>
+<script>
+  /*   //原型的继承，而不是改变构造函数的原型
+  function User() {}
+  User.prototype.name = function () {
+    console.log("user.name");
+  };
+  // let hd = new User();
+  // hd.name();
 
-    let a = new Admin();
-    a.role();
-  </script>
+  function Admin() {}
+  Admin.prototype = User.prototype;
+  Admin.prototype.role = function () {
+    console.log("admin.role");
+  };
+
+  function Member() {}
+  Member.prototype = User.prototype;
+  Member.prototype.role = function () {
+    console.log("member.role");
+  };
+
+  let a = new Admin();
+  a.role(); */
+
+
+  /* yznaisy */
+  //原型的继承，而不是改变构造函数的原型
+
+  function User() {
+    // this.name = function () {
+    //   console.log("user name method");
+    // }
+  }
+  User.prototype.name = function () {
+    console.log("user method");
+  }
+  let hd = new User();
+  console.log(hd);
+  hd.name();
+
+  function Admin() {}
+  Admin.prototype = User.prototype;
+  Admin.prototype.role = function () {
+    console.log("admin.role");
+  }
+
+  function Member() {}
+  Member.prototype = User.prototype;
+  Member.prototype.role = function () {
+    console.log("member.role");
+  }
+
+  let a = new Admin()
+  a.role();
+  console.dir(User);
+  console.dir(Admin);
+
+</script>
+
 </html>

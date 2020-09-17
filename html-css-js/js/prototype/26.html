@@ -1,30 +1,41 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-17 10:49:24
+-->
+>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //原型的继承，而不是改变构造函数的原型
-    function User() {}
-    User.prototype.name = function() {
-      console.log("user.name");
-    };
 
-    function Admin() {}
-    let a = new Admin();
+<head>
+  <meta charset="UTF-8" />
+  <title>继承对新创建对象的影响</title>
+</head>
 
-    Admin.prototype.__proto__ = User.prototype;
-    // Admin.prototype = Object.create(User.prototype);
-    Admin.prototype.role = function() {
-      console.log("admin.role");
-    };
-    a.role();
-    // function Member() {}
-    // Member.prototype.__proto__ = User.prototype;
-    // Member.prototype.role = function() {
-    //   console.log("member.role");
-    // };
-  </script>
+<body></body>
+<script>
+  //原型的继承，而不是改变构造函数的原型
+  function User() {}
+  User.prototype.name = function () {
+    console.log("user.name");
+  };
+
+  function Admin() {}
+  let a = new Admin();
+
+  Admin.prototype.__proto__ = User.prototype;
+  // Admin.prototype = Object.create(User.prototype);
+  Admin.prototype.role = function () {
+    console.log("admin.role");
+  };
+  a.role();
+  // function Member() {}
+  // Member.prototype.__proto__ = User.prototype;
+  // Member.prototype.role = function() {
+  //   console.log("member.role");
+  // };
+
+</script>
+
 </html>

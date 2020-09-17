@@ -1,12 +1,21 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-16 20:03:16
+ * @FilePath     : \Code\html-css-js\js\prototype\21.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let user = {
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Object.create与__proto__</title>
+</head>
+
+<body></body>
+<script>
+  /*     let user = {
       show() {
         return this.name;
       }
@@ -21,6 +30,31 @@
     // console.log(hd.show());
     let hd = { name: "后盾人" };
     hd.__proto__ = user;
-    console.log(hd.__proto__);
-  </script>
+    console.log(hd.__proto__); */
+
+
+  /* yznaisy */
+
+  let user = {
+    show() {
+      return this.name;
+    }
+  }
+  // let hd = Object.create(user, {
+  //   name: {
+  //     value: "后盾人"
+  //   }
+  // });
+  // // hd.name = "后盾人";
+  // console.log(hd);
+  let hd = {
+    name: "后盾人"
+  };
+  hd.__proto__ = user;
+  console.log(hd);
+  console.log(hd.show());
+  console.log(hd.__proto__);
+
+</script>
+
 </html>

@@ -1,24 +1,35 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-16 19:50:48
+ * @FilePath     : \Code\html-css-js\js\prototype\19.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //this
-    let hd = {
-      name: "后盾人"
-    };
-    let User = {
-      name: "向军",
-      show() {
-        console.log(this.name);
-      }
-    };
-    Object.setPrototypeOf(hd, User);
-    hd.show();
-    // console.log(hd);
-    // console.log(hd.show());
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>this和原型没有关系</title>
+</head>
+
+<body></body>
+<script>
+  //this
+  let hd = {
+    name: "后盾人"
+  };
+  let User = {
+    name: "向军",
+    show() {
+      console.log(this.name);
+    }
+  };
+  Object.setPrototypeOf(hd, User);
+  hd.show();
+  // console.log(hd);
+  // console.log(hd.show());
+
+</script>
+
 </html>

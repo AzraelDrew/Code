@@ -1,31 +1,74 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-05-12 13:57:18
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-16 20:52:07
+ * @FilePath     : \Code\html-css-js\js\prototype\25.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //原型的继承，而不是改变构造函数的原型
-    function User() {}
-    User.prototype.name = function() {
-      console.log("user.name");
-    };
 
-    function Admin() {}
+<head>
+  <meta charset="UTF-8" />
+  <title>继承是原型的继承</title>
+</head>
 
-    // Admin.prototype.__proto__ = User.prototype;
-    Admin.prototype = Object.create(User.prototype);
-    Admin.prototype.role = function() {
-      console.log("admin.role");
-    };
+<body></body>
+<script>
+  /*   //原型的继承，而不是改变构造函数的原型
+  function User() {}
+  User.prototype.name = function () {
+    console.log("user.name");
+  };
 
-    function Member() {}
-    Member.prototype.__proto__ = User.prototype;
-    Member.prototype.role = function() {
-      console.log("member.role");
-    };
-    let a = new Admin();
-    a.role();
-  </script>
+  function Admin() {}
+
+  // Admin.prototype.__proto__ = User.prototype;
+  Admin.prototype = Object.create(User.prototype);
+  Admin.prototype.role = function () {
+    console.log("admin.role");
+  };
+
+  function Member() {}
+  Member.prototype.__proto__ = User.prototype;
+  Member.prototype.role = function () {
+    console.log("member.role");
+  };
+  let a = new Admin();
+  a.role();
+ */
+
+  /* yznaisy */
+
+  function User() {
+
+  }
+  User.prototype.name = function () {
+    console.log("user.name");
+  }
+  let a = new User;
+  a.name();
+
+  function Admin() {}
+  // Admin.prototype.__proto__ = User.prototype;
+  Admin.prototype = Object.create(User.prototype); //只能放在role方法之前，放在之后则不会有role方法
+  Admin.prototype.role = function () {
+    console.log("admin.name");
+  }
+  let b = new Admin();
+  b.role();
+  b.name();
+
+  function Member() {}
+  // Member.prototype.__proto__ = User.prototype;
+  Member.prototype = Object.create(User.prototype);
+  Member.prototype.role = function () {
+    console.log("member.name");
+  }
+  let c = new Member();
+  c.role();
+  c.name();
+
+</script>
+
 </html>
