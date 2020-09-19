@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:18
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-09-17 10:49:24
+ * @LastEditTime : 2020-09-19 20:52:01
 -->
 >
 <!DOCTYPE html>
@@ -24,8 +24,8 @@
   function Admin() {}
   let a = new Admin();
 
-  Admin.prototype.__proto__ = User.prototype;
-  // Admin.prototype = Object.create(User.prototype);
+  Admin.prototype.__proto__ = User.prototype; //会实时更改
+  // Admin.prototype = Object.create(User.prototype);   //在此之前实例化的对象的原型不会更改
   Admin.prototype.role = function () {
     console.log("admin.role");
   };

@@ -1,33 +1,43 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-19 21:40:13
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //原型的继承，而不是改变构造函数的原型
-    function User() {}
-    User.prototype.name = function() {
-      console.log("user.name");
-    };
 
-    function Admin() {}
-    Admin.prototype = Object.create(User.prototype);
-    // Admin.prototype.constructor = Admin;
+<head>
+  <meta charset="UTF-8" />
+  <title>禁止constructor属性被遍历</title>
+</head>
 
-    Object.defineProperty(Admin.prototype, "constructor", {
-      value: Admin,
-      enumerable: false
-    });
-    // console.log(Object.getOwnPropertyDescriptors(Admin.prototype));
-    Admin.prototype.role = function() {
-      console.log("admin.role");
-    };
-    let a = new Admin();
-    console.log(a);
-    for (const key in a) {
-      console.log(key);
-    }
-  </script>
+<body></body>
+<script>
+  //原型的继承，而不是改变构造函数的原型
+  function User() {}
+  User.prototype.name = function () {
+    console.log("user.name");
+  };
+
+  function Admin() {}
+  Admin.prototype = Object.create(User.prototype);
+  // Admin.prototype.constructor = Admin;
+
+  Object.defineProperty(Admin.prototype, "constructor", { //设置属性特征
+    value: Admin,
+    enumerable: false
+  });
+  // console.log(Object.getOwnPropertyDescriptors(Admin.prototype));  //产看属性特征
+  Admin.prototype.role = function () {
+    console.log("admin.role");
+  };
+  let a = new Admin();
+  console.log(a);
+  for (const key in a) {
+    console.log(key);
+  }
+
+</script>
+
 </html>
