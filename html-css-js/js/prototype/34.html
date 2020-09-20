@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-09-17 23:46:54
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-09-19 23:08:40
+ * @LastEditTime : 2020-09-20 16:32:04
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
 
 <body></body>
 <script>
-  function extend(sub, sup) {
+  /*   function extend(sub, sup) {
     sub.prototype = Object.create(sup.prototype);
     Object.defineProperty(sub.prototype, "constructor", {
       value: sub,
@@ -28,6 +28,7 @@
   };
 
   function Credit() {}
+  extend(Credit, Address)
   Credit.prototype.total = function () {
     console.log("积分统计");
   };
@@ -55,12 +56,70 @@
   admin.show();
   admin.ajax();
   admin.total();
+  admin.getAddress();
+  // console.log(admin);
+
+  function Member(name, age) {
+    User.call(this, name, age);
+  }
+  extend(Member, User);
+  let lisi = new Member("李四", 22); */
+
+
+  /* yznaisy */
+
+
+  function extend(sub, sup) {
+    sub.prototype = Object.create(sup.prototype);
+    Object.defineProperty(sub.prototype, "constructor", {
+      value: sub,
+      enumerable: false
+    })
+  }
+
+  function Address() {}
+  Address.prototype.getAddress = function () {
+    console.log("获取地址");
+  }
+
+  function Credit() {}
+  extend(Credit, Address);
+  Credit.prototype.total = function () {
+    console.log("积分统计");
+  }
+
+  function Request() {}
+  extend(Request, Credit)
+  Request.prototype.ajax = function () {
+    console.log("请求后台");
+  }
+
+  function User(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  extend(User, Request);
+  User.prototype.show = function () {
+    console.log(this.name, this.age);
+  }
+
+  function Admin(name, age) {
+    User.call(this, name, age)
+  }
+  extend(Admin, User);
+  let admin = new Admin("向军", 19);
+  admin.show();
+  admin.ajax();
+  admin.total();
+  console.log(admin);
+  admin.getAddress();
 
   function Member(name, age) {
     User.call(this, name, age);
   }
   extend(Member, User);
   let lisi = new Member("李四", 22);
+  lisi.show();
 
 </script>
 

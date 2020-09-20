@@ -1,62 +1,73 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-20 16:50:51
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // php:trait mixin 混合功能
-    function extend(sub, sup) {
-      sub.prototype = Object.create(sup.prototype);
-      Object.defineProperty(sub.prototype, "constructor", {
-        value: sub,
-        enumerable: false
-      });
-    }
-    const Address = {
-      getAddress() {
-        console.log("获取收货地址");
-      }
-    };
-    const Request = {
-      ajax() {
-        return "请求后台";
-      }
-    };
-    const Credit = {
-      __proto__: Request,
-      total() {
-        //super  = this.__proto__
-        console.log(super.ajax() + "积分统计");
-      }
-    };
 
-    function User(name, age) {
-      this.name = name;
-      this.age = age;
-    }
-    User.prototype.show = function() {
-      console.log(this.name, this.age);
-    };
+<head>
+  <meta charset="UTF-8" />
+  <title>mixin内部继承与super关键字</title>
+</head>
 
-    function Admin(name, age) {
-      User.call(this, name, age);
+<body></body>
+<script>
+  // php:trait mixin 混合功能
+  function extend(sub, sup) {
+    sub.prototype = Object.create(sup.prototype);
+    Object.defineProperty(sub.prototype, "constructor", {
+      value: sub,
+      enumerable: false
+    });
+  }
+  const Address = {
+    getAddress() {
+      console.log("获取收货地址");
     }
-    extend(Admin, User);
-    Admin.prototype = Object.assign(Admin.prototype, Request, Credit);
-    let admin = new Admin("向军", 19);
-    admin.show();
-    admin.total();
+  };
+  const Request = {
+    ajax() {
+      return "请求后台";
+    }
+  };
+  const Credit = {
+    __proto__: Request,
+    total() {
+      //super  = this.__proto__   //当前对象的原型
+      console.log(super.ajax() + "积分统计");
+    }
+  };
 
-    console.log(admin);
-    console.log(Credit);
-    function Member(name, age) {
-      User.call(this, name, age);
-    }
-    extend(Member, User);
-    Member.prototype = Object.assign(Admin.prototype, Request, Credit, Address);
-    let lisi = new Member("李四", 22);
-    lisi.getAddress();
-  </script>
+  function User(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  User.prototype.show = function () {
+    console.log(this.name, this.age);
+  };
+
+  function Admin(name, age) {
+    User.call(this, name, age);
+  }
+  extend(Admin, User);
+  Admin.prototype = Object.assign(Admin.prototype, Request, Credit);
+  let admin = new Admin("向军", 19);
+  admin.show();
+  admin.total();
+
+  console.log(admin);
+  console.log(Credit);
+
+  function Member(name, age) {
+    User.call(this, name, age);
+  }
+  extend(Member, User);
+  Member.prototype = Object.assign(Admin.prototype, Request, Credit, Address);
+  let lisi = new Member("李四", 22);
+  lisi.getAddress();
+
+</script>
+
 </html>
