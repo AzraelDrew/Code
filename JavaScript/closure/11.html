@@ -2,15 +2,15 @@
  * @Author       : yznaisy
  * @Date         : 2020-05-12 13:57:18
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-08-14 14:10:08
- * @FilePath     : \Code\html-css-js\js\closure\13.html
+ * @LastEditTime : 2020-09-21 16:21:27
+ * @FilePath     : \Code\html-css-js\js\closure\11.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title>后盾人</title>
+  <title>移动动画的闭包使用</title>
 </head>
 
 <body>
@@ -26,15 +26,11 @@
 <script>
   let btns = document.querySelectorAll("button");
   btns.forEach(function (item) {
-    let bind = false;
     item.addEventListener("click", function () {
-      if (!bind) {
-        let left = 1;
-        bind = setInterval(function () {
-          item.style.left = left++ + "px";
-
-        }, 100);
-      }
+      let left = 8; // 每次点击都会重新生成一个left和setInterval，多次点击会出现抖动和加快移动
+      setInterval(function () {
+        item.style.left = left++ + "px";
+      }, 10);
     });
   });
 
