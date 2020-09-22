@@ -1,35 +1,79 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 22:10:14
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // "use strict";
-    // function show() {
-    //   console.log(this);
-    // }
-    // show();
-    // "use strict";
-    // function User() {}
-    // User.prototype.show = function() {
-    //   function test() {
-    //     console.log(this);
-    //   }
-    //   test();
-    // };
-    // let u = new User();
-    // u.show();
-    class Hd {
-      show() {
-        function test() {
-          console.log(this);
-        }
-        test();
+
+<head>
+  <meta charset="UTF-8" />
+  <title>严格模式</title>
+</head>
+
+<body></body>
+<script>
+  /*   // "use strict";
+  // function show() {
+  //   console.log(this);
+  // }
+  // show();
+  // "use strict";
+  // function User() {}
+  // User.prototype.show = function() {
+  //   function test() {
+  //     console.log(this);
+  //   }
+  //   test();
+  // };
+  // let u = new User();
+  // u.show();
+  class Hd {
+    show() {
+      function test() {
+        console.log(this);
       }
+      test();
     }
-    let hd = new Hd();
-    hd.show();
-  </script>
+  }
+  let hd = new Hd();
+  hd.show(); */
+
+
+  /* yznaisy */
+
+  // "use strict";
+
+  // function show() {
+  //   console.log(this);
+  // }
+  // show(); //undefined
+
+
+  // function User() {}
+  // User.prototype.show = function () {
+  //   function test() {
+  //     console.log(this);
+  //   }
+  //   test();
+  // }
+
+  // let u = new User();
+  // u.show(); //undefined
+
+
+  class Hd { //使用class默认使用严格模式
+    show() {
+      function test() {
+        console.log(this);
+      }
+      test();
+    }
+  }
+  let h = new Hd();
+  h.show();
+
+</script>
+
 </html>

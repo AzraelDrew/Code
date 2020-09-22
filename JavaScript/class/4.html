@@ -1,28 +1,59 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 21:50:49
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    class User {
-      site = "后盾人";
-      constructor(name) {
-        this.name = name;
-      }
-      changeSite(value) {
-        this.site = value;
-      }
-      show() {
-        return `${this.site}:${this.name}`;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>对象属性的声明</title>
+</head>
+
+<body></body>
+<script>
+  /*   class User {
+    site = "后盾人";
+    constructor(name) {
+      this.name = name;
     }
-    let hd = new User("后盾人");
-    hd.changeSite("houdunren");
-    console.log(hd.show());
-    // console.log(hd);
-    // let xj = new User("向军");
-    // console.log(xj);
-  </script>
+    changeSite(value) {
+      this.site = value;
+    }
+    show() {
+      return `${this.site}:${this.name}`;
+    }
+  }
+  let hd = new User("后盾人");
+  hd.changeSite("houdunren");
+  console.log(hd.show());
+  // console.log(hd);
+  // let xj = new User("向军");
+  // console.log(xj); */
+
+  /* yznaisy */
+
+  class User {
+    site = "后盾人"
+    constructor(name) {
+      this.name = name;
+    }
+    changeSite(value) {
+      this.site = value
+    }
+    show() {
+      return `${this.site}:${this.name}`
+    }
+  }
+  let hd = new User("后盾人");
+  hd.changeSite("houdunren")
+  console.log(hd.show());
+  console.log(hd);
+  let xj = new User("向军");
+  console.log(xj);
+
+</script>
+
 </html>

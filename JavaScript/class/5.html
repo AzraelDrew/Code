@@ -1,48 +1,91 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 22:01:46
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function Hd(name) {
-    //   this.name = name;
-    // }
-    // Hd.prototype.show = function() {};
-    // console.log(
-    //   JSON.stringify(
-    //     Object.getOwnPropertyDescriptor(Hd.prototype, "show"),
-    //     null,
-    //     2
-    //   )
-    // );
-    // let h = new Hd("后盾人");
-    // for (const key in h) {
-    //   console.log(key);
-    // }
-    // for (const key in h) {
-    //   if (h.hasOwnProperty(key)) {
-    //     console.log(key);
-    //   }
-    // }
-    class User {
-      constructor(name) {
-        this.name = name;
-      }
-      show() {}
+
+<head>
+  <meta charset="UTF-8" />
+  <title>class声明的方法为什么不能遍历</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function Hd(name) {
+  //   this.name = name;
+  // }
+  // Hd.prototype.show = function() {};
+  // console.log(
+  //   JSON.stringify(
+  //     Object.getOwnPropertyDescriptor(Hd.prototype, "show"),
+  //     null,
+  //     2
+  //   )
+  // );
+  // let h = new Hd("后盾人");
+  // for (const key in h) {
+  //   console.log(key);
+  // }
+  // for (const key in h) {
+  //   if (h.hasOwnProperty(key)) {
+  //     console.log(key);
+  //   }
+  // }
+  class User {
+    constructor(name) {
+      this.name = name;
     }
-    let u = new User("向军");
-    console.dir(User);
-    console.log(
-      JSON.stringify(
-        Object.getOwnPropertyDescriptor(User.prototype, "show"),
-        null,
-        2
-      )
-    );
-    for (const key in u) {
-      console.log(key);
-    }
-  </script>
+    show() {}
+  }
+  let u = new User("向军");
+  console.dir(User);
+  console.log(
+    JSON.stringify(
+      Object.getOwnPropertyDescriptor(User.prototype, "show"),
+      null,
+      2
+    )
+  );
+  for (const key in u) {
+    console.log(key);
+  } */
+
+
+  /* yznaisy */
+
+
+  function Hd(name) {
+    this.name = name;
+  }
+  Hd.prototype.show = function () {};
+  console.log(JSON.stringify(Object.getOwnPropertyDescriptor(Hd.prototype, "show"), null, 2));
+  // console.dir(Hd);
+  // let hd = new Hd();
+  // for (const key in hd) {
+  //   console.log(key);   //name   show
+  // }
+  // for (const key in hd) {
+  //   if (hd.hasOwnProperty(key)) {
+  //     console.log(key); //name
+  //   }
+  // }
+
+
+  class User {
+    name
+    show() {} //使用class关键字创建方法时默认是不允许被遍历
+
+  }
+  let u = new User();
+  // console.dir(User);
+  console.log(JSON.stringify(Object.getOwnPropertyDescriptor(User.prototype, "show"), null, 2));
+  for (const key in u) {
+    console.log(key); //name
+  }
+
+</script>
+
 </html>

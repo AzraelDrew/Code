@@ -1,30 +1,67 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 23:48:55
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function Web(url) {
-    //   this.url = url;
-    // }
-    // Web.url = "hdcms.com";
-    // let hd = new Web("houdunren.com");
-    // console.log(hd);
-    // console.dir(Web);
-    class Request {
-      static host = "https://www.houdunren.com";
-      api(url) {
-        return Request.host + `/${url}`;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>静态属性</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function Web(url) {
+  //   this.url = url;
+  // }
+  // Web.url = "hdcms.com";
+  // let hd = new Web("houdunren.com");
+  // console.log(hd);
+  // console.dir(Web);
+  class Request {
+    static host = "https://www.houdunren.com";
+    api(url) {
+      return Request.host + `/${url}`;
     }
-    let obj = new Request();
-    console.log(obj.api("article"));
-    // console.log(obj);
-    // console.dir(Request);
-    // let obj2 = new Request();
-    // obj.host = "https://baidu.com";
-    // console.log(obj2);
-  </script>
+  }
+  let obj = new Request();
+  console.log(obj.api("article"));
+  // console.log(obj);
+  // console.dir(Request);
+  // let obj2 = new Request();
+  // obj.host = "https://baidu.com";
+  // console.log(obj2); */
+
+
+  /* yznaisy */
+
+  function Web(url) {
+    this.url = url;
+  }
+
+  Web.url = "hdcms.com"; //静态属性
+  let hd = new Web("houdunren.com");
+  console.log(hd); //houdunren.com
+  console.log(Web.url); //hdcms.com
+  console.dir(Web);
+
+  class Request {
+    static host = "https://www.houdunren.com"; //公共的变量使用静态属性
+    api(url) {
+      return Request.host + `/${url}`
+    }
+  }
+  let obj1 = new Request();
+  console.log(obj1);
+  console.dir(Request);
+  console.log(obj1.api("article"));
+  // let obj2 = new Request();
+  // obj1.host = "https://baidu.com"
+  // console.log(obj2);
+
+</script>
+
 </html>

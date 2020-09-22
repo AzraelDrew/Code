@@ -1,42 +1,110 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 23:40:46
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    const data = [
-      { name: "js", price: 100 },
-      { name: "mysql", price: 212 },
-      { name: "vue.js", price: 98 }
-    ];
-    class Lesson {
-      constructor(data) {
-        this.model = data;
-      }
-      get price() {
-        return this.model.price;
-      }
-      get name() {
-        return this.model.name;
-      }
-      static totalPrice(data) {
-        return data.reduce((t, c) => {
-          return t + c.price;
-        }, 0);
-      }
-      static createBatch(data) {
-        return data.map(item => new Lesson(item));
-      }
-      static maxPrice(data) {
-        return data.sort((a, b) => b.price - a.price)[0];
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>静态属性练习之课程管理类</title>
+</head>
+
+<body></body>
+<script>
+  /*   const data = [{
+      name: "js",
+      price: 100
+    },
+    {
+      name: "mysql",
+      price: 212
+    },
+    {
+      name: "vue.js",
+      price: 98
     }
-    // let obj1 = new Lesson(data[0]);
-    // console.log(obj1);
-    let lessons = Lesson.createBatch(data);
-    console.log(Lesson.maxPrice(lessons).name);
-    console.log(Lesson.totalPrice(lessons));
-  </script>
+  ];
+  class Lesson {
+    constructor(data) {
+      this.model = data;
+    }
+    get price() {
+      return this.model.price;
+    }
+    get name() {
+      return this.model.name;
+    }
+    static totalPrice(data) {
+      return data.reduce((t, c) => {
+        return t + c.price;
+      }, 0);
+    }
+    static createBatch(data) {
+      return data.map(item => new Lesson(item));
+    }
+    static maxPrice(data) {
+      return data.sort((a, b) => b.price - a.price)[0];
+    }
+  }
+  // let obj1 = new Lesson(data[0]);
+  // console.log(obj1);
+  let lessons = Lesson.createBatch(data);
+  console.log(Lesson.maxPrice(lessons).name);
+  console.log(Lesson.totalPrice(lessons)); */
+
+
+  /* yznaisy */
+
+
+  const data = [{
+      name: "js",
+      price: 100
+    },
+    {
+      name: "mysql",
+      price: 212
+    },
+    {
+      name: "vue.js",
+      price: 98
+    }
+  ];
+
+
+  class Lesson {
+    constructor(data) {
+      this.model = data
+    }
+    static totalPrice() {
+      return data.reduce((t, l) => {
+        return t + l.price
+      }, 0)
+    }
+    get price() {
+      return this.model.price
+    }
+    get name() {
+      return this.model.name
+    }
+    static createBatch(data) {
+      return data.map(item => new Lesson(item))
+    }
+    static maxPrice(data) {
+      return data.sort((a, b) => {
+        return b.price - a.price
+      })[0]
+    }
+  }
+
+  let lessons = Lesson.createBatch(data);
+  console.log(lessons);
+  console.log(Lesson.maxPrice(lessons).price);
+  console.log(Lesson.maxPrice(lessons).name);
+  console.log(Lesson.totalPrice(lessons));
+
+</script>
+
 </html>

@@ -1,50 +1,103 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-22 23:14:34
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function User() {}
-    // User.prototype.show = function() {
-    //   console.log("prototype.show");
-    // };
-    // User.__proto__.show = function() {
-    //   console.log(this == User.prototype.constructor);
-    //   console.log("static.show");
-    // };
-    // User.show();
-    // console.dir(User);
-    // console.dir(User);
-    // let hd = new User();
-    // hd.show();
-    // class User {
-    //   show() {
-    //     console.log("prototype.show");
-    //   }
-    //   static show = function() {
-    //     console.log("static.show");
-    //   };
-    // }
-    // User.show();
-    // console.dir(User);
-    // let hd = new User();
-    // hd.show();
 
-    class Member {
-      constructor(name, age, sex) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-      }
-      static create(...args) {
-        return new this(...args);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>静态方法实现原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function User() {}
+  // User.prototype.show = function() {
+  //   console.log("prototype.show");
+  // };
+  // User.__proto__.show = function() {
+  //   console.log(this == User.prototype.constructor);
+  //   console.log("static.show");
+  // };
+  // User.show();
+  // console.dir(User);
+  // console.dir(User);
+  // let hd = new User();
+  // hd.show();
+  // class User {
+  //   show() {
+  //     console.log("prototype.show");
+  //   }
+  //   static show = function() {
+  //     console.log("static.show");
+  //   };
+  // }
+  // User.show();
+  // console.dir(User);
+  // let hd = new User();
+  // hd.show();
+
+  class Member {
+    constructor(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
     }
-    let xj = Member.create("向军", 19, "男");
-    console.log(xj);
-    // let hd = new User("后盾人");
-    // console.log(hd);
-  </script>
+    static create(...args) {
+      return new this(...args);
+    }
+  }
+  let xj = Member.create("向军", 19, "男");
+  console.log(xj);
+  // let hd = new User("后盾人");
+  // console.log(hd); */
+
+  /* yznaisy */
+
+
+  // function User() {
+
+  // }
+  // User.prototype.show = function () {
+  //   console.log("prototype.show");
+
+  // }
+  // User.show = function () { //直接定义在函数上的方法叫做静态方法  定义在原型上为普通方法
+  // }
+  // console.dir(User);
+  // let hd = new User();
+  // hd.show();
+
+  // class User {
+  //   show() {
+  //     console.log("prototype.show");
+  //   }
+  //   static show() {
+  //     console.log("static.show");
+
+  //   }
+  // }
+  // let hd = new User();
+  // console.dir(User);
+  // User.show();
+  // hd.show();
+
+  class User {
+    constructor(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+    static create(...args) {
+      return new this(...args);
+    }
+  }
+  let xj = User.create("向军", 19, "男");
+  console.log(xj);
+
+</script>
+
 </html>
