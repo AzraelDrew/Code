@@ -1,9 +1,15 @@
+#是否是顶级配置文件，设置为true时会停止搜索.editorconfig文件
 root = true
 
 [*]
 charset = utf-8
+#使用制表符类型<"tab" | "space">
 indent_style = space
+#制表符长度
 indent_size = 2
-end_of_line = lf
+#换行符类型<"lf" | "cr"  | "crlf">
+end_of_line = crlf
+#末尾行后多加一行空行
 insert_final_newline = true
+#末尾行去掉尾随的空格
 trim_trailing_whitespace = true

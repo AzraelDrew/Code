@@ -1,34 +1,76 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-27 22:53:52
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function User() {}
-    // User.prototype.show = function() {
-    //   console.log("后盾人");
-    // };
-    // function Admin() {}
-    // Admin.prototype = Object.create(User.prototype);
-    // // console.dir(Admin);
-    // let hd = new Admin();
-    // hd.show();
-    class User {
-      show() {
-        console.log("后盾人");
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>类的方法继承原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function User() {}
+  // User.prototype.show = function() {
+  //   console.log("后盾人");
+  // };
+  // function Admin() {}
+  // Admin.prototype = Object.create(User.prototype);
+  // // console.dir(Admin);
+  // let hd = new Admin();
+  // hd.show();
+  class User {
+    show() {
+      console.log("后盾人");
     }
-    class Admin extends User {
-      constructor(name) {
-        super();
-        this.name = name;
-      }
+  }
+  class Admin extends User {
+    constructor(name) {
+      super();
+      this.name = name;
     }
-    // console.dir(Admin);
-    let hd = new Admin("向军");
-    hd.show();
-    console.log(hd);
-  </script>
+  }
+  // console.dir(Admin);
+  let hd = new Admin("向军");
+  hd.show();
+  console.log(hd); */
+
+
+
+  /* yunziays */
+
+  // function User() {}
+  // User.prototype.show = function () {
+  //   console.log("后盾人");
+  // }
+
+  // function Admin() {}
+  // Admin.prototype = Object.create(User.prototype);
+  // console.dir(Admin);
+  // let hd = new Admin();
+  // hd.show();
+
+
+
+  class User {
+    show() {
+      console.log("后盾人");
+    }
+  }
+  class Admin extends User {
+    constructor(name) {
+      super();
+      this.name = name;
+    }
+  }
+  let hd = new Admin();
+  console.dir(Admin);
+  hd.show();
+
+</script>
+
 </html>

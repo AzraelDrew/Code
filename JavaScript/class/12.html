@@ -1,39 +1,86 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-27 22:28:15
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    const protecteds = Symbol();
-    class Common {
-      constructor() {
-        this[protecteds] = {};
-        this[protecteds].host = "https://houdunren.com";
-      }
-      set host(url) {
-        if (!/^https?:/i.test(url)) {
-          throw new Error("非常网址");
-        }
-        this[protecteds].host = url;
-      }
-      get host() {
-        return this[protecteds].host;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用Symbol定义protected属性</title>
+</head>
+
+<body></body>
+<script>
+  /*   const protecteds = Symbol();
+  class Common {
+    constructor() {
+      this[protecteds] = {};
+      this[protecteds].host = "https://houdunren.com";
     }
-    class User extends Common {
-      constructor(name) {
-        super();
-        this[protecteds].name = name;
+    set host(url) {
+      if (!/^https?:/i.test(url)) {
+        throw new Error("非常网址");
       }
-      get name() {
-        return this[protecteds].name;
-      }
+      this[protecteds].host = url;
     }
-    let hd = new User("后盾人");
-    hd.host = "https://www.hdcms.com";
-    // console.log(hd[Symbol()]);
-    console.log(hd.name);
-  </script>
+    get host() {
+      return this[protecteds].host;
+    }
+  }
+  class User extends Common {
+    constructor(name) {
+      super();
+      this[protecteds].name = name;
+    }
+    get name() {
+      return this[protecteds].name;
+    }
+  }
+  let hd = new User("后盾人");
+  hd.host = "https://www.hdcms.com";
+  // console.log(hd[Symbol()]);
+  console.log(hd.name); */
+
+  /* yznaisy */
+  const protecteds = Symbol();
+
+  class Common {
+    // [HOST] = "https://hdcms.com";
+    constructor() {
+      this[protecteds] = {};
+      this[protecteds].host = "https://hdcms.com"
+    }
+    set host(url) {
+      if (!/^https?:\/\//i.test(url)) {
+        throw new Error("错误地址")
+      }
+      this[protecteds].host = url;
+    }
+    get host() {
+      return this[protecteds].host;
+    }
+  }
+
+  class User extends Common {
+    constructor(name) {
+      super();
+      this[protecteds].name = name;
+    }
+    get name() {
+      return this[protecteds].name;
+    }
+
+  }
+
+  let hd = new User("后盾人");
+  hd.host = "https://houdunre.com"
+  console.log(hd);
+  console.log(hd.host);
+  console.log(hd.name);
+
+</script>
+
 </html>

@@ -1,27 +1,58 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-25 20:13:23
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    class User {
-      //public
-      _url = "https://houdunren.com";
-      constructor(name) {
-        this.name = name;
-      }
-      set url(url) {
-        if (!/^https?:/i.test(url)) {
-          throw new Error("非常网址");
-        }
-        this._url = url;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用命名规则保护属性</title>
+</head>
+
+<body></body>
+<script>
+  /*   class User {
+    //public
+    _url = "https://houdunren.com";
+    constructor(name) {
+      this.name = name;
     }
-    let hd = new User("后盾人");
-    hd.name = "李四";
-    hd.url = "https://hdcms.com";
-    console.log(hd);
-  </script>
+    set url(url) {
+      if (!/^https?:/i.test(url)) {
+        throw new Error("非常网址");
+      }
+      this._url = url;
+    }
+  }
+  let hd = new User("后盾人");
+  hd.name = "李四";
+  hd.url = "https://hdcms.com";
+  console.log(hd); */
+
+
+  /* yznaisy */
+
+  class User {
+    _url = "https://hdcms.com"; //以下划线开始的为私有属性
+    constructor(name) {
+      this.name = name;
+    }
+    set url(url) {
+      if (!/^https?:\/\//i.test(url)) {
+        throw new Error("错误地址")
+      }
+      this._url = url;
+    }
+  }
+
+  let hd = new User("后盾人");
+  hd.name = "李四"
+  hd.url = "https://houdunren.com"
+  console.log(hd);
+
+</script>
+
 </html>

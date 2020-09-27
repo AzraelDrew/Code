@@ -2,7 +2,7 @@
  * @Author       : yznaisy
  * @Date         : 2020-09-17 23:46:54
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-09-22 23:56:52
+ * @LastEditTime : 2020-09-23 15:03:19
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -53,9 +53,9 @@
       return this.data["host"]
     }
   }
-  let hd = new Request("https://www.houdunren.com")
-  // hd.host = "hdcms";
-  // hd.host = "https://hdcms.com";
+  let hd = new Request("https://www.houdun.com")
+  // hd.host = "hdcms.com"; //地址错误
+  hd.host = "https://hdmcs.com";
   console.log(hd);
   console.log(hd.host);
 

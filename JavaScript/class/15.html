@@ -1,32 +1,73 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-27 22:44:27
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function User(name) {
-    //   this.name = name;
-    // }
-    // function Admin(name) {
-    //   User.call(this, name);
-    // }
-    // Admin.prototype = Object.create(User.prototype);
-    // Admin.prototype.show = function() {};
-    // let hd = new Admin("后盾人");
-    // console.log(hd);
-    class User {
-      constructor(name) {
-        this.name = name;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>class属性继承原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function User(name) {
+  //   this.name = name;
+  // }
+  // function Admin(name) {
+  //   User.call(this, name);
+  // }
+  // Admin.prototype = Object.create(User.prototype);
+  // Admin.prototype.show = function() {};
+  // let hd = new Admin("后盾人");
+  // console.log(hd);
+  class User {
+    constructor(name) {
+      this.name = name;
     }
-    class Admin extends User {
-      constructor(name) {
-        super(name);
-      }
+  }
+  class Admin extends User {
+    constructor(name) {
+      super(name);
     }
-    let hd = new Admin("后盾人");
-    console.log(hd);
-  </script>
+  }
+  let hd = new Admin("后盾人");
+  console.log(hd); */
+
+
+  /* yznaisy */
+
+
+  // function User(name) {
+  //   this.name = name;
+  // }
+
+  // function Admin(name) {
+  //   // this.name = name;
+  //   User.call(this, name)
+  // }
+
+  // Admin.prototype = Object.create(User.prototype);
+  // Admin.prototype.show = function () {}
+  // console.dir(Admin);
+  // let hd = new Admin("后盾人")
+  // console.log(hd);
+  class User {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+  class Admin extends User {
+    constructor(name) {
+      super(name);
+    }
+  }
+  let hd = new Admin("后盾人");
+  console.log(hd);
+
+</script>
+
 </html>
