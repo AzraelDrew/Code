@@ -1,30 +1,77 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-29 22:17:25
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // function User() {}
-    // User.site = "后盾人";
-    // User.show = function() {
-    //   console.log("User.static.method");
-    // };
-    // function Admin() {}
-    // Admin.__proto__ = User;
-    // // console.dir(Admin);
-    // // Admin.show();
-    // console.log(Admin.site);
 
-    class User {
-      static site = "houdunren.com";
-      static show() {
-        console.log("user.static show");
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>静态继承原理</title>
+</head>
+
+<body></body>
+<script>
+  /*   // function User() {}
+  // User.site = "后盾人";
+  // User.show = function() {
+  //   console.log("User.static.method");
+  // };
+  // function Admin() {}
+  // Admin.__proto__ = User;
+  // // console.dir(Admin);
+  // // Admin.show();
+  // console.log(Admin.site);
+
+  class User {
+    static site = "houdunren.com";
+    static show() {
+      console.log("user.static show");
     }
-    class Admin extends User {}
-    // console.dir(Admin.site);
-    // Admin.show();
-  </script>
+  }
+  class Admin extends User {}
+  // console.dir(Admin.site);
+  // Admin.show(); */
+
+  /* yznaisy */
+
+
+  // function User() {}
+  // User.site = "后盾人";
+  // User.show = function () {
+  //   console.log("User.static.method");
+  // }
+  // console.dir(User);
+
+  // function Admin() {
+
+  // }
+  // Admin.__proto__ = User;
+  // console.dir(Admin);
+  // Admin.show();
+  // console.log(Admin.site);
+
+ 
+  class Common {
+    static site = "houdunren.com"
+    static show() {
+      console.log("user.static show");
+    }
+  }
+
+
+  class User extends Common {
+
+  }
+
+  class Admin extends User {}
+  console.dir(Admin);
+  Admin.show();
+
+
+
+</script>
+
 </html>

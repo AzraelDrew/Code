@@ -1,32 +1,73 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-28 22:42:08
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    class User {
-      constructor(name) {
-        this.name = name;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>为什么在子类constructor中执行super</title>
+</head>
+
+<body></body>
+<script>
+  /*   class User {
+    constructor(name) {
+      this.name = name;
     }
-    class Admin extends User {
-      constructor(...args) {
-        super(...args);
-        this.name = "houdunren.com";
-      }
+  }
+  class Admin extends User {
+    constructor(...args) {
+      super(...args);
+      this.name = "houdunren.com";
     }
-    let hd = new Admin("后盾人");
-    console.log(hd);
-    // function User(name) {
-    //   this.name = name;
-    // }
-    // function Admin(...args) {
-    //   User.call(this, ...args);
-    // }
-    // Admin.prototype = Object.create(User.prototype);
-    // let hd = new Admin("后盾人");
-    // console.log(hd);
-  </script>
+  }
+  let hd = new Admin("后盾人");
+  console.log(hd);
+  // function User(name) {
+  //   this.name = name;
+  // }
+  // function Admin(...args) {
+  //   User.call(this, ...args);
+  // }
+  // Admin.prototype = Object.create(User.prototype);
+  // let hd = new Admin("后盾人");
+  // console.log(hd); */
+
+
+  /* yznaisy */
+
+
+  class User {
+    constructor(name) {
+      this.name = name;
+      this.site = "abc"
+    }
+  }
+  class Admin extends User {
+    constructor(...args) {
+      super(args); //必须放在this之前   在子类中必须调用super
+      this.site = "houdunren.com"; //会将父类中的site覆盖   如果子类中没有site属性就会使用父类中的site
+
+    }
+  }
+  let hd = new Admin("后盾人");
+  console.log(hd);
+
+  // function User(name) {
+  //   this.name = name;
+  // }
+
+  // function Admin(...args) {
+  //   User.call(this, ...args)
+  // }
+  // Admin.prototype = Object.create(User.prototype);
+  // let hd = new Admin("后盾人");
+  // console.log(hd);
+
+</script>
+
 </html>

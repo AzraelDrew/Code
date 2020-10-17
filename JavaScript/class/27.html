@@ -1,38 +1,104 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-17 20:14:36
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //mixin
-    let Tool = {
-      max(key) {
-        return this.data.sort((a, b) => b[key] - a[key])[0];
-      }
-    };
-    let Arr = {
-      count(key) {
-        return this.data.reduce((t, c) => t + c[key], 0);
-      }
-    };
-    class Lesson {
-      constructor(lessons) {
-        this.lessons = lessons;
-      }
-      get data() {
-        return this.lessons;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>mixin混合模式使用技巧</title>
+</head>
+
+<body></body>
+<script>
+  /*   //mixin
+  let Tool = {
+    max(key) {
+      return this.data.sort((a, b) => b[key] - a[key])[0];
     }
-    const data = [
-      { name: "js", price: 100, click: 188 },
-      { name: "mysql", price: 212, click: 34 },
-      { name: "vue.js", price: 98, click: 89 }
-    ];
-    Object.assign(Lesson.prototype, Tool, Arr);
-    // console.dir(Lesson);
-    let hd = new Lesson(data);
-    console.log(hd.count("price"));
-  </script>
+  };
+  let Arr = {
+    count(key) {
+      return this.data.reduce((t, c) => t + c[key], 0);
+    }
+  };
+  class Lesson {
+    constructor(lessons) {
+      this.lessons = lessons;
+    }
+    get data() {
+      return this.lessons;
+    }
+  }
+  const data = [{
+      name: "js",
+      price: 100,
+      click: 188
+    },
+    {
+      name: "mysql",
+      price: 212,
+      click: 34
+    },
+    {
+      name: "vue.js",
+      price: 98,
+      click: 89
+    }
+  ];
+  Object.assign(Lesson.prototype, Tool, Arr);
+  // console.dir(Lesson);
+  let hd = new Lesson(data);
+  console.log(hd.count("price")); */
+
+
+  /* yznaisy */
+  let Tool = {
+    max(key) {
+      return this.data.sort((a, b) => b[key] - b[key])[0].price
+    }
+  }
+  let Arr = {
+    count(key) {
+      return this.data.reduce((t, l) => t + l[key], 0)
+    }
+  }
+
+  class Lesson {
+    constructor(lessons) {
+      this.lessons = lessons;
+    }
+    get data() {
+      return this.lessons;
+    }
+  }
+  const data = [{
+      name: "js",
+      price: 100,
+      click: 188
+    },
+    {
+      name: "mysql",
+      price: 212,
+      click: 34
+    },
+    {
+      name: "vue.js",
+      price: 98,
+      click: 89
+    }
+  ];
+
+
+  Object.assign(Lesson.prototype, Tool, Arr);
+  console.dir(Lesson);
+  let hd = new Lesson(data);
+  console.log(hd.max("price"));
+  console.log(hd.count("price"));
+
+</script>
+
 </html>

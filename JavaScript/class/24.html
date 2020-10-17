@@ -1,28 +1,60 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-15 21:13:21
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let a = {};
-    // let b = {
-    //   __proto__: a
-    // };
-    // let c = {
-    //   __proto__: b
-    // };
-    // console.log(a.isPrototypeOf(b));
-    // console.log(a.isPrototypeOf(c));
-    // console.log(c.isPrototypeOf(b));
-    class Common {}
-    class User extends Common {}
-    class Admin extends User {}
-    let hd = new Admin();
-    console.log(Admin.prototype.isPrototypeOf(hd));
-    console.log(Common.prototype.isPrototypeOf(hd));
 
-    console.log(hd instanceof Common);
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>isPrototypeOf检测原型关系</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let a = {};
+  // let b = {
+  //   __proto__: a
+  // };
+  // let c = {
+  //   __proto__: b
+  // };
+  // console.log(a.isPrototypeOf(b));
+  // console.log(a.isPrototypeOf(c));
+  // console.log(c.isPrototypeOf(b));
+  class Common {}
+  class User extends Common {}
+  class Admin extends User {}
+  let hd = new Admin();
+  console.log(Admin.prototype.isPrototypeOf(hd));
+  console.log(Common.prototype.isPrototypeOf(hd));
+
+  console.log(hd instanceof Common); */
+
+
+  /* yznaisy */
+
+  // let a = {}
+  // let b = {
+  //   __proto__: a
+  // }
+  // let c = {
+  //   __proto__: b
+  // }
+  // console.log(a.isPrototypeOf(b));
+  // console.log(a.isPrototypeOf(c));
+  // console.log(b.isPrototypeOf(c));
+
+  class Common {}
+  class User extends Common {}
+  class Admin extends User {}
+  let hd = new Admin
+  console.log(Admin.prototype.isPrototypeOf(hd));
+  console.log(Common.prototype.isPrototypeOf(hd));
+  console.log(hd instanceof Common);
+
+</script>
+
 </html>

@@ -1,49 +1,89 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-28 22:09:38
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //super
-    // class User {
-    //   show() {
-    //     console.log(this.name);
-    //   }
-    // }
-    // class Admin extends User {
-    //   constructor(name) {
-    //     super();
-    //     this.name = name;
-    //   }
-    //   show() {
-    //     super.show();
-    //   }
-    // }
-    // let hd = new Admin("后盾人");
-    // hd.show();
-    let common = {
-      show() {
-        console.log("common.show" + this.name);
-      }
-    };
-    let hd = {
-      __proto__: common,
-      name: "hd.name",
-      show() {
-        super.show();
-        // this.__proto__.show.call(this);
-      }
-    };
-    let xj = {
-      __proto__: hd,
-      name: "xj.name",
-      show() {
-        super.show();
-        // this.__proto__.show.call(this);
-      }
-    };
-    xj.show();
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>多继承中super的魅力</title>
+</head>
+
+<body></body>
+<script>
+  /*   //super
+  // class User {
+  //   show() {
+  //     console.log(this.name);
+  //   }
+  // }
+  // class Admin extends User {
+  //   constructor(name) {
+  //     super();
+  //     this.name = name;
+  //   }
+  //   show() {
+  //     super.show();
+  //   }
+  // }
+  // let hd = new Admin("后盾人");
+  // hd.show();
+  let common = {
+    show() {
+      console.log("common.show" + this.name);
+    }
+  };
+  let hd = {
+    __proto__: common,
+    name: "hd.name",
+    show() {
+      super.show();
+      // this.__proto__.show.call(this);
+    }
+  };
+  let xj = {
+    __proto__: hd,
+    name: "xj.name",
+    show() {
+      super.show();
+      // this.__proto__.show.call(this);
+    }
+  };
+  xj.show(); */
+
+
+  /* yznaisy */
+
+
+  let common = {
+    show() {
+      console.log("common.show" + this.name);
+    }
+  };
+  let hd = {
+    __proto__: common,
+    name: "hd.name",
+    show() {
+      super.show();
+
+      // console.log(this.name);
+      // this.__proto__.show.call(this);
+    }
+  };
+  hd.show(); //common.showhd.show
+  let xj = {
+    __proto__: hd,
+    name: "xj.name",
+    show() {
+      super.show();
+      // this.__proto__.show.call(this);
+    }
+  }
+  xj.show(); //common.showxj.show
+
+</script>
+
 </html>

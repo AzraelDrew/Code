@@ -1,35 +1,94 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-09-29 22:16:55
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    class Common {
-      sum() {
-        return this.data.reduce((t, c) => t + c.price, 0);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用super方法父类方法</title>
+</head>
+
+<body></body>
+<script>
+  /*   class Common {
+    sum() {
+      return this.data.reduce((t, c) => t + c.price, 0);
+    }
+  }
+  class Controller extends Common {}
+  class Lesson extends Controller {
+    constructor(data) {
+      super();
+      this.data = data;
+    }
+    info() {
+      return {
+        totalPrice: super.sum(),
+        data: this.data
+      };
+    }
+  }
+  let data = [{
+      name: "js",
+      price: 100
+    },
+    {
+      name: "mysql",
+      price: 212
+    },
+    {
+      name: "vue.js",
+      price: 98
+    }
+  ];
+  let hd = new Lesson(data);
+  console.log(hd.info()); */
+
+
+  /* yznasiy */
+
+  class Common {
+    sum() {
+      return this.data.reduce((t, c) => t + c.price, 0);
+    }
+  }
+
+  class Controller extends Common {
+
+  }
+  class Lesson extends Controller {
+    constructor(data) {
+      super();
+      this.data = data;
+    }
+    info() {
+      return {
+        totalPrice: super.sum(), //在super后面写上父类的方法就可以调用
+        data: this.data
       }
     }
-    class Controller extends Common {}
-    class Lesson extends Controller {
-      constructor(data) {
-        super();
-        this.data = data;
-      }
-      info() {
-        return {
-          totalPrice: super.sum(),
-          data: this.data
-        };
-      }
+  }
+  let data = [{
+      name: "js",
+      price: 100
+    },
+    {
+      name: "mysql",
+      price: 212
+    },
+    {
+      name: "vue.js",
+      price: 98
     }
-    let data = [
-      { name: "js", price: 100 },
-      { name: "mysql", price: 212 },
-      { name: "vue.js", price: 98 }
-    ];
-    let hd = new Lesson(data);
-    console.log(hd.info());
-  </script>
+  ];
+  console.dir(Lesson);
+  let hd = new Lesson(data);
+  console.log(hd.info());
+
+</script>
+
 </html>

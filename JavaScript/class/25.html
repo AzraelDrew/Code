@@ -1,22 +1,53 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-15 21:24:07
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function Arr(...args) {
-      args.forEach(item => this.push(item));
-      this.first = function() {
-        return this[0];
-      };
-      this.max = function() {
-        return this.sort((a, b) => b - a)[0];
-      };
+
+<head>
+  <meta charset="UTF-8" />
+  <title>内置类继承的原型实现</title>
+</head>
+
+<body></body>
+<script>
+  /*   function Arr(...args) {
+    args.forEach(item => this.push(item));
+    this.first = function () {
+      return this[0];
+    };
+    this.max = function () {
+      return this.sort((a, b) => b - a)[0];
+    };
+  }
+  Arr.prototype = Object.create(Array.prototype);
+  let hd = new Arr(99, 1, 2, 3, 4, 56, 195);
+  console.log(hd.max()); */
+
+
+  /* yznaisy */
+
+  function Arr(...args) {
+    // console.log(args);
+    args.forEach(item =>
+      this.push(item)
+    )
+    this.first = function () {
+      return this[0]
     }
-    Arr.prototype = Object.create(Array.prototype);
-    let hd = new Arr(99, 1, 2, 3, 4, 56, 195);
-    console.log(hd.max());
-  </script>
+    this.max = function () {
+      return this.sort((a, b) => b - a)[0]
+    }
+  }
+  Arr.prototype = Object.create(Array.prototype);
+  let hd = new Arr(1, 2, 34, 5, 6, 7, 129);
+  console.log(hd);
+  console.log(hd.first());
+  console.log(hd.max());
+
+</script>
+
 </html>

@@ -1,32 +1,69 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-15 21:39:30
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    class Arr extends Array {
-      constructor(...args) {
-        super(...args);
-      }
-      first() {
-        return this[0];
-      }
-      max() {
-        return this.sort((a, b) => b - a)[0];
-      }
-      add(item) {
-        this.push(item);
-      }
-      remove(value) {
-        let pos = this.findIndex(item => item == value);
-        // console.log(pos);
-        this.splice(pos, 1);
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用继承增强内置类</title>
+</head>
+
+<body></body>
+<script>
+  /*   class Arr extends Array {
+    constructor(...args) {
+      super(...args);
     }
-    let hd = new Arr(1, 2, 3);
-    hd.remove(3);
-    console.log(hd);
-  </script>
+    first() {
+      return this[0];
+    }
+    max() {
+      return this.sort((a, b) => b - a)[0];
+    }
+    add(item) {
+      this.push(item);
+    }
+    remove(value) {
+      let pos = this.findIndex(item => item == value);
+      // console.log(pos);
+      this.splice(pos, 1);
+    }
+  }
+  let hd = new Arr(1, 2, 3);
+  hd.remove(3);
+  console.log(hd); */
+
+
+  /* yznaisy */
+
+  class Arr extends Array {
+    constructor(...args) {
+      super(...args);
+    }
+    fisrt() {
+      return this[0];
+    }
+    max() {
+      return this.sort((a, b) => b - a)[0]
+    }
+    add(item) {
+      this.push(item)
+    }
+    remove(value) {
+      let pos = this.findIndex(item => item == value);
+      this.splice(pos, 1)
+    }
+  }
+  let hd = new Arr(1, 2, 3);
+  hd.add("后盾人");
+  console.log(hd);
+  hd.remove(2)
+  console.log(hd);
+
+</script>
+
 </html>
