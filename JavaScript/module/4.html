@@ -1,17 +1,29 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-21 22:48:07
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <script type="module">
-    import {} from "./hd.js";
-    console.log(this);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>模块延迟解析与严格模式</title>
+</head>
+<script type="module">
+  // 模块默认运行再严格模式
+  // site = "后盾人";   //site is not defined
+  import {} from "./js/4.js";
+    console.log(this);    //undefined
   </script>
-  <script>
-    console.log(this);
-  </script>
-  <body>
-    <button>后盾人</button>
-  </body>
+<script>
+  console.log(this); //window
+
+</script>
+
+<body>
+  <button>后盾人</button>
+</body>
+
 </html>

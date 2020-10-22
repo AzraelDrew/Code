@@ -1,12 +1,26 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-21 21:25:33
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import {} from "./hd.js";
-    import {} from "./houdunren.js";
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>作用域在模块中的体现</title>
+</head>
+
+<body></body>
+
+<!-- 每个模块都有 自己的作用域 -->
+<script type="module">
+  let site = "后盾人";
+</script>
+<script type="module">
+  console.log(site);  //site is not defined
+
+</script>
+
 </html>
