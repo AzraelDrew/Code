@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Style; });\nclass Style {\n  constructor() {}\n  init() {\n    document.body.style.backgroundColor = \"#338399\";\n  }\n}\n\n\n//# sourceURL=webpack:///./src/Style.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Style; });\n/*\r\n * @Author       : yznaisy\r\n * @Date         : 2020-09-17 23:46:54\r\n * @LastEditors  : yznaisy\r\n * @LastEditTime : 2020-10-25 00:47:50\r\n */\r\nclass Style {\r\n  constructor() {}\r\n  init() {\r\n    document.body.style.backgroundColor = \"#2ecc71\";\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack:///./src/Style.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Style */ \"./src/Style.js\");\n\nnew _Style__WEBPACK_IMPORTED_MODULE_0__[\"default\"]().init();\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Style */ \"./src/Style.js\");\n\r\nnew _Style__WEBPACK_IMPORTED_MODULE_0__[\"default\"]().init();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
