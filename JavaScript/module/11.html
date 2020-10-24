@@ -1,13 +1,26 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-25 00:05:48
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import * as api from "./modules/m11.js";
+
+<head>
+  <meta charset="UTF-8" />
+  <title>混合导入导出的使用</title>
+</head>
+
+<body></body>
+<script type="module">
+  import * as api from "./modules/m11.js";
+  console.log(api);
     console.log(api.default.render());
     console.log(api.site);
+  // import hd ,{site}from "./modules/m11.js";
+  //   console.log(hd.render());
+  //   console.log(site);
   </script>
+
 </html>

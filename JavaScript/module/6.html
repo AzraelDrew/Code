@@ -1,14 +1,25 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-24 22:44:16
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import { obj } from "./hd.js";
-    console.log(obj.get());
-    import { count } from "./houdunren.js";
-    console.log(count);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>模块的预解析</title>
+</head>
+
+<body></body>
+<script type="module">
+  // 导入多次时值解析一次
+  import {obj} from "./js/6.1.js";
+  console.log(obj.get());
+  import {count} from "./js/6.2.js";
+  console.log(count);
+
   </script>
+
 </html>

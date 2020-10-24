@@ -1,12 +1,24 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-25 00:01:07
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import hd from "./modules/m10.js";
-    console.log(hd);
+
+<head>
+  <meta charset="UTF-8" />
+  <title>default默认导出</title>
+</head>
+
+<body></body>
+<script type="module">
+  // 使用默认导出时可以使用任何变量来接收
+  import hd from "./modules/m10.js";
+  console.dir(hd);
+  let a = new hd();
+  console.log(hd.render());
   </script>
+
 </html>

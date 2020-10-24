@@ -1,8 +1,7 @@
-<!--
- * @Author       : yznaisy
+<!-- * @Author       : yznaisy
  * @Date         : 2020-09-17 23:46:54
  * @LastEditors  : yznaisy
- * @LastEditTime : 2020-10-21 21:25:33
+ * @LastEditTime : 2020-10-24 21:12:09
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +13,20 @@
 
 <body></body>
 
-<!-- 每个模块都有 自己的作用域 -->
-<script type="module">
-  let site = "后盾人";
-</script>
-<script type="module">
-  console.log(site);  //site is not defined
+<!-- 每个模块都有 自己的作用域
+  单独文件作用域也是独立的
+-->
+<!-- <script>
+  let url = "houdunren.com"
 
+</script> -->
+<script type="module">
+  import {site} from './js/5.1.js';
+  import {} from './js/5.2.js';
+  console.log(site);
 </script>
+<!-- <script type="module">
+  // console.log(site);  //site is not defined
+</script> -->
 
 </html>

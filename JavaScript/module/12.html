@@ -1,12 +1,22 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-25 00:10:17
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import m12 from "./modules/m12.js";
+
+<head>
+  <meta charset="UTF-8" />
+  <title>默认导出模块的使用规范</title>
+</head>
+
+<body></body>
+<script type="module">
+  // 默认导入时变量应该为文件名或者与文件名有关(便于阅读)
+  import m12 from "./modules/m12.js";
     console.log(m12.render());
   </script>
+
 </html>

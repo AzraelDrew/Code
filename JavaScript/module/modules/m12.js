@@ -4,4 +4,7 @@ class User {
     return "user static render";
   }
 }
-export { User as default, site };
+export {
+  User as
+  default, site
+};

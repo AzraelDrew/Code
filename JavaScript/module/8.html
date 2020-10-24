@@ -1,15 +1,27 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-24 23:49:27
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script type="module">
-    import { site } from "./modules/m8.js";
+
+<head>
+  <meta charset="UTF-8" />
+  <title>批量导入与建议</title>
+</head>
+
+<body></body>
+<script type="module">
+  // 尽量使用具名导入
+  import { site } from "./modules/m8.js";
     console.log(site);
+    // import * as api from "./modules/m8.js";
+    // console.log(api);
     // console.log(api.site);
     // console.log(api.show());
     // console.log(api.User.render());
   </script>
+
 </html>
