@@ -1,16 +1,24 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-27 22:00:17
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>houdunren.com</title>
-  </head>
-  <body>
-    <div class="content">
-      houdunren.com
-    </div>
-  </body>
-  <script>
-    let con = prompt("请输入要检测的内容，支持正则");
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用对象创建正则表达式</title>
+</head>
+
+<body>
+  <div class="content">
+    houdunren.com
+  </div>
+</body>
+<script>
+  /*     let con = prompt("请输入要检测的内容，支持正则");
     let reg = new RegExp(con, "g");
     let div = document.querySelector("div");
     div.innerHTML = div.innerHTML.replace(reg, search => {
@@ -25,6 +33,24 @@
     // let hd = "houdunren.com";
     // let a = "u";
     // let reg = new RegExp(a, "g");
-    // console.log(reg.test(hd));
-  </script>
+    // console.log(reg.test(hd)) */
+  ;
+
+
+  /* yznaisy */
+  // let hd = "houdunren";
+  // let a = "u"
+  // let reg = new RegExp(a, "g"); //第一个参数为查找的字符(也可以使用变量) ；第二个参数为查找的范围
+  // console.log(reg.test(hd));
+
+  let con = prompt("请输入要检测的内容，支持正则！");
+  let reg = new RegExp(con, "g");
+  let div = document.querySelector("div");
+  // console.log("abc".replace("a", "@"));   //@bc
+  div.innerHTML = div.innerHTML.replace(reg, search => {
+    return `<span style="color:red">${search}</span>`
+  })
+
+</script>
+
 </html>

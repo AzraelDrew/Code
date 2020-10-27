@@ -1,14 +1,39 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-27 22:27:53
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>houdunren.com</title>
-  </head>
-  <body></body>
-  <script>
-    //[] ()
-    let reg = /(12|34)/;
-    let hd = "88888822222344444";
-    console.log(hd.match(reg));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原子表与原子组中的选择符</title>
+</head>
+
+<body></body>
+<script>
+  //[] ()
+  let a1 = '1'
+  let a2 = '2'
+  let a3 = '3'
+  let a4 = '4'
+  let a5 = '5'
+  let a6 = 'a'
+  let reg1 = /[12345\w]/; // 在原子表中只匹配其中一个字符
+  console.log(a1.match(reg1));
+  console.log(a2.match(reg1));
+  console.log(a3.match(reg1));
+  console.log(a4.match(reg1));
+  console.log(a5.match(reg1));
+  console.log(a6.match(reg1));
+  let reg = /(12|34)/; //在原子组中匹配 “|”  左右两边的表达式
+  let hd1 = "88888822222344444";
+  let hd2 = "888888122222244444";
+  console.log(hd1.match(reg));
+  console.log(hd2.match(reg));
+
+</script>
+
 </html>

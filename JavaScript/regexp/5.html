@@ -1,14 +1,32 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-27 22:12:01
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>houdunren.com</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = "houdunren";
-    // console.log(/aaau|@/.test(hd));
-    let tel = "020-9999999";
-    console.log(/(010|020)\-\d{7,8}/.test(tel));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>选择符的使用</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let hd = "houdunren";
+  // console.log(/aaau|@/.test(hd));
+  let tel = "020-9999999";
+  console.log(/(010|020)\-\d{7,8}/.test(tel)); */
+
+
+  /* yznaisy */
+
+  let hd = "houdunren";
+  console.log(/oud|hoc/.test(hd)); //只要满足 “|” 左右两边的其中一个表达式
+  let tel = "010-9999999";
+  console.log(/(010|020)\-\d{7,8}/.test(tel));
+
+</script>
+
 </html>

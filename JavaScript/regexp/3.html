@@ -1,14 +1,33 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-27 21:43:18
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>houdunren.com</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = "houdunren.com";
-    let a = "u";
-    // console.log(/u/.test(hd));
-    console.log(eval(`/${a}/`).test(hd));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>字面量创建正则表达式</title>
+</head>
+
+<body></body>
+<script>
+  /*  let hd = "houdunren.com";
+  let a = "u";
+  // console.log(/u/.test(hd));
+  console.log(eval(`/${a}/`).test(hd));
+ */
+
+
+  /* yznaisy */
+  let hd = "houdunren.com";
+  // /u/    //字面量形式
+  let a = "u";
+  console.log(eval(`/${a}/`).test(hd)); //eval()  将字符串转换为js表达式
+  // console.log(/u/.test(hd)); //检测hd中是否有 “u”   返回一个Boolean值
+
+</script>
+
 </html>
