@@ -1,22 +1,56 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-31 09:30:39
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //\d \w .
-    // let hd = "houdunren-_@&*&***(";
-    // console.log(hd.match(/.+/));
-    // let url = "https://www.houdunren.com";
-    // console.log(url.match(/https?:\/\/\w+\.\w+\.\w+/));
-    // let hd = `
-    // houdunren.com
-    // hdcms.com
-    // `;
-    // console.log(hd.match(/.+/s)[0]);
-    let tel = "010 - 99999999";
-    console.log(tel.match(/\d+\s-\s\d{8}/));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>点元字符使用</title>
+</head>
+
+<body></body>
+<script>
+  /*   //\d \w .
+  // let hd = "houdunren-_@&*&***(";
+  // console.log(hd.match(/.+/));
+  // let url = "https://www.houdunren.com";
+  // console.log(url.match(/https?:\/\/\w+\.\w+\.\w+/));
+  // let hd = `
+  // houdunren.com
+  // hdcms.com
+  // `;
+  // console.log(hd.match(/.+/s)[0]);
+  let tel = "010 - 99999999";
+  console.log(tel.match(/\d+\s-\s\d{8}/)); */
+
+
+  /* yznaisy */
+
+  //    .匹配除了换行符以外的字符
+  let hd = "houdunren";
+  console.log(hd.match(/.+/));
+  let url = "https://www.houdunren.com";
+  console.log(url.match(/https?:\/\/\w+\.\w+.\w+/));
+
+
+
+  let hd1 = `
+  houdunren.com
+  hdcms.com
+  `;
+
+  console.log(hd1.match(/.+/s)); //  "s"   视为单行匹配
+
+
+  let tel = "010 - 99999999";
+  console.log(tel.match(/\d+ - \d{8}/)); //   空格也属于普通字符
+  console.log(tel.match(/\d+ -\d{8}/)); //   空格也属于普通字符
+  console.log(tel.match(/\d+\s-\s\d{8}/));
+
+</script>
+
 </html>

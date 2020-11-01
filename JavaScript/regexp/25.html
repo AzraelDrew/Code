@@ -1,22 +1,45 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 22:28:43
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <input type="text" name="mail" value="" />
-    <span></span>
-  </body>
-  <script>
-    let mail = document
-      .querySelector(`[name="mail"]`)
-      .addEventListener("keyup", function() {
-        reg = /^[\w-]+@([\w-]+\.)+(com|org|cc|cn|net)$/i;
-        document.querySelector("span").innerHTML = reg.test(this.value)
-          ? "正确"
-          : "错误";
-      });
-    // let reg = /^[\w-]+@[\w-]+\.(com|org|cc|cn|net)$/i;
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>邮箱验证中原子组的使用</title>
+</head>
+
+<body>
+  <input type="text" name="mail" value="Drewazrael@163.com.cn" />
+  <span></span>
+</body>
+<script>
+  /*   let mail = document
+    .querySelector(`[name="mail"]`)
+    .addEventListener("keyup", function () {
+      reg = /^[\w-]+@([\w-]+\.)+(com|org|cc|cn|net)$/i;
+      document.querySelector("span").innerHTML = reg.test(this.value) ?
+        "正确" :
+        "错误";
+    });
+  // let reg = /^[\w-]+@[\w-]+\.(com|org|cc|cn|net)$/i; */
+
+
+  /* yznaisy */
+
+  document.querySelector("[name='mail']").addEventListener("keyup", function () {
+    let reg = /^[\w-]+@([\w-]+\.)+(com|cn|cc|net)/i
+    // console.log(this.value.match(reg));
+    document.querySelector("span").innerHTML = reg.test(this.value) ? "邮箱正确" : "邮箱错误"
+  });
+
+  let mail = document.querySelector("[name='mail']").value;
+  let reg = /^[\w-]+@(qq|gamil|163|sina)\.(com|cn|cc|net)\.*(com|cn|cc|net)*$/i;
+  console.log(mail.match(reg));
+
+</script>
+
 </html>

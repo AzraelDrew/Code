@@ -1,15 +1,22 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 17:16:54
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>原子表字符不解析</title>
 </head>
 
 <body></body>
 <script>
   let hd = "(houdunren).+";
-  console.log(hd.match(/[.+]/gi));
+  console.log(hd.match(/[()]/gi)); //  在原子表中括号就是表示括号
+  console.log(hd.match(/[.+]/gi)); //  在原子表中  .  和  +  就是  .  和   +
 
 </script>
 

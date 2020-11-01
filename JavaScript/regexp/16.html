@@ -1,21 +1,45 @@
+<!--<title>lastindex属性的作用</title>
+ * @Author       : znaisy
+ * @LastEditors : yznaisy
+ * @LastEditTime : 2020-11-01 15:45:54
+-->
+* @Date : 2020-09-17 23:46:5
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //lastIndex
-    let hd = "houdunren";
-    // console.log(hd.match(/\w/g));
-    let reg = /\w/g;
-    console.log(reg.lastIndex);
-    console.log(reg.exec(hd));
-    console.log(reg.lastIndex);
-    console.log(reg.exec(hd));
-    // while ((res = reg.exec(hd))) {
-    //   console.log(res);
-    // }
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>lastindex属性的作用</title>
+</head>
+
+<body></body>
+<script>
+  /*   //lastIndex
+  let hd = "houdunren";
+  // console.log(hd.match(/\w/g));
+  let reg = /\w/g;
+  console.log(reg.lastIndex);
+  console.log(reg.exec(hd));
+  console.log(reg.lastIndex);
+  console.log(reg.exec(hd));
+  // while ((res = reg.exec(hd))) {
+  //   console.log(res);
+  // }
+ */
+
+  /* yznaisy */
+  let hd = "houdunren";
+  // console.log(hd.match(/\w/g));
+  let reg = /\w/g;
+  // console.log(reg.lastIndex);    //正则开始匹配的位置
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  while ((res = reg.exec(hd))) {
+    console.log(res);
+  }
+
+</script>
+
 </html>

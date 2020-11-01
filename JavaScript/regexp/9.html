@@ -1,30 +1,57 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-28 22:02:22
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //元字符
-    // let hd = "houdunren 2010";
-    // console.log(hd.match(/\d+/g));
-    // let hd = `
-    //   张三:010-99999999,李四:020-88888888
-    // `;
-    // console.log(hd.match(/\d{3}-\d{7,8}/g));
-    //\d  \D
 
-    // let hd = "houdunren 2010";
-    // console.log(hd.match(/\D+/));
+<head>
+  <meta charset="UTF-8" />
+  <title>数值与空白元字符</title>
+</head>
 
-    let hd = `
+<body></body>
+<script>
+  /*   //元字符
+  // let hd = "houdunren 2010";
+  // console.log(hd.match(/\d+/g));
+  // let hd = `
+  //   张三:010-99999999,李四:020-88888888
+  // `;
+  // console.log(hd.match(/\d{3}-\d{7,8}/g));
+  //\d  \D
+
+  // let hd = "houdunren 2010";
+  // console.log(hd.match(/\D+/));
+
+  let hd = `
       张三:010-99999999,李四:020-88888888
     `;
-    console.log(hd.match(/[^-\d:,\s]+/g));
+  console.log(hd.match(/[^-\d:,\s]+/g));
 
-    //\s
-    // console.log(/\s/.test("\nhd"));
-    // console.log(/\S/.test(" \nhd"));
-  </script>
+  //\s
+  // console.log(/\s/.test("\nhd"));
+  // console.log(/\S/.test(" \nhd")); */
+
+  /* yznaisy */
+
+
+  //元字符
+  let hd1 = "houdunren 202010";
+  console.log(hd1.match(/\d+/g)); //使用 “+”  匹配一个或多个    "g"为全局匹配
+  let hd2 = `
+    张三:010-99999999,李四:020-88888888
+  `;
+  console.log(hd2.match(/\d{3}-\d{7,8}/g));
+  //  \d  为数字   \D  为除了数字
+  console.log(hd1.match(/\D+/));
+  console.log(hd2.match(/[^-\d:,\s]+/g)); //除了原子表里面的都要匹配
+  //   \s  空白   \S除了空白
+  console.log(/\s/.test("fasdf  esfds"));
+  console.log(/\s/.test("fasdf  esfds"));
+
+</script>
+
 </html>

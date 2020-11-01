@@ -1,14 +1,36 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 17:12:21
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = "houdunren.com";
-    // console.log(hd.match(/[^ue]/gi));
-    let hd = `张三:010-99999999,李四:020-88888888`;
-    console.log(hd.match(/[^\d:\-,]+/g));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>排除匹配</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let hd = "houdunren.com";
+  // console.log(hd.match(/[^ue]/gi));
+  let hd = `张三:010-99999999,李四:020-88888888`;
+  console.log(hd.match(/[^\d:\-,]+/g));
+ */
+
+
+
+  /* yznaisy */
+
+  let hd = "houdunren";
+  console.log(hd.match(/[^ue]/g)); //匹配除了 "u"和"e"  以外的字符
+
+  let str = `张三:010-99999999,李四:020-88888888`;
+  console.log(str.match(/[^\d\-:,]+/g));
+  console.log(str.match(/\p{sc=Han}+/gu));
+
+</script>
+
 </html>

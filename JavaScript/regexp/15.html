@@ -1,20 +1,46 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 15:34:06
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //a [L]
-    let hd = "houdunren2010.不断发布教程，加油！";
-    // console.log(hd.match(/\p{L}/gu));
-    // console.log(hd.match(/\p{P}/gu));
-    //doc.houdunren.com
-    //Script  sc
-    // console.log(hd.match(/\p{sc=Han}/gu));
 
-    let str = "𝒳𝒴";
-    console.log(str.match(/[𝒳𝒴]/u));
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>汉字与字符属性</title>
+</head>
+
+<body></body>
+<script>
+  /*   //a [L]
+  let hd = "houdunren2010.不断发布教程，加油！";
+  //   \p{P}   匹配标点符号   必须配合u模式
+  // console.log(hd.match(/\p{L}/gu));
+  // console.log(hd.match(/\p{P}/gu));
+  //doc.houdunren.com
+  //Script  sc
+  console.log(hd.match(/\p{sc=Han}/gu));
+
+  let str = "𝒳𝒴";
+  console.log(str.match(/[𝒳𝒴]/u)); */
+
+
+
+  /* yznaisy */
+  // \p{}   必须配合u模式使用
+  // \P{L}   匹配字母
+  // \P{P}   匹配标点符号
+  // \p{sc=Han}   匹配汉语
+  let hd = "houdunren2010.不断发布教程，加油！";
+  console.log(hd.match(/\P{L}/gu));
+  console.log(hd.match(/\p{P}/gu));
+  console.log(hd.match(/\p{sc=Han}/gu));
+  let str = "𝒳𝒴";
+  console.log(str.match(/[𝒳𝒴]/g));
+  console.log(str.match(/[𝒳𝒴]/gu)); //u  可以匹配宽字节
+
+</script>
+
 </html>

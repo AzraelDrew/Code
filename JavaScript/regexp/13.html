@@ -1,13 +1,33 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-31 10:03:47
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = "hoUdUnren";
-    // console.log(hd.match(/u/gi));
-    console.log(hd.replace(/u/gi, "@"));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>i与g模式修正符</title>
+</head>
+
+<body></body>
+<script>
+  /*  let hd = "hoUdUnren";
+  // console.log(hd.match(/u/gi));
+  console.log(hd.replace(/u/gi, "@"));
+ */
+
+  /* yznaisy */
+
+
+  let hd = "houdunren";
+  console.log(hd.match(/U/i)); //  i模式  不区分大小写
+  console.log(hd.match(/u/g)); //  g模式  全局匹配
+  console.log(hd.match(/U/gi)); //  gi   全局匹配和不区分大小写
+  console.log(hd.replace(/u/gi, "@"));
+
+</script>
+
 </html>

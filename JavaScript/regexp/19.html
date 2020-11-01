@@ -1,20 +1,41 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 16:52:19
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <input type="text" name="username" />
-  </body>
-  <script>
-    // let hd = "2010";
-    // console.log(hd.match(/[0-9]+/g));
-    // let hd = "houdunren";
-    // console.log(hd.match(/[a-z]+/g));
-    let input = document.querySelector(`[name="username"]`);
-    input.addEventListener("keyup", function() {
-      console.log(this.value.match(/^[a-z]\w{3,6}$/i));
-    });
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>区间匹配</title>
+</head>
+
+<body>
+  <input type="text" name="username" />
+</body>
+<script>
+  /*   // let hd = "2010";
+  // console.log(hd.match(/[0-9]+/g));
+  // let hd = "houdunren";
+  // console.log(hd.match(/[a-z]+/g));
+  let input = document.querySelector(`[name="username"]`);
+  input.addEventListener("keyup", function () {
+    console.log(this.value.match(/^[a-z]\w{3,6}$/i));
+  });
+ */
+
+
+  /* yznaisy */
+  let num = "1234";
+  console.log(num.match(/[0-9]+/g)); //区间匹配只能升序不能降序
+  let str = "houdunren";
+  console.log(str.match(/[a-z]+/g));
+  document.querySelector("[name='username']").addEventListener("keyup", function () {
+    console.log(this.value.match(/^[a-z]\w{3,6}$/i));
+  })
+
+</script>
+
 </html>

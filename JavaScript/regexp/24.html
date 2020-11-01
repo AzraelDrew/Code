@@ -1,16 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 22:42:08
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = `<h1>houdunren</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原子组</title>
+</head>
+
+<body></body>
+<script>
+  /*   let hd = `<h1>houdunren</h1>
     <h2>hdcms</h2>
     `;
 
     let reg = /<(h[1-6])>([\s\S]*)<\/\1>/i;
     console.dir(hd.match(reg));
-  </script>
+ */
+
+  /* yznaisy */
+  let hd = `
+    <h1>houdunren</h1>
+    <h2>hdcms</h2>
+      `;
+  let reg = /<(h[1-6])>([\s\S]*)<\/\1>/i;
+  //() 原子组 每一个括号表示一个组\ 1 表示第一个组
+  let a = hd.match(reg);
+  console.log(a);
+  console.log(a[0]); //[0]  表示匹配到的内容
+  console.log(a[1]); //[1]   第一个原子组
+  console.log(a[2]); // [1]   第二个原子组
+  console.log(a.index); //index  从哪开始匹配
+  console.log(a.input); //原字符串
+  console.log(a.groups); //组名
+
+  let yzn = "sefgsdghffhjdfds"
+  let reg2 = /((\w{3,4})([\w\W]+))/; //当出现原子组里面包含原子组时   顺序为   由外到内
+  console.log(yzn.match(reg2));
+
+</script>
+
 </html>

@@ -1,12 +1,20 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-28 22:35:52
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //\w \d
+
+<head>
+  <meta charset="UTF-8" />
+  <title>w与W元字符</title>
+</head>
+
+<body></body>
+<script>
+  /*     //\w \d
     // let hd = "houdunren2010_@@";
     // console.log(hd.match(/\w+/));
     // let email = "&^&**(*&*^2300071698@qq.com";
@@ -16,6 +24,23 @@
     // a  \w   5 10
     let username = prompt("请输入用户名");
     // 8houdunren
-    console.log(/^[a-z]\w{4,9}$/.test(username));
-  </script>
+    console.log(/^[a-z]\w{4,9}$/.test(username)); */
+
+
+  /* yznaisy */
+  // \w   字母数字下划线   \W  除了字母数字下划线
+  let hd = "houdunren3030";
+  console.log(hd.match(/\w+/));
+
+  let email = "yznaisycode@gmail.com";
+  console.log(email.match(/^\w+@\w+\.\w+$/));
+
+
+  console.log("hdcms@".match(/\W/));
+
+  let username = prompt("请输入用户名");
+  console.log(/^[a-z]\w{4,9}$/.test(username));
+
+</script>
+
 </html>

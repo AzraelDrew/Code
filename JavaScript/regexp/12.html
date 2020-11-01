@@ -1,21 +1,47 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-10-31 09:49:10
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = `
+
+<head>
+  <meta charset="UTF-8" />
+  <title>如何精巧的匹配所有字符</title>
+</head>
+
+<body></body>
+<script>
+  /* let hd = `
     <span>
       houdunren @@@@
       hdcms
     </span>
   `;
-    // . \d \w
-    // let xj = "ab";
-    // console.log(xj.match(/#$%$%^%^%%^b/));
-    // [\s\S]  [\d\D]   a  \d \w . [a-z]
-    // console.log(hd.match(/<span>[\d\D]+<\/span>/));
-  </script>
+  // . \d \w
+  // let xj = "ab";
+  // console.log(xj.match(/#$%$%^%^%%^b/));
+  // [\s\S]  [\d\D]   a  \d \w . [a-z]
+  // console.log(hd.match(/<span>[\d\D]+<\/span>/)); */
+
+
+  /* yznaisy */
+
+  let hd = `
+    <span>
+      houdunren @@@@
+      hdcms
+    </span>
+  `;
+  console.log(hd.match(/<span>[\s\S]+<\/span>/)[0]);
+  console.log(hd.match(/<span>.+<\/span>/s)[0]);
+  console.log(hd.match(/<span>[\d\D]+<\/span>/)[0]);
+  console.log(hd.match(/<span>[\w\W]+<\/span>/)[0]);
+  let xj = "ab";
+  console.log(xj.match(/[ab]+/)[0]);
+
+</script>
+
 </html>

@@ -1,26 +1,75 @@
+<!--
+ * @Author       : yznaisy
+ * @Date         : 2020-09-17 23:46:54
+ * @LastEditors  : yznaisy
+ * @LastEditTime : 2020-11-01 16:12:17
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //y g
-    // let hd = "udunren";
-    // let reg = /u/y;
-    // console.log(reg.exec(hd));
-    // console.log(reg.lastIndex);
-    // console.log(reg.exec(hd));
-    // console.log(reg.lastIndex);
 
-    let hd = `后盾人QQ群:11111111,999999999,88888888
+<head>
+  <meta charset="UTF-8" />
+  <title>有效率的y模式</title>
+</head>
+
+<body></body>
+<script>
+  /*   //y g
+  // let hd = "udunren";
+  // let reg = /u/y;
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+
+  let hd = `后盾人QQ群:11111111,999999999,88888888
 后盾人不断分享视频教程，后盾人网址是 houdunren.com`;
 
-    let reg = /(\d+),?/y;
-    reg.lastIndex = 7;
-    let qq = [];
-    while ((res = reg.exec(hd))) qq.push(res[1]);
-    console.log(qq);
-  </script>
+  let reg = /(\d+),?/y;
+  reg.lastIndex = 7;
+  let qq = [];
+  while ((res = reg.exec(hd))) qq.push(res[1]);
+  console.log(qq);
+ */
+
+
+  /* yznaisy */
+  // let hd = "udunren";
+  // let reg = /u/g; //g模式只会匹配满足正则的字符串    当不满足时会跳过继续匹配
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(hd));
+  // console.log(reg.lastIndex);
+  // console.log("=======================");
+  // let reg1 = /u/y; // y模式   如果从lastindex开始匹配不成功时就会返回  lastindex=0   有从头开始匹配
+  // console.log(reg1.lastIndex);
+  // console.log(reg1.exec(hd));
+  // console.log(reg1.lastIndex);
+  // console.log(reg1.exec(hd));
+  // console.log(reg1.lastIndex);
+  // console.log(reg1.exec(hd));
+  // console.log(reg1.lastIndex);
+
+
+  let hd1 = `后盾人QQ群:11111111,999999999,88888888
+后盾人不断分享视频教程，后盾人网址是 houdunren.com`;
+
+  let reg2 = /(\d+),?/y;
+  reg2.lastIndex = 7;
+  // console.log(reg2.exec(hd1));
+  // console.log(reg2.exec(hd1));
+  // console.log(reg2.exec(hd1));
+
+  let qq = [];
+  while ((res = reg2.exec(hd1))) {
+    qq.push(res[1])
+    console.log(res);
+  }
+  console.log(qq);
+
+</script>
+
 </html>
