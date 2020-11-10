@@ -9,42 +9,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>let和const</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let和const</title>
 </head>
 
 <body>
 
 </body>
 <script>
-    {
-        // let声明的变量只在它所在的代码块有效,let不存在变量提升
-        let a = 10;
-        var b = 20;
+  {
+    // let声明的变量只在它所在的代码块有效,let不存在变量提升
+    let a = 10;
+    var b = 20;
+  }
+  console.log(b);
+  // console.log(a); // ReferenceError: a is not defined
+
+  // 循环结束后i会泄漏为全局变量
+  for (var i = 0; i < 10; i++) {}
+  console.log(i);
+
+
+  function f() {
+    console.log('I am outside!');
+  }
+
+  (function () {
+    if (true) {
+      // 重复声明一次函数f
+      function f() {
+        console.log('I am inside!');
+      }
     }
-    console.log(b);
-    // console.log(a); // ReferenceError: a is not defined
+    f();
 
-    // 循环结束后i会泄漏为全局变量
-    for (var i = 0; i < 10; i++) {}
-    console.log(i);
+  }());
 
-
-    function f() {
-        console.log('I am outside!');
-    }
-
-    (function () {
-        if (true) {
-            // 重复声明一次函数f
-            function f() {
-                console.log('I am inside!');
-            }
-        }
-        f();
-
-    }());
 </script>
 
 </html>

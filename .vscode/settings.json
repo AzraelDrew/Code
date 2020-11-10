@@ -9,5 +9,76 @@
   "git.ignoreLimitWarning": true, //如果后面还加内容，记得块末用逗号隔开,
   "prettier.useEditorConfig": false,
   "prettier.semi": true, // 是否带分号
-  "prettier.singleQuote": true // 是否为单引号
+  "prettier.singleQuote": true,
+  "winopacity.opacity": 225,
+  "beautify.config": "true",
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-d>": false,
+    "<C-e>": false,
+    "<C-f>": false,
+    "<C-g>": false,
+    "<C-h>": false,
+    "<C-i>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-l>": false,
+    "<C-m>": false,
+    "<C-n>": false,
+    "<C-o>": false,
+    "<C-p>": false,
+    "<C-q>": false,
+    "<C-r>": false,
+    "<C-s>": false,
+    "<C-t>": false,
+    "<C-u>": false,
+    "<C-v>": false,
+    "<C-w>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-z>": false
+  }
+  ,
+  "editor.formatOnSave": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "update.mode": "none",
+  "search.followSymlinks": false,
+  "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "beautify.config": "",
+  "beautify.language": {
+      "html": [
+          "htm",
+          "html",
+          "vue"
+      ],
+      "js": {
+          "type": [
+              "javascript",
+              "json"
+          ],
+          "filename": [
+              ".jshintrc",
+              ".jsbeautify"
+          ]
+      },
+      "css": [
+          "css",
+          "scss",
+          "less"
+      ]
+  },
+  "[vue]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  }
 }
