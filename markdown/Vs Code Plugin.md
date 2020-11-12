@@ -11,5 +11,3 @@
 - Git
 - vscode-icon
 - Prettier
-
-123
