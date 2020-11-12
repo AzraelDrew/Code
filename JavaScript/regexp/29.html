@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let hd = "hdddhdhdhdhdh";
-    // console.log(hd.match(/(hd)+/g));
-    // let tel = "0478-99999999";
-    // console.log(tel.match(/^0\d{2,3}-\d{7,8}$/));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>重复匹配对原子组、原子表的影响与电话正则</title>
+</head>
+
+<body></body>
+<script>
+  // let hd = "hdddhdhdhdhdh";
+  // console.log(hd.match(/(hd)+/g));
+  // let tel = "0478-99999999";
+
+  // console.log(tel.match(/^0\d{2,3}-\d{7,8}$/));
+
+
+  /* yznaisy */
+  let hd = "hddddfghdhdhdhdh";
+  console.log(hd.match(/hd+/g)); //只会对d有影响
+  console.log(hd.match(/(hd)+/g)); //使用原子组是会对整个原子组都有影响 
+
+  let tel = "0130-54449999";
+  console.log(tel.match(/^0\d{2,3}-\d{7,8}$/));
+
+</script>
+
 </html>

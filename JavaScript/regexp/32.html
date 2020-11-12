@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = "hdddd";
-    console.log(hd.match(/hd??/));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>禁止贪婪</title>
+</head>
+
+<body></body>
+<script>
+  let hd = "hdddd";
+  console.log(hd.match(/hd??/)); // 匹配0个或者1个 尽可能少的匹配
+  console.log(hd.match(/hd*?/)); // 匹配0个或者多个 尽可能少的匹配
+  console.log(hd.match(/hd+?/)); // 匹配1个或者多个 尽可能少的匹配
+  console.log(hd.match(/hd{2,3}?/)); // {n,m}匹配n个或者m个 尽可能少的匹配
+
+</script>
+
 </html>

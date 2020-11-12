@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = `
+
+<head>
+  <meta charset="UTF-8" />
+  <title>嵌套分组与不记录分组</title>
+</head>
+
+<body></body>
+<script>
+  /*  let hd = `
     https://www.houdunren.com
     http://houdunwang.com
     https://hdcms.com
@@ -17,6 +19,23 @@
     while ((res = reg.exec(hd))) {
       urls.push(res[1]);
     }
-    console.log(urls);
-  </script>
+    console.log(urls); */
+
+
+  /* yznaisy */
+
+  let hd = `
+    https://www.houdunren.com
+    http://houdunwang.com
+    https://hdcms.com
+    `;
+  let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|cn|org))/gi; //在原子组中使用  ?: 这个原子组将不会被记录在组中
+  let urls = [];
+  while (res = reg.exec(hd)) {
+    urls.push(res[1]);
+  }
+  console.log(urls);
+
+</script>
+
 </html>

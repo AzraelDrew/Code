@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <input type="text" name="username" />
-  </body>
-  <script>
-    document.querySelector(`[name="username"]`).addEventListener("keyup", e => {
-      const value = e.target.value;
-      let reg = /^[a-z][\w-]{2,7}$/i;
-      console.log(reg.test(value));
-    });
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>网站用户名验证</title>
+</head>
+
+<body>
+  <input type="text" name="username" />
+</body>
+<script>
+  /*   document.querySelector(`[name="username"]`).addEventListener("keyup", e => {
+    const value = e.target.value;
+    ;
+    let reg = /^[a-z][\w-]{2,7}$/i;
+    console.log(reg.test(value));
+  });
+ */
+
+  /* yznaisy */
+
+  document.querySelector("[name='username']").addEventListener("keyup", e => {
+    const value = e.target.value;
+    let reg = /^[a-z][\w-]{2,7}$/i;
+    // console.log(value.match(reg));
+    console.log(reg.test(value));
+  })
+
+</script>
+
 </html>

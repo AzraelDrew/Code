@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = "hdddddd";
-    console.log(hd.match(/hd?/));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>多种重复匹配的使用</title>
+</head>
+
+<body></body>
+<script>
+  // 重复匹配都会贪婪,尽可能多的匹配,重复匹配只会影响前面的一个字符
+  let hd = "hdddddd";
+  console.log(hd.match(/hd?/)); //?  0个或一个
+  console.log(hd.match(/hd*/)); //*  0个或多个
+  console.log(hd.match(/hd+/)); //   1个或多个
+  console.log(hd.match(/hd{1,3}/)); // {n,m}  n个到m个
+  console.log(hd.match(/hd{1,}/)); //  {n,}   n个到多个
+
+</script>
+
 </html>
