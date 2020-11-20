@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    // let tel = "2030/12/18";
-    // console.log(tel.replace(/\//g, "-"));
-    // let hd = "(010)99999999 (020)8888888";
-    // 010-99999
-    // let reg = /\((\d{3,4})\)(\d{7,8})/g;
-    // console.log(hd.match(reg));
-    // console.log(hd.replace(reg, "$1-$2"));
-    // $` $'  %&
-    let hd = "=后盾人=";
-    console.log(hd.replace(/后盾人/, "$'$'$&$'$'"));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>$在正则中的使用</title>
+</head>
+
+<body></body>
+<script>
+  /*   // let tel = "2030/12/18";
+  // console.log(tel.replace(/\//g, "-"));
+  // let hd = "(010)99999999 (020)8888888";
+  // 010-99999
+  // let reg = /\((\d{3,4})\)(\d{7,8})/g;
+  // console.log(hd.match(reg));
+  // console.log(hd.replace(reg, "$1-$2"));
+  // $` $'  %&
+  let hd = "=后盾人=";
+  console.log(hd.replace(/后盾人/, "$'$'$&$'$'")); */
+
+
+  /* yznaisy */
+  let hd = "(010)99999999 (020)8888888";
+  let reg = /\((\d{3,4})\)(\d{7,8})/g;
+  console.log(hd.replace(reg, "$1-$2"));
+
+
+  //$`匹配内容的左边
+  //$'匹配内容的右边
+  //$&匹配到的内容
+  let hd2 = "%后盾人=";
+  console.log(hd2.replace(/后盾人/, "$&"));
+  console.log(hd2.replace(/后盾人/, "$'"));
+  console.log(hd2.replace(/后盾人/, '$`'));
+
+</script>
+
 </html>

@@ -34,7 +34,6 @@
     // let a = "u";
     // let reg = new RegExp(a, "g");
     // console.log(reg.test(hd)) */
-  ;
 
 
   /* yznaisy */
@@ -46,10 +45,11 @@
   let con = prompt("请输入要检测的内容，支持正则！");
   let reg = new RegExp(con, "g");
   let div = document.querySelector("div");
-  // console.log("abc".replace("a", "@"));   //@bc
+  console.log("abc".replace("a", "@")); //@bc
   div.innerHTML = div.innerHTML.replace(reg, search => {
     return `<span style="color:red">${search}</span>`
   })
+  //   console.log(div.innerHTML.match(/\w/g));
 
 </script>
 

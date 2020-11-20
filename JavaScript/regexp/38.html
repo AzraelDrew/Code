@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //     let hd = `
+
+<head>
+  <meta charset="UTF-8" />
+  <title>字符串正则方法split与matchAll</title>
+</head>
+
+<body></body>
+<script>
+  /*   //     let hd = `
     //     https://hdcms.com
     //     http://www.sina.com.cn
     //     https://www.houdunren.com
@@ -16,6 +18,24 @@
     //       console.log(iterator);
     //     }
     let hd = "2020/09/12";
-    console.log(hd.split(/[-\/]/));
-  </script>
+    console.log(hd.split(/[-\/]/)); */
+
+
+  /* yznaisy */
+
+  let hd = `
+        https://hdcms.com
+        http://www.sina.com.cn
+        https://www.houdunren.com
+    `;
+
+  let reg = /https?:\/\/(\w+\.)?([\w.]+)(com|cn|org)/gi;
+  for (const iterator of hd.matchAll(reg)) {
+    console.dir(iterator);
+  }
+  let hd2 = "2020/09-12";
+  console.log(hd2.split(/[-\/]/));
+
+</script>
+
 </html>
