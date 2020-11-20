@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <h1>houdunren.com</h1>
-    <h2>hdcms.com</h2>
-    <h1>后盾人</h1>
-  </body>
-  <script>
-    function search(string, reg) {
-      let result = [];
-      while ((res = reg.exec(string))) {
-        result.push(res);
-      }
-      return result;
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用exec方法完成全局匹配</title>
+</head>
+
+<body>
+  <h1>houdunren.com</h1>
+  <h2>hdcms.com</h2>
+  <h1>后盾人</h1>
+</body>
+<script>
+  /*   function search(string, reg) {
+    let result = [];
+    while ((res = reg.exec(string))) {
+      result.push(res);
     }
-    let matchs = search(document.body.innerHTML, /<(h[1-6])[\s\S]+?<\/\1>/gi);
-    console.dir(matchs);
-    // let hd = "houdunren";
-    // let reg = /u/gi;
-    // console.log(reg.exec(hd));
-    // console.log(reg.exec(hd));
-    // console.log(reg.exec(hd));
-    // let result = [];
-    // while ((res = reg.exec(hd))) {
-    //   result.push(res);
-    // }
-    // console.log(result);
-  </script>
+    return result;
+  }
+  let matchs = search(document.body.innerHTML, /<(h[1-6])>[\s\S]+?<\/\1>/gi);
+  console.dir(matchs);
+  // let hd = "houdunren";
+  // let reg = /u/gi;
+  // console.log(reg.exec(hd));
+  // console.log(reg.exec(hd));
+  // console.log(reg.exec(hd));
+  // let result = [];
+  // while ((res = reg.exec(hd))) {
+  //   result.push(res);
+  // }
+  // console.log(result);
+ */
+
+  /* yznaisy */
+
+  function serach(string, reg) {
+    let result = [];
+    while ((res = reg.exec(string))) {
+      result.push(res);
+    }
+    return result;
+  }
+  let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+  let matchs = serach(document.body.innerHTML, reg);
+  console.log(matchs);
+  for (const iterator of matchs) {
+    console.dir(iterator);
+  }
+
+</script>
+
 </html>

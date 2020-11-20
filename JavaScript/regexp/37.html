@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //match exec matchAll replace
-    // let hd = "houdunren.com";
-    // console.log(hd.search(/u/));
-    // console.log(hd.match(/u/gi));
 
-    let hd = `
+<head>
+  <meta charset="UTF-8" />
+  <title>字符串正则方法search与match</title>
+</head>
+
+<body></body>
+<script>
+  /*   //match exec matchAll replace
+  // let hd = "houdunren.com";
+  // console.log(hd.search(/u/));
+  // console.log(hd.match(/u/gi));
+
+  let hd = `
     https://hdcms.com  
     http://www.sina.com.cn
     https://www.houdunren.com
 `;
-    let reg = /https?:\/\/(\w+\.)?(\w+\.)+(com|cn|org|cc)/gi;
-    console.dir(hd.match(reg));
-  </script>
+  let reg = /https?:\/\/(\w+\.)?(\w+\.)+(com|cn|org|cc)/gi;
+  console.dir(hd.match(reg));
+ */
+
+  /* yznaisy */
+  //   let hd = "houdunren";
+  //   //serach查找字符串所在位置的索引找到时返回索引，找不到返回-1
+  //   console.log(hd.search(/u/));
+  //   //match会将找到的字符串返回，当使用全局模式时会将找到的所有字符串返回
+  //   console.log(hd.match(/u/));
+  //   console.log(hd.match(/u/g));
+
+
+  let hd = `
+    https://hdcms.com  
+    http://www.sina.com.cn
+    https://www.houdunren.com
+`;
+  /* 
+  匹配http
+  s可能会有
+  www.也可能会有
+  sina.com.可能会有多个
+   */
+  //当使用全局模式时打印再控制台的数据看不见原子组等其他数据(只能查看匹配到的字符串)
+  let reg = /https?:\/\/(\w+\.)?(\w+\.)+(com|cn|org)/gi;
+  console.dir(hd.match(reg));
+
+</script>
+
 </html>

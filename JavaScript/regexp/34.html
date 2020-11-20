@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <h1>houdunren.com</h1>
-    <h2>hdcms.com</h2>
-    <h1>后盾人</h1>
-  </body>
-  <script>
-    let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
-    const body = document.body;
-    const hd = body.innerHTML.matchAll(reg);
-    let contents = [];
-    for (const iterator of hd) {
-      contents.push(iterator[2]);
-    }
-    console.table(contents);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用matchAll完成全局匹配</title>
+</head>
+
+<body>
+  <h1>houdunren.com</h1>
+  <h2>hdcms.com</h2>
+  <h1>后盾人</h1>
+</body>
+<script>
+  /*   let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+  const body = document.body;
+  const hd = body.innerHTML.matchAll(reg);
+  let contents = [];
+  for (const iterator of hd) {
+    contents.push(iterator[2]);
+  }
+  console.table(contents); */
+
+
+  /* yznaisy */
+  let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+  const hd = document.body.innerHTML.matchAll(reg);
+  console.dir(hd);
+  const contents = [];
+  for (const iterator of hd) {
+    // console.dir(iterator);
+    contents.push(iterator[2])
+  }
+  console.table(contents);
+
+</script>
+
 </html>
