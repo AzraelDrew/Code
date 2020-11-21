@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let hd = `
+
+<head>
+  <meta charset="UTF-8" />
+  <title>原子组别名</title>
+</head>
+
+<body></body>
+<script>
+  /*   let hd = `
   <h1>houdunren</h1>
   <span>后盾人</span>
   <h2>hdcms</h2>
 `;
-    const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;
-    console.log(hd.replace(reg, "<h4>$<con></h4>"));
-  </script>
+  const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;
+  console.log(hd.replace(reg, "<h4>$<con></h4>")); */
+
+
+  /* yznaisy */
+  let hd = `
+  <h1>houdunren</h1>
+  <span>后盾人</span>
+  <h2>hdcms</h2>
+`;
+  let reg = /<(?<tag>h[1-6])>(?<con>.*?)<\/\1>/ig; //(?<组别名>)  组别名会记录在groups中
+  console.log(hd.replace(reg, `<h4>原标签：$1--$2</h4>`)); //使用序号
+  console.log(hd.replace(reg, `<h4>原标签：$<tag>--$<con></h4>`)); //使用组别名
+  for (const iterator of hd.matchAll(reg)) {
+    console.log(iterator);
+  }
+
+</script>
+
 </html>

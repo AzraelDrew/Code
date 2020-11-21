@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <main>
-      后盾人不断分享视频教程，学习后盾人教程提升编程能力。
-    </main>
-  </body>
-  <script>
-    let main = document.querySelector("main");
-    let reg = /后盾人(?=教程)/g;
-    main.innerHTML = main.innerHTML.replace(
-      reg,
-      `<a href="https://houdunren.com">$&</a>`
-    );
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>?=断言匹配</title>
+</head>
+
+<body>
+  <main>
+    后盾人不断分享视频教程，学习后盾人教程提升编程能力。
+  </main>
+</body>
+<script>
+  /*   let main = document.querySelector("main");
+  let reg = /后盾人(?=教程)/g;
+  main.innerHTML = main.innerHTML.replace(
+    reg,
+    `<a href="https://houdunren.com">$&</a>`
+  );
+ */
+
+  /* yznaisy */
+  let main = document.querySelector("main");
+  // console.log(main);
+
+  let reg = /后盾人(?=教程)/g; //匹配后盾人且后盾人的后面必须紧接着教程    (?=exp)匹配后面为exp的内容
+  main.innerHTML = main.innerHTML.replace(reg, `<a href="https://houdunren.com">$&</a>`)
+
+</script>
+
 </html>

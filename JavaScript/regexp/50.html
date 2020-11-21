@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    //?= ?!
-    let hd = "houdunren2010hdcms";
-    let reg = /[a-z]+(?!\d+)$/i;
-    console.log(hd.match(reg));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>?!断言</title>
+</head>
+
+<body></body>
+<script>
+  //?= ?!
+  let hd = "houdunren2010hdcms";
+  let reg = /[a-z]+(?!\d+)$/i; //匹配多个字母且以字母结尾后面不是数字   （?!exp） 匹配后面不是exp的内容
+  console.log(hd.match(reg));
+
+</script>
+
 </html>

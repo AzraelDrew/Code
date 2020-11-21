@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <main></main>
-  </body>
-  <script>
-    let users = `
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用断言模糊电话号</title>
+</head>
+
+<body>
+  <main></main>
+</body>
+<script>
+  /*   let users = `
   向军电话: 12345678901
   后盾人电话: 98745675603
 `;
-    let reg = /(?<=\d{7})\d{4}/gi;
-    users = users.replace(reg, v => {
-      return "*".repeat(4);
-    });
-    console.log(users);
-  </script>
+  let reg = /(?<=\d{7})\d{4}/gi;
+  users = users.replace(reg, v => {
+    return "*".repeat(4);
+  });
+  console.log(users); */
+
+  /* yznaisy */
+  let users = `
+  向军电话: 12345678901
+  后盾人电话: 98745675603
+`;
+  let reg = /(?<=\d{7})\d{4}/ig;
+  users = users.replace(reg, v => {
+    return "*".repeat(4)
+    // console.log(v);
+  })
+  console.log(users);
+
+</script>
+
 </html>

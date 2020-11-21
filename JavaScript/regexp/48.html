@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <main>
-      <a href="https://baidu.com">百度</a>
-      <a href="https://yahoo.com">雅虎</a>
-    </main>
-  </body>
-  <script>
-    const main = document.querySelector("main");
-    const reg = /(?<=href=(['"])).+(?=\1)/gi;
-    main.innerHTML = main.innerHTML.replace(reg, "https://www.houdunren.com");
-    // console.log(main.innerHTML.match(reg));
-    // let hd = "houdunren789hdcms666";
-    // const reg = /(?<=houdunren)\d+/i;
-    // console.log(hd.match(reg));
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>?<=断言匹配</title> </head> <body>
+      <main>
+        <a href="https://baidu.com">百度</a>
+        <a href="https://yahoo.com">雅虎</a>
+      </main>
+      </body>
+      <script>
+        /*         const main = document.querySelector("main");
+        const reg = /(?<=href=(['"])).+(?=\1)/gi;
+        main.innerHTML = main.innerHTML.replace(reg, "https://www.houdunren.com");
+        // console.log(main.innerHTML.match(reg));
+        // let hd = "houdunren789hdcms666";
+        // const reg = /(?<=houdunren)\d+/i;
+        // console.log(hd.match(reg));
+ */
+
+        /* yznaisy */
+        let hd = 'houdunren678hdcms563';
+        let reg = /(?<=(houdunren|hdcms))(\d+)/i; //匹配多个数字且前面必须是houdunren或hdcms   (?<=exp)匹配前面为exp的内容
+        console.log(hd.match(reg));
+
+        let main = document.querySelector("main");
+        let reg1 = /(?<=href=(["'])).+(?=\1)/gi;
+        main.innerHTML = main.innerHTML.replace(reg1, "https://houdunren.com")
+        // console.log(main.innerHTML.match(reg1));
+        console.log(main.innerHTML);
+
+      </script>
+
 </html>

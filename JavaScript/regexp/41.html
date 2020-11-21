@@ -26,7 +26,7 @@
   }); */
 
   const main = document.querySelector("main");
-  const reg = /(<a.*href=['"])(http)(s?)(:\/\/)(www\.)?(hdcms|houdunren)/g
+  const reg = /(<a.*href=['"])(http)(s?)(:\/\/)(www\.)?(hdcms|houdunren|yahoo)/g
   main.innerHTML = main.innerHTML.replace(reg, (v, ...args) => {
     // args[1] += "s";
     args[2] = args[2] || "s"

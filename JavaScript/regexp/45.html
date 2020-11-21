@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <main>
-      后盾人不断分享视频教程，后盾人网址是 houdunren.com后盾人后盾人
-    </main>
-  </body>
-  <script>
-    //exec match
-    let reg = /后盾人/g;
-    const main = document.querySelector("body main");
-    let count = 0;
-    while ((res = reg.exec(main.innerHTML))) {
-      count++;
-    }
-    console.log(count);
-    // console.log(main.innerHTML.match(reg));
-    // console.log(reg.exec(main.innerHTML));
-    // console.log(reg.lastIndex);
-    // console.log(reg.exec(main.innerHTML));
-    // console.log(reg.lastIndex);
-    // console.log(reg.exec(main.innerHTML));
-    // console.log(reg.lastIndex);
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>正则方法exec</title>
+</head>
+
+<body>
+  <main>
+    后盾人不断分享视频教程，后盾人网址是 houdunren.com后盾人后盾人
+  </main>
+</body>
+<script>
+  /*   //exec match
+  let reg = /后盾人/g;
+  const main = document.querySelector("body main");
+  let count = 0;
+  while ((res = reg.exec(main.innerHTML))) {
+    count++;
+  }
+  console.log(count);
+  // console.log(main.innerHTML.match(reg));
+  // console.log(reg.exec(main.innerHTML));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(main.innerHTML));
+  // console.log(reg.lastIndex);
+  // console.log(reg.exec(main.innerHTML));
+  // console.log(reg.lastIndex); */
+
+
+  /* yznaisy */
+  let reg = /后盾人/g;
+  const main = document.querySelector("main").innerHTML;
+  let count = 0;
+  while ((res = reg.exec(main))) {
+    count++;
+  }
+  console.log(count);
+  //exec与match只匹配一个值时两者没有区别
+  console.log(main.match(reg)); //match当使用全局模式时只会返回匹配到的所有内容(会缺少一些细节)
+  console.log(reg.lastIndex);
+  console.log(reg.exec(main)); //exec等使用全局模式时只会返回匹配到的一个内容
+  console.log(reg.lastIndex);
+  console.log(reg.exec(main));
+  console.log(reg.lastIndex);
+
+</script>
+
 </html>
