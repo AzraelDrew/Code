@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ajax异步请求任务管理</title>
+</head>
+
+<body>
+  <script src="./js/ajax.js"></script>
   <script>
-    ajax(`http://localhost:8888/php/user.php?name=后盾人`, user => {
-      ajax(`http://localhost:8888/php/houdunren.php?id=${user.id}`, lessons => {
-        console.log(lessons);
-      });
-    });
-    console.log("houdunren.com");
+    // ajax(`http://localhost/php/user.php?name=后盾人`, user => {
+    //   ajax(`http://localhost/php/houdunren.php?id=${user.id}`, lessons => {
+    //     console.log(lessons);
+    //   })
+    // })
+
   </script>
+</body>
+<!-- <script src="js/ajax.js"></script> -->
+<script>
+  ajax("http://localhost/php/user.php?name=向军", user => {
+    ajax(
+      `http://localhost/php/houdunren.php?id=${user["id"]}`,
+      response => {
+        console.log(response[0]);
+      }
+    );
+  });
+
+
+  /* yznaisy */
+
+</script>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise.then也是一个Promise</title>
+</head>
+
+<body>
   <script>
-    let p1 = new Promise((resolve, reject) => {
+    /*   let p1 = new Promise((resolve, reject) => {
       // resolve("fulfilled");
       reject("rejected");
     });
@@ -19,10 +21,31 @@
         a => console.log("成功"),
         b => console.log(b)
       );
-
+  
     setTimeout(() => {
       // console.log(p1);
       // console.log(p2);
     });
+   */
+
+    /* yznaisy */
+    let p1 = new Promise((reslove, reject) => {
+      //   reslove("fulfilled");
+      reject("rejected")
+    });
+    let p2 = p1.then(
+      value => console.log(value),
+      reason => console.log(reason)
+    ).then(a => console.log(a), b => console.log(b))
+    // console.log(p1);
+    // console.log(p2);
+    // setTimeout(() => {
+    //   console.log(p1);
+    //   console.log(p2);
+    // })
+
   </script>
+</body>
+
+
 </html>
