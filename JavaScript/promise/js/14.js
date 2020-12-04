@@ -1,4 +1,4 @@
-function ajax() {
+function ajax(url) {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url);

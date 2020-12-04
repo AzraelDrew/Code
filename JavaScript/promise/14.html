@@ -10,9 +10,9 @@
 <script src="js/14.js"></script>
 <script>
   let url = `http://localhost/php/`;
-  ajax(`${url}/user.php?name=后盾人`)
-    .then(user => ajax(`${url}/houdunren.php?id=${user.id}`))
-    .then(lessons => console.log(lessons));
+  ajax(`${url}/user.php?name=后盾人`).then(value => console.log(value))
+  // .then(user => ajax(`${url}/houdunren.php?id=${user.id}`))
+  // .then(lessons => console.log(lessons));
   // function request() {
   //   return new Promise((resolve, reject) => {
   //     setTimeout(() => {
