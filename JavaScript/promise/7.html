@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>宏任务与微任务执行顺序</title>
+</head>
+
+<body>
+
   <script>
-    setTimeout(() => {
+    // setTimeout(() => {
+    //   console.log("setTimeout");
+    // }, 0);
+    // new Promise(resolve => {
+    //   resolve();
+    //   console.log("promise");
+    // }).then(value => console.log("成功"));
+    // console.log("后盾人");
+
+
+    /* yznaisy */
+    //同步>微任务>宏任务
+    setTimeout(() => { //宏尔任务
       console.log("setTimeout");
     }, 0);
-    new Promise(resolve => {
-      resolve();
-      console.log("promise");
-    }).then(value => console.log("成功"));
-    console.log("后盾人");
+    new Promise(reslove => {
+        reslove(); //微任务
+        console.log("Promise"); //同步
+      })
+      .then(value => console.log("成功")); //微任务
+    console.log("后盾人"); //同步
+
   </script>
+</body>
+
 </html>

@@ -1,36 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    let p1 = new Promise((resolve, reject) => {
+
+<head>
+  <meta charset="UTF-8" />
+  <title>then返回值的处理技巧</title>
+</head>
+
+<body></body>
+<script>
+  /*   let p1 = new Promise((resolve, reject) => {
       // reject("fail");
       resolve("fulfilled");
     })
-      .then(
-        value => {
-          // return "houdunren";
+    .then(
+      value => {
+        // return "houdunren";
+        return new Promise((resolve, reject) => {
+          // resolve("解决了");
+          setTimeout(() => {
+            reject("处理失败");
+          }, 3000);
+        }).then(null, r => {
           return new Promise((resolve, reject) => {
-            // resolve("解决了");
-            setTimeout(() => {
-              reject("处理失败");
-            }, 3000);
-          }).then(null, r => {
-            return new Promise((resolve, reject) => {
-              reject("失败了。。。。");
-            });
+            reject("失败了。。。。");
           });
-        },
-        reason => console.log("erorr" + reason)
-      )
-      .then(
-        value => {
-          console.log("成功:" + value);
-        },
-        reason => console.log("error" + reason)
-      );
-  </script>
+        });
+      },
+      reason => console.log("erorr" + reason)
+    )
+    .then(
+      value => {
+        console.log("成功:" + value);
+      },
+      reason => console.log("error" + reason)
+    ); */
+
+
+  /* yznaisy */
+  let p1 = new Promise((reslove, reject) => {
+      reslove("resloved");
+    }).then(
+      value => {
+        //   return `houdunren`;
+        //在then中return一个Promise时，与当前then处在同一级的下一个then表示对这个Promise的处理
+        // return new Promise((reslove, reject) => {
+        //   //   reslove("return Promise");
+        //   setTimeout(() => {
+        //     reject("fail");
+        //   }, 3000);
+        // });
+
+
+        //此Promise没有return时则必须在当前Promise后面使用then进行处理
+        // new Promise((reslove, reject) => {
+        //   setTimeout(() => {
+        //     reslove("return Promise");
+        //     // reject("fail");
+        //   }, 3000);
+        // }).then(a => console.log(a));
+
+
+        // return new Promise((reslove, reject) => {
+        //   setTimeout(() => {
+        //     reslove("return Promise");
+        //     // reject("fail");
+        //   }, 3000);
+        // }).then(a => "abc")
+
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("return Promise");
+            // reject("fail");
+          }, 3000);
+        }).then(a => {
+          return new Promise((reslove, rejcet) => {
+            rejcet("失败了。。。")
+          })
+        })
+      },
+      reason => {
+        console.log("error" + reason);
+      }
+    )
+    .then(value => console.log(value), reason => console.log(reason))
+  // 后面的then时对返回的Promise的处理
+
+</script>
+
 </html>

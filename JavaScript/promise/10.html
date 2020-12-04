@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>了解Promise.then的基本语法</title>
+</head>
+
+<body>
   <script>
-    new Promise((resolve, reject) => {
-      // resolve("一瓶可乐");
-      reject("涨价了，买不起了");
-    })
+    /*     new Promise((resolve, reject) => {
+        // resolve("一瓶可乐");
+        reject("涨价了，买不起了");
+      })
       .then(null, a => {
         console.log(`处理了失败的状态,${a}`);
       })
       .then(null, reason => {
         console.log(reason);
-      });
+      }); */
+
+
+
+    /* yznaisy */
+    new Promise((reslove, reject) => {
+        reslove("一瓶可乐");
+        // reject("涨价了,买不起!");
+      })
+      .then(a => console.log(a), b => {
+        console.log(`处理失败的状态,${b}`);
+      })
+      .then(c => console.log(c), reason => {
+        console.log(reason);
+      })
+
   </script>
+</body>
+
 </html>

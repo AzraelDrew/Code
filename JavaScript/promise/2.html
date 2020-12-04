@@ -10,12 +10,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>后盾人</title>
+  <title>异步加载图片体验js任务操作</title>
 </head>
 
 <body></body>
 <script>
-  function loadImag(src, resolve, reject) {
+  /*   function loadImag(src, resolve, reject) {
     let image = new Image();
     image.src = src;
     image.onload = () => {
@@ -32,6 +32,26 @@
       console.log("加载失败");
     }
   );
+  console.log("后盾人"); */
+
+  /* yznaisy */
+
+  function loadImag(src, reslove, reject) {
+    let image = new Image();
+    image.src = src;
+    image.onload = () => {
+      reslove(image);
+    }
+    image.onerro = reject;
+  }
+  loadImag("./images/houdunren.png",
+    (image) => {
+      document.body.appendChild(image);
+      console.log("加载成功");
+    },
+    () => {
+      console.log("加载失败");
+    });
   console.log("后盾人");
 
 </script>
