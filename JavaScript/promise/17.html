@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body>
-    <style>
-      div {
-        width: 100px;
-        height: 100px;
-        background: red;
-        color: white;
-        display: none;
-      }
-    </style>
-    <div id="loading">loading...</div>
-  </body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>使用finally实现异步加载动画</title>
+</head>
+
+<body>
+  <style>
+    #loading {
+      width: 100px;
+      height: 100px;
+      background: red;
+      color: yellow;
+      display: none;
+    }
+
+  </style>
+  <div id="loading">loading...</div>
+  <script src="js/17.js"></script>
   <script>
-    ajax(`http://localhost:8888/php/user.php?name=后盾人`)
+    /*     ajax(`http://localhost/php/user.php?name=后盾人`)
       .then(value => {
         console.log(value);
       })
@@ -29,11 +31,34 @@
     //   reject("hdcms");
     // })
     //   .then(msg => {
-    //     console.log("resolve");
+    //     console.log("resolve");s
     //   })
     //   .catch(error => {})
     //   .finally(() => {
     //     console.log("永远会执行");
     //   });
+ */
+
+    /* yznaisy */
+    ajax("http://localhost/php/user.php?name=后盾人")
+      .then(value => console.log(value))
+      .finally(() => {
+        setTimeout(() => {
+          loading.style.display = "none";
+        }, 2000)
+      })
+
+
+    // new Promise((resolve, reject) => {
+    //     // resolve("success");
+    //     reject("fail")
+    //   })
+    //   .then(value => console.log(value))
+    //   .catch(error => console.log(error))
+    //   .finally(() => console.log("永远执行")) // 不管成功还是失败都会执行
+
   </script>
+</body>
+
+
 </html>

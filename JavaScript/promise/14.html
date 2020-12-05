@@ -3,26 +3,32 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>后盾人</title>
+  <title>使用Promise封装AJAX请求</title>
 </head>
 
-<body></body>
-<script src="js/14.js"></script>
-<script>
-  let url = `http://localhost/php/`;
-  ajax(`${url}/user.php?name=后盾人`)
-    .then(value => console.log(value))
-  // .then(user => ajax(`${url}/houdunren.php?id=${user.id}`))
-  // .then(lessons => console.log(lessons));
-  // function request() {
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve("成功");
-  //     }, 2300);
-  //   });
-  // }
-  // request().then(value => console.log(value));
+<body>
+  <script src="js/14.js"></script>
+  <script>
+    let url = `http://localhost/php/`;
+    ajax(`${url}/user.php?name=后盾人`)
+      .then(user => {
+        return ajax(`${url}houdunren.php?id=${user.id}`)
+      }).then(lessons => {
+        console.log(lessons);
+      })
+    // .then(user => ajax(`${url}/houdunren.php?id=${user.id}`))
+    // .then(lessons => console.log(lessons));
+    // function request() {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve("成功");
+    //     }, 2300);
+    //   });
+    // }
+    // request().then(value => console.log(value));
 
-</script>
+  </script>
+</body>
+
 
 </html>

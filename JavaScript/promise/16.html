@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>自定义错误</title>
+</head>
+
+<body>
+  <script src="js/16.js"></script>
   <script>
-    ajax(`http://localhost:8888/php/user.php?name=后盾人12`)
+    /*     ajax(`http://localhost/php/user.php?name=后盾人`)
       .then(value => {
         console.log(value);
       })
@@ -20,5 +22,26 @@
         }
         console.log(error);
       });
+ */
+
+    /* yznaisy */
+
+    ajax(`http://localhost/php/user.php?name=后盾人`)
+      .then(
+        value => console.log(value)
+      )
+      .catch(
+        value => {
+          if (value instanceof ParamError) {
+            console.log(value.message);
+          }
+          if (value instanceof HttpError) {
+            alert(value.message);
+          }
+        })
+
   </script>
+
+</body>
+
 </html>

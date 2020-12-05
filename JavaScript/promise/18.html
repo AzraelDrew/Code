@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script>
-    function loadImage(src) {
-      return new Promise((resolve, reject) => {
-        const image = new Image();
-        image.src = src;
-        image.onload = () => {
-          resolve(image);
-        };
-        image.onerror = reject;
-        document.body.appendChild(image);
-      });
-    }
-    loadImage("images/houdunren.png").then(image => {
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise异步加载图片</title>
+</head>
+
+<body></body>
+
+<script>
+  // function loadImage(src) {
+  //   return new Promise((resolve, reject) => {
+  //     const image = new Image();
+  //     image.src = src;
+  //     image.onload = () => {
+  //       resolve(image);
+  //     };
+  //     image.onerror = reject;
+  //     document.body.appendChild(image);
+  //   });
+  // }
+  // loadImage("images/houdunren.png").then(image => {
+  //   image.style.border = "solid 6px red";
+  // });
+
+  /* yznaisy */
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.src = src;
+      image.onload = resolve(image);
+      image.onerror = reject();
+      document.body.appendChild(image)
+    })
+  }
+
+  loadImage("./images/houdunren.png")
+    .then(image => {
+      // image.style.border = "solid 6px red"
       image.style.border = "solid 6px red";
-    });
-  </script>
+    }).catch(value => console.log(value))
+
+</script>
+
 </html>

@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise多种错误监测与catch使用</title>
+</head>
+
+<body>
+  <script>
+    new Promise((resolve, reject) => {
+        // resolve("fulfilled");
+        /* 下列错误都会在then中的第二个回调函数中处理 */
+        // reject("fail");
+        // reject(new Error("error"));
+        // throw new Error("throw");
+        hd + 1;
+      })
+      .then(
+        value => console.log(value),
+        reason => console.log(reason)
+      )
+
+
+    new Promise((resolve, reject) => {
+        // resolve("fulfilled");
+        reject("p1--fail")
+      })
+      .then(
+        value => {
+          return new Promise((resolve, reject) => {
+            reject("p2--rejected");
+          })
+        },
+        reason => {
+          console.log(reason);
+          return new Promise((resolve, reject) => {
+            reject("p2--rejected");
+          })
+        }
+      )
+      .then(
+        value => console.log(value),
+        // reason => console.log("reason---p2" + reason)
+      )
+      // catch对上面的错误进行处理(如果上面没有对错误进行处理时)，一般放在最后
+      .catch(value => console.log("catch---" + value))
+
+  </script>
+</body>
+
+
 </html>
