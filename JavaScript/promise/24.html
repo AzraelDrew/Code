@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise.all批量获取数据</title>
+</head>
+
+<body>
+  <script src="js/24.js"></script>
   <script>
-    // const hdcms = new Promise((resolve, reject) => {
+    /*     // const hdcms = new Promise((resolve, reject) => {
     //   setTimeout(() => {
     //     // resolve("第一个异步");
     //     reject("fail");
@@ -26,12 +28,56 @@
     //根据用户批量获取用户资料
     function getUsers(names) {
       let promises = names.map(name => {
-        return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+        return ajax(`http://localhost/php/user.php?name=${name}`);
       });
       return Promise.all(promises);
     }
     getUsers(["后盾人"]).then(users => {
       console.log(users);
-    });
+    }); */
+
+
+    /* yznaisy */
+
+    // const hdcms = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第一个异步");
+    //     // reject("fail1")
+    //   }, 1000)
+    // })
+    // const houdunren = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第二个异步");
+    //     // reject("fail2")
+    //   }, 1000)
+    // })
+    // // 任何一个 Promise 执行失败就会调用 catch方法
+    // Promise.all([hdcms, houdunren]).then(value => {
+    //   console.log(value);
+    // }).catch(error => {
+    //   console.log(error);
+    // })
+
+    // const promise = ["后盾人", "向军"].map(name => {
+    //   return ajax(`http://localhost/php/user.php?name=${name}`)
+    // })
+    // Promise.all(promise).then(user => {
+    //   console.log(user);
+    // })
+
+
+    function getUsers(names) {
+      let promises = names.map(name => {
+        return ajax(`http://localhost/php/user.php?name=${name}`)
+      })
+      return Promise.all(promises)
+    }
+    getUsers(["后盾人", "向军"]).then(users => {
+      console.dir(users);
+    })
+
   </script>
+</body>
+
+
 </html>

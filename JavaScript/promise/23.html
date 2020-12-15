@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise.reject的使用</title>
+</head>
+
+<body>
   <script>
-    let hd = {
+    /*     let hd = {
       then(resolve, reject) {
         resolve("后盾人");
       }
@@ -16,8 +17,8 @@
       // console.log(value);
     });
     new Promise((resolve, reject) => {
-      resolve("后盾人");
-    })
+        resolve("后盾人");
+      })
       .then(value => {
         // console.log(value);
         if (value != "成功") {
@@ -34,6 +35,39 @@
     //   })
     //   .catch(error => {
     //     console.log(error);
-    //   });
+    //   }); */
+
+
+    /* yznaisy */
+
+    // let hd = {
+    //   then(resolve, reject) {
+    //     resolve("后盾人");
+    //   }
+    // }
+    // Promise.resolve(hd).then(value => {
+    //   console.log(value);
+    // })
+
+
+    // Promise.reject("fail").then(value => {
+    //   console.log(value);
+    // }).catch(error => {
+    //   console.log(error);
+    // })
+
+    new Promise((resolve, reject) => {
+      resolve("后盾人");
+    }).then(value => {
+      if (value != "成功") {
+        return Promise.reject("参数错误")
+      }
+    }).catch(error => {
+      console.log(error + "fail");
+    })
+
   </script>
+</body>
+
+
 </html>

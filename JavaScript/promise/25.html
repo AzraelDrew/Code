@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise.allSettled使用</title>
+</head>
+
+<body>
+  <script src="js/25.js"></script>
   <script>
-    let promises = ["后盾人", "李四"].map(name => {
-      return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    /*     let promises = ["后盾人", "李四"].map(name => {
+      return ajax(`http://localhost/php/user.php?name=${name}`);
     });
     Promise.allSettled(promises).then(values => {
       let users = values.filter(user => {
@@ -25,6 +27,34 @@
     // });
     // Promise.allSettled([p1, p2]).then(results => {
     //   console.log(results);
-    // });
+    // }); */
+
+    /* yznaisy */
+
+    // const p1 = new Promise((resolve, reject) => {
+    //   resolve("resolved")
+    // })
+    // const p2 = new Promise((resolve, reject) => {
+    //   //   resolve("resolved")
+    //   reject("rejected")
+    // })
+    // Promise.allSettled([p1, p2]).then(result => { //用于处理多个Promise，只关注执行完成，不关注是否全部执行成功
+    //   console.log(result);
+    // })
+
+    let promises = ["后盾人", "lisi"].map(name => {
+      return ajax(`http://localhost/php/user.php?name=${name}`)
+    })
+    Promise.allSettled(promises).then(values => {
+      //   console.log(values);
+      let users = values.filter(user => {
+        return user.status == "fulfilled"
+      })
+      console.log(users);
+    })
+
   </script>
+</body>
+
+
 </html>

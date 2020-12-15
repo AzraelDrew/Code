@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>后盾人</title>
-  </head>
-  <body></body>
-  <script src="js/ajax.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Promise.race后台请求超时处理</title>
+</head>
+
+<body>
+  <script src="js/26.js"></script>
   <script>
-    function query(url, delay = 2000) {
+    /*     function query(url, delay = 2000) {
       let promises = [
         //http://localhost:8888/php/user.php?name=后盾人
         ajax(url),
@@ -19,7 +21,7 @@
       ];
       return Promise.race(promises);
     }
-    query(`http://localhost:8888/php/user.php?name=后盾人`, 1000)
+    query(`http://localhost/php/user.php?name=后盾人`, 1000)
       .then(value => {
         console.log(value);
       })
@@ -49,6 +51,64 @@
     //   })
     //   .catch(msg => {
     //     console.log(msg);
+    //   }); */
+
+
+    /* yznaisy */
+
+    // const hdcms = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第一个Promise");
+    //   }, 2000);
+    // });
+    // const houdunren = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第二个异步");
+    //   }, 1000);
+    // });
+    // Promise.race([hdcms, houdunren])
+    //   .then(results => {
+    //     console.log(results);
+    //   })
+    //   .catch(msg => {
+    //     console.log(msg);
     //   });
+
+
+    // let promise = [
+    //   ajax("http://localhost/php/user.php?name=后盾人"),
+    //   new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         reject("请求超时")
+    //       },
+    //       2000)
+    //   })
+    // ]
+    // Promise.race(promise).then(value => {
+    //   console.log(value);
+    // }).catch(error => {
+    //   console.log(error);
+    // })
+
+    function query(url, delay = 2000) {
+      let promises = [
+        ajax(url),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject("请求超时")
+          }, delay)
+        })
+      ]
+      return Promise.race(promises)
+    }
+    query("http://localhost/php/user.php?name=后盾人", 4000).then(value => {
+      console.log(value);
+    }).catch(error => {
+      console.log(error);
+    })
+
   </script>
+</body>
+
+
 </html>
