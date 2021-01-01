@@ -126,3 +126,13 @@ git merge dev
 git log --oneline --graph
 ```
 
+> 删除远程仓库的文件或文件夹
+
+```
+git rm -r --cached filename or folder
+
+git commit -m "delete filename"
+
+git push
+```
+
