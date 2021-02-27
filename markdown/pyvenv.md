@@ -21,7 +21,7 @@ cd venv1
 > 激活
 
 ```
-.\Scripts\activate
+.\Scripts\activate (source ./bin/activate)
 ```
 
 > 退出虚拟环境
