@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin:*");
+sleep(5);
 $users = [
     ['id' => 1, 'name' => '后盾人', 'email' => 'admin@houdunren.com'],
     ['id' => 2, 'name' => '向军', 'email' => '2300071698@qq.com'],
@@ -26,3 +27,4 @@ if (isset($_GET['id'])) {
     });
     die(json_encode($response));
 }
+?>

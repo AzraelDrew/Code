@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>后盾人</title>
+  <title>async基本错误处理</title>
 </head>
 
 <body></body>
@@ -12,7 +12,7 @@
   async function hd(name) {
     // console.log(a);
     // throw new Error("fail");
-    return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    return ajax(`http://localhost/php/user.php?name=${name}`);
   }
   hd("后盾人")
     .then(user => {

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromiseTest</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function timeout(ms) {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, ms, 'done');
+    });
+  }
+
+  timeout(100).then((value) => {
+    console.log(value);
+  });
+
+  //   const p1 = new Promise(function (resolve, reject) {});
+
+  //   const p2 = new Promise(function (resolve, reject) {
+  //     resolve(p1);
+  //   })
+  /* 上面代码中， p1和p2都是 Promise 的实例， 但是p2的resolve方法将p1作为参数， 即一个异步操作的结果是返回另一个异步操作。
+  注意， 这时p1的状态就会传递给p2， 也就是说， p1的状态决定了p2的状态。 如果p1的状态是pending， 
+  那么p2的回调函数就会等待p1的状态改变； 
+  如果p1的状态已经是resolved或者rejected， 那么p2的回调函数将会立刻执行。
+ */
+
+  const p1 = new Promise(function (resolve, reject) {
+    setTimeout(() => reject(new Error('fail')), 3000)
+  })
+
+  const p2 = new Promise(function (resolve, reject) {
+    setTimeout(() => resolve(p1), 1000)
+  })
+
+
+  p2
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
+
+</script>
+
+</html>

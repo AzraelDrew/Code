@@ -48,6 +48,7 @@
     Promise.allSettled(promises).then(values => {
       //   console.log(values);
       let users = values.filter(user => {
+        //   return user
         return user.status == "fulfilled"
       })
       console.log(users);

@@ -101,7 +101,7 @@
       ]
       return Promise.race(promises)
     }
-    query("http://localhost/php/user.php?name=后盾人", 4000).then(value => {
+    query("http://localhost/php/user.php?name=后盾人", 1000).then(value => {
       console.log(value);
     }).catch(error => {
       console.log(error);
@@ -109,6 +109,5 @@
 
   </script>
 </body>
-
 
 </html>
