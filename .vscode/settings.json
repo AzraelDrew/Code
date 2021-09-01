@@ -1,5 +1,6 @@
 {
   "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+  "terminal.integrated.shell.windows": "C:\\azraelsoft\\Git\\bin\\bash.exe",
   "editor.fontLigatures": true,
   "materialTheme.accent": "Graphite",
   //改变注释颜色
@@ -11,7 +12,6 @@
   "prettier.semi": true, // 是否带分号
   "prettier.singleQuote": true,
   "winopacity.opacity": 225,
-  "beautify.config": "true",
   "vim.useCtrlKeys": true,
   "vim.handleKeys": {
     "<C-a>": false,
@@ -80,5 +80,6 @@
   },
   "[vue]": {
       "editor.defaultFormatter": "HookyQR.beautify"
-  }
+},
+"liveServer.settings.port": 5501
 }

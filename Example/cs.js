@@ -28,11 +28,18 @@ if (score) {
 }
 console.log(colors); */
 
-var a = 1;
+// var a = 1;
 
-function fun() {
-  "use strict";
-  var a = 2;
-  return this.a;
+// function fun() {
+//   "use strict";
+//   var a = 2;
+//   return this.a;
+// }
+// let a = 1;
+// fun()
+let date = {
+  "123": 43564,
+  "abc": 234
 }
-fun()
+
+console.log(date["abc"]);
