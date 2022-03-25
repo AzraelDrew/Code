@@ -6,54 +6,53 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>对象属性的声明</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>对象属性的声明</title>
-</head>
+  <body></body>
+  <script>
+    /*   class User {
+      site = "后盾人";
+      constructor(name) {
+        this.name = name;
+      }
+      changeSite(value) {
+        this.site = value;
+      }
+      show() {
+        return `${this.site}:${this.name}`;
+      }
+    }
+    let hd = new User("后盾人");
+    hd.changeSite("houdunren");
+    console.log(hd.show());
+    // console.log(hd);
+    // let xj = new User("向军");
+    // console.log(xj); */
 
-<body></body>
-<script>
-  /*   class User {
-    site = "后盾人";
-    constructor(name) {
-      this.name = name;
-    }
-    changeSite(value) {
-      this.site = value;
-    }
-    show() {
-      return `${this.site}:${this.name}`;
-    }
-  }
-  let hd = new User("后盾人");
-  hd.changeSite("houdunren");
-  console.log(hd.show());
-  // console.log(hd);
-  // let xj = new User("向军");
-  // console.log(xj); */
+    /* yznaisy */
 
-  /* yznaisy */
-
-  class User {
-    site = "后盾人"
-    constructor(name) {
-      this.name = name;
+    class User {
+      site = '后盾人';
+      constructor(name) {
+        this.name = name;
+      }
+      changeSite(value) {
+        this.site = value;
+      }
+      show() {
+        return `${this.site}:${this.name}`;
+      }
     }
-    changeSite(value) {
-      this.site = value
-    }
-    show() {
-      return `${this.site}:${this.name}`
-    }
-  }
-  let hd = new User("后盾人");
-  hd.changeSite("houdunren")
-  console.log(hd.show());
-  console.log(hd);
-  let xj = new User("向军");
-  console.log(xj);
-
-</script>
-
+    // let hd = new User('后盾人');
+    // hd.changeSite('houdunren');
+    // console.log(hd.show());
+    // console.log(hd);
+    // let xj = new User('向军');
+    // console.log(xj);
+    let ts = new User();
+    console.log(ts);
+  </script>
 </html>
