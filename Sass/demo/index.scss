@@ -1,3 +1,4 @@
+//变量声明
 $div_color: #74b9ff; //全局可以使用
 
 $highlight_color: #f90;
@@ -43,6 +44,7 @@ p {
 }
 
 .blue-theme {
+  //导入sass文件
   @import 'blue-theme';
 }
 
@@ -58,6 +60,7 @@ p {
 //不会出现在css文件中
 /*会出现在css文件中*/
 
+//混合器
 @mixin rounded_corners {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -66,9 +69,10 @@ p {
 notice {
   background-color: green;
   border: 2px solid #00aa00;
+  //混合器使用
   @include rounded_corners;
 }
-
+//混合器设置参数
 @mixin link-colors($normal, $hover, $visited) {
   color: $normal;
   &:hover {
@@ -79,5 +83,6 @@ notice {
   }
 }
 a {
+  //混合器传参
   @include link-colors(blue, red, green);
 }
