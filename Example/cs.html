@@ -9,9 +9,16 @@
   </head>
 
   <body>
-    <script src="./cs.js"></script>
-    <script type="module">
-      import a from './cs.js';
+    <main id="set">后盾人不断分享视频教程，学习后盾人教程提升编程能力。</main>
+
+    <button onclick="Set()">提交</button>
+    <script>
+      const main = document.querySelector('main');
+      const reg = /后盾人(?=教程)/gi;
+      main.innerHTML = main.innerHTML.replace(
+        reg,
+        (v) => `<a href="https://houdunren.com">${v}</a>`
+      );
     </script>
   </body>
 </html>

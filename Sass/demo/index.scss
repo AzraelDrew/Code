@@ -1,0 +1,83 @@
+$div_color: #74b9ff; //全局可以使用
+
+$highlight_color: #f90;
+$highlight_border: 1px solid $div_color; //变量中也可以使用其他变量
+
+div {
+  $width: 500px;
+  height: auto;
+  width: $width; //只能在当前div中使用
+  color: $div_color;
+  border: 1px solid $div_color; //变量可在任何地方访问
+  &:hover {
+    //父选择器 此时的&为div标签
+    color: yellow;
+  }
+
+  p {
+    //div下的p     嵌套规则
+    color: #f90;
+    a {
+      &:hover {
+        //此时的&为a标签
+        color: aquamarine;
+      }
+      li & {
+        color: black;
+      }
+    }
+  }
+  a {
+    &:hover {
+      //父选择器 此时的&为a标签
+      color: red;
+    }
+  }
+}
+nav > p {
+  border: 1px solid red;
+}
+p {
+  border: $highlight_border;
+  font-size: 50px;
+}
+
+.blue-theme {
+  @import 'blue-theme';
+}
+
+//生成的结果跟你直接在.blue-theme选择器内写_blue-theme.scss文件的内容完全一样。
+
+// .blue-theme {
+//   aside {
+//     background: blue;
+//     color: #fff;
+//   }
+// }
+
+//不会出现在css文件中
+/*会出现在css文件中*/
+
+@mixin rounded_corners {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+notice {
+  background-color: green;
+  border: 2px solid #00aa00;
+  @include rounded_corners;
+}
+
+@mixin link-colors($normal, $hover, $visited) {
+  color: $normal;
+  &:hover {
+    color: $hover;
+  }
+  &:visited {
+    color: $visited;
+  }
+}
+a {
+  @include link-colors(blue, red, green);
+}

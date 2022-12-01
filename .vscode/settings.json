@@ -1,3 +1,4 @@
 {
-  "livePreview.defaultPreviewPath": "/Example/cs.html"
+  "livePreview.defaultPreviewPath": "/Example/cs.html",
+  "compile-hero.disable-compile-files-on-did-save-code": false
 }
